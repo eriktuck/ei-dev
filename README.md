@@ -10,10 +10,10 @@ To push changes:
 ```bash
 mkdocs gh-deploy
 ```
-Note that the Settings Tab, under project pages, should have the ghp-pages branch selected as the page
+Note that the Settings Tab, under project pages, should have the ghp-pages branch selected as the page.
 
-You can still run 'mkdocs build' to visualize the site while working on it
+You can still run 'mkdocs build' to visualize the site while working on it.
 
-Add the `site/` folder to the gitignore file because it doesn't need to be served up to github
+Add the `site/` folder to the gitignore file because it doesn't need to be served up to github.
 
-To add the Anaconda Prompt to your right-click context menu on windows, see this [gist](https://gist.github.com/jiewpeng/8ba446acf329b1801bf91db767d179ea).
+*To add the Anaconda Prompt to your right-click context menu on windows, see this [gist](https://gist.github.com/jiewpeng/8ba446acf329b1801bf91db767d179ea).
