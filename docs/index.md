@@ -1,6 +1,22 @@
-# Welcome to MkDocs
+# # EI Development Guidance
 
-For full documentation visit [mkdocs.org](https://mkdocs.org).
+This was produced with mkdocs. For full documentation visit [mkdocs.org](https://mkdocs.org).
+
+## Contents
+
+* Git
+  * Install & Setup
+  * Starting a Project
+  * Standard Workflow
+* Deployment
+* Spatial Analysis
+* Data Science Workflow
+  * Data Cleaning
+  * Pandas
+* Visualization
+  * Matplotlib & Seaborn
+* Consulting Workflow & Resources
+* Conservation Design Process
 
 ## Commands
 
