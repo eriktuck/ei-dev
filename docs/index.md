@@ -1,4 +1,4 @@
-# # EI Development Guidance
+## EI Development Guidance
 
 This was produced with mkdocs. For full documentation visit [mkdocs.org](https://mkdocs.org).
 
