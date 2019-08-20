@@ -75,18 +75,22 @@ The MkDocs package will create the basic architecture when [creating the project
     * data-exploration
     * data-analysis
     * data-visualization
+  * spatial-analysis/
+    * earth-sensing
+    * google-earth-engine
+    * gdal
+    * arcpy
+  * visualization/
   * packages/
     * dash
     * pandas
     * seaborn
     * folium
     * sqlite
-    * arcpy
   * technologies/
-    * earth-sensing
-    * google-earth-engine
-    * gdal
     * SQL
+  * consulting/
+  * conservation-design/
 
 #### Approach
 
