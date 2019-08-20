@@ -17,7 +17,7 @@ In Windows Explorer, navigate to the folder in which you will create your projec
 
 *Skip the following paragraph if you already have a project started*.
 
-Use the command `mkdir project-name` (replace project-name with the name of the directory for the project) to create a folder. Next, use the command `cd project-name` to move into that folder.
+Use the command `mkdir <project-name>` (replace `<project-name>` with the name of the directory for the project) to create a folder. Next, use the command `cd <project-name>` to move into that folder.
 
 ### 2. Initialize git
 
@@ -84,7 +84,7 @@ where you replace `<url>` with the copied url (use Shift+Insert to paste into Ba
 
 Run `ls` to confirm that the repository was created. Type the command `cd <repository-name>` to move into the repository folder (replace `<repository name>` with the correct name).  
 
-If you need to copy files/folders into the repository, use the command `cp -R <~/path/> .`. Replace `<~/path/` with the correct path of the source folder/file. Th `-R` flag signifies recursive and copies everything from within the folders as well. the `.` simply means the current directory, so your copying everything from the path provided to the current directory.
+If you need to copy files/folders into the repository, use the command `cp -R <~/path/> .`. Replace `<~/path/>` with the correct path of the source folder/file. The `-R` flag signifies recursive and copies everything from within the folders as well. The `.` simply means the current directory, so your copying everything from the path provided to the current directory.
 
 ### 3. Populate the .gitignore file
 
