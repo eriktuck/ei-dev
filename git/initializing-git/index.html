@@ -357,6 +357,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-resources" title="Additional Resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
       
       
       
@@ -487,6 +494,13 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#additional-resources" title="Additional Resources" class="md-nav__link">
+    Additional Resources
+  </a>
+  
+</li>
+      
       
       
       
@@ -525,8 +539,12 @@
 <p>Use the command <code>touch .gitignore</code> to create a new file named .gitignore. This file will be used by git to ignore files in the project that should not be tracked. Use the command <code>code .gitignore</code> to open VSCode to edit the file (or however you would open and edit files). Using one line per folder or file, list all folders or files to be ignored. Wildcards (i.e., globbing patterns) are honored. Each project will be different but consider including <code>*.pyc</code>, <code>venv</code>, <code>idea</code>. See this <a href="https://github.com/github/gitignore">GitHub help page</a> for more on .gitignore files and this <a href="https://github.com/github/gitignore">repo</a> for suggested files to ignore.</p>
 <p>Use the command <code>touch README.md</code> to create a README file. This file will automatically be displayed on the repository page on Github. Using the Markdown language, populate this README file with important info as necessary.</p>
 <h3 id="4-commit-your-initial-files">4. Commit your initial file(s)</h3>
-<p>We'll use a fast-forward commit to get the first batch of files/folders into our git repository. Use the following command:</p>
-<pre><code class="bash">git commit -am &quot;Initial Commit&quot;
+<p>First, we'll need to add all files to be tracked by git. Use the command:</p>
+<pre><code class="bash">git add -A
+</code></pre>
+
+<p>Next we'll use a  commit to get the first batch of files/folders into our git repository. Use the following command:</p>
+<pre><code class="bash">git commit -m &quot;Initial Commit&quot;
 </code></pre>
 
 <p>You will learn more about commits and other features of git in the Using Git section.</p>
@@ -560,6 +578,11 @@ git push -u origin master --tags
 <p>The .gitignore file will be used by git to ignore files in the project that should not be tracked. Use the command <code>code .gitignore</code> to open VSCode to edit the file (or however you would open and edit files). Using one line per folder or file, list all folders or files to be ignored. Wildcards (i.e., globbing patterns) are honored. Each project will be different but consider including <code>*.pyc</code>, <code>venv</code>, <code>idea</code>. See this <a href="https://github.com/github/gitignore">GitHub help page</a> for more on .gitignore files and this <a href="https://github.com/github/gitignore">repo</a> for suggested files to ignore.</p>
 <h3 id="4-create-your-project-structure-and-begin-coding">4. Create your project structure and begin coding!</h3>
 <p>At this point, you may wish to switch into your IDE and open the project folder to build your project architecture and begin coding. Follow the workflow described in the Using Git section as you work.</p>
+<h2 id="additional-resources">Additional Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=HVsySz-h9r4&amp;list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx&amp;index=1">Corey Shafer's excellent series on Git</a></li>
+<li></li>
+</ul>
                 
                   
                 
