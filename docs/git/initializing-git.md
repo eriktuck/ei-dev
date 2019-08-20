@@ -13,7 +13,7 @@ This section describes how to begin a new project and track it on Github. We hav
 
 In Windows Explorer, navigate to the folder in which you will create your project directory (or the root of an existing project directory). Right-click and select 'GitBash Here' to open an instance of Bash. 
 
-![git-bash-here](assets/git-bash-here.gif)
+![git-bash-here](../assets/git-bash-here.gif)
 
 *Skip the following paragraph if you already have a project started*.
 

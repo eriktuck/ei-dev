@@ -28,9 +28,11 @@ Provide a single source for documenting and sharing EI's approach to data produc
 
 #### Users
 
-**Primary:** EI's metrics staff and other technical staff
+##### Primary
+EI's metrics staff and other technical staff
 
-**Secondary:** non-technical staff working with metrics staff to develop a data product
+##### Secondary
+Non-technical staff working with metrics staff to develop a data product
 
 #### Technologies:
 
@@ -49,48 +51,48 @@ The MkDocs package will create the basic architecture when [creating the project
 * mkdocs.yml
 * README.md
 * Docs/
-  * index.md
-  * assets/
-    * (for storing gifs, images, etc.)
-  * getting-started/
-    * setting-up.md
-    * project-planning.md
-    * specifications-outline.md
-    * skills-and-training.md
-  * git/
-    * installing-git.md
-    * initializing-git.md
-    * using-git.md
-  * development/
-    * virtual-environments
-  * deployment/
-    * deployment-overview.md
-    * jupyter.md
-    * heroku.md
-    * linux.md
-    * aws.md
-    * docker.md
-  * data-science/
-    * workflow-overview
-    * data-exploration
-    * data-analysis
-    * data-visualization
-  * spatial-analysis/
-    * earth-sensing
-    * google-earth-engine
-    * gdal
-    * arcpy
-  * visualization/
-  * packages/
-    * dash
-    * pandas
-    * seaborn
-    * folium
-    * sqlite
-  * technologies/
-    * SQL
-  * consulting/
-  * conservation-design/
+    * index.md
+    * assets/
+        * (for storing gifs, images, etc.)
+    * getting-started/
+        * setting-up.md
+        * project-planning.md
+        * specifications-outline.md
+        * skills-and-training.md
+    * git/
+        * installing-git.md
+        * initializing-git.md
+        * using-git.md
+    * development/
+        * virtual-environments
+    * deployment/
+        * deployment-overview.md
+        * jupyter.md
+        * heroku.md
+        * linux.md
+        * aws.md
+        * docker.md
+    * data-science/
+        * workflow-overview
+        * data-exploration
+        * data-analysis
+        * data-visualization
+    * spatial-analysis/
+        * earth-sensing
+        * google-earth-engine
+        * gdal
+        * arcpy
+    * visualization/
+    * packages/
+        * dash
+        * pandas
+        * seaborn
+        * folium
+        * sqlite
+    * technologies/
+        * SQL
+    * consulting/
+    * conservation-design/
 
 #### Approach
 
