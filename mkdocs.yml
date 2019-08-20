@@ -2,5 +2,7 @@ site_name: My Docs
 theme: material
 nav:
 - Home: 'index.md'
+- Getting Started:
+  - 'Project Planning': getting-started/project-planning.md
 - Git:
-  - 'Create Project': 'git-create-project.md'
+  - 'Create Project': 'git/initializing-git.md'

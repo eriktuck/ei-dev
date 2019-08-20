@@ -4,17 +4,14 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 
 ## Contents
 
+* Getting Started
 * Git
-  * Install & Setup
-  * Starting a Project
-  * Standard Workflow
+* Development
 * Deployment
+* Data Science
 * Spatial Analysis
-* Data Science Workflow
-  * Data Cleaning
-  * Pandas
 * Visualization
-  * Matplotlib & Seaborn
+* Packages
 * Consulting Workflow & Resources
 * Conservation Design Process
 
