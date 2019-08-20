@@ -36,7 +36,7 @@
     
     
       
-        <title>Git create project - My Docs</title>
+        <title>Create Project - My Docs</title>
       
     
     
@@ -101,7 +101,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Git create project
+                Create Project
               
             </span>
           
@@ -170,8 +170,8 @@
 
 
   <li class="md-nav__item">
-    <a href=".." title="EI Development Guidance" class="md-nav__link">
-      EI Development Guidance
+    <a href=".." title="Home" class="md-nav__link">
+      Home
     </a>
   </li>
 
@@ -183,17 +183,38 @@
   
 
 
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
   <li class="md-nav__item md-nav__item--active">
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Git create project
+        Create Project
       </label>
     
-    <a href="./" title="Git create project" class="md-nav__link md-nav__link--active">
-      Git create project
+    <a href="./" title="Create Project" class="md-nav__link md-nav__link--active">
+      Create Project
     </a>
     
       
@@ -308,6 +329,11 @@
   
 </nav>
     
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -442,7 +468,7 @@
               
                 
                 
-                  <h1>Git create project</h1>
+                  <h1>Create Project</h1>
                 
                 <p>This section describes how to begin a new project and track it on Github. We have two options:</p>
 <ol>
@@ -454,8 +480,9 @@
 <p>If you have already started a project or prefer to work from your local machine first, follow these steps:</p>
 <h3 id="1-create-the-project-directory">1. Create the project directory</h3>
 <p>In Windows Explorer, navigate to the folder in which you will create your project directory (or the root of an existing project directory). Right-click and select 'GitBash Here' to open an instance of Bash. </p>
+<p><img alt="git-bash-here" src="../assets/git-bash-here.gif" /></p>
 <p><em>Skip the following paragraph if you already have a project started</em>.</p>
-<p>Use the command <code>mkdir project-name</code> (replace project-name with the name of the directory for the project) to create a folder. Next, use the command <code>cd project-name</code> to move into that folder.</p>
+<p>Use the command <code>mkdir &lt;project-name&gt;</code> (replace <code>&lt;project-name&gt;</code> with the name of the directory for the project) to create a folder. Next, use the command <code>cd &lt;project-name&gt;</code> to move into that folder.</p>
 <h3 id="2-initialize-git">2. Initialize git</h3>
 <p>Use the command <code>git init</code> to initialize git. A new repository named .git will be created within the directory which stores all of the git version control. You don't need to have GitBash open during your editing sessions, this folder will take care of all of your version control. If for some reason you want to stop tracking with git and lose all of your previous versions, just delete this folder.</p>
 <h3 id="3-create-a-gitignore-and-readmemd-file">3. Create a .gitignore and README.md file</h3>
@@ -492,7 +519,7 @@ git push -u origin master --tags
 
 <p>where you replace <code>&lt;url&gt;</code> with the copied url (use Shift+Insert to paste into Bash). You may provide a name for the project following the url if you'd like the folder on your local drive to have a different name than the repository on Github. </p>
 <p>Run <code>ls</code> to confirm that the repository was created. Type the command <code>cd &lt;repository-name&gt;</code> to move into the repository folder (replace <code>&lt;repository name&gt;</code> with the correct name).  </p>
-<p>If you need to copy files/folders into the repository, use the command <code>cp -R &lt;~/path/&gt; .</code>. Replace <code>&lt;~/path/</code> with the correct path of the source folder/file. Th <code>-R</code> flag signifies recursive and copies everything from within the folders as well. the <code>.</code> simply means the current directory, so your copying everything from the path provided to the current directory.</p>
+<p>If you need to copy files/folders into the repository, use the command <code>cp -R &lt;~/path/&gt; .</code>. Replace <code>&lt;~/path/&gt;</code> with the correct path of the source folder/file. The <code>-R</code> flag signifies recursive and copies everything from within the folders as well. The <code>.</code> simply means the current directory, so your copying everything from the path provided to the current directory.</p>
 <h3 id="3-populate-the-gitignore-file">3. Populate the .gitignore file</h3>
 <p>The .gitignore file will be used by git to ignore files in the project that should not be tracked. Use the command <code>code .gitignore</code> to open VSCode to edit the file (or however you would open and edit files). Using one line per folder or file, list all folders or files to be ignored. Wildcards (i.e., globbing patterns) are honored. Each project will be different but consider including <code>*.pyc</code>, <code>venv</code>, <code>idea</code>. See this <a href="https://github.com/github/gitignore">GitHub help page</a> for more on .gitignore files and this <a href="https://github.com/github/gitignore">repo</a> for suggested files to ignore.</p>
 <h3 id="4-create-your-project-structure-and-begin-coding">4. Create your project structure and begin coding!</h3>
@@ -517,7 +544,7 @@ git push -u origin master --tags
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href=".." title="EI Development Guidance" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href=".." title="Home" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -526,7 +553,7 @@ git push -u origin master --tags
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                EI Development Guidance
+                Home
               </span>
             </div>
           </a>
