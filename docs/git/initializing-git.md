@@ -31,10 +31,16 @@ Use the command `touch README.md` to create a README file. This file will automa
 
 ### 4. Commit your initial file(s)
 
-We'll use a fast-forward commit to get the first batch of files/folders into our git repository. Use the following command:
+First, we'll need to add all files to be tracked by git. Use the command:
 
 ```bash
-git commit -am "Initial Commit"
+git add -A
+```
+
+Next we'll use a  commit to get the first batch of files/folders into our git repository. Use the following command:
+
+```bash
+git commit -m "Initial Commit"
 ```
 
 You will learn more about commits and other features of git in the Using Git section.
@@ -93,3 +99,9 @@ The .gitignore file will be used by git to ignore files in the project that shou
 ### 4. Create your project structure and begin coding!
 
 At this point, you may wish to switch into your IDE and open the project folder to build your project architecture and begin coding. Follow the workflow described in the Using Git section as you work.
+
+## Additional Resources
+
+* [Corey Shafer's excellent series on Git](https://www.youtube.com/watch?v=HVsySz-h9r4&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx&index=1)
+* 
+
