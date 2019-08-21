@@ -1,3 +1,5 @@
+HELP ME PLEASE!
+
 ## Setting Up Git & GitHub
 
 ### Download Git
