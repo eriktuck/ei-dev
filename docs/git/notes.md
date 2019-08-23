@@ -138,3 +138,13 @@ git push origin master
 
 **Open file with VSCode** `code <file name>` (set up default editors with aliases or use `start` and ensure preferred editor is system default)
 
+### Working Together
+
+There are two common ways of collaborating:
+
+1. Fork the repo and submit pull requests to the repo owner
+2. Add Collaborators to your repo to give others push authority
+
+Forking the repo and submitting pull requests is the safest, as the repo owner is in charge of reviewing all proposed changes before integrating them into the repo. However, that can create a lot of work for the repo owner depending on the frequency of commits.
+
+Adding Collaborators can be done in the Settings tab of a repo. This allows anyone listed as a collaborator to work on the repo as if it was their own. This will streamline the workflow, but you risk missing simple mistakes, severe mistakes, and malicious intent. 
