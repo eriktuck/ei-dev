@@ -50,10 +50,8 @@ The MkDocs package will create the basic architecture when [creating the project
 
 * mkdocs.yml
 * README.md
-* Docs/
+* docs/
     * index.md
-    * assets/
-        * (for storing gifs, images, etc.)
     * getting-started/
         * setting-up.md
         * project-planning.md
@@ -65,6 +63,7 @@ The MkDocs package will create the basic architecture when [creating the project
         * using-git.md
     * development/
         * virtual-environments
+        * IDEs
     * deployment/
         * deployment-overview.md
         * jupyter.md
@@ -72,16 +71,19 @@ The MkDocs package will create the basic architecture when [creating the project
         * linux.md
         * aws.md
         * docker.md
+    * data-management/
+        * database-overview.md
     * data-science/
-        * workflow-overview
-        * data-exploration
-        * data-analysis
-        * data-visualization
+        * workflow-overview.md
+        * data-exploration.md
+        * data-analysis.md
+        * data-visualization.md
     * spatial-analysis/
-        * earth-sensing
-        * google-earth-engine
-        * gdal
-        * arcpy
+        * earth-sensing.md
+        * google-earth-engine.md
+        * gdal.md
+        * arcpy.md
+        * land-use-land-cover.md
     * visualization/
     * packages/
         * dash
@@ -89,9 +91,9 @@ The MkDocs package will create the basic architecture when [creating the project
         * seaborn
         * folium
         * sqlite
-    * technologies/
-        * SQL
+        * rasterio
     * consulting/
+        * program-requirements.md
     * conservation-design/
 
 #### Approach
