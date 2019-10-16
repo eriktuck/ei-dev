@@ -69,9 +69,10 @@ Resources
 Assets
 
 * [xcld bobby tables cartoon](https://www.google.com/url?sa=i&source=images&cd=&ved=2ahUKEwi219Kwgp_lAhU4ITQIHctfBSMQjRx6BAgBEAQ&url=https%3A%2F%2Fxkcd.com%2F327%2F&psig=AOvVaw08GxKbuhIlpoZqDFcB99A4&ust=1571254745719498)
-* [xlcd data pipeline](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiglbPDgp_lAhWTLH0KHaZECZMQjRx6BAgBEAQ&url=https%3A%2F%2Fxkcd.com%2F2054%2F&psig=AOvVaw08GxKbuhIlpoZqDFcB99A4&ust=1571254745719498)
-* [xlcd hard problems with algorithms](https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjUiZiVg5_lAhUYHjQIHSEHCOYQjRx6BAgBEAQ&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F686517536918211418%2F&psig=AOvVaw08GxKbuhIlpoZqDFcB99A4&ust=1571254745719498)
-* 
+* [xlcd data pipeline]( https://xkcd.com/2054/ )
+* [xlcd hard problems with algorithms]( http://twcmattress.com/2017/05/xkcd-com-here-to-help/ )
+* [xKcd curve fitting]( https://xkcd.com/2048/ )
+*  
 
 To Do
 
