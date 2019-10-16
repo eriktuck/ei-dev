@@ -1,0 +1,791 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
+    
+    
+      
+        <title>Database Overview - EI Metrics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.0284f74d.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#introduction-to-databases" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EI Metrics" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EI Metrics
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Database Overview
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EI Metrics" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    EI Metrics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project Planning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project Planning
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project-planning/project-planning/" title="Project Planning" class="md-nav__link">
+      Project Planning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/initializing-git/" title="Create Project" class="md-nav__link">
+      Create Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
+    
+    <label class="md-nav__link" for="nav-4">
+      Data Management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Data Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Database Overview
+      </label>
+    
+    <a href="./" title="Database Overview" class="md-nav__link md-nav__link--active">
+      Database Overview
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-databases" title="Introduction to Databases" class="md-nav__link">
+    Introduction to Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interacting-with-databases" title="Interacting with Databases" class="md-nav__link">
+    Interacting with Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forms" title="Forms" class="md-nav__link">
+    Forms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queries" title="Queries" class="md-nav__link">
+    Queries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reports" title="Reports" class="md-nav__link">
+    Reports
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-than-just-a-database" title="More than Just a Database" class="md-nav__link">
+    More than Just a Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-choose-a-database" title="How to Choose a Database" class="md-nav__link">
+    How to Choose a Database
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#budget" title="Budget" class="md-nav__link">
+    Budget
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability" title="Scalability" class="md-nav__link">
+    Scalability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-integration" title="Hosting &amp; Integration" class="md-nav__link">
+    Hosting &amp; Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support" title="Support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-to-databases" title="Introduction to Databases" class="md-nav__link">
+    Introduction to Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#interacting-with-databases" title="Interacting with Databases" class="md-nav__link">
+    Interacting with Databases
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#forms" title="Forms" class="md-nav__link">
+    Forms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#queries" title="Queries" class="md-nav__link">
+    Queries
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reports" title="Reports" class="md-nav__link">
+    Reports
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#more-than-just-a-database" title="More than Just a Database" class="md-nav__link">
+    More than Just a Database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-choose-a-database" title="How to Choose a Database" class="md-nav__link">
+    How to Choose a Database
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#budget" title="Budget" class="md-nav__link">
+    Budget
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scalability" title="Scalability" class="md-nav__link">
+    Scalability
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hosting-integration" title="Hosting &amp; Integration" class="md-nav__link">
+    Hosting &amp; Integration
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#support" title="Support" class="md-nav__link">
+    Support
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  <h1>Database Overview</h1>
+                
+                <p>Learning Objectives</p>
+<ul>
+<li>Be able to recommend a database technology for the SETT</li>
+<li>Understand the functionality of the selected database technology</li>
+</ul>
+<p>Goal: Demystify the database and its uses to encourage faster adoption of database tech in our projects</p>
+<p>Objectives</p>
+<ul>
+<li>Illustrate what a database looks like from the user perspective</li>
+<li>Clarify the process and level of effort for developing a database</li>
+<li>Link to more advanced topics for technical staff</li>
+</ul>
+<p>Audience: All EI staff</p>
+<p>Content</p>
+<ul>
+<li>Intro</li>
+<li>When to use a database</li>
+<li>Database functionality</li>
+<li>Navigation View</li>
+<li>Data Entry</li>
+<li>Tables</li>
+<li>Queries (search/replace)</li>
+<li>Reports</li>
+<li>Forms</li>
+<li>Considerations when selecting a database</li>
+<li>Free vs Paid (e.g. Salesforce)</li>
+<li>CAP theorem</li>
+<li>SQL vs NoSQL</li>
+<li>Keep it simple</li>
+<li>Updates/Releases</li>
+<li>Support</li>
+<li>Lifetime</li>
+<li>Types of databases</li>
+<li>How to create a database</li>
+<li>Schema design<ul>
+<li>ACID</li>
+</ul>
+</li>
+<li>Setting up the database</li>
+<li>Populating the database<ul>
+<li>Importing/Exporting Data</li>
+</ul>
+</li>
+<li>Distributing the database</li>
+<li>Managing the database<ul>
+<li>DBA vs User</li>
+</ul>
+</li>
+<li>Transitions<ul>
+<li>Porting to the web</li>
+</ul>
+</li>
+<li>Advanced Topics</li>
+<li>SQL language basics<ul>
+<li>Joins (inner, outer)</li>
+</ul>
+</li>
+<li>Advanced Interface Design (esp. for Postgres, MySQL)</li>
+<li>Cloud Analytics Platforms</li>
+<li><a href="https://www.techradar.com/news/best-cloud-analytics">Zoho, Domo</a></li>
+<li>Non-traditional options</li>
+<li>Airtable</li>
+<li>Terminology</li>
+</ul>
+<p>Resources</p>
+<ul>
+<li><a href="https://www.youtube.com/playlist?list=PL4UezTfGBADBmCOYtQ8QohflQNY1y3oE7">Intro to Access Databases (YouTube: Design &amp; Deploy)</a></li>
+<li><a href="https://www.youtube.com/watch?v=v5e_PasMdXc">Udemy Excerpt on Database Selection (YouTube: Frank Kane)</a></li>
+<li><a href="https://www.youtube.com/watch?v=WzfDLqt-WIg">How to Choose Relational Databases (YouTube: Socratica)</a></li>
+<li><a href="https://www.youtube.com/watch?v=fZQI7nBu32M">Postgres Installation &amp; Overview (YouTube: Socratica)</a></li>
+<li>Monarch - Database Options Memo (in Downloads)</li>
+</ul>
+<p>Assets</p>
+<ul>
+<li><a href="https://www.google.com/url?sa=i&amp;source=images&amp;cd=&amp;ved=2ahUKEwi219Kwgp_lAhU4ITQIHctfBSMQjRx6BAgBEAQ&amp;url=https%3A%2F%2Fxkcd.com%2F327%2F&amp;psig=AOvVaw08GxKbuhIlpoZqDFcB99A4&amp;ust=1571254745719498">xcld bobby tables cartoon</a></li>
+<li><a href="https://xkcd.com/2054/">xlcd data pipeline</a></li>
+<li><a href="http://twcmattress.com/2017/05/xkcd-com-here-to-help/">xlcd hard problems with algorithms</a></li>
+<li><a href="https://xkcd.com/2048/">xKcd curve fitting</a></li>
+<li></li>
+</ul>
+<p>To Do</p>
+<ul>
+<li>[ ] Better example for database need in Introduction to Databases</li>
+<li>[ ] Asset: linked tables example</li>
+</ul>
+<p>Decision Tree Concept</p>
+<ol>
+<li>Where will the database live?</li>
+<li>Website hosted by the client (2)</li>
+<li>
+<p>On the client's local server</p>
+</li>
+<li>
+<p>Are we talking about a Squarespace they update occasionally or a managed website?</p>
+</li>
+<li>Full stack web developers in the mix (3)</li>
+<li>
+<p>Actually, its a Wordpress site...</p>
+</li>
+<li>
+<p>Work with the client's web provider to design the schema, they'll do the rest</p>
+</li>
+<li>
+<p>What kind of budget are we talking?</p>
+</li>
+<li>Just inked a deal with the Bill &amp; Melinda Gates Foundation (5)</li>
+<li>
+<p>eh (6)</p>
+</li>
+<li>
+<p>Consider hiring a provider to set up the database and offer ongoing support</p>
+</li>
+<li>
+<p>You probably don't have budget for a publicly available database. Consider a local option instead (7)</p>
+</li>
+<li>
+<p>How much data are we talking?</p>
+</li>
+<li>
+<p>Seems like a lot but its manageable (8)</p>
+</li>
+<li>
+<p>We make Facebook look like punks (11)</p>
+</li>
+<li>
+<p>Can we create the data analyses?</p>
+</li>
+<li>
+<p>Yes (9)</p>
+</li>
+<li>
+<p>No (10)</p>
+</li>
+<li>
+<p>MS Access or OO Base</p>
+</li>
+<li>
+<p>Salesforce, AirTable, Zoho, Domo, Notion</p>
+</li>
+<li>
+<p>You'll want professional help.</p>
+</li>
+</ol>
+<hr />
+<p>Do you (or your client) have data stored across so many files you sometimes can't remember where it is? Are you scrambling to pull together information when requested, constantly months behind in reporting, or finding yourself dumping data from multiple sources into a single spreadsheet for analysis? If so, it might be time for a database.</p>
+<p>This tutorial will </p>
+<ol>
+<li><a href="#introduction to databases">introduce you to databases</a>,</li>
+<li>help you select the right database for your needs, and </li>
+<li>describe the process for developing and managing a database. </li>
+</ol>
+<h2 id="introduction-to-databases">Introduction to Databases</h2>
+<p>A database is simply an organized store for information. Data are stored in tables and relationships are defined between tables (hence the name, 'relational database'). </p>
+<p>Imagine you have a list of employees, their position titles, and their salaries (which are based on position). You can create one table that includes the employee information and their position titles, and another table that stores the salary associated with each position. You can see the salary for each employee by 'joining' the tables based on the position title. Now imagine you want to give everyone a cost-of-living adjustment. Simply update the salaries in the salary table and the change will automatically be carried over to each employee based on their position title. In this way, you don't need to edit salary information that is repeated, for example with multiple employees of the same position. </p>
+<p>A trivial example for sure, but imagine instead you have hundreds or thousands of employees. You certainly wouldn't want to manually change the salary information for every employee!</p>
+<p>[ASSET: ILLUSTRATE TABLE LINKAGES] </p>
+<h3 id="interacting-with-databases">Interacting with Databases</h3>
+<p>So what's a database even look like? Most users will interact with a database through a navigation form. The navigation form surfaces the important functionality of the database, including entering data, querying data, and generating reports. </p>
+<p>Here's an example navigation form for a bakery's order database created in Microsoft Access. </p>
+<p><img alt="navigation-form" src="../assets/navigation-form.gif" /></p>
+<p>The navigation form is set up after the database is configured by the database administrator (DBA; this may be you, someone on the Metrics Service Line, or an outside contractor). The navigation form (as well as other forms, queries and reports that are made available to the user by the DBA) make the data in the database accessible to users while protecting the integrity of the database </p>
+<h4 id="forms">Forms</h4>
+<p>Data is entered into the database primarily through forms. Forms can be made available through the Navigation Form or through individual forms designed and made available by the DBA.</p>
+<h4 id="queries">Queries</h4>
+<p>Queries allow you to search for and update records in the database. Want to know how many orders were placed yesterday? How many blueberry muffins you've sold this year? You'll need a query for that.</p>
+<h4 id="reports">Reports</h4>
+<p>Reports are queries or collections of queries that can be batched together and run periodically. You might have a standard report that is produced each quarter or a ready-made report to provide real time information to your boss when requested. Reports must also be set up and made available by the DBA.</p>
+<hr />
+<blockquote>
+<h3 id="more-than-just-a-database">More than Just a Database</h3>
+<p>Before we go any further...</p>
+</blockquote>
+<hr />
+<h2 id="how-to-choose-a-database">How to Choose a Database</h2>
+<p>There are many options when it comes to choosing a database. This section will help you pick the right one. Here are a few considerations.</p>
+<h4 id="budget">Budget</h4>
+<p>Consider both the cost of the software and the cost of designing and maintaining the database. </p>
+<p>Many database options are available at no cost as open source software (e.g., MySQL, PostgreSQL, MariaDB). While these are robust, scalable database solutions used by many international corporations, they are not user friendly out of the box. Often, these open source solutions are paired with a web-based interface. If you are working with a web developer and have the budget for them to design the forms, queries and reports you need--you'll likely choose one of these open source options. </p>
+<p>If not, you may need a different solution, like Microsoft Access or even Salesforce. These may require a license or subscription but will allow you to query data and create reports without hiring specialized expertise.</p>
+<h4 id="scalability">Scalability</h4>
+<p>For most of our applications, you won't need to worry about the database growing too large to fit on a single server. The only likely exception would be if attempting to store geospatial data within a relational database outside of ArcGIS. Try not to do that. If you are worried about scalability and think you need a cloud-based solution, consult an expert.</p>
+<h4 id="hosting-integration">Hosting &amp; Integration</h4>
+<p>If the database will be hosted and managed by the client or their website manager, your options will likely be limited to those that integrate with their existing systems. Work with them when selecting a database and during database design.</p>
+<p>In most other cases, the database will live on the client's local drive or server. Most database solutions can be run locally or on a remote server.</p>
+<h4 id="support">Support</h4>
+<p>What would you do if your database crashes at 2am? Run into the office and call technical support? Or keep snoozing? Enterprise solutions provided by Oracle and IBM are available if the thought of a database crash keeps you up at night. For the rest of us, 24-hour on-call support just isn't necessary. Some open source options have companies behind them that sell support if you need it. Some are only supported by their user community. </p>
+<p>Also consider that </p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../git/initializing-git/" title="Create Project" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Create Project
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.245445c6.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
