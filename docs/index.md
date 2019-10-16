@@ -1,12 +1,15 @@
+
+
 ---
 
-![xlcd: data pipeline](assets/data_pipeline.png)
+![xkcd: data-pipeline](assets/data-pipeline.png)
 
 <div style = "text-align: right">  Credit: Randall Munroe (xkcd.com/2054) </div>
-
 ---
 
-Welcome to Environmenal Incentives' Metrics Service Line site! This site is intended for all EI staff to better understand the services of the Metrics service line and for Metrics service line experts as an important standard reference. Don't build a giant house of cards! We can help you develop solutions that last.
+Welcome to Environmental Incentives' Metrics Service Line site! 
+
+This site is intended for [all EI staff](#all-ei-staff) to better understand the services of the Metrics service line and for [Metrics service line experts](#metrics-service-line-experts) as an important standard reference. Don't build a giant house of cards! We can help you develop solutions that last.
 
 ### All EI Staff
 
