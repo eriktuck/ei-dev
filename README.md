@@ -12,7 +12,7 @@ mkdocs gh-deploy
 ```
 Note that the Settings Tab, under project pages, should have the ghp-pages branch selected as the page.
 
-You can still run 'mkdocs build' to visualize the site while working on it.
+You can still run `mkdocs build` and `mkdocs serve` to visualize the site while working on it.
 
 Add the `site/` folder to the gitignore file because it doesn't need to be served up to github.
 
