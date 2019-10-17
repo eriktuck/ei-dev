@@ -1,5 +1,22 @@
-site_name: EI Metrics
-theme: material
+site_name: 'EI Metrics'
+site_description: ' A knowledge management system for the metrics service line'
+site_author: 'Erik Anderson'
+copyright: 'Copyright &copy; 2019 Erik Anderson'
+
+#Configuration
+theme: 
+  name: material
+  favicon: 'img/ei-logo-black.png'
+  palette:
+    primary: 'indigo'
+    accent: 'indigo'
+  logo: 'img/ei-logo-white.png'
+  font:
+    text: 'Roboto'
+    code: 'Roboto Mono'
+  feature:
+    tabs: false
+
 nav:
 - Home: 'index.md'
 - Project Planning:
@@ -8,3 +25,10 @@ nav:
   - 'Create Project': 'git/initializing-git.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
+
+extra:
+  social:
+    - type: 'linkedin'
+      link: 'https://linkedin.com/in/eriktanderson'
+    - type: 'github'
+      link: 'https://github.com/eanderson-ei'
