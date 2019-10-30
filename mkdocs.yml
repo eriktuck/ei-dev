@@ -17,15 +17,31 @@ theme:
   feature:
     tabs: false
 
+# Navigation
 nav:
 - Home: 'index.md'
+- How We Work:
+  - 'Development Guidance': 'consulting-process/development-guidance.md'
 - Project Planning:
   - 'Project Planning': 'project-planning/project-planning.md'
 - Git:
   - 'Create Project': 'git/initializing-git.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
+- Spatial Analysis:
+  - 'Spatial Analysis Overview': 'under-construction.md'
+  - 'Land Use Land Cover Tutorial': 'spatial-analysis/lulc-tutorial/lulc-tutorial.md'
 
+# Extensions
+markdown_extensions:
+  - admonition
+  - codehilite:
+      guess_lang: true
+      linenums: true
+  - toc:
+      permalink: true
+
+# Social
 extra:
   social:
     - type: 'linkedin'
