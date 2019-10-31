@@ -31,7 +31,7 @@ Add full folder path that includes executable to system path environment variabl
 Restart Bash
 Create alias for editor
 `notepad++ ~/.bash_profile`
-alias npp='notepad++ -mulitInst - nosession'
+`alias npp='notepad++ -mulitInst - nosession'`
 `git config --global core.editor "notepad++ -multiInst -nosession"`
 `git config --global -e`
 
@@ -137,6 +137,14 @@ git push origin master
 **Open file with default editor** `start <file name>`
 
 **Open file with VSCode** `code <file name>` (set up default editors with aliases or use `start` and ensure preferred editor is system default)
+
+### Diffs & Merges
+
+If you encounter a merge issue after pulling from the repo, and it can't be automatically merged, open the file in VSCode and accept/reject changes (will be highlighted in VSCode).
+
+`code <mergefile>`
+
+Then save and close the editor. You can now add the file to the staging area and push all changes to the repo (`git commit -m "Fixed merge conflict"` > `git push`).
 
 ### Working Together
 
