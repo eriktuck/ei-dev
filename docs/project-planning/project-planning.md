@@ -80,7 +80,7 @@ The MkDocs package will create the basic architecture when [creating the project
         * data-analysis.md
         * data-visualization.md (e.g., inline exploratory)
     * spatial-analysis/
-        * earth-sensing.md
+        * earth-observation.md
         * google-earth-engine.md
         * gdal.md
         * arcpy.md
