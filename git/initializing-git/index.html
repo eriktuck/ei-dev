@@ -198,10 +198,46 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Project Planning
+      How We Work
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
+        How We Work
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../consulting-process/development-guidance/" title="Development Guidance" class="md-nav__link">
+      Development Guidance
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Project Planning
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
         Project Planning
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -233,13 +269,13 @@
 
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" checked>
     
-    <label class="md-nav__link" for="nav-3">
+    <label class="md-nav__link" for="nav-4">
       Git
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-3">
+      <label class="md-nav__title" for="nav-4">
         Git
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -399,13 +435,13 @@
 
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
     
-    <label class="md-nav__link" for="nav-4">
+    <label class="md-nav__link" for="nav-5">
       Data Management
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
-      <label class="md-nav__title" for="nav-4">
+      <label class="md-nav__title" for="nav-5">
         Data Management
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -419,6 +455,54 @@
   <li class="md-nav__item">
     <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
       Database Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Spatial Analysis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Spatial Analysis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../under-construction/" title="Spatial Analysis Overview" class="md-nav__link">
+      Spatial Analysis Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../spatial-analysis/lulc-tutorial/lulc-tutorial/" title="Land Use Land Cover Tutorial" class="md-nav__link">
+      Land Use Land Cover Tutorial
     </a>
   </li>
 
@@ -574,59 +658,64 @@
 <li><a href="#starting-remote">Create the project on Github first and clone it down to your computer</a></li>
 </ol>
 <p>*If you already have a project started, you've already started locally. </p>
-<h2 id="starting-locally">Starting Locally</h2>
+<h2 id="starting-locally">Starting Locally<a class="headerlink" href="#starting-locally" title="Permanent link">&para;</a></h2>
 <p>If you have already started a project or prefer to work from your local machine first, follow these steps:</p>
-<h3 id="1-create-the-project-directory">1. Create the project directory</h3>
+<h3 id="1-create-the-project-directory">1. Create the project directory<a class="headerlink" href="#1-create-the-project-directory" title="Permanent link">&para;</a></h3>
 <p>In Windows Explorer, navigate to the folder in which you will create your project directory (or the root of an existing project directory). Right-click and select 'GitBash Here' to open an instance of Bash. </p>
 <p><img alt="git-bash-here" src="../assets/git-bash-here.gif" /></p>
 <p><em>Skip the following paragraph if you already have a project started</em>.</p>
 <p>Use the command <code>mkdir &lt;project-name&gt;</code> (replace <code>&lt;project-name&gt;</code> with the name of the directory for the project) to create a folder. Next, use the command <code>cd &lt;project-name&gt;</code> to move into that folder.</p>
-<h3 id="2-initialize-git">2. Initialize git</h3>
+<h3 id="2-initialize-git">2. Initialize git<a class="headerlink" href="#2-initialize-git" title="Permanent link">&para;</a></h3>
 <p>Use the command <code>git init</code> to initialize git. A new repository named .git will be created within the directory which stores all of the git version control. You don't need to have GitBash open during your editing sessions, this folder will take care of all of your version control. If for some reason you want to stop tracking with git and lose all of your previous versions, just delete this folder.</p>
-<h3 id="3-create-a-gitignore-and-readmemd-file">3. Create a .gitignore and README.md file</h3>
+<h3 id="3-create-a-gitignore-and-readmemd-file">3. Create a .gitignore and README.md file<a class="headerlink" href="#3-create-a-gitignore-and-readmemd-file" title="Permanent link">&para;</a></h3>
 <p>Use the command <code>touch .gitignore</code> to create a new file named .gitignore. This file will be used by git to ignore files in the project that should not be tracked. Use the command <code>code .gitignore</code> to open VSCode to edit the file (or however you would open and edit files). Using one line per folder or file, list all folders or files to be ignored. Wildcards (i.e., globbing patterns) are honored. Each project will be different but consider including <code>*.pyc</code>, <code>venv</code>, <code>idea</code>. See this <a href="https://github.com/github/gitignore">GitHub help page</a> for more on .gitignore files and this <a href="https://github.com/github/gitignore">repo</a> for suggested files to ignore.</p>
 <p>Use the command <code>touch README.md</code> to create a README file. This file will automatically be displayed on the repository page on Github. Using the Markdown language, populate this README file with important info as necessary.</p>
-<h3 id="4-commit-your-initial-files">4. Commit your initial file(s)</h3>
+<h3 id="4-commit-your-initial-files">4. Commit your initial file(s)<a class="headerlink" href="#4-commit-your-initial-files" title="Permanent link">&para;</a></h3>
 <p>First, we'll need to add all files to be tracked by git. Use the command:</p>
-<pre><code class="bash">git add -A
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git add -A
+</pre></div>
+</td></tr></table>
 
 <p>Next we'll use a  commit to get the first batch of files/folders into our git repository. Use the following command:</p>
-<pre><code class="bash">git commit -m &quot;Initial Commit&quot;
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git commit -m <span class="s2">&quot;Initial Commit&quot;</span>
+</pre></div>
+</td></tr></table>
 
 <p>You will learn more about commits and other features of git in the Using Git section.</p>
-<h3 id="5-create-a-github-repository">5. Create a Github repository</h3>
+<h3 id="5-create-a-github-repository">5. Create a Github repository<a class="headerlink" href="#5-create-a-github-repository" title="Permanent link">&para;</a></h3>
 <p>Navigate to your <a href="#https://github.com">Github.com</a> page and login. Click the green Create New Repository button. Name it with the same name you used in step 1 for the project directory. Provide a description. The repository will be public. DO NOT create a README or .gitignore file.</p>
 <p>After you click 'Ok', Github will provide instructions for importing your project files into the repository. Use HTTP or SSH if you have it set up. Copy the url provided to your clipboard. You'll use two commands in GitBash to accomplish this:</p>
-<pre><code class="bash">git remote add origin &lt;url&gt;
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git remote add origin &lt;url&gt;
 git push -u origin master --tags
-</code></pre>
+</pre></div>
+</td></tr></table>
 
 <p>The first line establishes a remote connection to the repository. Replace the url with the url provided by github to your project repository. Note that you can change the name 'origin' to anything you'd like, but origin is used by convention. You will be prompted to sign into your Github account.</p>
 <p>The second line 'pushes' your files/folders up to Github. The <code>-u</code> flag tells Github to track these files/folders along with master, while the <code>--tags</code> flag will move any messages from previous commits.</p>
 <p>If this fails, it may be because you already have a remote established named 'origin'. Try <code>git remove rm origin</code> to remove any existing connections, or change the name <code>origin</code> to something unique. To confirm your remote connection was established, use the command <code>git remote -v</code>. </p>
-<h3 id="6-create-your-project-structure-and-begin-coding">6. Create your project structure and begin coding!</h3>
+<h3 id="6-create-your-project-structure-and-begin-coding">6. Create your project structure and begin coding!<a class="headerlink" href="#6-create-your-project-structure-and-begin-coding" title="Permanent link">&para;</a></h3>
 <p>At this point, you may wish to switch into your IDE and open the project folder to build your project architecture and begin coding. Follow the workflow described in the Using Git section as you work.</p>
-<h2 id="starting-remote">Starting Remote</h2>
+<h2 id="starting-remote">Starting Remote<a class="headerlink" href="#starting-remote" title="Permanent link">&para;</a></h2>
 <p>In this option, we'll start by creating a repository on Github and then clone that down to our computer. You can copy files/folders into this newly created repository if you'd like.</p>
-<h3 id="1-create-a-gihub-repository">1. Create a Gihub repository</h3>
+<h3 id="1-create-a-gihub-repository">1. Create a Gihub repository<a class="headerlink" href="#1-create-a-gihub-repository" title="Permanent link">&para;</a></h3>
 <p>Navigate to your <a href="#https://github.com">Github.com</a> page and login. Click the green Create New Repository button. Provide a description. The repository will be public. Create a README and .gitignore file. Optionally add a license.</p>
-<h3 id="2-clone-the-remote-repository">2. Clone the remote repository</h3>
+<h3 id="2-clone-the-remote-repository">2. Clone the remote repository<a class="headerlink" href="#2-clone-the-remote-repository" title="Permanent link">&para;</a></h3>
 <p>Within the project repository on Github, click the 'Clone or Download' button. Use HTTP or SSH if you have it set up. Copy the url provided to your clipboard.</p>
 <p>In Windows Explorer, navigate to the folder in which you will create your project directory. Right-click and select 'GitBash Here' to open an instance of Bash. </p>
 <p>Clone the repository into this folder with the command:</p>
-<pre><code class="bash">git clone &lt;url&gt;
-</code></pre>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone &lt;url&gt;
+</pre></div>
+</td></tr></table>
 
 <p>where you replace <code>&lt;url&gt;</code> with the copied url (use Shift+Insert to paste into Bash). You may provide a name for the project following the url if you'd like the folder on your local drive to have a different name than the repository on Github. </p>
 <p>Run <code>ls</code> to confirm that the repository was created. Type the command <code>cd &lt;repository-name&gt;</code> to move into the repository folder (replace <code>&lt;repository name&gt;</code> with the correct name).  </p>
 <p>If you need to copy files/folders into the repository, use the command <code>cp -R &lt;~/path/&gt; .</code>. Replace <code>&lt;~/path/&gt;</code> with the correct path of the source folder/file. The <code>-R</code> flag signifies recursive and copies everything from within the folders as well. The <code>.</code> simply means the current directory, so your copying everything from the path provided to the current directory.</p>
-<h3 id="3-populate-the-gitignore-file">3. Populate the .gitignore file</h3>
+<h3 id="3-populate-the-gitignore-file">3. Populate the .gitignore file<a class="headerlink" href="#3-populate-the-gitignore-file" title="Permanent link">&para;</a></h3>
 <p>The .gitignore file will be used by git to ignore files in the project that should not be tracked. Use the command <code>code .gitignore</code> to open VSCode to edit the file (or however you would open and edit files). Using one line per folder or file, list all folders or files to be ignored. Wildcards (i.e., globbing patterns) are honored. Each project will be different but consider including <code>*.pyc</code>, <code>venv</code>, <code>idea</code>. See this <a href="https://github.com/github/gitignore">GitHub help page</a> for more on .gitignore files and this <a href="https://github.com/github/gitignore">repo</a> for suggested files to ignore.</p>
-<h3 id="4-create-your-project-structure-and-begin-coding">4. Create your project structure and begin coding!</h3>
+<h3 id="4-create-your-project-structure-and-begin-coding">4. Create your project structure and begin coding!<a class="headerlink" href="#4-create-your-project-structure-and-begin-coding" title="Permanent link">&para;</a></h3>
 <p>At this point, you may wish to switch into your IDE and open the project folder to build your project architecture and begin coding. Follow the workflow described in the Using Git section as you work.</p>
-<h2 id="additional-resources">Additional Resources</h2>
+<h2 id="additional-resources">Additional Resources<a class="headerlink" href="#additional-resources" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.youtube.com/watch?v=HVsySz-h9r4&amp;list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx&amp;index=1">Corey Shafer's excellent series on Git</a></li>
 <li></li>
