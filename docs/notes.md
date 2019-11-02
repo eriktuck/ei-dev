@@ -30,7 +30,7 @@ Changes made to the notebook will not be reflected in the markdown files, and yo
 
 #### Linking Documents
 
-To link to another page, simply provide the relative path to the page as a markdown file. You can link to a section if you add a '#' after the filename. Sections should be all lower-case and '-' delimitted. See also [documentation]( https://mkdocs.readthedocs.io/en/0.11.1/user-guide/writing-your-docs/#linking-documents).
+To link to another page, simply provide the relative path to the page as a markdown file. You can link to a section if you add a '#' after the filename. Sections should be all lower-case and '-' delimitted. Ignore any punctuation in the header. See also [documentation]( https://mkdocs.readthedocs.io/en/0.11.1/user-guide/writing-your-docs/#linking-documents).
 
 `[here's a link](foldername/filename.md#header-name)`
 
@@ -40,9 +40,13 @@ You can either link to images and gifs online or save locally. If saving locally
 
 `![here's an image](assets/gif.gif)`
 
-#### Youtube Videos
+#### YouTube Videos
 
 To include Youtube videos, use the iframe provided under the 'Share' option. Any HTML pasted directly within a markdown file will be rendered in the site.
+
+#### Forms
+
+Google forms (and probably many other web forms) can be embedded as HTML within an iframe.
 
 #### Extensions
 
