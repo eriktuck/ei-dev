@@ -31,8 +31,36 @@ Provide a single source for documenting and sharing EI's approach to data produc
 ##### Primary
 EI's metrics staff and other technical staff
 
+​	**Problem Hypotheses:** (how do you know?)
+
+​	**Value Hypotheses:** (why is it better than the alternative?)
+
 ##### Secondary
 Non-technical staff working with metrics staff to develop a data product
+
+​	**Problem Hypotheses:**
+
+​	**Value Hypotheses:**
+
+#### Product Sketch
+
+[Story Board, what did you learn from storyboarding?]
+
+#### Design Principles & Constraints
+
+(list 'em. Consider integration, hosting, support, adaptive management, deployment but don't get into details yet)
+
+#### Conditions of Satisfaction
+
+(How will we know this tool is successful?)
+
+#### Approach
+
+(Roles, Timeline, Re+++++++++++++++++++++++++++++++sources required)
+
+As you can see, lots to be done! The folder order is roughly the prioritization for these pages. Thus, my approach will be to work through these pages in roughly this order. One objective for this project is to provide a place to store new information as it becomes available, so I'll create the above folders initially as markdown files of the same name within a 'tbd' folder where I can store links and other references as I come across them. I've also built some of the pages above in other formats (Evernote, Google Docs, Jupyter Notebooks, etc.) so I can now pull everything together into one place.
+
+## (Move to Specs)
 
 #### Technologies:
 
@@ -40,18 +68,24 @@ Non-technical staff working with metrics staff to develop a data product
 * Markdown - markup text language
 * Typora - Markdown editor
 * VS Code - IDE
+* Git - version control
 * Github - Repository
 * Github Project Pages - Deployment (gh-pages branch); see [MkDocs deployment documentation](https://www.mkdocs.org/user-guide/deploying-your-docs/).
 * Screen2Gif - a screen recording app that saves outputs as gifs (for video instruction)
+* YouTube - custom videos for instruction, etc.
 
 #### Architecture
 
 The MkDocs package will create the basic architecture when [creating the project](https://www.mkdocs.org/#getting-started). After creating the project, a mkdocs.yml file will be created. A docs folder will also be created with an index.md file within it. The index.md file manages the site outline; the mkdocs.yml file manages the settings. I'll add a README.md file in the root folder that will show up on the Github repo page. Files and folders can be created within the docs folder to create the project pages. Here's the file structure proposed within the root folder; the folder structure will mirror the site outline:
 
-* mkdocs.yml
-* README.md
+* mkdocs.yml  # describes how the site is organized, enables features
+* README.md  # instructions for accessing and publishing
 * docs/
-    * index.md
+    * index.md  # home page
+    * how-we-work/
+        * consulting-process.md
+        * program-requirements.md
+    * conservation-design/
     * project-planning/
         * file-organization-and-naming.md
         * project-planning.md
@@ -94,13 +128,9 @@ The MkDocs package will create the basic architecture when [creating the project
         * folium
         * sqlite
         * rasterio
-    * consulting/
-        * program-requirements.md
-    * conservation-design/
+    * 
 
-#### Approach
 
-As you can see, lots to be done! The folder order is roughly the prioritization for these pages. Thus, my approach will be to work through these pages in roughly this order. One objective for this project is to provide a place to store new information as it becomes available, so I'll create the above folders initially as markdown files of the same name within a 'tbd' folder where I can store links and other references as I come across them. I've also built some of the pages above in other formats (Evernote, Google Docs, Jupyter Notebooks, etc.) so I can now pull everything together into one place.
 
 #### Other Considerations
 
