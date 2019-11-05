@@ -7,7 +7,7 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 * Home
 * Portfolio
 * How We Work (Metrics Consulting Process)
-* Conservation Design
+* Metrics Design Philosophy
 * Project Planning
 * Git
 * Development
@@ -19,6 +19,7 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 * Packages
 * News/Blog 
 * How to Maintain this Site
+* Additional Resources
 
 ## Commands
 

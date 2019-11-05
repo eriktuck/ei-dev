@@ -14,11 +14,15 @@ You should have a clear plan in writing before starting with the first line of c
 
 Here's an example project plan for this project:
 
+#### Solution Description
+
+A web-based wiki for capturing and organizing information important to developing metrics products with a focus on performance-driven conservation programs.
+
 #### Goal & Objectives
 
 ##### Goal
 
-Provide a single source for documenting and sharing EI's approach to data product development and best practices for current and future staff.
+Provide a single source for documenting and sharing EI's approach to metrics product development and best practices for current and future staff.
 
 ##### Objectives
 
@@ -29,18 +33,43 @@ Provide a single source for documenting and sharing EI's approach to data produc
 #### Users
 
 ##### Primary
-EI's metrics staff and other technical staff
+EI's metrics staff and other technical staff (e.g., Erik, Kristen, Maso)
 
-​	**Problem Hypotheses:** (how do you know?)
+| Problem Scenarios | Alternatives | Value Propositions |
+| :---------------: | :----------: | :----------------: |
+|                   |              |                    |
 
-​	**Value Hypotheses:** (why is it better than the alternative?)
+​	**Problem Scenarios:** Metrics staff have developed standard processes and must learn new technologies frequently to deliver metrics products. Until now, this information has been scattered in multiple locations or lost entirely. New information that is learned or 
+
+​	**Value Propositions:** This product will provide a common location for storing information and allow metrics staff to quickly access said information and re-familiarize themselves with important information quickly. 
 
 ##### Secondary
-Non-technical staff working with metrics staff to develop a data product
+Non-technical staff working with metrics staff to develop a data product (e.g., Kelsey)
 
-​	**Problem Hypotheses:**
+| Problem Scenarios | Alternatives | Value Propositions |
+| :---------------: | :----------: | :----------------: |
+|                   |              |                    |
 
-​	**Value Hypotheses:**
+​	**Problem Scenarios:** Non-technical staff are unaware of the capabilities available to them from metrics service line staff or are uncertain as to how to utilize those capabilities for their projects, both internal and external.
+
+​	**Value Propositions:** This product will include overviews of available services and technologies, as well as project examples, that non-technical staff can peruse at their leisure. Metrics staff can also use the wiki to introduce options and explain our engagement process.
+
+#### Use Cases
+
+1. 
+
+#### User Stories
+
+1. As the metrics service line lead, I want to \_\_\_\_\_\_ so I can \__\_\_\_\_:
+   - Direct staff to a common resource so I can limit the time needed to train new staff on commonly used technologies and best practices.
+   - Encourage metrics staff to work with technologies like git and the command line so I can better integrate them into our workflows.
+2. As a metrics/technical staff, I want to \_\_\_\_\_\_ so I can \__\_\_\_\_:
+   - Quickly relearn previously used technologies so I can employ them in new projects with minimal spin up time.
+   - Communicate to non-metrics staff the options they have for a specific product, visualization or analysis so I can more quickly scope their projects.
+   - Capture and share new technologies, ideas, and other information as I discover it so I can reference it later and promote its use.
+3. As a non-metrics EI staff, I want to \_\_\_\_\_\_ so I can \__\_\_\_\_:
+   - Better understand the capabilities of EI staff to support on technology-based products so I can pitch them to clients or develop them for internal uses.
+   - Better understand the process for working with metrics service line staff so I can assess the feasibility of the product I'm considering.
 
 #### Product Sketch
 
@@ -56,9 +85,15 @@ Non-technical staff working with metrics staff to develop a data product
 
 #### Approach
 
-(Roles, Timeline, Re+++++++++++++++++++++++++++++++sources required)
+(Roles, Timeline, Resources required)
 
 As you can see, lots to be done! The folder order is roughly the prioritization for these pages. Thus, my approach will be to work through these pages in roughly this order. One objective for this project is to provide a place to store new information as it becomes available, so I'll create the above folders initially as markdown files of the same name within a 'tbd' folder where I can store links and other references as I come across them. I've also built some of the pages above in other formats (Evernote, Google Docs, Jupyter Notebooks, etc.) so I can now pull everything together into one place.
+
+#### Optional: Situation Model
+
+#### Optional: Results Chain
+
+#### 
 
 ## (Move to Specs)
 

@@ -2,7 +2,7 @@
 
 ---
 
-![xkcd: data-pipeline](assets/data-pipeline.png)
+![xkcd: data-pipeline]( https://imgs.xkcd.com/comics/data_pipeline.png)
 
 <div style = "text-align: right">  Credit: Randall Munroe (xkcd.com/2054) </div>
 ---
