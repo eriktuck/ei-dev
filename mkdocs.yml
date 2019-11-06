@@ -31,8 +31,8 @@ nav:
   - 'Step 3: Develop Empathy': 'metrics-design/step3-develop-empathy.md'
   - 'Step 4: Define the Problem': 'metrics-design/step4-define-the-problem.md'
   - 'Step 5: Identify a Solution': 'metrics-design/step5-identify-a-solution.md'
-  - 'Step 6: Implement': 'metrics-design/step6-implement.md'
-  - 'Step 7: Iterate & Adapt': 'metrics-design/step7-iterate-and-adapt.md'
+  - 'Step 6: Implement': 'under-construction.md'
+  - 'Step 7: Iterate & Adapt': 'under-construction.md'
 - Project Planning:
   - 'Project Planning': 'project-planning/project-planning.md'
 - Git:
@@ -42,6 +42,9 @@ nav:
 - Spatial Analysis:
   - 'Spatial Analysis Overview': 'under-construction.md'
   - 'Land Use Land Cover Tutorial': 'spatial-analysis/lulc-tutorial/lulc-tutorial.md'
+- Additional Resources:
+  - 'Persona Development Guide': 'additional-resources/persona-guide.md'
+  - 'Interview Guide': 'additional-resources/interview-guide.md'
 - How to Maintain This Site: 'development-guidance.md'
 
 # Extensions

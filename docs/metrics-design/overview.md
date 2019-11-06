@@ -10,7 +10,7 @@ There's a few key characteristics of this philosophy that make it unique.
 
 * **People-first**: This philosophy is unapologetically people-centric. We seek to change people's behavior to achieve our conservation targets. We do that by solving people's problems or creating new opportunities for people. If changing human behavior isn't at the core of your problem or central to the success of your strategy, this isn't the right process for you.
 * **Evidence-based**: Prepare to test every assumption! We seek evidence from the very beginning of the process - we do not wait until we've implemented the program to start testing our assumptions. Importantly, we do not even entertain solutions until we have strong evidence that the problem exists and that solving it will help achieve our conservation target. And we never commit to our solution unless we see results in the real world.
-* **Iterative**: Yes, you can prototype whatever it is you're attempting to do. Trust us. You will not spend two years developing the perfect program, instead you will build the minimum solution required to begin testing assumptions. This might actually look a lot different than the full solution you're trying to build, that's ok. You'll greatly reduce the chances of wasting your time - or even making the problem worse - if you *fail fast*, as some like to say. Once you've found success, iterate and scale up.
+* **Iterative**: Yes, you can prototype whatever it is you're attempting to do. Trust us. You will not spend two years developing the perfect program, instead you will build the minimum solution required to begin testing assumptions. This might actually look a lot different than the full solution you're trying to build, that's ok. You'll greatly reduce the chances of wasting your time - or even making the problem worse - if you *fail fast* and *fail small*, as some like to say. Once you've found success, iterate and scale up.
 
 ## The Process
 
@@ -18,19 +18,19 @@ We've codified our philosophy into a seven step process. Each step is described 
 
 #### Process Steps
 
-​    **Step 1**: Start at the End
+​    [**Step 1**: Start at the End](step1-start-at-the-end.md)
 
-​    **Step 2**: Map It
+​    [**Step 2**: Map It](step2-map-it.md)
 
-​    **Step 3**: Develop Empathy
+​    [**Step 3**: Develop Empathy](step3-develop-empathy.md)
 
-​	**Step 4**: Define the Problem
+​	[**Step 4**: Define the Problem](step4-define-the-problem.md)
 
-​	**Step 5**: Identify a Solution
+​	[**Step 5**: Identify a Solution](step5-identify-a-solution.md)
 
-​	**Step 6**: Implement
+​	[**Step 6**: Implement](../under-construction.md)
 
-​	**Step 7**: Iterate & Adapt
+​	[**Step 7**: Iterate & Adapt](../under-construction.md)
 
 #### Additional Resources
 
