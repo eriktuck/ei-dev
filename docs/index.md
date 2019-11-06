@@ -13,10 +13,10 @@ This site is intended for [all EI staff](#all-ei-staff) to better understand the
 
 ### All EI Staff
 
-If you're here to better understand how the Metrics service line can support your project or internal initiative, you might want to check out our portfolio of projects(), better understand our process for delivering metrics products(), or review one of these helpful introductions to technologies and services available to you:
+If you're here to better understand how the Metrics service line can support your project or internal initiative, you might want to check out our portfolio of projects(), better understand our [process for delivering metrics products](metrics-services/how-we-work.md), or review one of these helpful introductions to technologies and services available to you:
 
 * Data Analysis
-* Tool Development (i.e., deployment)
+* Tool Development  # (i.e., deployment)
 * [Databases](data-management/database-overview.md)
 * Visualization
 * Mapping and Spatial Analysis

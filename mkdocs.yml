@@ -20,8 +20,19 @@ theme:
 # Navigation
 nav:
 - Home: 'index.md'
-- How We Work:
-  - 'Development Guidance': 'consulting-process/development-guidance.md'
+- Metrics Services:
+  - 'How We Work': 'metrics-services/how-we-work.md'
+  - Guidance & Templates:
+    - 'Scoping': 'metrics-services/templates/scoping.md'
+- Metrics Design Philosophy:
+  - 'Overview': 'metrics-design/overview.md'
+  - 'Step 1: Start at the End': 'metrics-design/step1-start-at-the-end.md'
+  - 'Step 2: Map It': 'metrics-design/step2-map-it.md'
+  - 'Step 3: Develop Empathy': 'metrics-design/step3-develop-empathy.md'
+  - 'Step 4: Define the Problem': 'metrics-design/step4-define-the-problem.md'
+  - 'Step 5: Identify a Solution': 'metrics-design/step5-identify-a-solution.md'
+  - 'Step 6: Implement': 'metrics-design/step6-implement.md'
+  - 'Step 7: Iterate & Adapt': 'metrics-design/step7-iterate-and-adapt.md'
 - Project Planning:
   - 'Project Planning': 'project-planning/project-planning.md'
 - Git:
@@ -31,6 +42,7 @@ nav:
 - Spatial Analysis:
   - 'Spatial Analysis Overview': 'under-construction.md'
   - 'Land Use Land Cover Tutorial': 'spatial-analysis/lulc-tutorial/lulc-tutorial.md'
+- How to Maintain This Site: 'development-guidance.md'
 
 # Extensions
 markdown_extensions:
