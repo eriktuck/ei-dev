@@ -22,8 +22,6 @@ nav:
 - Home: 'index.md'
 - Metrics Services:
   - 'How We Work': 'metrics-services/how-we-work.md'
-  - Guidance & Templates:
-    - 'Scoping': 'metrics-services/templates/scoping.md'
 - Metrics Design Philosophy:
   - 'Overview': 'metrics-design/overview.md'
   - 'Step 1: Start at the End': 'metrics-design/step1-start-at-the-end.md'
@@ -33,7 +31,7 @@ nav:
   - 'Step 5: Identify a Solution': 'metrics-design/step5-identify-a-solution.md'
   - 'Step 6: Implement': 'under-construction.md'
   - 'Step 7: Iterate & Adapt': 'under-construction.md'
-- Project Planning:
+- Project Organization:
   - 'Project Planning': 'project-planning/project-planning.md'
 - Git:
   - 'Create Project': 'git/initializing-git.md'

@@ -23,11 +23,12 @@ If that's too optimistic for you, we can instead focus on the problems you face,
 
 While you're describing the vision or problem, we'll be listening for three things. 
 
-First, the people involved. Who are the users and what are their roles? Who are the stakeholders (those affected by the tool)? What are the users' capabilities? The list of people will be refined to a list of users and persona descriptions that describe their motivations and constraints.
+1. First, the people involved. Who are the users and what are their roles? Who are the stakeholders (those affected by the tool)? What are the users' capabilities? The list of people will be refined to a list of users and persona descriptions that describe their motivations and constraints.
 
-Second, their problems or needs. Which can be addressed? What are people doing instead? How will our solution improve upon the alternatives? Problems will be catalogued and we'll ultimately seek to identify the problem, or set of problems, that our solution will address first.
+2. Second, their problems or needs. Which can be addressed? What are people doing instead? How will our solution improve upon the alternatives? Problems will be catalogued and we'll ultimately seek to identify the problem, or set of problems, that our solution will address first.
 
-Finally, context. How will this solution integrate with existing tools or processes? What are the requirements, constraints, and design considerations we must keep in mind?
+3. Finally, context. How will this solution integrate with existing tools or processes? What are the requirements, constraints, and design considerations we must keep in mind?
+
 
 If we come up with questions you don't have an answer for, its helpful to have an expert (whether a true expert or just another member of the project team) available to get clarity before we move on.
 
