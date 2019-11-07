@@ -158,6 +158,8 @@ Setting up a database is a big step in the maturation of any data-driven program
 
 Important! If you've decided that you're not the right person to decide which database to use, that's ok. While someone with more technical experience will be better able to select the right database solution, they may not know enough about your program to design the database and the forms, queries and reports you need. You're the expert on your program, stay involved in the process to make sure the final solution meets your needs!
 
+---
+
 
 
 ![little-bobby-tables]( https://imgs.xkcd.com/comics/exploits_of_a_mom.png )
