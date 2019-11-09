@@ -2,7 +2,7 @@
 
 Our metrics design philosophy has been developed and tested through many years building solutions for clients and internal initiatives alike. It is based on a variety of different frameworks, from the Open Standards for the Practice of Conservation to Systems Thinking to Human-Centered Design (see list of inspirations below). 
 
-To be honest, very little in this philosophy is new. What is unique about it, however, is its synthesis of these various frameworks. Human-centered design typically assumes you already have your solution, and are simply adding a new feature whereas the Open Standards/Systems Thinking are focused on identifying the right place to intervene - but are, in my opinion, lacking in specifics as to how to design and implement a successful solution. Bringing the concepts within these processes together creates a more wholistic, and hopefully impactful, approach to conservation.
+To be honest, very little in this philosophy is new. What is unique about it, however, is its synthesis of these various frameworks. Human-centered design typically assumes you already have your solution, and are simply adding a new feature. Open Standards/Systems Thinking are focused on identifying the right place to intervene - but are, in my opinion, lacking in specifics as to how to design and implement a successful solution. Bringing the concepts within these processes together creates a more wholistic, and hopefully impactful, approach to conservation.
 
 #### So how is it unique?
 
@@ -10,11 +10,17 @@ There's a few key characteristics of this philosophy that make it unique.
 
 * **People-first**: This philosophy is unapologetically people-centric. We seek to change people's behavior to achieve our conservation targets. We do that by solving people's problems or creating new opportunities for people. If changing human behavior isn't at the core of your problem or central to the success of your strategy, this isn't the right process for you.
 * **Evidence-based**: Prepare to test every assumption! We seek evidence from the very beginning of the process - we do not wait until we've implemented the program to start testing our assumptions. Importantly, we do not even entertain solutions until we have strong evidence that the problem exists and that solving it will help achieve our conservation target. And we never commit to our solution unless we see results in the real world.
-* **Iterative**: Yes, you can prototype whatever it is you're attempting to do. Trust us. You will not spend two years developing the perfect program, instead you will build the minimum solution required to begin testing assumptions. This might actually look a lot different than the full solution you're trying to build, that's ok. You'll greatly reduce the chances of wasting your time - or even making the problem worse - if you *fail fast* and *fail small*, as some like to say. Once you've found success, iterate and scale up.
+* **Inverted**: If you're used to spending years developing the perfect program, creating a monitoring plan, and then seeing what happens, this might be disorienting. Instead, you will build the minimum solution required to begin testing assumptions. This might actually look a lot different than the full solution you're trying to build, that's ok. You'll greatly reduce the chances of wasting your time - or even making the problem worse - if you *fail fast* and *fail small*, as some like to say. Once you've found success, iterate and scale up.
+
+
+
+![inverted](assets/inverted.gif)
+
+
 
 ## The Process
 
-We've codified our philosophy into a seven step process. Each step is described in more detail on the pages linked through here. Also, note that there are templates, additional guidance, and other resources available in the [Additional Resources](), many of which are referenced within these linked pages.
+We've codified our philosophy into a seven step process. Each step is described in more detail on the pages linked through here. Also, note that there are templates, additional guidance, and other resources available in [Additional Resources](#additional-resources), many of which are referenced within these linked pages.
 
 #### Process Steps
 
@@ -34,9 +40,9 @@ We've codified our philosophy into a seven step process. Each step is described 
 
 #### Additional Resources
 
-​	Persona Development Guide
+​	[Persona Development Guide](../additional-resources/persona-guide.md)
 
-​	Interview Guide
+​	[Interview Guide](../additional-resources/interview-guide.md)
 
 ## Inspiration
 

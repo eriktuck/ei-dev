@@ -1,6 +1,6 @@
 # Step 2: Map It
 
-Documenting your understanding of the problem space in a visual way is an impactful way of capturing your understanding and can be a good way of sharing it with others. A **Situation Model** or **Systems Map** are both great tools. The Situation Model focuses on relationships between human causes (drivers) of threats to your vision (conservation targets); whereas the Systems Map describes feedback loops between relevant elements of the system.
+Documenting your understanding of the problem space in a visual way is an impactful way of capturing your understanding and can be a good way of sharing it with others. A **Situation Model**, **Systems Map**, or **Journey Map** are all great tools. The Situation Model focuses on relationships between human causes (drivers) of threats to your vision (conservation targets); whereas the Systems Map describes feedback loops between relevant elements of the system. Journey Maps capture the chain of behaviors required to solve a problem or do a job.
 
 If you can, start by defining the **scope** of the system that you will be exploring, such as geographic boundaries or levels (e.g., federal vs. state gov’t). This will help focus your search to just that area of the problem space in which you have a **manageable interest**. Alternatively, use a **framing question** to focus your interrogation of the system.
 
@@ -15,7 +15,7 @@ The map you create can be a good communication tool, but it is often only helpfu
 #### More on This Step
 
 - See *Thinking in Systems* by Donella Meadows, Chapter 5 for a discussion on the challenges of appropriately defining scope.
-- See CMP-Open Standards v3.0 section 1B Define Scope, Vision, and Conservation Targets for a general discussion of scope. Scopes are both “place-based” and “thematic-based”.See CMP-Open Standards v3.0 section 1C-1D for more on Situation Models.
+- See [CMP-Open Standards v3.0]( http://cmp-openstandards.org/wp-content/uploads/2014/03/CMP-OS-V3-0-Final.pdf ) section 1B Define Scope, Vision, and Conservation Targets for a general discussion of scope. Scopes are both “place-based” and “thematic-based”.See CMP-Open Standards v3.0 section 1C-1D for more on Situation Models.
 - See publication [Building Ecosystem Services Conceptual Models](https://nicholasinstitute.duke.edu/publications/building-ecosystem-services-conceptual-models) (Olander et al) for helpful guidance. 
 - See Systems Practice by Omidyar Group, section *Gaining Clarity*.
 - Context Mapping (Historical, Environmental, Societal/Cultural, Technological, Political)
