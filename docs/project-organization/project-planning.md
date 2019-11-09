@@ -22,7 +22,7 @@ A web-based wiki for capturing and organizing information important to developin
 
 ##### Goal
 
-Provide a single source for documenting and sharing EI's approach to metrics product development and best practices for current and future staff.
+Create a single source for documenting and sharing EI's approach to metrics product development and best practices for current and future staff.
 
 ##### Objectives
 

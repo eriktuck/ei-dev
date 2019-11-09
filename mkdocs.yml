@@ -25,6 +25,7 @@ nav:
 - Metrics Services:
   - 'How We Work': 'metrics-services/how-we-work.md'
   - 'Scoping': 'metrics-services/scoping.md'
+  - 'Product Definition': 'metrics-services/product-definition.md'
 - Metrics Design Philosophy:
   - 'Overview': 'metrics-design/overview.md'
   - 'Step 1: Start at the End': 'metrics-design/step1-start-at-the-end.md'
@@ -35,7 +36,7 @@ nav:
   - 'Step 6: Implement': 'under-construction.md'
   - 'Step 7: Iterate & Adapt': 'under-construction.md'
 - Project Organization:
-  - 'Project Planning': 'project-planning/project-planning.md'
+  - 'Project Planning': 'project-organization/project-planning.md'
 - Git:
   - 'Create Project': 'git/initializing-git.md'
 - Data Management:
