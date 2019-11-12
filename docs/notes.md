@@ -18,9 +18,11 @@ To add a notebook to the site, us `nbconvert` to convert the notebook to markdow
 
 1. Open the Anaconda Prompt window within the notebook's root directory
 
-2. Run the following command:
+2. Run the following command (a new directory will be created if needed):
 
-   `nbconvert <notebook.ipynb> --to markdown --out_dir='<new dirname>' --output <desired-filename>`
+   `jupyter nbconvert <notebook.ipynb> --to markdown --output-dir='<rel path to new dirname>' --output <desired-filename>`
+
+   > For example `jupyter nbconvert my_notebook.ipynb --to markdown --output-dir='../md-notebooks' --output my_markdown`
 
 3. Cut and paste the newly created directory into the ei-dev docs/ folder in the desired location.
 
