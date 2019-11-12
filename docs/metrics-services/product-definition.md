@@ -8,7 +8,9 @@ Use the guidance below to complete the product definition. The product definitio
 
 #### Solution Description
 
-Provide a 1-2 sentence description of the proposed solution.
+Provide a 1-2 sentence description of the proposed solution. If you'd like, include a positioning statement: 
+
+For [User Name], who wants/needs to [statement of need or opportunity], this [product category] will [primary value proposition]. Unlike [next best alternative], this tool [primary difference].
 
 #### Goal & Objectives
 
@@ -42,15 +44,15 @@ Secondary users don't directly use the tool or solution, but are affected by it.
 | :-------------------------------------------: | :----------------------: | :--------------------------: |
 | What is the problem, need, or job to be done? | What are they doing now? | Why is your solution better? |
 
-#### Use Cases
+#### Uses
 
-Use cases describe the conditions under which the tool is used and the purpose for using the tool in that case. They should be fairly broad and together encompass the list of uses you envision for the tool or solution. 
+Uses describe the conditions under which the tool is used and the purpose for using the tool in that case. They should be fairly broad and together encompass the list of uses you envision for the tool or solution. 
 
-If you're familiar with user stories, you can think of a use case as an 'epic' user story. During product specification you will enumerate more specific user stories to motivate development of features. However, if it's helpful, you can frame use cases like user stories as "As user X, I want to Y so I can Z." This helps you think through each use case (Y) as specific to a user (X) who is motivated by some factor (Z). 
+If you're familiar with user stories, you can think of a use case as an 'epic' user story. During product specification you will enumerate more specific user stories to motivate development of features. However, if it's helpful, you can frame use cases like user stories as "As user X, I want to Y so I can Z." This helps you think through each use case (Y) as specific to a user (X) who is motivated to achieve some outcome (Z). 
 
 #### Product Sketch
 
-The six panels in this section allow you to get visual with how you expect the solution to work in practice. Visualizing can really help you avoid pitfalls and identify necessary features. Don't feel restricted to this six-panel format, feel free to get creative. Storyboards and Journey Maps are both great options for this sketch. Jot down any insights you had.
+The six panels in this section allow you to get visual with how you expect the solution to work in practice. Visualizing can really help you avoid pitfalls and identify necessary features. Don't feel restricted to this six-panel format, feel free to get creative. Storyboards and Journey Maps are both great options for this sketch. Jot down any insights you had. You can move this section to the back if breaks up the flow of the document too much.
 
 #### Design Principles & Constraints
 
