@@ -22,7 +22,7 @@ To add a notebook to the site, us `nbconvert` to convert the notebook to markdow
 
    `jupyter nbconvert <notebook.ipynb> --to markdown --output-dir='<rel path to new dirname>' --output <desired-filename>`
 
-   > For example `jupyter nbconvert my_notebook.ipynb --to markdown --output-dir='../md-notebooks' --output my_markdown`
+>For example `jupyter nbconvert my_notebook.ipynb --to markdown --output-dir='../md-notebooks' --output my_markdown`
 
 3. Cut and paste the newly created directory into the ei-dev docs/ folder in the desired location.
 

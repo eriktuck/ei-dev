@@ -21,7 +21,7 @@ theme:
 nav:
 - Home: 'index.md'
 - Project Porfolio:
-  - 'Land Use Land Cover Tutorial': 'portfolio/lulc-tutorial/lulc-tutorial.md'
+  - 'Land Use Land Cover Tutorial': 'portfolio/lulc-tutorial/lulc_tutorial.md'
 - Metrics Services:
   - 'How We Work': 'metrics-services/how-we-work.md'
   - 'Scoping': 'metrics-services/scoping.md'
