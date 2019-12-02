@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.0">
     
     
       
@@ -44,9 +44,9 @@
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../assets/stylesheets/application.0284f74d.css">
       
-        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.01803549.css">
       
       
         
@@ -182,7 +182,7 @@
         
       
       
-      <main class="md-main" role="main">
+      <main class="md-main">
         <div class="md-main__inner md-grid" data-md-component="container">
           
             
@@ -223,11 +223,11 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
     
     <label class="md-nav__link" for="nav-2">
-      Project Porfolio
+      Project Portfolio
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        Project Porfolio
+        Project Portfolio
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
         
@@ -238,8 +238,8 @@
 
 
   <li class="md-nav__item">
-    <a href="../portfolio/lulc-tutorial/lulc_tutorial/" title="Land Use Land Cover Tutorial" class="md-nav__link">
-      Land Use Land Cover Tutorial
+    <a href="../portfolio/machine-learning-tutorial/machine-learning-tutorial/" title="Machine Learning Tutorial" class="md-nav__link">
+      Machine Learning Tutorial
     </a>
   </li>
 
@@ -652,63 +652,63 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#customs-used" class="md-nav__link">
+  <a href="#customs-used" title="Customs Used" class="md-nav__link">
     Customs Used
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#markdown-reference" class="md-nav__link">
+  <a href="#markdown-reference" title="Markdown Reference" class="md-nav__link">
     Markdown Reference
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#converting-notebooks" class="md-nav__link">
+  <a href="#converting-notebooks" title="Converting Notebooks" class="md-nav__link">
     Converting Notebooks
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#linking-documents" class="md-nav__link">
+  <a href="#linking-documents" title="Linking Documents" class="md-nav__link">
     Linking Documents
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#images-and-gifs" class="md-nav__link">
+  <a href="#images-and-gifs" title="Images and Gifs" class="md-nav__link">
     Images and Gifs
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#youtube-videos" class="md-nav__link">
+  <a href="#youtube-videos" title="YouTube Videos" class="md-nav__link">
     YouTube Videos
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#forms" class="md-nav__link">
+  <a href="#forms" title="Forms" class="md-nav__link">
     Forms
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#extensions" class="md-nav__link">
+  <a href="#extensions" title="Extensions" class="md-nav__link">
     Extensions
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#interactive-visualizations" class="md-nav__link">
+  <a href="#interactive-visualizations" title="Interactive Visualizations" class="md-nav__link">
     Interactive Visualizations
   </a>
   
@@ -746,10 +746,13 @@
 <p>Open the Anaconda Prompt window within the notebook's root directory</p>
 </li>
 <li>
-<p>Run the following command:</p>
+<p>Run the following command (a new directory will be created if needed):</p>
 </li>
 </ol>
-<p><code>jupyter nbconvert &lt;notebook.ipynb&gt; --to markdown --output_dir='&lt;new dirname&gt;' --output &lt;desired-filename&gt;</code></p>
+<p><code>jupyter nbconvert &lt;notebook.ipynb&gt; --to markdown --output-dir='&lt;rel path to new dirname&gt;' --output &lt;desired-filename&gt;</code></p>
+<blockquote>
+<p>For example <code>jupyter nbconvert my_notebook.ipynb --to markdown --output-dir='../md-notebooks' --output my_markdown</code></p>
+</blockquote>
 <ol>
 <li>Cut and paste the newly created directory into the ei-dev docs/ folder in the desired location.</li>
 </ol>
@@ -816,7 +819,7 @@
       
     </div>
     
-      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../assets/javascripts/application.245445c6.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
       
