@@ -42,8 +42,8 @@ nav:
 - Spatial Analysis:
   - 'Spatial Analysis Overview': 'under-construction.md'
 - Additional Resources:
-  - 'Scoping': 'metrics-services/scoping.md'
-  - 'Product Definition': 'metrics-services/product-definition.md'
+  - 'Scoping': 'additional-resources/scoping.md'
+  - 'Product Definition': 'additional-resources/product-definition.md'
   - 'Persona Development Guide': 'additional-resources/persona-guide.md'
   - 'Interview Guide': 'additional-resources/interview-guide.md'
 - How to Maintain This Site: 'development-guidance.md'

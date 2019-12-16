@@ -17,7 +17,7 @@ We'll work with you through the process of [scoping](#scoping), [product definit
 
 ### Scoping
 
-[Scoping](scoping.md) is all about understanding the situation and exploring the problem. We often start by asking you to describe your vision. If its our first time working on this program, we'd like to know your vision for the program, your conservation targets, etc. If we've already engaged, then we'll focus on your vision for the world in which this solution exists. Understanding your vision helps us know what a successful solution will look like.
+[Scoping](../additional-resources/scoping.md) is all about understanding the situation and exploring the problem. We often start by asking you to describe your vision. If its our first time working on this program, we'd like to know your vision for the program, your conservation targets, etc. If we've already engaged, then we'll focus on your vision for the world in which this solution exists. Understanding your vision helps us know what a successful solution will look like.
 
 If that's too optimistic for you, we can instead focus on the problems you face, decisions you need to make, or jobs to be done. We'll have you list the problems and needs so we can zero in on the key problems, who is involved, and the overall situation.
 
@@ -38,7 +38,7 @@ After this meeting, we'll refine our understanding of what you told us, develop 
 
 ### Product Definition
 
-Utilizing our research and what you've told us, we'll develop options for solutions and develop a recommendation. We'll return with a [Product Definition](product-definition.md) and, potentially, a 'Minimum Viable Product' (MVP) - some tangible way for you to understand the recommended solution. 
+Utilizing our research and what you've told us, we'll develop options for solutions and develop a recommendation. We'll return with a [Product Definition](../additional-resources/product-definition.md) and, potentially, a 'Minimum Viable Product' (MVP) - some tangible way for you to understand the recommended solution. 
 
 The MVP is the minimum build sufficient to test key hypotheses we've developed. It may not even     function at all (e.g., a 'wizard of oz' approach), but will simulate the experience of using the tool. It might be as simple as a drawing, a wireframe, or even a small version of what we'll eventually develop. We find it's better to have something tangible for you to react to so that you are fully aware of the look/feel and limitations of any solution. Otherwise you might be imaging a cure all that is impossible!
 
