@@ -21,6 +21,7 @@ theme:
 nav:
 - Home: 'index.md'
 - Project Portfolio:
+  - 'Project Examples': 'portfolio/project-portfolio.md'
   - 'Machine Learning Tutorial': 'portfolio/machine-learning-tutorial/machine-learning-tutorial.md'
 - Metrics Services:
   - 'How We Work': 'metrics-services/how-we-work.md'
@@ -31,16 +32,14 @@ nav:
   - 'Step 3: Develop Empathy': 'metrics-design/step3-develop-empathy.md'
   - 'Step 4: Define the Problem': 'metrics-design/step4-define-the-problem.md'
   - 'Step 5: Identify a Solution': 'metrics-design/step5-identify-a-solution.md'
-  - 'Step 6: Implement': 'under-construction.md'
-  - 'Step 7: Iterate & Adapt': 'under-construction.md'
+  - 'Step 6: Implement': 'metrics-design/step6-implement.md'
+  - 'Step 7: Iterate & Adapt': 'metrics-design/step7-adapt.md'
 - Project Organization:
   - 'Project Planning': 'project-organization/project-planning.md'
 - Git:
   - 'Create Project': 'git/initializing-git.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
-- Spatial Analysis:
-  - 'Spatial Analysis Overview': 'under-construction.md'
 - Additional Resources:
   - 'Scoping': 'additional-resources/scoping.md'
   - 'Product Definition': 'additional-resources/product-definition.md'

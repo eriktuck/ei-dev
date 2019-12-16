@@ -35,3 +35,11 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
         index.md  # The documentation homepage.
         ...       # Other markdown pages, images and other files.
 
+## Installations
+
+The `mkdocs` and `material` theme must be installed:
+
+`pip install mkdocs`
+
+`pip install mkdocs-material`
+
