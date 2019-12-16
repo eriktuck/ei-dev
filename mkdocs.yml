@@ -24,8 +24,6 @@ nav:
   - 'Machine Learning Tutorial': 'portfolio/machine-learning-tutorial/machine-learning-tutorial.md'
 - Metrics Services:
   - 'How We Work': 'metrics-services/how-we-work.md'
-  - 'Scoping': 'metrics-services/scoping.md'
-  - 'Product Definition': 'metrics-services/product-definition.md'
 - Metrics Design Philosophy:
   - 'Overview': 'metrics-design/overview.md'
   - 'Step 1: Start at the End': 'metrics-design/step1-start-at-the-end.md'
@@ -44,6 +42,8 @@ nav:
 - Spatial Analysis:
   - 'Spatial Analysis Overview': 'under-construction.md'
 - Additional Resources:
+  - 'Scoping': 'metrics-services/scoping.md'
+  - 'Product Definition': 'metrics-services/product-definition.md'
   - 'Persona Development Guide': 'additional-resources/persona-guide.md'
   - 'Interview Guide': 'additional-resources/interview-guide.md'
 - How to Maintain This Site: 'development-guidance.md'
