@@ -21,8 +21,7 @@ theme:
 nav:
 - Home: 'index.md'
 - Project Portfolio: 'portfolio/project-portfolio.md'
-- Metrics Services:
-  - 'How We Work': 'metrics-services/how-we-work.md'
+- Metrics Services: 'metrics-services/how-we-work.md'
 - Metrics Design Philosophy:
   - 'Overview': 'metrics-design/overview.md'
   - 'Step 1: Start at the End': 'metrics-design/step1-start-at-the-end.md'
@@ -48,7 +47,7 @@ nav:
 - Data Science:
   - 'Machine Learning Tutorial': 'data-science/machine-learning-tutorial/machine-learning-tutorial.md'
 - Additional Resources:
-  - 'Scoping': 'additional-resources/scoping.md'
+  - 'Scoping Canvas': 'additional-resources/scoping.md'
   - 'Product Definition': 'additional-resources/product-definition.md'
   - 'Persona Development Guide': 'additional-resources/persona-guide.md'
   - 'Interview Guide': 'additional-resources/interview-guide.md'

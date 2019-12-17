@@ -1,4 +1,4 @@
-# Scoping
+# Scoping Canvas
 
 This scoping exercise will help you better understand the problem context and kick-start the process of identifying solutions. This is best done together in person, if possible, and typically requires at least an hour but can take half a day or more, depending on how invested you are in building out the Situation Model (feel free to sub in a systems map or journey map if preferred). If you've already developed some of these elements, great! Bring along a copy and start with a quick review.
 

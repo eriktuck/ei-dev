@@ -37,9 +37,9 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 
 ## Installations
 
-The `mkdocs` and `material` theme must be installed:
+`mkdocs` and the `material` theme must be installed:
 
-`pip install mkdocs`
+* `pip install mkdocs`
 
-`pip install mkdocs-material`
+* `pip install mkdocs-material`
 
