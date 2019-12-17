@@ -26,7 +26,7 @@ The [Nevada Site Screening Tool]( https://www.enviroaccounting.com/NVCreditSyste
 
 ## Roadside Managers Monarch Tool
 
-We partnered with UX design students to design an interface for a [mobile field data collection app]( https://enviroincentives.com/blog/where-monarch-conservation-meets-the-road-a-mobile-app-for-highway-departments/ ) for roadside managers to quickly assess the quality of monarch habitat on roadsides. The design was used to spur interest in funders and as the basis for the final mobile field data collection app design, which was build on ESRI's Survey123.
+We partnered with UX design students to design an interface for a [mobile field data collection app]( https://enviroincentives.com/blog/where-monarch-conservation-meets-the-road-a-mobile-app-for-highway-departments/ ) for roadside managers to quickly assess the quality of monarch habitat on roadsides. The design was used to spur interest from funders and as the basis for the final mobile field data collection app design, which was build on ESRI's Survey123.
 
 ![roadside-app](assets/roadside-app.png)
 

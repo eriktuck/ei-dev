@@ -16,7 +16,7 @@ This site is intended for [all EI staff](#all-ei-staff) to better understand the
 If you're here to better understand how the Metrics service line can support your project or internal initiative, you might want to check out our [portfolio of projects](portfolio/project-portfolio.md), better understand [how we can work with you](metrics-services/how-we-work.md), or review one of these helpful introductions to technologies and services available to you:
 
 * Data Analysis
-* Tool Development  # (i.e., deployment)
+* [Tool Development](deployment/deployment-overview.md)
 * [Databases](data-management/database-overview.md)
 * Visualization
 * Mapping and Spatial Analysis
