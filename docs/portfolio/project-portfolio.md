@@ -123,11 +123,18 @@ As part of the Sage-Steppe Habitat Quantification Tool, we developed a custom Ex
 The Water Team developed a great introduction to Results Chains that can be tailored to any audience. Check it out below, or download [here](https://docs.google.com/presentation/d/1DProNR0wA22EyTJFvKagufbH6wS61KrarvJpuEeM37Y/edit?usp=sharing).
 
 <iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTC8xT2zfiTxT7W3o4RHTaYwvwRhFaFQhlvE5XvgOUflP-XniWWaP5XIN2Io7E9g8Gp3Z83fD161F_R/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="550" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-\# Open Standards, Results Chain
+\# Open Standards, Results Chain, Performance Measures
 
 ---
 
 
+
+## Performance Measure Design
+
+This slide deck introduces a five step process to performance measure design. It's a useful resource when introducing performance measures to new clients or developing proposals.
+
+<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vRSPtltQHq6lh_kcKsvhDPnL_vvx21QmiE6OGJTiNsgsUPB5HNdNu7D26HKj2i7vaOOFu0AI-nXR89G/embed?start=false&loop=false&delayms=3000" frameborder="0" width="1440" height="450" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+\# Open Standards, Results Chains, Performance Measures
 
 ## Qualitative Monitoring Dashboard
 
