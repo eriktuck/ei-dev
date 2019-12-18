@@ -38,6 +38,7 @@ Here's a short list of options (and important supporting technologies) for deplo
      * Cron Tab
      * PyOxidizer
      * Excel + VBA
+     * Command Line Tools
 
 
 * **[Databases](../data-management/database-overview.md) & Back-ends**
@@ -45,6 +46,7 @@ Here's a short list of options (and important supporting technologies) for deplo
      * PostgreSQL
      * MySQL
      * Google Sheets
+     * AWS S3
 
 
 * **Environments**
