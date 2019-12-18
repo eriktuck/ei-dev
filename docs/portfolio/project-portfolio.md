@@ -2,16 +2,6 @@
 
 These are a few of our projects. Peruse at your leisure.
 
-## Utilization Report
-
-The [EI Utilization Report](https://ei-utilization.herokuapp.com) helps inform weekly planning by providing up-to-date utilization (or percent to project) data for all EI staff. ![utillization-report](assets/utilization-report.png)
-
-\# python, heroku, streamlit, pandas, matplotlib, google api, google sheets, data viz
-
----
-
-
-
 ## Monarch Registry
 
 We worked with a web design firm to develop the [Monarch Registry](http://monarchhabitatexchange.org/projects) for the Monarch Habitat Exchange. Our role was to design the database, identify reporting metrics, and provide input on visual aesthetic.
@@ -88,7 +78,7 @@ The [Monarch Habitat Quantification Tool]( http://monarchhabitatexchange.org/too
 
 ![monarch-field](assets/monarch-hqt-field.png)
 
-\# Excel, field protocol, datasheets
+\# Excel, Monitoring Protocol, Datasheets
 
 ---
 
@@ -145,4 +135,18 @@ The Qualitative Monitoring Dashboard reports progress markers for sustainable WA
 \# dashboard, PDF, InDesign, qualitative indicators  
 
 ---
+
+
+
+# Giant Garter Snake HQT
+
+The Central Valley Habitat Exchange developed a [multi-species habitat quanitification tool](http://cvhe.org/tools) (HQT) to understand not only the quantity (e.g. acres) but also the quality of habitat across the Central Valley of California. This tool was focused on species that co-exist with agricultural landscapes. The HQT scoring is broken down in the diagram below.
+
+![ggs-hqt](ggs-hqt/assets/sankeydiagram.png)
+
+\# Excel, field protocol
+
+---
+
+
 
