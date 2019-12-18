@@ -20,7 +20,10 @@ theme:
 # Navigation
 nav:
 - Home: 'index.md'
-- Project Portfolio: 'portfolio/project-portfolio.md'
+- Project Portfolio: 
+  - Portfolio: 'portfolio/project-portfolio.md'
+  - Case Studies:
+    - 'portfolio/ggs-hqt/ggs-hqt.md'
 - Metrics Services: 'metrics-services/how-we-work.md'
 - Metrics Design Philosophy:
   - 'Overview': 'metrics-design/overview.md'

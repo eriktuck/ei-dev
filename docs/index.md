@@ -7,9 +7,9 @@
 <div style = "text-align: right">  Credit: Randall Munroe (xkcd.com/2054) </div>
 ---
 
-Welcome to Environmental Incentives' Metrics Service Line site! 
+Welcome to Environmental Incentives' Metrics Service Line Wiki! 
 
-This site is intended for [all EI staff](#all-ei-staff) to better understand the services of the Metrics service line and for [Metrics service line experts](#metrics-service-line-experts) as an important standard reference. Don't build a giant house of cards! We can help you develop solutions that last.
+This wiki is intended for [all EI staff](#all-ei-staff) to better understand the services of the Metrics service line and for [Metrics service line experts](#metrics-service-line-experts) as an important standard reference. Don't build a giant house of cards! We can help you develop solutions that last.
 
 ### All EI Staff
 
