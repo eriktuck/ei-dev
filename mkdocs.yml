@@ -1,7 +1,7 @@
 site_name: 'EI Metrics'
 site_description: ' A knowledge management system for the metrics service line'
 site_author: 'Erik Anderson'
-copyright: 'Copyright &copy; 2019 Erik Anderson'
+copyright: 'Copyright &copy; 2019 Environmental Incentives'
 
 #Configuration
 theme: 
