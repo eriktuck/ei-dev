@@ -1,0 +1,1174 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content=" A knowledge management system for the metrics service line">
+      
+      
+      
+        <meta name="author" content="Erik Anderson">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/ei-logo-black.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Product Definition - EI Metrics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "G-K8SJ57V0JS", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#product-definition" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EI Metrics" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/ei-logo-white.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EI Metrics
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Product Definition
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EI Metrics" class="md-nav__button md-logo">
+      
+        <img src="../../img/ei-logo-white.png" width="48" height="48">
+      
+    </a>
+    EI Metrics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project Portfolio
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project Portfolio
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/project-portfolio/" title="Portfolio" class="md-nav__link">
+      Portfolio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Case Studies
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Case Studies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/ggs-hqt/ggs-hqt/" title="Giant Garter Snake Habitat Quantification Tool" class="md-nav__link">
+      Giant Garter Snake Habitat Quantification Tool
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-services/how-we-work/" title="Metrics Services" class="md-nav__link">
+      Metrics Services
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Metrics Design Philosophy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Metrics Design Philosophy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step1-start-at-the-end/" title="Step 1: Start at the End" class="md-nav__link">
+      Step 1: Start at the End
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step2-map-it/" title="Step 2: Map It" class="md-nav__link">
+      Step 2: Map It
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step3-develop-empathy/" title="Step 3: Develop Empathy" class="md-nav__link">
+      Step 3: Develop Empathy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step4-define-the-problem/" title="Step 4: Define the Problem" class="md-nav__link">
+      Step 4: Define the Problem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step5-identify-a-solution/" title="Step 5: Identify a Solution" class="md-nav__link">
+      Step 5: Identify a Solution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step6-implement/" title="Step 6: Implement" class="md-nav__link">
+      Step 6: Implement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step7-adapt/" title="Step 7: Iterate & Adapt" class="md-nav__link">
+      Step 7: Iterate & Adapt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Project Organization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Project Organization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project-organization/project-planning/" title="Project Planning" class="md-nav__link">
+      Project Planning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/initializing-git/" title="Create Project" class="md-nav__link">
+      Create Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/virtual-environments/" title="Virtual Environments" class="md-nav__link">
+      Virtual Environments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/deployment-overview/" title="Deployment Overview" class="md-nav__link">
+      Deployment Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/heroku/" title="Heroku" class="md-nav__link">
+      Heroku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/google-api/" title="Google API" class="md-nav__link">
+      Google API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/environment-variables/" title="Environment Variables" class="md-nav__link">
+      Environment Variables
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Data Management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Data Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
+      Database Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Data Science
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Data Science
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" title="Machine Learning Tutorial" class="md-nav__link">
+      Machine Learning Tutorial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11" checked>
+    
+    <label class="md-nav__link" for="nav-11">
+      Additional Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Additional Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../scoping/" title="Scoping Canvas" class="md-nav__link">
+      Scoping Canvas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Product Definition
+      </label>
+    
+    <a href="./" title="Product Definition" class="md-nav__link md-nav__link--active">
+      Product Definition
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#solution-description" class="md-nav__link">
+    Solution Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-objectives" class="md-nav__link">
+    Goal &amp; Objectives
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    Users
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary" class="md-nav__link">
+    Primary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary" class="md-nav__link">
+    Secondary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uses" class="md-nav__link">
+    Uses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-sketch" class="md-nav__link">
+    Product Sketch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles-constraints" class="md-nav__link">
+    Design Principles &amp; Constraints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-of-satisfaction" class="md-nav__link">
+    Conditions of Satisfaction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach" class="md-nav__link">
+    Approach
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../persona-guide/" title="Persona Development Guide" class="md-nav__link">
+      Persona Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../interview-guide/" title="Interview Guide" class="md-nav__link">
+      Interview Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../development-guidance/" title="How to Maintain This Site" class="md-nav__link">
+      How to Maintain This Site
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#solution-description" class="md-nav__link">
+    Solution Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#goal-objectives" class="md-nav__link">
+    Goal &amp; Objectives
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#goal" class="md-nav__link">
+    Goal
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#objectives" class="md-nav__link">
+    Objectives
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#users" class="md-nav__link">
+    Users
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#primary" class="md-nav__link">
+    Primary
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#secondary" class="md-nav__link">
+    Secondary
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#uses" class="md-nav__link">
+    Uses
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#product-sketch" class="md-nav__link">
+    Product Sketch
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#design-principles-constraints" class="md-nav__link">
+    Design Principles &amp; Constraints
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#conditions-of-satisfaction" class="md-nav__link">
+    Conditions of Satisfaction
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#approach" class="md-nav__link">
+    Approach
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="product-definition">Product Definition<a class="headerlink" href="#product-definition" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>An editable version of the Product Definition is available <a href="https://docs.google.com/document/d/18tqPRzVUzHOwHV_MJVtf4ewP7XH1Kr0QZQ_6B8St56k/edit?usp=sharing">here</a>. Download a copy before continuing.</p>
+</blockquote>
+<p>Product definition is the process of documenting the proposed solution in broad terms. The purpose of a product definition is to align expectations, formulate broad concepts, clarify roles, and establish a development timeline. In the next step, <a href="">Product Specification</a>, you will have a chance to provide more specifics. At the product definition stage, you still have considerable flexibility in how you will deliver the final solution.</p>
+<p>Use the guidance below to complete the product definition. The product definition for this website is available <a href="">here</a> as an example.</p>
+<h4 id="solution-description">Solution Description<a class="headerlink" href="#solution-description" title="Permanent link">&para;</a></h4>
+<p>Provide a 1-2 sentence description of the proposed solution. If you'd like, include a positioning statement: </p>
+<p>For [User Name], who wants/needs to [statement of need or opportunity], this [product category] will [primary value proposition]. Unlike [next best alternative], this tool [primary difference].</p>
+<h4 id="goal-objectives">Goal &amp; Objectives<a class="headerlink" href="#goal-objectives" title="Permanent link">&para;</a></h4>
+<h5 id="goal">Goal<a class="headerlink" href="#goal" title="Permanent link">&para;</a></h5>
+<p>The goal statement should describe the desired impact of the project. It should relate to your conservation targets. It should be observable. Optionally, it can be measurable and time-limited. The goal is not "to implement the solution", the goal is what happens if the solution is implemented successfully.</p>
+<h5 id="objectives">Objectives<a class="headerlink" href="#objectives" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Objectives describe a desired outcome for the project</li>
+<li>Objectives are not an outline, list of features, are set of use cases</li>
+<li>Try to have at least two and no more than five objectives</li>
+</ol>
+<h4 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h4>
+<h5 id="primary">Primary<a class="headerlink" href="#primary" title="Permanent link">&para;</a></h5>
+<p>Primary users are the subset of your boundary partners who will directly interact with the tool or solution. Think of these like your customers. You might want to group users with <a href="../persona-guide/">personas</a>. For each primary user identified, complete the table below. If you've already completed the <a href="../scoping/">scoping exercise</a>, you will have a starting point. </p>
+<table>
+<thead>
+<tr>
+<th align="center">Problem Scenarios</th>
+<th align="center">Alternatives</th>
+<th align="center">Value Propositions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">What is the problem, need, or job to be done?</td>
+<td align="center">What are they doing now?</td>
+<td align="center">Why is your solution better?</td>
+</tr>
+</tbody>
+</table>
+<p><em>Add a row to the table for each problem scenario.</em></p>
+<h5 id="secondary">Secondary<a class="headerlink" href="#secondary" title="Permanent link">&para;</a></h5>
+<p>Secondary users don't directly use the tool or solution, but are affected by it. They may provide data inputs or make decisions from the outputs. Repeat the process you went through for primary users.</p>
+<table>
+<thead>
+<tr>
+<th align="center">Problem Scenarios</th>
+<th align="center">Alternatives</th>
+<th align="center">Value Propositions</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">What is the problem, need, or job to be done?</td>
+<td align="center">What are they doing now?</td>
+<td align="center">Why is your solution better?</td>
+</tr>
+</tbody>
+</table>
+<h4 id="uses">Uses<a class="headerlink" href="#uses" title="Permanent link">&para;</a></h4>
+<p>Uses describe the conditions under which the tool is used and the purpose for using the tool in that case. They should be fairly broad and together encompass the list of uses you envision for the tool or solution. </p>
+<p>If you're familiar with user stories, you can think of a use case as an 'epic' user story. During product specification you will enumerate more specific user stories to motivate development of features. However, if it's helpful, you can frame use cases like user stories as "As user X, I want to Y so I can Z." This helps you think through each use case (Y) as specific to a user (X) who is motivated to achieve some outcome (Z). </p>
+<h4 id="product-sketch">Product Sketch<a class="headerlink" href="#product-sketch" title="Permanent link">&para;</a></h4>
+<p>The six panels in this section allow you to get visual with how you expect the solution to work in practice. Visualizing can really help you avoid pitfalls and identify necessary features. Don't feel restricted to this six-panel format, feel free to get creative. Storyboards and Journey Maps are both great options for this sketch. Jot down any insights you had. You can move this section to the back if breaks up the flow of the document too much.</p>
+<h4 id="design-principles-constraints">Design Principles &amp; Constraints<a class="headerlink" href="#design-principles-constraints" title="Permanent link">&para;</a></h4>
+<p>List design principles and constraints. Consider integration, hosting, support, adaptive management and deployment but don't get into details yet. Your client may have constraints related to software licensing, budget, etc. Listing them here will make sure you don't come back with a solution that isn't feasible.</p>
+<h4 id="conditions-of-satisfaction">Conditions of Satisfaction<a class="headerlink" href="#conditions-of-satisfaction" title="Permanent link">&para;</a></h4>
+<p>Set expectations for the tool by clarifying how you will know this tool is successful. </p>
+<h4 id="approach">Approach<a class="headerlink" href="#approach" title="Permanent link">&para;</a></h4>
+<p>Provide a general description of the proposed work plan. Discuss roles, timelines, and resources required.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../scoping/" title="Scoping Canvas" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Scoping Canvas
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../persona-guide/" title="Persona Development Guide" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Persona Development Guide
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Erik Anderson
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://linkedin.com/in/eriktanderson" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://github.com/eanderson-ei" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
