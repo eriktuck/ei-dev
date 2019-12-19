@@ -138,9 +138,9 @@ The Qualitative Monitoring Dashboard reports progress markers for sustainable WA
 
 
 
-# Giant Garter Snake HQT
+## Central Valley Multi-Species HQT
 
-The Central Valley Habitat Exchange developed a [multi-species habitat quanitification tool](http://cvhe.org/tools) (HQT) to understand not only the quantity (e.g. acres) but also the quality of habitat across the Central Valley of California. This tool was focused on species that co-exist with agricultural landscapes. The HQT scoring is broken down in the diagram below.
+The Central Valley Habitat Exchange developed a [multi-species habitat quanitification tool](http://cvhe.org/tools) (HQT) to understand not only the quantity (e.g. acres) but also the quality of habitat across the Central Valley of California. This tool was focused on species that co-exist with agricultural landscapes. The HQT scoring for giant garter-snake is broken down in the diagram below.
 
 ![ggs-hqt](ggs-hqt/assets/sankeydiagram.png)
 

@@ -2,7 +2,7 @@ Do you (or your client) have data stored across so many files you can't remember
 
 This tutorial will 
 
-1. [introduce you to databases](#introduction to databases),
+1. [introduce you to databases](#introduction-to-databases),
 2. [describe available database solutions](#database-options), and
 3. [help you select the right database for your needs](#how-to-choose). 
 
