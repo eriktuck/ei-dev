@@ -112,6 +112,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#google-api" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -613,10 +617,61 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Google API
+      </label>
     
     <a href="./" title="Google API" class="md-nav__link md-nav__link--active">
       Google API
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-access" class="md-nav__link">
+    Setting up access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacting-with-the-spreadsheet" class="md-nav__link">
+    Interacting with the spreadsheet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-gspread-commands" class="md-nav__link">
+    Basic gspread commands
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -789,15 +844,135 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#setting-up-access" class="md-nav__link">
+    Setting up access
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#interacting-with-the-spreadsheet" class="md-nav__link">
+    Interacting with the spreadsheet
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#basic-gspread-commands" class="md-nav__link">
+    Basic gspread commands
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Google API</h1>
-                
-                
+                <h1 id="google-api">Google API<a class="headerlink" href="#google-api" title="Permanent link">&para;</a></h1>
+<p>Google provides an API for interacting with Google Drive and its suite of office products (Sheets, Docs, Slides, etc.). An API is an 'application programming interface'. Simply put, it's the interpreter between your program and Google's products. If you want to write into a Google Doc, you can use the API to do it.</p>
+<p>Google Sheets is actually a quite powerful backend data store for web-based applications. If you're deploying to <a href="../heroku/">Heroku</a> and don't have the need to configure a Postgres database, Google Sheets can get the job done quite well. That said, it's not free of issues, so beware before building anything mission critical.</p>
+<p>You can create up to 12 projects on Google Drive using the API for free.</p>
+<h3 id="setting-up-access">Setting up access<a class="headerlink" href="#setting-up-access" title="Permanent link">&para;</a></h3>
+<p><a href="https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html">This tutorial</a> describes how to set up a project through Google's API Console and get the credentials you'll need to access it. Basically</p>
+<ol>
+<li>Go to the <a href="https://console.developers.google.com/">Google API Console</a></li>
+<li>Create a new project</li>
+<li>Click Enable API. Search for and enable the Google Drive API.</li>
+<li>Search for and enable the Google Sheets API.</li>
+<li>Create credentials for a Web Server to access Application Data.</li>
+<li>Name the service account and grant it a Project Role of Editor</li>
+<li>Download the JSON file</li>
+<li>Copy the JSON file into your project directory under a subdirectory called <code>secrets/</code></li>
+<li>In the spreadsheet on Google Drive, click the Share button and paste the client email from the JSON file into the People field to give it edit rights. Hit Send.</li>
+</ol>
+<p><img alt="" src="https://s3.amazonaws.com/com.twilio.prod.twilio-docs/original_images/google-developer-console.gif" /></p>
+<p>Credit: Greg Baugues, twilio.com</p>
+<h3 id="interacting-with-the-spreadsheet">Interacting with the spreadsheet<a class="headerlink" href="#interacting-with-the-spreadsheet" title="Permanent link">&para;</a></h3>
+<p>Now you can access the spreadsheet from your script. You'll need both the <code>gspread</code> and <code>oauth2client</code> package. <em>Note that oauth2client is deprecated, see <code>google-auth</code> or <code>oauthlib</code>, <code>gspread</code> may be superseded by <code>pygsheets</code></em>.</p>
+<p><code>conda install</code> the required packages.</p>
+<p>Use the code below to get access to the spreadsheet. </p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">gspread</span>
+<span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
+
+<span class="n">scope</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://spreadsheets.google.com/feeds&#39;</span><span class="p">,</span>
+         <span class="s1">&#39;https://www.googleapis.com/auth/drive&#39;</span><span class="p">]</span>
+
+<span class="n">creds</span> <span class="o">=</span> <span class="n">ServiceAccountCredentials</span><span class="o">.</span><span class="n">from_json_keyfile_name</span><span class="p">(</span>
+    <span class="s1">&#39;&lt;path to JSON credentials&gt;&#39;</span><span class="p">,</span> <span class="n">scope</span>
+<span class="p">)</span>
+
+<span class="n">client</span> <span class="o">=</span> <span class="n">gspread</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="n">creds</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Refer to the 'gspread` <a href="https://gspread.readthedocs.io/en/latest/">docs</a> for help reading and writing to spreadsheets.</p>
+<h4 id="basic-gspread-commands">Basic gspread commands<a class="headerlink" href="#basic-gspread-commands" title="Permanent link">&para;</a></h4>
+<p>Use this code to read a spreadsheet as a pandas data frame (include code from above to authenticate). Note that a spreadsheet is synonymous with an Excel workbook, and a worksheets is still a worksheet.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+
+<span class="n">wks</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;&lt;spreadsheet name&gt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">worksheet</span><span class="p">(</span><span class="s1">&#39;&lt;worksheet name&gt;&#39;</span><span class="p">)</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">hours_wks</span><span class="o">.</span><span class="n">get_all_values</span><span class="p">()</span>
+<span class="n">headers</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>To save a csv in an existing workbook (note this will overwrite the entire workbook):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">out_file</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;&lt;spreadsheet name&gt;&#39;</span><span class="p">)</span><span class="s1">&#39;.id</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&lt;data.csv&gt;&#39;</span><span class="p">)</span>
+<span class="n">client</span><span class="o">.</span><span class="n">import_csv</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
                 
                   
                 
