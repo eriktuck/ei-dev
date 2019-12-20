@@ -40,7 +40,7 @@
     
     
       
-        <title>Environment Variables - EI Metrics</title>
+        <title>Scheduling Tasks - EI Metrics</title>
       
     
     
@@ -112,6 +112,10 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
+      <a href="#scheduling-tasks" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
     
       <header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid">
@@ -134,7 +138,7 @@
             </span>
             <span class="md-header-nav__topic">
               
-                Environment Variables
+                Scheduling Tasks
               
             </span>
           
@@ -489,10 +493,12 @@
       
       
 
+  
 
-  <li class="md-nav__item md-nav__item--nested">
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
     
     <label class="md-nav__link" for="nav-7">
       Development
@@ -510,7 +516,101 @@
 
 
   <li class="md-nav__item">
-    <a href="../../development/virtual-environments/" title="Virtual Environments" class="md-nav__link">
+    <a href="../command-line-tools/" title="Command Line Tools" class="md-nav__link">
+      Command Line Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Scheduling Tasks
+      </label>
+    
+    <a href="./" title="Scheduling Tasks" class="md-nav__link md-nav__link--active">
+      Scheduling Tasks
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows-task-scheduler" class="md-nav__link">
+    Windows Task Scheduler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-bat-file" class="md-nav__link">
+    Create a .bat file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-the-task" class="md-nav__link">
+    Schedule the task
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../environment-variables/" title="Environment Variables" class="md-nav__link">
+      Environment Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../virtual-environments/" title="Virtual Environments" class="md-nav__link">
       Virtual Environments
     </a>
   </li>
@@ -525,12 +625,10 @@
       
       
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+  <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
     
     <label class="md-nav__link" for="nav-8">
       Deployment
@@ -548,7 +646,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../deployment-overview/" title="Deployment Overview" class="md-nav__link">
+    <a href="../../deployment/deployment-overview/" title="Deployment Overview" class="md-nav__link">
       Deployment Overview
     </a>
   </li>
@@ -560,7 +658,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../heroku/" title="Heroku" class="md-nav__link">
+    <a href="../../deployment/heroku/" title="Heroku" class="md-nav__link">
       Heroku
     </a>
   </li>
@@ -572,7 +670,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../google-api/" title="Google API" class="md-nav__link">
+    <a href="../../deployment/google-api/" title="Google API" class="md-nav__link">
       Google API
     </a>
   </li>
@@ -582,18 +680,11 @@
           
           
 
-  
 
-
-  <li class="md-nav__item md-nav__item--active">
-    
-    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-    
-    
-    <a href="./" title="Environment Variables" class="md-nav__link md-nav__link--active">
+  <li class="md-nav__item">
+    <a href="../../deployment/environment-variables.md" title="Environment Variables" class="md-nav__link">
       Environment Variables
     </a>
-    
   </li>
 
         
@@ -765,15 +856,99 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#windows-task-scheduler" class="md-nav__link">
+    Windows Task Scheduler
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-a-bat-file" class="md-nav__link">
+    Create a .bat file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#schedule-the-task" class="md-nav__link">
+    Schedule the task
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Environment Variables</h1>
-                
-                
+                <h1 id="scheduling-tasks">Scheduling Tasks<a class="headerlink" href="#scheduling-tasks" title="Permanent link">&para;</a></h1>
+<p>If you have a task that needs to be completed regularly, and it's something you can automate with a pyton script, you can schedule the task to occur at set  times to save you the hassle. It also helps guarantee that the task gets done when it should.</p>
+<p>Python has packages available for scheduling tasks, such as <code>python-chrontab</code>. However, on a Windows machine it's possibly easiest to use the Windows Task Scheduler.</p>
+<h3 id="windows-task-scheduler">Windows Task Scheduler<a class="headerlink" href="#windows-task-scheduler" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<h4 id="create-a-bat-file">Create a <code>.bat</code> file<a class="headerlink" href="#create-a-bat-file" title="Permanent link">&para;</a></h4>
+</li>
+</ol>
+<p>To use the Windows Task Scheduler to , you'll first need to create a <code>.bat</code> file. Open a new file on VS Code or notepad and type:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="s2">&quot;</span><span class="s">&lt;Path to python executable&gt;</span><span class="s2">&quot;</span> <span class="s2">&quot;</span><span class="s">&lt;Path to script&gt;</span><span class="s2">&quot;</span>
+<span class="k">pause</span>
+</pre></div>
+</td></tr></table>
+
+<ul>
+<li>The path to the python executable for me is: <code>"C:\Users\Erik\Anaconda3\python.exe"</code> </li>
+<li>The path to your script is the fully qualified path to your script, don't forget to include the script name and <code>.py</code> at the end.</li>
+</ul>
+<p>Save the file and change the extension to <code>.bat</code> (e.g., <code>run_me.bat</code>).</p>
+<p>You can run your script by double clicking on the file. Running a <code>.bat</code> file is a lot like typing <code>python &lt;my_script.py&gt;</code> into the CLI.</p>
+<ol>
+<li>
+<h4 id="schedule-the-task">Schedule the task<a class="headerlink" href="#schedule-the-task" title="Permanent link">&para;</a></h4>
+</li>
+</ol>
+<p>To schedule the task, type 'schedule task' in the Windows start menu and open the Task Scheduler. Select 'Create Basic Task...' and work through the interface. You can open the settings dialog box for more options (see below) before saving.</p>
+<p><img alt="task-scheduler" src="../assets/task-scheduler.gif" /></p>
+<ul>
+<li><strong>General</strong>: Provide any name you want</li>
+<li><strong>Triggers</strong>: Add a New Trigger and select the type of trigger you'd prefer. The task can be run at a specific time and day, but also upon logging on to the computer or other options.</li>
+<li><strong>Actions</strong>: Add a New Action and select 'Start a Program'.</li>
+<li><strong>Conditions</strong>: You can specify additional conditions here.</li>
+<li><strong>Settings</strong>: Additional settings here. I recommend selecting 'Run task as soon as possible after a scheduled start is missed', in case the computer isn't on when the task should have been run.</li>
+</ul>
                 
                   
                 
@@ -795,7 +970,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../google-api/" title="Google API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../command-line-tools/" title="Command Line Tools" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -804,19 +979,19 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Google API
+                Command Line Tools
               </span>
             </div>
           </a>
         
         
-          <a href="../../data-management/database-overview/" title="Database Overview" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../environment-variables/" title="Environment Variables" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Database Overview
+                Environment Variables
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
