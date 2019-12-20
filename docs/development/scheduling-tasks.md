@@ -1,6 +1,6 @@
 # Scheduling Tasks
 
-If you have a task that needs to be completed regularly, and it's something you can automate with a pyton script, you can schedule the task to occur at set  times to save you the hassle. It also helps guarantee that the task gets done when it should.
+If you have a task that needs to be completed regularly, and it's something you can automate with a python script, you can schedule the task to occur at set  times to save you the hassle. It also helps guarantee that the task gets done when it should.
 
 Python has packages available for scheduling tasks, such as `python-chrontab`. However, on a Windows machine it's possibly easiest to use the Windows Task Scheduler.
 
