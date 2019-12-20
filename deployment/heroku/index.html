@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -111,6 +111,10 @@
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#heroku" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
     
     
       <header class="md-header" data-md-component="header">
@@ -601,10 +605,67 @@
     
     <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
     
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Heroku
+      </label>
     
     <a href="./" title="Heroku" class="md-nav__link md-nav__link--active">
       Heroku
     </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step-by-step
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
     
   </li>
 
@@ -789,18 +850,169 @@
               </div>
             
             
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tutorial" class="md-nav__link">
+    Tutorial
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#step-by-step" class="md-nav__link">
+    Step-by-step
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
           
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               
                 
                 
-                  <h1>Heroku</h1>
-                
-                
+                <h1 id="heroku">Heroku<a class="headerlink" href="#heroku" title="Permanent link">&para;</a></h1>
+<p>Heroku is an app hosting platform that supports multiple programming languages, including python. To get the most out of it, you'll need to develop a user interface for your app with a package like <code>streamlit</code>,  <code>dash</code>, <code>django</code> or <code>flask</code>. Anything that renders your application in HTML will suffice.</p>
+<p>Heroku loads all of the software (i.e., python, the packages you need, and your scripts) into a container on its servers in what they call a 'dyno'. That way, your users can run the software without having to load it on their own machine. Heroku is similar to Shiny Apps, if you're used to the R ecosystem.</p>
+<p>It's also worth noting that <a href="https://help.heroku.com/K1PPS2WM/why-are-my-file-uploads-missing-deleted">Heroku does not store data</a> for you. In other words, you won't be able to access the <code>.csv</code> files or <code>.png</code> files you have been passing to your program. You'll need to find a cloud-based hosting service like <a href="https://www.twilio.com/blog/2017/02/an-easy-way-to-read-and-write-to-a-google-spreadsheet-in-python.html">Google Drive</a> or <a href="https://devcenter.heroku.com/articles/s3-upload-python">Amazon S3</a> for those assets. </p>
+<h2 id="tutorial">Tutorial<a class="headerlink" href="#tutorial" title="Permanent link">&para;</a></h2>
+<p>This tutorial will walk you through the process of deploying a <code>streamlit</code> app on Heroku. You'll need to set up a <a href="../../development/virtual-environments/">virtual environment</a>,  understand the basics of git, and be comfortable working from the command line. You should also review the Google API tutorial to set up Google Sheets as a back-end.</p>
+<h3 id="step-by-step">Step-by-step<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Create a new project folder</p>
+</li>
+<li>
+<p>Open an Anaconda Prompt window within the project folder</p>
+</li>
+<li>
+<p>Initialize git (<code>git init</code>)</p>
+</li>
+<li>
+<p>Create a <code>.gitignore</code> file (<code>code .gitignore</code>)</p>
+</li>
+<li>
+<p>Add (one per line): <code>*.pyc</code>, <code>secrets/</code>, and any other files or folders you want ignored (e.g., <code>notebooks/</code>, <code>data/</code> if you have will be working in jupyter notebooks or with local data while you build your app)</p>
+</li>
+<li>
+<p>Create a virtual environment (<code>conda create -n &lt;project-name&gt; python</code>)</p>
+</li>
+<li>
+<p>Activate the environment (<code>conda activate &lt;project-name&gt;</code>)</p>
+</li>
+<li>
+<p>Install any packages you'll need using the <code>conda</code> package manager</p>
+</li>
+<li>
+<p>Build your project locally, working within the project's environment</p>
+</li>
+<li>
+<p>Create a <code>requirements.txt</code> file. To do this, you will first need to install <code>pip</code> into your environment (<code>install pip</code>). Then use the command <code>pip freeze &gt; requirements.txt</code>. As an alternative, you can simply list the top-level libraries you are using (i.e., the packages you import in your script). If, when deploying to Heroku, you get an error that a package cannot be found, delete that package from <code>requirements.txt</code>. I've found fewer issues with just listing top-level libraries, but you risk version issues cropping up later.</p>
+</li>
+<li>
+<p>Optionally, create a <code>runtime.txt</code> file to tell Heroku which python version to install. Only certain versions are supported by Heroku, so check the documentation first. Use the command <code>python -V &gt; runtime.txt</code>, or type in the python version you'd prefer Heroku install. </p>
+</li>
+<li>
+<p>Create a Procfile, which tells Heroku how to actually run your app. The Procfile is run when the app is initialized in each session. Type <code>code Profile</code> to create a new file and add the command Heroku will use to run your app. It's different for each technology, but for a streamlit app the text is <code>sh setup.sh &amp;&amp; streamlit run &lt;my_app.py&gt;</code>. The app will run from the root folder, so make sure if your script is stored in a folder, you include it in the path (e.g, <code>sh setup &amp;&amp; streamlit run &lt;scripts/my_app.py&gt;</code>). Also, make sure that the relative paths in your script are relative to the root folder, NOT the script itself. </p>
+</li>
+<li>
+<p>For a<code>streamlit</code> app, you'll need to create a <code>setup.sh</code> file. Create a new file <code>code setup.sh</code> and paste the below into it:</p>
+<p>```
+mkdir -p ~/.streamlit/</p>
+<p>echo "\
+[general]\n\
+email = \"your-email@domain.com\"\n\
+" &gt; ~/.streamlit/credentials.toml</p>
+<p>echo "\
+[server]\n\
+headless = true\n\
+enableCORS=false\n\
+port = $PORT\n\
+" &gt; ~/.streamlit/config.toml
+```</p>
+</li>
+<li>
+<p>Create a Procfile for local development, if needed:</p>
+<p><code>code Procfile.windows</code></p>
+<p><code>web: streamlit run scripts/&lt;my_app.py&gt; runserver 0.0.0.0:5000</code></p>
+</li>
+<li>
+<p>Commit changes to git (<code>git add .</code> , <code>git commit -m "message"</code>)</p>
+</li>
+<li>
+<p>Create the Heroku app: <code>heroku create &lt;app name&gt;</code> where <code>&lt;app name&gt;</code> will serve as the base of the url and the name of the app on Heroku's dashboard</p>
+</li>
+<li>
+<p>Deploy the code to Heroku: <code>git push heroku master</code></p>
+</li>
+<li>
+<p>Spin up one dyno: <code>heroku ps:scale web=1</code> (use <code>heroku ps:scale web=0</code>) to shut it down. Use <code>heroku ps</code> to see how many dynos are running.</p>
+</li>
+<li>
+<p>Open the app: <code>heroku open</code>.</p>
+</li>
+<li>
+<p>If the app isn't up yet, or something looks wrong, check the logs with <code>heroku logs --tail</code>. You can close the logs with <code>ctrl+c</code>.</p>
+</li>
+<li>
+<p>If you need to run the app locally, you can use the command <code>heroku local web -f Procfile.windows</code>.</p>
+</li>
+<li>
+<p>If you make changes to the app, commit everything to git and then push it back up to Heroku. Every time you push to Heroku, it rebuilds the dyno from scratch, which can take some time depending on how many packages you need to load, so try to do that sparingly.</p>
+</li>
+<li>
+<p>If you have API tokens or other sensitive information, you'll need to configure Heroku's configuration variables. This is equivalent to setting an <a href="../../development/environment-variables/">environment variable</a> on your local machine. These variables will only be exposed at runtime, and won't be accessible to your users. Simply type <code>heroku config:set &lt;VAR_NAME&gt; = &lt;VAR_VALUE&gt;</code>. For JSON blobs, it's easiest to add them through Heroku's online interface (under the 'Settings' of the app.) You can paste in the prettified JSON as a new variable there. See the <a href="../google-api/">Google API</a> page for more info on accessing those variables within your scripts.</p>
+</li>
+</ol>
+<p>Your app should now be up and running on Heroku. If you're on a free tier, it may take 10-20 seconds for the app to load each time because the server needs to spin it up. It will be active for 30 minutes, but will sleep again after that time. You can upgrade to a Hobby license for $7 per dyno per month.</p>
+<h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
+<p>Note that in recent updates the setup.sh may not be required, instead you can use this command in the Procfile:</p>
+<p><code>web: streamlit run --server.enableCORS false my_script.py</code> </p>
+<p>(but I haven't tested it).</p>
                 
                   
-                
                 
               
               
@@ -881,7 +1093,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
