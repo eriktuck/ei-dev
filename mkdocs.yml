@@ -39,6 +39,9 @@ nav:
 - Git:
   - 'Create Project': 'git/initializing-git.md'
 - Development:
+  - 'Command Line Tools': 'development/command-line-tools.md'
+  - 'Scheduling Tasks': 'development/scheduling-tasks.md'
+  - 'Environment Variables': 'development/environment-variables.md'
   - 'Virtual Environments': 'development/virtual-environments.md'
 - Deployment:
   - 'Deployment Overview': 'deployment/deployment-overview.md'
