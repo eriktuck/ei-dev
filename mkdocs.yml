@@ -47,7 +47,6 @@ nav:
   - 'Deployment Overview': 'deployment/deployment-overview.md'
   - 'Heroku': 'deployment/heroku.md'
   - 'Google API': 'deployment/google-api.md'
-  - 'Environment Variables': 'deployment/environment-variables.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
 - Data Science:
