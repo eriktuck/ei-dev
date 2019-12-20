@@ -6,13 +6,13 @@ Virtual environments allow you to maintain a controlled development environment 
 
 Imagine you have built an app using Python v2.7. You decide to upgrade your Anaconda distribution, which upgrades all of your packages and upgrades Python to v3.6. All of the sudden, all of your print statements return an error because they are missing parentheses! 
 
-To avoid this, you can create virtual environments for each of your projects. A virtual environment simply saves all of the packages your using, as well as the python version (in some cases), in a unique folder rather than with the base Anaconda packages. This way, you can always be sure that the packages you're using aren't upgraded (or downgraded) in the future when you upgrade or install new packages to your base environment.
+To avoid this, you can create virtual environments for each of your projects. A virtual environment simply saves all of the packages you're using, as well as the Python version (in some cases), in a unique folder rather than with the base Anaconda packages. This way, you can always be sure that the packages you're using aren't upgraded (or downgraded) in the future when you upgrade or install new packages to your base environment.
 
 ### The base environment
 
 If you're not working in a virtual environment you have created, you're working in the base Anaconda environment (assuming you're working from an Anaconda distribution). You'll notice that every time you open an Anaconda Prompt window, it automatically activates the base environment with the command `conda activate base`.
 
-When you `conda install` a package, it is stored in this base environment.
+When you `conda install` a package from the base environment, it is stored in this base environment.
 
 ### Creating virtual environments
 

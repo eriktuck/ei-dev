@@ -26,3 +26,9 @@ Environment variables are commonly used, but [not always the best option](https:
 
 Use the `google-auth` or `oauthlib` packages to access and use credentials stored as a JSON file.
 
+### For the A/V Crowd
+
+This video captures the essentials of Environment Variables in 5 minutes. Worth a watch for anything I missed.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IolxqkL7cD8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+

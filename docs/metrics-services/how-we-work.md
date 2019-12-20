@@ -56,7 +56,7 @@ Implementation - the development and deployment of the solution- is simply itera
 
 ### Adaptation
 
-Almost every tool requires some revision in the first year. We can provide support for the first year and recommend a structure process for adapting the product as needed after a full year of use. The adaptation process should, of course, be scaled to the size of the tool.
+Almost every tool requires some revision in the first year. We can provide support for the first year and recommend a structured process for adapting the product as needed after a full year of use. The adaptation process should, of course, be scaled to the size of the tool.
 
 ## Why have we developed this process?
 

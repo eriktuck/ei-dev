@@ -34,6 +34,10 @@ We've codified our philosophy into a seven step process. Each step is described 
 
 #### Additional Resources
 
+​    [Scoping Canvas](../additional-resources/scoping.md)
+
+​    [Product Definition](../additional-resources/product-definition.md)
+
 ​	[Persona Development Guide](../additional-resources/persona-guide.md)
 
 ​	[Interview Guide](../additional-resources/interview-guide.md)
