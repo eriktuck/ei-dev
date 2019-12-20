@@ -958,21 +958,38 @@
 <p>Create a Procfile, which tells Heroku how to actually run your app. The Procfile is run when the app is initialized in each session. Type <code>code Profile</code> to create a new file and add the command Heroku will use to run your app. It's different for each technology, but for a streamlit app the text is <code>sh setup.sh &amp;&amp; streamlit run &lt;my_app.py&gt;</code>. The app will run from the root folder, so make sure if your script is stored in a folder, you include it in the path (e.g, <code>sh setup &amp;&amp; streamlit run &lt;scripts/my_app.py&gt;</code>). Also, make sure that the relative paths in your script are relative to the root folder, NOT the script itself. </p>
 </li>
 <li>
-<p>For a<code>streamlit</code> app, you'll need to create a <code>setup.sh</code> file. Create a new file <code>code setup.sh</code> and paste the below into it:</p>
-<p>```
-mkdir -p ~/.streamlit/</p>
-<p>echo "\
-[general]\n\
-email = \"your-email@domain.com\"\n\
-" &gt; ~/.streamlit/credentials.toml</p>
-<p>echo "\
-[server]\n\
-headless = true\n\
-enableCORS=false\n\
-port = $PORT\n\
-" &gt; ~/.streamlit/config.toml
-```</p>
+<p>For a<code>streamlit</code> app, you'll need to create a <code>setup.sh</code> file. Create a new file <code>code setup.sh</code> and paste the below into it (note language is bash):</p>
 </li>
+</ol>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>mkdir -p ~/.streamlit/
+
+<span class="nb">echo</span> <span class="s2">&quot;\</span>
+<span class="s2">[general]\n\</span>
+<span class="s2">email = \&quot;your-email@domain.com\&quot;\n\</span>
+<span class="s2">&quot;</span> &gt; ~/.streamlit/credentials.toml
+
+<span class="nb">echo</span> <span class="s2">&quot;\</span>
+<span class="s2">[server]\n\</span>
+<span class="s2">headless = true\n\</span>
+<span class="s2">enableCORS=false\n\</span>
+<span class="s2">port = </span><span class="nv">$PORT</span><span class="s2">\n\</span>
+<span class="s2">&quot;</span> &gt; ~/.streamlit/config.toml
+</pre></div>
+</td></tr></table>
+
+<ol>
 <li>
 <p>Create a Procfile for local development, if needed:</p>
 <p><code>code Procfile.windows</code></p>
