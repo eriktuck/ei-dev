@@ -13,11 +13,11 @@ These snakes now live in agricultural canals and rice fields, and are often impa
 ## Benefits of the HQT 
 
 The giant garter snake HQT was developed by Environmental Defense Fund and a Technical Advisory Committee of giant garter snake experts. EI helped to ensure the tool was specifically designed to be used by conservation organizations, agencies, and technically savvy farmers and landowners. As such, the tool is
-- Excel-based, with 13 attributes needed
-- Minor spatial analysis can be completed in ArcGIS or Google Earth
-- Includes management strategies that will likely lead to improved habitat
-- Combines landscape, regional, and site-specific attributes into one clear metric (% functionality)
-- Can be used on working lands and protected wetlands and everything in between
+* Excel-based, with 13 attributes needed
+* Minor spatial analysis can be completed in ArcGIS or Google Earth
+* Includes management strategies that will likely lead to improved habitat
+* Combines landscape, regional, and site-specific attributes into one clear metric (% functionality)
+* Can be used on working lands and protected wetlands and everything in between
 
 We believe tools are only useful if they are used. Given the identified users of this tool, having a relatively simple excel sheet that completes the complicating weighting of attributes behind-the-scenes was critical for tool success.
 
