@@ -36,25 +36,23 @@ This tutorial will walk you through the process of deploying a `streamlit` app o
 
 12. Create a Procfile, which tells Heroku how to actually run your app. The Procfile is run when the app is initialized in each session. Type `code Profile` to create a new file and add the command Heroku will use to run your app. It's different for each technology, but for a streamlit app the text is `sh setup.sh && streamlit run <my_app.py>`. The app will run from the root folder, so make sure if your script is stored in a folder, you include it in the path (e.g, `sh setup && streamlit run <scripts/my_app.py>`). Also, make sure that the relative paths in your script are relative to the root folder, NOT the script itself. 
 
-13. For a`streamlit` app, you'll need to create a `setup.sh` file. Create a new file `code setup.sh` and paste the below into it:
+13. For a`streamlit` app, you'll need to create a `setup.sh` file. Create a new file `code setup.sh` and paste the below into it (note language is bash):
 
-    ```
-    mkdir -p ~/.streamlit/
-    
-    echo "\
-    [general]\n\
-    email = \"your-email@domain.com\"\n\
-    " > ~/.streamlit/credentials.toml
-    
-    echo "\
-    [server]\n\
-    headless = true\n\
-    enableCORS=false\n\
-    port = $PORT\n\
-    " > ~/.streamlit/config.toml
-    ```
+```bash
+mkdir -p ~/.streamlit/
 
-    
+echo "\
+[general]\n\
+email = \"your-email@domain.com\"\n\
+" > ~/.streamlit/credentials.toml
+
+echo "\
+[server]\n\
+headless = true\n\
+enableCORS=false\n\
+port = $PORT\n\
+" > ~/.streamlit/config.toml
+```
 
 14. Create a Procfile for local development, if needed:
 
