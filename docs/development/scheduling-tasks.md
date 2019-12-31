@@ -30,9 +30,9 @@ To schedule the task, type 'schedule task' in the Windows start menu and open th
 
 
 
-#### Additional Settings
+#### Additional settings available
 
-* General**: Provide any name you want
+* **General**: Provide any name you want
 * **Triggers**: Add a New Trigger and select the type of trigger you'd prefer. The task can be run at a specific time and day, but also upon logging on to the computer or other options.
 * **Actions**: Add a New Action and select 'Start a Program'.
 * **Conditions**: You can specify additional conditions here.
@@ -44,6 +44,16 @@ Navigate to your `.bat` file, right-click and select copy. Use the **Windows key
 
 Note that if you shut down your computer more than once a day, this will run the script multiple times that day. If you just want a daily task to run, use the Task Scheduler.
 
-
-
 [Read more about using batch files in Windows]( https://www.windowscentral.com/how-create-and-run-batch-file-windows-10 ).
+
+## Getting an error?
+
+In some cases (especially if you have multiple python versions installed on your computer), you may need to activate the base Anaconda environment before attempting to run your script in the `.bat` file. To do this, simply add a line at the beginning of your `.bat` file (edit the path as necessary to for your machine) so it looks like this:
+
+```
+call "C:\Users\Erik\Anaconda3\Scripts\activate.bat"
+"C:\Users\Erik\Anaconda3\python.exe" "<Path to script>"
+```
+
+The `call` function is used to execute another `.bat` file from within a `.bat` file, and in this case will activate the base anaconda environment which will allow your machine to find the packages you need to run your script. If you don't do this, you may get a DLL load error when attempting to run the `.bat` file.
+

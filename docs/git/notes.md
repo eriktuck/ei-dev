@@ -158,3 +158,25 @@ Forking the repo and submitting pull requests is the safest, as the repo owner i
 Adding Collaborators can be done in the Settings tab of a repo. This allows anyone listed as a collaborator to work on the repo as if it was their own. This will streamline the workflow, but you risk missing simple mistakes, severe mistakes, and malicious intent. 
 
 https://kbroman.org/github_tutorial/pages/fork.html
+
+### Removing files 
+
+If you want to remove a file that has already been committed:
+
+1. Add the file to the .gitignore file
+2. Use the command `git rm --cached <filename>`
+
+### Adding empty folders
+
+Empty folders are automatically ignored by git, since it only stores files. Sometimes you want to include an empty folder if you want to commit a folder structure before populating it with files or add a folder for temporarily storing data. To do this you need to add an empty file to the folder. By convention, we can call this `.keep` or `.gitkeep`. Create a new text document within the folder you want to keep, leave it empty, and save it as `.keep` or `.gitkeep`.
+
+If you also want to ignore the contents of this folder, but keep the folder (e.g., for log files or temporary data that isn't deleted), add the following to the `.gitignore` file:
+
+```
+# ignore the files in the folder foo
+foo/*
+
+# but keep the folder
+!foo/.keep
+```
+
