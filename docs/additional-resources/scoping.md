@@ -28,11 +28,13 @@ It's important to be agnostic about the solution within the vision statement. Th
 
 See [Step 1: Start at the End](../metrics-design/step1-start-at-the-end.md) of our metrics design philosophy for help if you get stuck.
 
-### Situation Model & Interventions
+### Map It!
 
-The Situation Model consists of one or more conservation targets, threats, and drivers. Interventions should be mapped where appropriate. 
+Create a visual representation of the problem space. 
 
-See [Step 2: Map It](../metrics-design/step2-map-it.md) of our metrics design philosophy for inspiration.
+A Situation Model is a great option, which consists of one or more conservation targets, threats, and drivers. Interventions should be mapped where appropriate. However, you can do a systems map, journey map, or whatever approach you choose. See [Step 2: Map It](../metrics-design/step2-map-it.md) of our metrics design philosophy for inspiration.
+
+The components of a Situation Model are defined below:
 
 #### Conservation Targets
 
@@ -70,7 +72,7 @@ See [Step 3: Develop Empathy](../metrics-design/step3-develop-empathy.md) of our
 
 ### Problems
 
-If you're coming from the Open Standards for the Practice of Conservation, everything so far has been  very familiar. This is where we take a bit of a departure. Instead of jumping straight to listing strategies, we're going to think about how we can solve problems or create opportunities for the people whose behavior we need to change to achieve our conservation goal. Our strategy will be shaped by our understanding of these problems (but we actually won't define a specific strategy until the Product Definition step).
+If you're coming from the Open Standards for the Practice of Conservation, everything so far has been very familiar. This is where we take a bit of a departure. Instead of jumping straight to listing strategies, we're going to think about how we can solve problems or create opportunities for the people whose behavior we need to change to achieve our conservation goal. Our strategy will be shaped by our understanding of these problems (but we actually won't define a specific strategy until the Product Definition step).
 
 Identify the most important boundary partner in your list. Ask yourself, what do we need them to do (or to stop doing) to achieve our conservation goal? In other words, what behaviors do we need them to exhibit in order that our vision is achieved? You might frame these as behaviors you'd 'expect to see', 'like to see', and 'love to see'. 
 
