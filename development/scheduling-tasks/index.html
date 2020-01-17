@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -563,21 +563,48 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-a-bat-file" class="md-nav__link">
-    Create a .bat file
+  <a href="#1-create-a-bat-file" class="md-nav__link">
+    1. Create a .bat file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#schedule-the-task" class="md-nav__link">
-    Schedule the task
+  <a href="#2-schedule-the-task" class="md-nav__link">
+    2. Schedule the task
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-settings-available" class="md-nav__link">
+    Additional settings available
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-startup-folder" class="md-nav__link">
+    The Startup Folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-an-error" class="md-nav__link">
+    Getting an error?
+  </a>
   
 </li>
       
@@ -866,21 +893,48 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#create-a-bat-file" class="md-nav__link">
-    Create a .bat file
+  <a href="#1-create-a-bat-file" class="md-nav__link">
+    1. Create a .bat file
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#schedule-the-task" class="md-nav__link">
-    Schedule the task
+  <a href="#2-schedule-the-task" class="md-nav__link">
+    2. Schedule the task
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-settings-available" class="md-nav__link">
+    Additional settings available
   </a>
   
 </li>
         
       </ul>
     </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-startup-folder" class="md-nav__link">
+    The Startup Folder
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#getting-an-error" class="md-nav__link">
+    Getting an error?
+  </a>
   
 </li>
       
@@ -903,17 +957,13 @@
                 
                 <h1 id="scheduling-tasks">Scheduling Tasks<a class="headerlink" href="#scheduling-tasks" title="Permanent link">&para;</a></h1>
 <p>If you have a task that needs to be completed regularly, and it's something you can automate with a python script, you can schedule the task to occur at set  times to save you the hassle. It also helps guarantee that the task gets done when it should.</p>
-<p>Python has packages available for scheduling tasks, such as <code>python-chrontab</code>. However, on a Windows machine it's possibly easiest to use the Windows Task Scheduler.</p>
-<h3 id="windows-task-scheduler">Windows Task Scheduler<a class="headerlink" href="#windows-task-scheduler" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<h4 id="create-a-bat-file">Create a <code>.bat</code> file<a class="headerlink" href="#create-a-bat-file" title="Permanent link">&para;</a></h4>
-</li>
-</ol>
+<p>Python has packages available for scheduling tasks, such as <code>python-chrontab</code>. However, on a Windows machine it's possibly easiest to use the <a href="#windows-task-scheduler">Windows Task Scheduler</a>. Alternatively, you can use schedule task to run <a href="#the-startup-folder">when you start up your computer</a>.</p>
+<h2 id="windows-task-scheduler">Windows Task Scheduler<a class="headerlink" href="#windows-task-scheduler" title="Permanent link">&para;</a></h2>
+<h3 id="1-create-a-bat-file">1. Create a <code>.bat</code> file<a class="headerlink" href="#1-create-a-bat-file" title="Permanent link">&para;</a></h3>
 <p>To use the Windows Task Scheduler to , you'll first need to create a <code>.bat</code> file. Open a new file on VS Code or notepad and type:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&quot;&lt;Path to python executable&gt;&quot; &quot;&lt;Path to script&gt;&quot;
-pause
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">&quot;&lt;Path to python executable&gt;&quot; &quot;&lt;Path to script&gt;&quot;</span>
+<span class="err">pause</span>
 </pre></div>
 </td></tr></table>
 
@@ -923,13 +973,10 @@ pause
 </ul>
 <p>Save the file and change the extension to <code>.bat</code> (e.g., <code>run_me.bat</code>).</p>
 <p>You can run your script by double clicking on the file. Running a <code>.bat</code> file is a lot like typing <code>python &lt;my_script.py&gt;</code> into the CLI.</p>
-<ol>
-<li>
-<h4 id="schedule-the-task">Schedule the task<a class="headerlink" href="#schedule-the-task" title="Permanent link">&para;</a></h4>
-</li>
-</ol>
+<h3 id="2-schedule-the-task">2. Schedule the task<a class="headerlink" href="#2-schedule-the-task" title="Permanent link">&para;</a></h3>
 <p>To schedule the task, type 'schedule task' in the Windows start menu and open the Task Scheduler. Select 'Create Basic Task...' and work through the interface. You can open the settings dialog box for more options (see below) before saving.</p>
 <p><img alt="task-scheduler" src="../assets/task-scheduler.gif" /></p>
+<h4 id="additional-settings-available">Additional settings available<a class="headerlink" href="#additional-settings-available" title="Permanent link">&para;</a></h4>
 <ul>
 <li><strong>General</strong>: Provide any name you want</li>
 <li><strong>Triggers</strong>: Add a New Trigger and select the type of trigger you'd prefer. The task can be run at a specific time and day, but also upon logging on to the computer or other options.</li>
@@ -937,8 +984,22 @@ pause
 <li><strong>Conditions</strong>: You can specify additional conditions here.</li>
 <li><strong>Settings</strong>: Additional settings here. I recommend selecting 'Run task as soon as possible after a scheduled start is missed', in case the computer isn't on when the task should have been run.</li>
 </ul>
+<h2 id="the-startup-folder">The Startup Folder<a class="headerlink" href="#the-startup-folder" title="Permanent link">&para;</a></h2>
+<p>Navigate to your <code>.bat</code> file, right-click and select copy. Use the <strong>Windows key + R</strong> keyboard shortcut to open the Run command. Type in <code>shell:startup</code> and click OK. Paste a shortcut to the <code>.bat</code> file in this folder and it will run on every startup (you'll need to restart for this to take effect).</p>
+<p>Note that if you shut down your computer more than once a day, this will run the script multiple times that day. If you just want a daily task to run, use the Task Scheduler.</p>
+<p><a href="https://www.windowscentral.com/how-create-and-run-batch-file-windows-10">Read more about using batch files in Windows</a>.</p>
+<h2 id="getting-an-error">Getting an error?<a class="headerlink" href="#getting-an-error" title="Permanent link">&para;</a></h2>
+<p>In some cases (especially if you have multiple python versions installed on your computer), you may need to activate the base Anaconda environment before attempting to run your script in the <code>.bat</code> file. To do this, simply add a line at the beginning of your <code>.bat</code> file (edit the path as necessary to for your machine) so it looks like this:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">call &quot;C:\Users\Erik\Anaconda3\Scripts\activate.bat&quot;</span>
+<span class="err">&quot;C:\Users\Erik\Anaconda3\python.exe&quot; &quot;&lt;Path to script&gt;&quot;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The <code>call</code> function is used to execute another <code>.bat</code> file from within a <code>.bat</code> file, and in this case will activate the base anaconda environment which will allow your machine to find the packages you need to run your script. If you don't do this, you may get a DLL load error when attempting to run the <code>.bat</code> file.</p>
                 
                   
+                
                 
               
               
@@ -1019,7 +1080,7 @@ pause
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
