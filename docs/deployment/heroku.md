@@ -80,6 +80,12 @@ port = $PORT\n\
 
 Your app should now be up and running on Heroku. If you're on a free tier, it may take 10-20 seconds for the app to load each time because the server needs to spin it up. It will be active for 30 minutes, but will sleep again after that time. You can upgrade to a Hobby license for $7 per dyno per month.
 
+#### Update an existing app
+
+Updating an existing app is as simple as running `git push heroku master` from the project's root directory. However, if you have cloned the repository (or you, say, deployed it last time from a different computer), you'll need to establish the remote connection with heroku first.
+
+Type `heroku login` to login (a browser window will open) and then `heroku git:remote -a <app-name>` to connect to the app. The `<app-name>` can be found on your [heroku page](dashboard.herroku.com/apps).
+
 #### Notes
 
 Note that in recent updates the setup.sh may not be required, instead you can use this command in the Procfile:
@@ -87,3 +93,4 @@ Note that in recent updates the setup.sh may not be required, instead you can us
 `web: streamlit run --server.enableCORS false my_script.py` 
 
 (but I haven't tested it).
+
