@@ -51,6 +51,8 @@ nav:
   - 'Database Overview': 'data-management/database-overview.md'
 - Data Science:
   - 'Machine Learning Tutorial': 'data-science/machine-learning-tutorial/machine-learning-tutorial.md'
+- Visualization:
+  - 'Data Visualization': 'data-visualization/data-visualization.md'
 - Additional Resources:
   - 'Scoping Canvas': 'additional-resources/scoping.md'
   - 'Product Definition': 'additional-resources/product-definition.md'
