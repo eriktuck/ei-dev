@@ -15,7 +15,7 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 * Data Management (non-tech: database overview)
 * Data Science (non-tech: types of data analysis)
 * Spatial Analysis (non-tech: types of spatial data analysis)
-* Visualization (non-tech: visualization options)
+* Data Visualization (non-tech: visualization options)
 * Packages
 * News/Blog 
 * How to Maintain this Site

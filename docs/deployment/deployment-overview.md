@@ -1,5 +1,7 @@
 # Getting Tools to Users
 
+*This page is under development*
+
 Tools are only useful if they are used.
 
 Getting tools in the hands of your users, while ensuring a good user experience with tech support and the development of new features, is at least half the battle.
@@ -30,7 +32,7 @@ Here's a short list of options (and important supporting technologies) for deplo
      * GitHub Pages
      * Linode
      * Digital Ocean
-     * Google Apps
+     * Google Apps (Firebase, AppSheet, App Engine)
 
 
 * **Desktop Deployment**

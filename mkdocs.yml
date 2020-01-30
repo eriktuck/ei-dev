@@ -24,6 +24,7 @@ nav:
   - Portfolio: 'portfolio/project-portfolio.md'
   - Case Studies:
     - 'portfolio/ggs-hqt/ggs-hqt.md'
+    - 'portfolio/utilization-report/utilization-report.md'
 - Metrics Services: 'metrics-services/how-we-work.md'
 - Metrics Design Philosophy:
   - 'Overview': 'metrics-design/overview.md'
@@ -51,14 +52,18 @@ nav:
   - 'Database Overview': 'data-management/database-overview.md'
 - Data Science:
   - 'Machine Learning Tutorial': 'data-science/machine-learning-tutorial/machine-learning-tutorial.md'
-- Visualization:
+- Data Visualization:
   - 'Data Visualization': 'data-visualization/data-visualization.md'
+- Python Packages:
+  - 'Dash': 'python-packages/dash.md'
 - Additional Resources:
   - 'Scoping Canvas': 'additional-resources/scoping.md'
   - 'Product Definition': 'additional-resources/product-definition.md'
   - 'Persona Development Guide': 'additional-resources/persona-guide.md'
   - 'Interview Guide': 'additional-resources/interview-guide.md'
-- How to Maintain This Site: 'development-guidance.md'
+- How to Maintain This Site: 
+  - 'Development Guide': 'development-guidance.md'
+  - 'Tips & Tricks': 'notes.md'
 
 # Extensions
 markdown_extensions:
@@ -78,6 +83,8 @@ extra:
       link: 'https://github.com/eanderson-ei'
   
 # Analytics
-google_analytics:
-  - 'G-K8SJ57V0JS'
-  - 'auto'
+google_analytics: ['G-K8SJ57V0JS', 'auto']
+
+# Extra JavaScript
+extra_javascript:
+  - js/scripts.js

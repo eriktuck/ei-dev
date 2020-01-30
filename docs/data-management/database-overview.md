@@ -12,7 +12,7 @@ A database is simply an organized store for information. Data are stored as rows
 
 How the data are stored is often less important than how the data are accessed. The primary reason you're developing a database is probably to make data easier to access, analyze and report. When choosing and designing a database, you'll need to pay as much attention to how the user will interface with the database as the database solution itself. 
 
-> If you're simply looking for data analysis and visualization (think: Tableau), check out our *Introduction to Data Visualization*.
+> If you're simply looking for data analysis and visualization (think: Tableau), check out our *[Introduction to Data Visualization](../data-visualization/data-visualization.md)*.
 
 ### Interacting with a database
 
@@ -42,8 +42,8 @@ Reports are queries or collections of queries that can be batched together and r
 
 A database solution (aka database management system; DBMS) will include these key components
 
-1. **Database Engine** and **Hosting Platform**: The database engine is the software that runs the database. The database and the database engine will be hosted either on a local server or on the cloud.
-2. **Database Management Client**: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client helps reduce, but doesn't necessarily eliminate, the need to use SQL (Structured Query Language) to interact with the database.
+1. **Database Software** and **Hosting Platform**: The database software runs the database. The database and the database software will be hosted either on a local server or on the cloud.
+2. **Database Management Client**: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client can reduce, but doesn't necessarily eliminate, the need to use SQL (Structured Query Language) to interact with the database (however many DBAs will prefer using SQL anyway).
 3. **User Interface** and **Analysis Platform**: The user interface allows users to access the data while the analysis platform allows the user to gain insights from the data. Often, these are combined.
 
 To illustrate, below are three options for a database solution that you might consider. 
@@ -56,7 +56,7 @@ To illustrate, below are three options for a database solution that you might co
 
 ##### Example 1: Microsoft Access
 
-Microsoft Access is an all-in-one database solution from the '90s. It lacks many features that some would deem critical, but for lightweight and desktop-based database solutions, it's hard to beat the out-of-the-box functionality for low-tech users. More modern options are available as cloud-based, subscription services.
+Microsoft Access is an all-in-one database solution from the '90s. It lacks many features that some would deem critical, but for lightweight and desktop-based database solutions, it's hard to beat the out-of-the-box functionality for low-tech users. Similar, more modern options are available as cloud-based, subscription services.
 
 ---
 
@@ -66,7 +66,7 @@ Microsoft Access is an all-in-one database solution from the '90s. It lacks many
 
 ##### Example 2: Microsoft Azure SQL Database + SQL Server Management Studio + Microsoft PowerApps
 
-A cloud-based solution that offers great customization, if you're tech-savvy enough to configure and maintain it. You don't have to be a software engineer, but don't expect it to be easy. Amazon and Oracle offer similar solutions.
+A cloud-based solution that offers great customization, if you're tech-savvy enough to configure and maintain it. You don't have to be a software engineer, but don't expect it to be easy. Amazon, IBM and Oracle offer similar solutions.
 
 ---
 
@@ -92,7 +92,7 @@ These are your options if you don't have a tech guru on the team and don't have 
 
 **Microsoft Access** and **OpenOffice Base** are good entry-level options. OpenOffice Base is free but has fewer features and less support than Microsoft Access. 
 
-**Microsoft Excel**, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations (it pains me to even suggest this). If you'd prefer a cloud-based solution, **Google Sheets** paired with **Google Forms** might even work. 
+**Microsoft Excel**, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations. If you'd prefer a cloud-based solution, **Google Sheets** paired with **Google Forms** might even work. 
 
 #### <u>Cheap(ish) Cloud-based Subscription Services</u>
 
@@ -110,11 +110,11 @@ Venture into this territory and you'll want to make sure you have the technical 
 
 #### <u>Open Source Database Software</u>
 
-**PostgreSQL**, **MySQL**, and **MariaDB** are examples of open source (free) database solutions. While these are robust, scalable database solutions used by many large corporations, they are not designed for your everyday desk jockey. These open source solutions are often paired with a web-based interface. If you are working with a web developer and have the budget for them to design the forms, queries and reports you need you'll likely choose one of these open source options. *Don't forget you'll probably need to hire them again when your version of the software is no longer supported by its open source community.*
+**PostgreSQL**, **MySQL**, and **MariaDB** are examples of open source (free) database solutions. While these are robust, scalable database solutions used by many large corporations, they are not designed for your everyday desk jockey. These open source solutions are often paired with a web-based interface. If you are working with a web developer and have the budget for them to design the forms, queries and reports you need you'll likely choose one of these open source options. *Don't forget you'll probably need to hire them again when you want to make changes or when the software reaches its End Of Life (EOL).*
 
 #### <u>Cloud-based Scalable Services</u>
 
-Cloud-based options are offered by **Amazon RCD**, **Microsoft Azure** and **Oracle Cloud Services**. Your data now lives on the cloud. Price scales with use, and entry-level tiers can be very cheap, but you will have to provide a credit card and make sure the charges don't get out of hand. 
+Cloud-based options are offered by **Amazon RCD**, **Microsoft Azure**, **IBM Db2** and **Oracle Cloud Services**. Your data now lives on the cloud. Price scales with use, and entry-level tiers can be very cheap, but you will have to provide a credit card and make sure the charges don't get out of hand. 
 
 To get to your data, you'll need an application--either a custom web app or a desktop app you build using a service like **Microsoft PowerApps**, **FileMaker**, **Oracle Forms**, or **Appian**. These "low code" application platforms allow you to develop custom solutions without a team of software engineers, but do require some serious training.
 
@@ -125,6 +125,12 @@ Microsoft, IBM, and Oracle all sell enterprise database solutions. Expect to pay
 ### Database Clients
 
 For these more technical solutions, you'll need a database management client. Some database solutions come with a preferred client, such as Microsoft's **SQL Server Management Studio** and **Azure Data Studio**, Oracle's **SQL Developer**, PostreSQL's **pgAdmin**, and MySQL's **MySQL Workbench**. However, you're not stuck with these options, some of these can be used for other databases, while a number of popular free alternative options exist including **SQuirrel SLQ**, **DataGrip**, or even **VSCode** with `mssql` extension (for MySQL databases; however see Azure Data Studio as a better solution built from the VSCode platform).
+
+#### For Python
+
+If you're working in Python, know that there are APIs for most of the open source and cloud-based database solutions. For example, [`psycopg2`](https://www.postgresqltutorial.com/postgresql-python/) is the API for Postrgres and `Ibm-db` is the API for IBM's DB2 cloud-based database. 
+
+I'd recommend playing around with [SQLite](https://www.sqlitetutorial.net/) (sqlite3 package), which comes with the base Python distribution, to familiarize yourself with using databases in your applications. You can access and manipulate your database in a Jupyter Notebook using the appropriate API and `pandas`. Use the `pandas.read_sql` command to read the results of a SQL query into a pandas dataframe for further analysis.
 
 ## How to Choose?
 
@@ -150,7 +156,7 @@ Who will maintain the database over time? If it's the client, make sure they are
 
 Who will provide support if something crashes or the client needs a new type of report developed? If it's you, make sure *you* are comfortable with the solution. 
 
-Keep in mind that paying a contractor to set up a cool web-based database will likely require paying a contractor to maintain that database periodically over time. 
+Keep in mind that paying a contractor to set up a cool web-based database and interface will likely require paying a contractor to maintain that database and interface periodically over time. 
 
 ## Final Thoughts
 
