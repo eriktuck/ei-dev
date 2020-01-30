@@ -1,0 +1,1687 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content=" A knowledge management system for the metrics service line">
+      
+      
+      
+        <meta name="author" content="Erik Anderson">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/ei-logo-black.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+    
+    
+      
+        <title>Dash - EI Metrics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "G-K8SJ57V0JS", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#dash" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EI Metrics" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/ei-logo-white.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EI Metrics
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Dash
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EI Metrics" class="md-nav__button md-logo">
+      
+        <img src="../../img/ei-logo-white.png" width="48" height="48">
+      
+    </a>
+    EI Metrics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project Portfolio
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project Portfolio
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/project-portfolio/" title="Portfolio" class="md-nav__link">
+      Portfolio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Case Studies
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Case Studies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/ggs-hqt/ggs-hqt/" title="Giant Garter Snake Habitat Quantification Tool" class="md-nav__link">
+      Giant Garter Snake Habitat Quantification Tool
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/utilization-report/utilization-report/" title="Utilization Report" class="md-nav__link">
+      Utilization Report
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-services/how-we-work/" title="Metrics Services" class="md-nav__link">
+      Metrics Services
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Metrics Design Philosophy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Metrics Design Philosophy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step1-start-at-the-end/" title="Step 1: Start at the End" class="md-nav__link">
+      Step 1: Start at the End
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step2-map-it/" title="Step 2: Map It" class="md-nav__link">
+      Step 2: Map It
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step3-develop-empathy/" title="Step 3: Develop Empathy" class="md-nav__link">
+      Step 3: Develop Empathy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step4-define-the-problem/" title="Step 4: Define the Problem" class="md-nav__link">
+      Step 4: Define the Problem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step5-identify-a-solution/" title="Step 5: Identify a Solution" class="md-nav__link">
+      Step 5: Identify a Solution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step6-implement/" title="Step 6: Implement" class="md-nav__link">
+      Step 6: Implement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step7-adapt/" title="Step 7: Iterate & Adapt" class="md-nav__link">
+      Step 7: Iterate & Adapt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Project Organization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Project Organization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../project-organization/project-planning/" title="Project Planning" class="md-nav__link">
+      Project Planning
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/initializing-git/" title="Create Project" class="md-nav__link">
+      Create Project
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/command-line-tools/" title="Command Line Tools" class="md-nav__link">
+      Command Line Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/scheduling-tasks/" title="Scheduling Tasks" class="md-nav__link">
+      Scheduling Tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/environment-variables/" title="Environment Variables" class="md-nav__link">
+      Environment Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/virtual-environments/" title="Virtual Environments" class="md-nav__link">
+      Virtual Environments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+    <label class="md-nav__link" for="nav-8">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/deployment-overview/" title="Deployment Overview" class="md-nav__link">
+      Deployment Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/heroku/" title="Heroku" class="md-nav__link">
+      Heroku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/google-api/" title="Google API" class="md-nav__link">
+      Google API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Data Management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Data Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
+      Database Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Data Science
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Data Science
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" title="Machine Learning Tutorial" class="md-nav__link">
+      Machine Learning Tutorial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Data Visualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Data Visualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-visualization/data-visualization/" title="Data Visualization" class="md-nav__link">
+      Data Visualization
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12" checked>
+    
+    <label class="md-nav__link" for="nav-12">
+      Python Packages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Python Packages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Dash
+      </label>
+    
+    <a href="./" title="Dash" class="md-nav__link md-nav__link--active">
+      Dash
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patterns" class="md-nav__link">
+    Patterns
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    Layout
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    Core Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-components" class="md-nav__link">
+    HTML Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling" class="md-nav__link">
+    Styling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grids" class="md-nav__link">
+    Grids
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap" class="md-nav__link">
+    Bootstrap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventupdate-noupdate" class="md-nav__link">
+    PreventUpdate &amp; NoUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-graphing" class="md-nav__link">
+    Interactive Graphing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-app" class="md-nav__link">
+    Running the app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heroku" class="md-nav__link">
+    Heroku
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flask" class="md-nav__link">
+    Flask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-in-existing-websites" class="md-nav__link">
+    Embedding in existing websites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-tricks" class="md-nav__link">
+    Tips &amp; Tricks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-data-performance" class="md-nav__link">
+    Storing data &amp; performance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-page-apps" class="md-nav__link">
+    Multi-page Apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending" class="md-nav__link">
+    Extending
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-css" class="md-nav__link">
+    Custom CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-javascript" class="md-nav__link">
+    Custom JavaScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Additional Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        Additional Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/scoping/" title="Scoping Canvas" class="md-nav__link">
+      Scoping Canvas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/product-definition/" title="Product Definition" class="md-nav__link">
+      Product Definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/persona-guide/" title="Persona Development Guide" class="md-nav__link">
+      Persona Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/interview-guide/" title="Interview Guide" class="md-nav__link">
+      Interview Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
+      How to Maintain This Site
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        How to Maintain This Site
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development-guidance/" title="Development Guide" class="md-nav__link">
+      Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/" title="Tips & Tricks" class="md-nav__link">
+      Tips & Tricks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    Installation
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#patterns" class="md-nav__link">
+    Patterns
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#layout" class="md-nav__link">
+    Layout
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#core-components" class="md-nav__link">
+    Core Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#html-components" class="md-nav__link">
+    HTML Components
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#styling" class="md-nav__link">
+    Styling
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grids" class="md-nav__link">
+    Grids
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap" class="md-nav__link">
+    Bootstrap
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#callbacks" class="md-nav__link">
+    Callbacks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#state" class="md-nav__link">
+    State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#preventupdate-noupdate" class="md-nav__link">
+    PreventUpdate &amp; NoUpdate
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#interactive-graphing" class="md-nav__link">
+    Interactive Graphing
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#running-the-app" class="md-nav__link">
+    Running the app
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deployment" class="md-nav__link">
+    Deployment
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#heroku" class="md-nav__link">
+    Heroku
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#flask" class="md-nav__link">
+    Flask
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#embedding-in-existing-websites" class="md-nav__link">
+    Embedding in existing websites
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tips-tricks" class="md-nav__link">
+    Tips &amp; Tricks
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storing-data-performance" class="md-nav__link">
+    Storing data &amp; performance
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multi-page-apps" class="md-nav__link">
+    Multi-page Apps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#extending" class="md-nav__link">
+    Extending
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#custom-css" class="md-nav__link">
+    Custom CSS
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#custom-javascript" class="md-nav__link">
+    Custom JavaScript
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="dash">Dash<a class="headerlink" href="#dash" title="Permanent link">&para;</a></h1>
+<p><a href="https://dash.plot.ly/?_ga=2.8778997.1992613160.1580408450-1790432314.1580408450">Dash</a> is a Python framework for building analytic web applications. As it's name suggests, it's especially good for building interactive dashboards. The strengths of this package lie in how it bridges the gaps between your app's analytic functionality, the web, and your user. Dash obviously integrates with Python and all of its functionality, but also provides a fairly intuitive interface to interact with the DOM (more on that below) and includes user interface components (i.e., <em>widgets</em>) that invite interactivity. </p>
+<p>I recommend taking a day to work through the examples in the <a href="https://dash.plot.ly/">User Guide</a> and exploring what's possible in the <a href="https://dash-gallery.plotly.host/Portal">gallery</a>. Once you've done that and built your first app, you can come back here for a quick refresher. Also worth noting that Dash 1.0 is relatively new, and a lot of the guidance you'll find in forums and on YouTube is outdated, so start with the official documentation and the very helpful <a href="https://community.plot.ly/">Dash community</a>.</p>
+<div class="admonition info">
+<p class="admonition-title">The DOM</p>
+<p>DOM is short for document-object-model. The DOM is how web browsers display information on web pages. The DOM is represented by HTML (Hyper-Text Markup Language). Having a decent grasp on HTML will help you as you customize your Dash app. Check out <a href="https://www.w3schools.com/">w3schools</a> or <a href="https://www.codecademy.com/learn/learn-html">codeacademy</a> for a crash course. You don't need to know everything, but it's helpful to know how Dash is converting your Python code to HTML, and the options you have through <a href="https://dash.plot.ly/dash-html-components">Dash's HTML components</a>.</p>
+</div>
+<h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
+<p>Dash isn't distributed through <code>conda</code> (yet), so you'll need to install using <code>pip</code>. Might as well <a href="../../git/initializing-git/">initialize a git repository</a> and create a <a href="../development/virtual-environment">virtual environment</a> while you're at it. Use <code>virtualenv</code> since this is a <code>pip</code> environment and that's what the Dash documentation suggests. Make sure your prompt is in the root folder of your project directory (or <code>mkdir</code> and <code>cd</code> into it).</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">virtualenv</span> <span class="n">venv</span>
+<span class="n">source</span> <span class="n">venv</span><span class="p">/</span><span class="n">bin</span><span class="p">/</span><span class="n">activate</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">dash</span><span class="p">==</span><span class="n">1</span><span class="p">.</span><span class="n">8</span><span class="p">.</span><span class="n">0</span>  <span class="c"># check the docs for the latest version</span>
+<span class="n">pip</span> <span class="n">install</span> <span class="n">plotly</span>
+</pre></div>
+</td></tr></table>
+
+<p>Here are the files they recommend including in your <code>.gitignore</code> file.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">venv</span>
+<span class="err">*.pyc</span>
+<span class="err">.DS_Store</span>
+<span class="err">.env</span>
+</pre></div>
+</td></tr></table>
+
+<h2 id="patterns">Patterns<a class="headerlink" href="#patterns" title="Permanent link">&para;</a></h2>
+<p>A Dash app consists of a layout, which describes the organization of the app, and callbacks, which create interactive functionality. </p>
+<h3 id="layout">Layout<a class="headerlink" href="#layout" title="Permanent link">&para;</a></h3>
+<p>The Dash layout consists of both <a href="https://dash.plot.ly/dash-core-components">Core Components</a> and <a href="https://dash.plot.ly/dash-html-components">HTML Components</a>. Core components represent your user interface widgets. HTML components expose the HTML tags used in the DOM as Python classes.</p>
+<p>Here's a basic template layout to get you started.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">dash</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
+
+<span class="n">external_stylesheets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://codepen.io/chriddyp/pen/bWLwgP.css&#39;</span><span class="p">]</span>
+
+<span class="n">app</span> <span class="o">=</span> <span class="n">dash</span><span class="o">.</span><span class="n">Dash</span><span class="p">(</span><span class="vm">__name__</span><span class="p">,</span> <span class="n">external_stylesheets</span><span class="o">=</span><span class="n">external_stylesheets</span><span class="p">)</span>
+
+<span class="n">app</span><span class="o">.</span><span class="n">layout</span> <span class="o">=</span> <span class="n">html</span><span class="o">.</span><span class="n">Div</span><span class="p">(</span><span class="n">children</span><span class="o">=</span><span class="p">[</span>
+    <span class="c1"># YOUR APP GOES HERE</span>
+<span class="p">])</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<p>Within the <code>app.layout</code> variable, you'll define all of your core components and html components within a <code>div</code> HTML element as a list. <code>app.layout</code> essentially defines the body of the DOM. Everything you want on your webpage must be included here.</p>
+<p>The external stylesheet provides styling through CSS to make your app look a bit better. You can also provide <a href="#custom-css">custom CSS</a> and <a href="#custom-javascript">custom JavaScript</a>.</p>
+<h4 id="core-components">Core Components<a class="headerlink" href="#core-components" title="Permanent link">&para;</a></h4>
+<p>Dash's <a href="https://dash.plot.ly/dash-core-components">core components</a> facilitate user interaction and include dropdowns, sliders, a variety of inputs, checkboxes, radio items, buttons, date pickers, file uploaders, tabs, dialogs, and graphs (i.e., charts). The <a href="https://dash.plot.ly/datatable">tables component</a>, recently released, allows for interacting with and even editing tables. As well, you can pass Markdown through the Markdown component. There are a few additional libraries of components available, check out the <a href="https://dash.plot.ly/">list</a> under <em>Open Source Component Library</em> (I recommend checking out <a href="https://dash.plot.ly/dash-daq">Dash DAQ</a> library). Each component also has an array of properties that can be set (or updated through callbacks), refer to each component's documentation. </p>
+<h4 id="html-components">HTML Components<a class="headerlink" href="#html-components" title="Permanent link">&para;</a></h4>
+<p>The <a href="https://dash.plot.ly/dash-html-components">HTML components</a> provide all of the other functionality you'll need to create a web page by exposing a majority of the available html tags. You'll most often be using <code>html.Div</code> to create areas within the web page to show widgets, content, and even to store information without showing it.</p>
+<h4 id="styling">Styling<a class="headerlink" href="#styling" title="Permanent link">&para;</a></h4>
+<p>The CSS provided by the external stylesheet offers some basic styling and a grid feature. Check out the <a href="https://codepen.io/chriddyp/pen/bWLwgP?editors=1100">codepen</a> to see the documentation and example styles available to you. To use the CSS, you need to assign a class to the component. You can do this by including a variable <code>className</code> in the list of component properties. Convert any dots (<code>.</code>) in the CSS to spaces in your code. For example, a primary button (<code>primary.button</code>) is created with:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">html</span><span class="o">.</span><span class="n">Button</span><span class="p">(</span>
+    <span class="n">children</span><span class="o">=</span><span class="s1">&#39;Click me!&#39;</span><span class="p">,</span>
+    <span class="nb">id</span><span class="o">=</span><span class="s1">&#39;my_button&#39;</span><span class="p">,</span>
+    <span class="n">className</span><span class="o">=</span><span class="s1">&#39;primary button&#39;</span>
+    <span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="grids">Grids<a class="headerlink" href="#grids" title="Permanent link">&para;</a></h4>
+<p>To create side-by-side elements, access the grid. First, create a <code>div</code> where you will include the side-by-side elements. Assign to each component the number of 'columns' you want the component to occupy out of a possible twelve. Assign to the <code>div</code> element the class name of 'row'. This example would create two side-by-side buttons, each occupying one half of the screen:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">html</span><span class="p">.</span><span class="n">Div</span><span class="p">([</span>
+    <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">,</span>
+    <span class="n">id</span><span class="o">=</span><span class="s1">&#39;submit-button&#39;</span><span class="p">,</span>
+    <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six rows&#39;</span><span class="p">),</span>
+
+    <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="s1">&#39;Undo&#39;</span><span class="p">,</span>
+    <span class="n">id</span><span class="o">=</span><span class="s1">&#39;undo-button&#39;</span><span class="p">,</span>
+    <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six rows&#39;</span><span class="p">)</span>
+<span class="p">],</span> <span class="n">className</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+</pre></div>
+</td></tr></table>
+
+<h4 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h4>
+<p>Another stylesheet makes available Bootstrap (a popular user interface library for the web), called <a href="https://dash-bootstrap-components.opensource.faculty.ai/">dash-bootstrap-components</a>. This stylesheet changes the development patterns with new syntax for the layout, so decide if you want to use Bootstrap before getting too far in development. </p>
+<h3 id="callbacks">Callbacks<a class="headerlink" href="#callbacks" title="Permanent link">&para;</a></h3>
+<p>Callbacks handle the interactivity of the app. Callbacks listen for events, like clicking on a button, and then handle the action required to make the button do it's job. You can update almost any property of any component through a callback. For example, you might want to update the figure property of a <code>dcc.Graph</code> component based on the value of a slider or other input. In other words, you will change the way the graph looks whenever the user interacts with the relevant widget.</p>
+<p>To create a callback, import <code>Input</code> and <code>Output</code> from <code>dash.dependencies</code>, use the callback decorator, provide one or more outputs and one or more inputs, and then define a function that handles the interaction.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
+<span class="c1"># Put callbacks below the layout or in a separate file</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;my-output&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)]</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">first_input</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">first_input</span> <span class="o">^</span> <span class="mi">2</span>
+</pre></div>
+</td></tr></table>
+
+<p>If you have more than one output, they should be passed as a list. The inputs need to be included in a list, regardless of how many there are. The inputs are passed to the function in the order they are listed. Two parameters are passed to the <code>Output</code> or <code>Input</code>, first the <code>id</code> of the component and second the property of interest. Thus, any component that supports interactivity must have an <code>id</code> property assigned (also, all components in your callbacks must also be represented in the layout, or you'll get an error). </p>
+<p>Callbacks can also be chained to create a cascade of changes to create dynamic UIs where one input component updates the available options of another input component. Provide the <code>Output</code> of one callback as the <code>Input</code> of another callback.</p>
+<p>Note that you won't provide the value for the <code>Output</code> components you will be updating within <code>app.layout</code>. This is because Dash automatically fires all of the callbacks upon page load, so anything you provide up front will simply be overwritten. For example, if you have a callback that updates the figure of a <code>dcc.Graph</code> component, don't include a <code>figure=</code> property for that graph in the <code>app.layout</code> section, you only need provide it an <code>id=</code> property.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't update variables that are outside of the callback's scope, as this can introduce unusual behavior.</p>
+</div>
+<h4 id="state">State<a class="headerlink" href="#state" title="Permanent link">&para;</a></h4>
+<p>Callbacks fire whenever there is a change to the input component(s). You might instead want to, say, wait for the user to finish updating a form before you fire the callbacks associated with those input fields. For this, you can use a <code>State</code> variable.  Include <code>State</code> variables as you would <code>Input</code> variables, in a list below the <code>Input</code> variables.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6
+7
+8
+9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">State</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;my-output&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)],</span>
+    <span class="p">[</span><span class="n">State</span><span class="p">(</span><span class="s1">&#39;my-input-state&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)]</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">first_input</span><span class="p">,</span> <span class="n">state_input</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">first_input</span> <span class="o">^</span> <span class="n">state_input</span>
+</pre></div>
+</td></tr></table>
+
+<p>This example raises the value of the <code>my-input</code> component by the <code>my-input-state</code> component, which allows the user to specify the power to raise to without re-calculating all of the outputs. The result is used to update the <code>children</code> property of the <code>my-output</code> component (children properties are common for text outputs, so this would print the result to the screen).</p>
+<h4 id="preventupdate-noupdate">PreventUpdate &amp; NoUpdate<a class="headerlink" href="#preventupdate-noupdate" title="Permanent link">&para;</a></h4>
+<p>If you want to include logic that prevents updating a component based on the property of some input, you can use <code>PreventUpdate</code>.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dash.exceptions</span> <span class="kn">import</span> <span class="n">PreventUpdate</span>
+
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
+    <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;my-output&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
+    <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)]</span>
+<span class="p">)</span>
+<span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">first_input</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">first_input</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="n">PreventUpdate</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">first_input</span> <span class="o">^</span> <span class="mi">2</span>
+</pre></div>
+</td></tr></table>
+
+<p>Here, if the input is not filled in, the output component will not be updated. </p>
+<p>Alternatively, you can  use <code>dash.no_update</code> to tell Dash to skip updating a specific output based on an input value. For example, if you want to update one output, but not another, based on an input, return <code>dash.no_update</code> for that output.</p>
+<h4 id="interactive-graphing">Interactive Graphing<a class="headerlink" href="#interactive-graphing" title="Permanent link">&para;</a></h4>
+<p>One really great feature of Dash is its ability to update multiple graphs based on the built-in interactivity of Plotly figures. Plotly figures support hovering, clicking, selecting, and zooming on charts and their data. Using Dash, you can update any component based on the user's interaction with the graph. This is probably best illustrated. Note the charts on the right are updated based on where the cursor hovers.</p>
+<p><img alt="interactive-graphing" src="../assets/dash-interactive-plot.gif" /></p>
+<p>See the <a href="https://dash.plot.ly/interactive-graphing">documentation</a> for details.</p>
+<h3 id="running-the-app">Running the app<a class="headerlink" href="#running-the-app" title="Permanent link">&para;</a></h3>
+<p>Run the app in the terminal with:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">python</span> <span class="p">&lt;</span><span class="n">app</span><span class="p">.</span><span class="n">py</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>where <code>&lt;app.py&gt;</code> is the path to your python script containing the application. By custom, this is called <code>app.py</code>. Visit <a href="http://127.0.0.1:8050">localhost:8050</a> in your browser (or whichever port the terminal states).</p>
+<h2 id="deployment">Deployment<a class="headerlink" href="#deployment" title="Permanent link">&para;</a></h2>
+<p>While Dash does provide a paid hosting platform, it's better to host on Heroku.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Don't deploy with Debut set to True
+(In app.py, set app.run_server(debug=False))</p>
+</div>
+<h4 id="heroku">Heroku<a class="headerlink" href="#heroku" title="Permanent link">&para;</a></h4>
+<p>Check out our <a href="../../deployment/heroku/">Heroku tutorial</a> for general guidance and the <a href="https://dash.plot.ly/deployment">step-by-step tutorial</a> in the official documentation (under <em>Heroku example</em>). There are a few configuration options and gotchas specific to Dash you'll need to know about that are covered in the tutorial.</p>
+<h4 id="flask">Flask<a class="headerlink" href="#flask" title="Permanent link">&para;</a></h4>
+<p>Dash is written on top of <code>flask</code>, and so integrates fairly easily with Flask applications. Deploying your Flask application is exactly the same as deploying your Dash application.</p>
+<h4 id="embedding-in-existing-websites">Embedding in existing websites<a class="headerlink" href="#embedding-in-existing-websites" title="Permanent link">&para;</a></h4>
+<p>Dash apps (and any other apps hosted through Heroku) can be inserted into a webpage using the iframe tag.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;&lt;path-to-my-app.com&gt;&quot;</span><span class="err">,</span> <span class="na">height</span><span class="o">=</span><span class="s">800,</span> <span class="na">width</span><span class="o">=</span><span class="s">700</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>Check out the <a href="../../portfolio/utilization-report/utilization-report/">Utilization Report</a> embedded in this site for an example. Note that with the free tier, the page may timeout before the app is spun up and loaded. You'll need to reload the site, which isn't the best user experience, so consider upgrading any app that you want to embed in this way.</p>
+<h2 id="tips-tricks">Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permanent link">&para;</a></h2>
+<h3 id="storing-data-performance">Storing data &amp; performance<a class="headerlink" href="#storing-data-performance" title="Permanent link">&para;</a></h3>
+<p>If your app includes expensive analytics, you may want to separate that process from the interactivity of your app to avoid expensive computations with every change of inputs. One option is to store the data in a hidden <code>div</code>. This will store the data in the user's browser for the duration of their session. Data has to be converted to a string like JSON for storage. You can either store the fully computed data or you can perform some computation, save the intermediate results, and then with a chained callback access that information to complete the interaction. The pre-processed data will be available to subsequent callbacks where you stored it. Finally, you can cache the data using <code>flask</code>. This will also allow for persisting the data between sessions. Once you're ready to worry about optimizing performance, see the <a href="https://dash.plot.ly/sharing-data-between-callbacks">docs</a>.</p>
+<h3 id="multi-page-apps">Multi-page Apps<a class="headerlink" href="#multi-page-apps" title="Permanent link">&para;</a></h3>
+<p>If you need basic functionality for multiple pages, check out the Tabs core component. If you really need a multi-page app, you can either embed multiple Dash apps in a Django or Flask app, or check out this <a href="https://dash.plot.ly/urls">guidance</a>. I'd also recommend this helpful <a href="https://towardsdatascience.com/how-to-build-a-complex-reporting-dashboard-using-dash-and-plotl-4f4257c18a7f">Towards Data Science</a> article. </p>
+<h3 id="extending">Extending<a class="headerlink" href="#extending" title="Permanent link">&para;</a></h3>
+<p>You can <a href="https://dash.plot.ly/plugins">write your own Dash components</a> in React JS, a popular JavaScript library for building user interfaces. You'll need to fork the sample component library and, of course, be comfortable working with React JS.</p>
+<h4 id="custom-css">Custom CSS<a class="headerlink" href="#custom-css" title="Permanent link">&para;</a></h4>
+<p>To add your own CSS, save the CSS files in a folder named <code>assets</code> in the project's root directory. Dash will automatically serve any CSS it finds here. Note that the CSS files are added in alphanumeric order, so if the order matters, prepend numeric values to the filenames to get the loading order you want. You can also copy the <a href="https://codepen.io/chriddyp/pen/bWLwgP.css">provided CSS</a> into this folder and edit it.</p>
+<h4 id="custom-javascript">Custom JavaScript<a class="headerlink" href="#custom-javascript" title="Permanent link">&para;</a></h4>
+<p>To add custom JavaScript, simply include a JavaScript file in the <code>assets</code> folder in the project's root directory. Dash will automatically include it. However, they recommend building new Dash components for any significant functionality you want to add.</p>
+                
+                  
+                
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../data-visualization/data-visualization/" title="Data Visualization" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Data Visualization
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../additional-resources/scoping/" title="Scoping Canvas" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Scoping Canvas
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Environmental Incentives
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://linkedin.com/in/eriktanderson" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://github.com/eanderson-ei" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/scripts.js"></script>
+      
+    
+  </body>
+</html>

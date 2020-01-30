@@ -275,6 +275,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/utilization-report/utilization-report/" title="Utilization Report" class="md-nav__link">
+      Utilization Report
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -643,6 +655,13 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#update-an-existing-app" class="md-nav__link">
+    Update an existing app
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
     Notes
   </a>
@@ -769,10 +788,82 @@
       <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
     
     <label class="md-nav__link" for="nav-11">
-      Additional Resources
+      Data Visualization
     </label>
     <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
       <label class="md-nav__title" for="nav-11">
+        Data Visualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-visualization/data-visualization/" title="Data Visualization" class="md-nav__link">
+      Data Visualization
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Python Packages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Python Packages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../python-packages/dash/" title="Dash" class="md-nav__link">
+      Dash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      Additional Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
         Additional Resources
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -836,10 +927,46 @@
       
 
 
-  <li class="md-nav__item">
-    <a href="../../development-guidance/" title="How to Maintain This Site" class="md-nav__link">
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-14" type="checkbox" id="nav-14">
+    
+    <label class="md-nav__link" for="nav-14">
       How to Maintain This Site
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-14">
+        How to Maintain This Site
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development-guidance/" title="Development Guide" class="md-nav__link">
+      Development Guide
     </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../notes/" title="Tips & Tricks" class="md-nav__link">
+      Tips & Tricks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
   </li>
 
     
@@ -878,6 +1005,13 @@
   
     <nav class="md-nav">
       <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#update-an-existing-app" class="md-nav__link">
+    Update an existing app
+  </a>
+  
+</li>
         
           <li class="md-nav__item">
   <a href="#notes" class="md-nav__link">
@@ -1024,6 +1158,9 @@
 </li>
 </ol>
 <p>Your app should now be up and running on Heroku. If you're on a free tier, it may take 10-20 seconds for the app to load each time because the server needs to spin it up. It will be active for 30 minutes, but will sleep again after that time. You can upgrade to a Hobby license for $7 per dyno per month.</p>
+<h4 id="update-an-existing-app">Update an existing app<a class="headerlink" href="#update-an-existing-app" title="Permanent link">&para;</a></h4>
+<p>Updating an existing app is as simple as running <code>git push heroku master</code> from the project's root directory. However, if you have cloned the repository (or you, say, deployed it last time from a different computer), you'll need to establish the remote connection with heroku first.</p>
+<p>Type <code>heroku login</code> to login (a browser window will open) and then <code>heroku git:remote -a &lt;app-name&gt;</code> to connect to the app. The <code>&lt;app-name&gt;</code> can be found on your <a href="dashboard.herroku.com/apps">heroku page</a>.</p>
 <h4 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h4>
 <p>Note that in recent updates the setup.sh may not be required, instead you can use this command in the Procfile:</p>
 <p><code>web: streamlit run --server.enableCORS false my_script.py</code> </p>
@@ -1114,6 +1251,8 @@
       <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/scripts.js"></script>
       
     
   </body>
