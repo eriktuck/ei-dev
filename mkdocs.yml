@@ -83,7 +83,9 @@ extra:
       link: 'https://github.com/eanderson-ei'
   
 # Analytics
-google_analytics: ['G-K8SJ57V0JS', 'auto']
+google_analytics:
+  - UA-151885346-1
+  - 'auto'
 
 # Extra JavaScript
 extra_javascript:
