@@ -100,11 +100,11 @@ It's best to work within the source code mode (`ctrl+/`), as Markdown treats thi
 <p> Here's some more content with a <a href='https://enviroincentives.com'>link</a></p>
 </details>
 
-Note that the `details` tag is styled by the extension [admonition](#admonition) with additional styling. I couldn't prevent this behavior by removing the admonition extension from my yaml file, which may be a bug. However, [adding custom CSS](#css) may help override this behavior. 
+Note that the `details` tag is styled by the extension [admonition](#admonition) as a call out box. I couldn't prevent this behavior by removing the admonition extension from my yaml file when using the Material Theme. [Adding custom CSS](#css) or switching to a different theme may help override this behavior. 
 
 ##### PyMdown
 
-A ton of functionality in this [package of extensions](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/), including highlighting text, inline comments and editing, math equations, and tasklists (though not interactive tasklists).
+A ton of functionality in this [package of extensions](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/), including highlighting text, inline comments and editing, math equations, and task lists (though not interactive task lists).
 
 
 #### JavaScript

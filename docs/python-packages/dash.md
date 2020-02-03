@@ -189,7 +189,7 @@ where `<app.py>` is the path to your python script containing the application. B
 While Dash does provide a paid hosting platform, it's better to host on Heroku.
 
 !!! warning
-    Don't deploy with Debut set to True
+    Don't deploy with Debug set to True
     (In app.py, set app.run_server(debug=False))
 
 #### Heroku

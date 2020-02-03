@@ -2,49 +2,7 @@ HELP ME PLEASE!
 
 ## Setting Up Git & GitHub
 
-### Download Git
 
-git-scm.com
-Download & run installer
-`git --version` on cmd to make sure its successfully installed
-
-### Configure Git
-
-`git config --global user.name <name>` 
-`git config --global user.email <email>`
-`git config --list` to see all settings
-
-**Git Log**
-`git log` <- all commits
-`git show` <- last commit 
-`git ls-files` <- lists all files that git is tracking
-`git log --oneline --graph --decorate --all` <-more detailed history of commits
-
-##### To create an alias for the git history command
-`git config --global alias.hist "log --oneline --graph --decorate --all"`
-now use git `hist` to see the same command, note it still accepts additional arguments (for example, provide `--filename` to see history for one file)
-
-History will be served line by line, type `q` to quit at any time
-
-**Setup editor** (VSCode should be already available as 'code')
-Add full folder path that includes executable to system path environment variable, separate with semi-colon
-Restart Bash
-Create alias for editor
-`notepad++ ~/.bash_profile`
-`alias npp='notepad++ -mulitInst - nosession'`
-`git config --global core.editor "notepad++ -multiInst -nosession"`
-`git config --global -e`
-
-**Setup Diff & Merge Tool**
-
-This section describes how to use p4merge. Use VS Code instead
-
-git config --global diff.tool p4merge
-git config --gloabl difftool.p4merge.path "C:/... /p4merge.exe
-git config --global difftool.prompt false
-git config --global merge.tool p4merge
-git config --global mergetool.p4merge.path "C:/.../p4merge.exe
-git config --global mergetool.prompt false
 
 ## Git Workflow
 
