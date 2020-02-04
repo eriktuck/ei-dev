@@ -47,7 +47,7 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 
 This project is available on GitHub [here](https://github.com/eanderson-ei/ei-dev).
 
-Fork the project to begin contributing. You can find more information on how to fork a project [here](.../git/collaborating-with-git.md), or if you're unfamiliar with Git and GitHub, start [here](../git/install-configure-git.md).
+Fork the project to begin contributing. You can find more information on how to fork a project [here](../git/collaborating-with-git.md), or if you're unfamiliar with Git and GitHub, start [here](../git/install-configure-git.md).
 
 Here are the technologies used in this project, you'll need to be familiar with these to contribute.
 
@@ -60,4 +60,24 @@ Here are the technologies used in this project, you'll need to be familiar with 
 * Github Project Pages - Deployment (gh-pages branch); see [MkDocs deployment documentation](https://www.mkdocs.org/user-guide/deploying-your-docs/).
 * Screen2Gif - a screen recording app that saves outputs as gifs (for video instruction)
 * YouTube - custom videos for instruction, etc.
+
+Use`mkdocs serve` to visualize the site while working on it.
+
+Add the `site/` folder to the .gitignore file.
+
+### Deploying changes
+
+To deploy the website:
+
+1. Open the local repository
+2. Make sure you're working on the master branch (use `git status`)
+3. Open the Anaconda Prompt* and run
+
+```bash
+mkdocs gh-deploy
+```
+
+Note that in the GitHub repo on the Settings Tab, under project pages, should have the ghp-pages branch selected as the page.
+
+*To add the Anaconda Prompt to your right-click context menu on windows, see this [gist](https://gist.github.com/jiewpeng/8ba446acf329b1801bf91db767d179ea).
 

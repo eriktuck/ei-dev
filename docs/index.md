@@ -18,7 +18,7 @@ If you're here to better understand how the Metrics service line can support you
 * Data Analysis
 * [Tool Development](deployment/deployment-overview.md)
 * [Databases](data-management/database-overview.md)
-* Visualization
+* [Visualization](data-visualization/data-visualization.md)
 * Mapping and Spatial Analysis
 
 ### Metrics Service Line Experts

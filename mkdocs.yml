@@ -35,8 +35,8 @@ nav:
   - 'Step 5: Identify a Solution': 'metrics-design/step5-identify-a-solution.md'
   - 'Step 6: Implement': 'metrics-design/step6-implement.md'
   - 'Step 7: Iterate & Adapt': 'metrics-design/step7-adapt.md'
-- Project Organization:
-  - 'Project Planning': 'project-organization/project-planning.md'
+- The Basics:
+  - 'Getting Started': 'getting-started.md'
 - Git:
   - 'Install Git': 'git/install-configure-git.md'
   - 'Create Project': 'git/initializing-git.md'
@@ -66,8 +66,8 @@ nav:
   - 'Persona Development Guide': 'additional-resources/persona-guide.md'
   - 'Interview Guide': 'additional-resources/interview-guide.md'
 - How to Maintain This Site: 
-  - 'Development Guide': 'development-guidance.md'
-  - 'Tips & Tricks': 'notes.md'
+  - 'Development Guide': 'maintenance/development-guidance.md'
+  - 'Tips & Tricks': 'maintenance/tips-and-tricks.md'
 
 # Extensions
 markdown_extensions:
