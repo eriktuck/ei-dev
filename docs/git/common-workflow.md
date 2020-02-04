@@ -98,6 +98,10 @@ If `-m "Message"` is excluded, the default editor will be opened and a message s
 `git commit -am "Message"`
 For any files already tracked (use `git ls-files` if unsure or `git status` to see what's in the staging area).
 
+#### Ammend last commit message
+
+`git commit --amend -m "<ammended commit message"`
+
 #### Rename files
 
 `git mv <file1> <file2>`

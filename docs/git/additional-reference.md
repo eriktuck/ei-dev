@@ -22,10 +22,6 @@ foo/*
 
 `git fetch -p` will prune (delete) stale references if you made changes on GitHub that aren't reflected in your local repository, such as deleting a branch.
 
-### Ammend last commit message
-
-`git commit --amend -m "<ammended commit message"`
-
 ### Transfer project
 
 Repositories can be transferred from a personal accont to an organization (or vice versa). Under the repo settings, in the 'Danger Zone', select transfer. You might then want to fork the repo back to the original account.
@@ -33,3 +29,4 @@ Repositories can be transferred from a personal accont to an organization (or vi
 ### TO DO
 
 * Rebase
+* Organizations & Teams
