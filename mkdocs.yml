@@ -35,8 +35,8 @@ nav:
   - 'Step 5: Identify a Solution': 'metrics-design/step5-identify-a-solution.md'
   - 'Step 6: Implement': 'metrics-design/step6-implement.md'
   - 'Step 7: Iterate & Adapt': 'metrics-design/step7-adapt.md'
-- The Basics:
-  - 'Getting Started': 'getting-started.md'
+# - The Basics:
+#   - 'Getting Started': 'getting-started.md'
 - Git:
   - 'Install Git': 'git/install-configure-git.md'
   - 'Create Project': 'git/initializing-git.md'
@@ -58,6 +58,7 @@ nav:
   - 'Machine Learning Tutorial': 'data-science/machine-learning-tutorial/machine-learning-tutorial.md'
 - Data Visualization:
   - 'Data Visualization': 'data-visualization/data-visualization.md'
+  - 'Dashboards': 'data-visualization/dashboards.md'
 - Python Packages:
   - 'Dash': 'python-packages/dash.md'
 - Additional Resources:
