@@ -56,19 +56,29 @@ Type `git config --global -e` to confirm this worked. VSCode should open and dis
 !!! info
     You can open files with the command `start <filepath>` using your system's default editor for that filetype. If you want to open a project in VSCode from the command line (or Git Bash), type `code .`, where the period represents the current folder. This will open VSCode within the context of the project's folder. See the [documentation](https://code.visualstudio.com/docs/editor/command-line) for other ways you can open files/folder from the command line.
 
-**Setup Diff & Merge Tool**
+#### Setup Diff & Merge Tool
 
-When there are conflicting changes to a file, you'll need to tell git which changes to keep using Diff and Merge tools. Type the following one line at a time in Git Bash. [REQUIRES TESTING]
+When there are conflicting changes to a file, you'll need to tell Git which changes to keep using Diff and Merge tools. Use the command `git config --global -e` to open Git's global configuration file and paste the following into it:
 
 
-```bash
-git config --global diff.tool vscode
-git config --global difftool.vscode cmd = "code --wait $MERGED"
-git config --global difftool.prompt false
-git config --global merge.tool p4merge
-git config --global mergetool.vscode cmd = "code --wait --diff $LOCAL $REMOTE"
-git config --global mergetool.prompt false
+```
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
 ```
 
 !!! info
     You can also use VSCode to compare two files using the command `code --diff <filepath1> <filepath2>`. This option is available from within VSCode through the context menu as well.
+
+### Connect to GitHub
+
+You'll want to set up an account on [GitHub](https://github.com/). You can either create a single profile for both your personal and professional projects, or you can set up a profile specifically for your professional projects.
+
+You will also want to join the Environmental Incentives organization. Once you're set up, let someone on the Metrics team know your GitHub user name and we'll send you an invite.
+
+The next section will walk through connecting your local Git repository to GitHub.

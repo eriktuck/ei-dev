@@ -40,6 +40,9 @@ nav:
 - Git:
   - 'Install Git': 'git/install-configure-git.md'
   - 'Create Project': 'git/initializing-git.md'
+  - 'Common Workflow': 'git/common-workflow.md'
+  - 'Collaborating with Git': 'git/collaborating-with-git.md'
+  - 'Additional Reference': 'git/additional-reference.md'
 - Development:
   - 'Command Line Tools': 'development/command-line-tools.md'
   - 'Scheduling Tasks': 'development/scheduling-tasks.md'

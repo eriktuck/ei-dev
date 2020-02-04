@@ -34,7 +34,7 @@ To link to another page, simply provide the relative path to the page as a markd
 
 `[here's a link to another document](foldername/filename.md#header-name)`
 
-`[here's a link to a head in this document](#header-name)`
+`[here's a link to a header in this document](#header-name)`
 
 #### Images and Gifs
 

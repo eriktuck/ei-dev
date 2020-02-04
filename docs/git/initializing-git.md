@@ -49,7 +49,7 @@ You will learn more about commits and other features of git in the Using Git sec
 
 Navigate to your [Github.com](#https://github.com) page and login. Click the green Create New Repository button. Name it with the same name you used in step 1 for the project directory. Provide a description. The repository will be public. DO NOT create a README or .gitignore file.
 
-After you click 'Ok', Github will provide instructions for importing your project files into the repository. Use HTTP or SSH if you have it set up. Copy the url provided to your clipboard. You'll use two commands in GitBash to accomplish this:
+After you click 'Ok', Github will provide instructions for importing your project files into the repository. Copy the url provided to your clipboard. You'll use two commands in GitBash to accomplish this:
 
 ```bash
 git remote add origin <url>
@@ -59,6 +59,8 @@ git push -u origin master --tags
 The first line establishes a remote connection to the repository. Replace the url with the url provided by github to your project repository. Note that you can change the name 'origin' to anything you'd like, but origin is used by convention. You will be prompted to sign into your Github account.
 
 The second line 'pushes' your files/folders up to Github. The `-u` flag tells Github to track these files/folders along with master, while the `--tags` flag will move any messages from previous commits.
+
+You will be prompted for your username and password when you use `git push` (see other authentication options [here](https://help.github.com/en/github/using-git/which-remote-url-should-i-use)). 
 
 If this fails, it may be because you already have a remote established named 'origin'. Try `git remove rm origin` to remove any existing connections, or change the name `origin` to something unique. To confirm your remote connection was established, use the command `git remote -v`. 
 
@@ -103,5 +105,4 @@ At this point, you may wish to switch into your IDE and open the project folder 
 ## Additional Resources
 
 * [Corey Shafer's excellent series on Git](https://www.youtube.com/watch?v=HVsySz-h9r4&list=PL-osiE80TeTuRUfjRe54Eea17-YfnOOAx&index=1)
-* 
 

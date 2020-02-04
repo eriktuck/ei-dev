@@ -1,6 +1,6 @@
 ## Git Workflow
 
-Once you work with Git a few times, you'll have this workflow memorized. See the next section for more on [Collaborating with Git], and the [Additional Reference] if you don't find what you need here.
+Once you work with Git a few times, you'll have this workflow memorized. See the next section for more on [Collaborating with Git](collaborating-with-git.md), and the [Additional Reference](additional-reference.md) if you don't find what you need here.
 
 ### Common workflow on master
 
@@ -12,11 +12,11 @@ The master branch is the main branch of the project. When you're working on your
 4. Pull any changes from GitHub with `git pull origin master`.
 5. Work on your feature. You can open, add, and remove files using the Windows Explorer GUI or using unix commands in Git Bash.
 6. Commit changes locally:
-   1. If new files were created, `git add -A` then `git commit -m "Message"`
-   2. Otherwise, express commit `git commit -am "Message"`
+    1. If new files were created, `git add -A` then `git commit -m "Message"`
+    2. Otherwise, express commit `git commit -am "Message"`
 7. Push to GitHub:
-   1. `git pull origin master` (in case others are working on it)
-   2. `git push origin master` 
+    1. `git pull origin master` (in case others are working on it)
+    2. `git push origin master` 
 
 If you work on multiple features in one session without committing changes, you might want to commit each file one at a time so that your commit messages are associated with just the relevant changes. Use `git status` to see where you have changes, and use `git add <filename>` to add only the relevant files to the staging area to commit, commit those changes, and then add the next file or set of files. You can pass in folders (which will include all files within the folder) or globbing patterns (i.e., wildcards) to select multiple files at once. You can wait until all changes are committed to push your changes to GitHub. 
 
@@ -45,13 +45,23 @@ Now that you're familiar with working on master, we'll quickly summarize the sta
 #### Creating and committing a branch
 
 ```bash
-git branch <branch_name>  # creates branch
-git checkout <branch_name>  # checks out branch
+git checkout -b <branch_name>  # creates new branch and switches to it
 # work on your feature
 git add -A
 git commit -m "<message>"
-git push -u origin <branch_name>  # the -u flag is required only on first commit
-git branch -a  # to confirm
+git push -u origin <branch_name>  # the -u flag is required only on 
+```
+
+#### Working on a branch
+
+Use `git branch -a`  to see all branches.
+
+```bash
+git checkout <branch_name>
+# work on your feature
+git add -A
+git commit -m "<message>"
+git push origin <branch_name>
 ```
 
 #### Merging to master
@@ -61,7 +71,6 @@ After you've tested the branch, you will need to merge with master.
 ```bash
 git checkout master  # move from working on branch to master
 git pull origin master  # update master branch
-git branch --merged  # prints out which branches merged
 git merge <branch_name>  # merges branch with master
 git push origin master
 git branch -d <branch_name>  # delete branch locally
@@ -70,14 +79,14 @@ git push origin --delete <branch_name>  # delete branch remotely
 
 ## Workflow Commands
 
-#### Adding files to staging area
+#### Add files to staging area
 
 Use `git add <filename>` to add a file.
 Use `git add -A` to add everything in the working directory.
 
-#### Removing files from the staging area
+#### Remove files from the staging area
 
-Use `git reset <filename>` to remove from the staging area or `git reset` to remove everything.
+Use `git reset HEAD <filename>` to remove from the staging area or `git reset HEAD` to remove everything.
 
 #### Regular commit
 
@@ -89,7 +98,7 @@ If `-m "Message"` is excluded, the default editor will be opened and a message s
 `git commit -am "Message"`
 For any files already tracked (use `git ls-files` if unsure or `git status` to see what's in the staging area).
 
-#### Renaming files
+#### Rename files
 
 `git mv <file1> <file2>`
 Use `git add -A` if changes (renames, deletions) were made outside of Git. Git is smart enough to know if a new file in the staging area is actually a renamed file that was deleted.
@@ -99,16 +108,24 @@ Use `git add -A` if changes (renames, deletions) were made outside of Git. Git i
 `git rm filename`
 Use `git add -u` if files were deleted outside of Git Bash.
 
-#### Removing files from Git history
+#### Remove files from Git history
 
 If you want to remove a file that has already been committed:
 
 1. Add the file to the `.gitignore` file
 2. Use the command `git rm -r --cached <filename>`
 
-#### Diffs
+#### Undo changes
+
+Use `git checkout -- <filename>` to undo the changes made since the last commit.
+
+#### Compare differences
 
 Use `git diff <filename>` to shows recent changes to a file.
+
+Use `git diff <commit1> <commit2>` to compare all changes between two commits (use `git hist` to git the sha-1 codes for commits). Use `HEAD` as the second sha-1 hash to compare to the last commit.
+
+#### For a more comprehensive overview, see here
 
 [Example workflow](https://www.gun.io/blog/how-to-github-fork-branch-and-pull-request)
 
@@ -122,46 +139,18 @@ Use `git diff <filename>` to shows recent changes to a file.
 
 **Open file with VSCode** `code <file name>` 
 
-### Diffs & Merges
+## Merges
 
-If you encounter a merge issue after pulling from the repo, and it can't be automatically merged, open the file in VSCode and accept/reject changes (will be highlighted in VSCode).
+If you encounter a merge issue after pulling from the repo, and it can't be automatically merged, use VSCode (your merge tool) to address any conflicts. 
 
-`code <mergefile>`
+While Git is in a merging state, launch your merge tool with `git mergetool`. Git will open each conflicting file in VSCode one at a time. Conflicting code will be highlighted. Address conflicts, save and close the editor. You can now add the file to the staging area and push all changes to the repo. 
 
-Then save and close the editor. You can now add the file to the staging area and push all changes to the repo (`git commit -m "Fix merge conflict"` > `git push`).
+You might find a new file with `.orig` extension created by Git after this process. This is the original version of the conflicting file. Delete this file using `git rm <filename.orig>`. You might also want to add this file extension to your `.gitignore` file.
 
-### Working Together
+## Tags
 
-There are two common ways of collaborating:
+Git supports tagging to mark major milestones in your repository. Say you're finally ready to deploy, and you want to make sure you know the version of your project that is getting deployed. You could then create a tag each time the code is deployed. 
 
-1. Fork the repo and submit pull requests to the repo owner
-2. Add Collaborators to your repo to give others push authority
+Use `git tag -a <tag_name> -m "<tag message>"` to create a tag. For example, you could tag v1.0 of your code using `git tag -a v1.0 -m "Version 1.0 Release"`.
 
-Forking the repo and submitting pull requests is the safest, as the repo owner is in charge of reviewing all proposed changes before integrating them into the repo. However, that can create a lot of work for the repo owner depending on the frequency of commits.
-
-Adding Collaborators can be done in the Settings tab of a repo. This allows anyone listed as a collaborator to work on the repo as if it was their own. This will streamline the workflow, but you risk missing simple mistakes, severe mistakes, and malicious intent. 
-
-https://kbroman.org/github_tutorial/pages/fork.html
-
-### Unstaging files
-
-
-
-2. 
-
-# Additional Reference
-
-### Adding empty folders
-
-Empty folders are automatically ignored by git, since it only stores files. Sometimes you want to include an empty folder if you want to commit a folder structure before populating it with files or add a folder for temporarily storing data. To do this you need to add an empty file to the folder. By convention, we can call this `.keep` or `.gitkeep`. Create a new text document within the folder you want to keep, leave it empty, and save it as `.keep` or `.gitkeep`.
-
-If you also want to ignore the contents of this folder, but keep the folder (e.g., for log files or temporary data that isn't deleted), add the following to the `.gitignore` file:
-
-```
-# ignore the files in the folder foo
-foo/*
-
-# but keep the folder
-!foo/.keep
-```
-
+To see tags, use `git tag --list`. You can also see tags in context of your history with `git hist`. If you want to see the details associated with a specific tag, use `git show <tag_name>`.
