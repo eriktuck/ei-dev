@@ -54,10 +54,6 @@ Non-technical staff working with metrics staff to develop a data product (e.g., 
 
 ​	**Value Propositions:** This product will include overviews of available services and technologies, as well as project examples, that non-technical staff can peruse at their leisure. Metrics staff can also use the wiki to introduce options and explain our engagement process.
 
-#### Use Cases
-
-1. 
-
 #### User Stories
 
 1. As the metrics service line lead, I want to \_\_\_\_\_\_ so I can \__\_\_\_\_:

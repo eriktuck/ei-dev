@@ -14,8 +14,8 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 * Deployment (non-tech: how do we deliver products?)
 * Data Management (non-tech: database overview)
 * Data Science (non-tech: types of data analysis)
-* Spatial Analysis (non-tech: types of spatial data analysis)
 * Data Visualization (non-tech: visualization options)
+* Spatial Analysis (non-tech: types of spatial data analysis)
 * Packages
 * News/Blog 
 * How to Maintain this Site
@@ -42,4 +42,22 @@ This was produced with mkdocs. For full documentation visit [mkdocs.org](https:/
 * `pip install mkdocs`
 
 * `pip install mkdocs-material`
+
+## Contributing
+
+This project is available on GitHub [here](https://github.com/eanderson-ei/ei-dev).
+
+Fork the project to begin contributing. You can find more information on how to fork a project [here](.../git/collaborating-with-git.md), or if you're unfamiliar with Git and GitHub, start [here](../git/install-configure-git.md).
+
+Here are the technologies used in this project, you'll need to be familiar with these to contribute.
+
+* MkDocs - static site generator that requires Markdown
+* Markdown - markup text language
+* Typora - Markdown editor
+* VS Code - IDE for yaml
+* Git - version control
+* Github - code sharing
+* Github Project Pages - Deployment (gh-pages branch); see [MkDocs deployment documentation](https://www.mkdocs.org/user-guide/deploying-your-docs/).
+* Screen2Gif - a screen recording app that saves outputs as gifs (for video instruction)
+* YouTube - custom videos for instruction, etc.
 
