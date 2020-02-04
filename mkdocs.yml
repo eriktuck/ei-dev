@@ -38,6 +38,7 @@ nav:
 - Project Organization:
   - 'Project Planning': 'project-organization/project-planning.md'
 - Git:
+  - 'Install Git': 'git/install-configure-git.md'
   - 'Create Project': 'git/initializing-git.md'
 - Development:
   - 'Command Line Tools': 'development/command-line-tools.md'

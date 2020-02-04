@@ -100,7 +100,7 @@ It's best to work within the source code mode (`ctrl+/`), as Markdown treats thi
 <p> Here's some more content with a <a href='https://enviroincentives.com'>link</a></p>
 </details>
 
-Note that the `details` tag is styled by the extension [admonition](#admonition) as a call out box. I couldn't prevent this behavior by removing the admonition extension from my yaml file when using the Material Theme. [Adding custom CSS](#css) or switching to a different theme may help override this behavior. 
+Note that the `details` tag is styled by the extension [admonition](#admonition) as a call out box when using the Material Theme. I couldn't prevent this behavior by removing the admonition extension from my yaml file. Switching to a different theme will avoid this behavior. [Adding custom CSS](#css) may also be an option.
 
 ##### PyMdown
 
@@ -136,7 +136,7 @@ for (var i = 0, linksLength = links.length; i < linksLength; i++) {
 
 This script gets a list of all links in the document, checks whether the hostname is the same as the hostname of the current window (i.e., the hostname of my website), and then updates the target property of each link to `"_blank"` whenever the link is external.
 
- Note you can also add JavaScript (and CSS) by defining a [custom theme](https://www.mkdocs.org/user-guide/custom-themes/).
+You can also add JavaScript (and CSS) by defining a [custom theme](https://www.mkdocs.org/user-guide/custom-themes/).
 
 #### CSS
 

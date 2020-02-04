@@ -1,16 +1,16 @@
 # Installing & Configuring Git
 
-Git is version control software for code. When paired with Github, git is a convenient way to collaborate on coding projects. This series will help you get comfortable with the basic workflow and commands, and includes a helpful [reference] for when you get stuck.
+Git is version control software for code. When paired with Github, Git is a convenient way to collaborate on coding projects. This series will help you get comfortable with the basic workflow and commands, and includes a helpful [reference] for when you get stuck.
 
 ### Download & Install Git
 
-Go to [git-scm.com](git-scm.com) to download git. Run the installer. I recommend installing only Git Bash in the context menu. I also recommend checking the option to '*Use Git from the Windows Command Prompt*'. 
+Go to [git-scm.com](git-scm.com) to download Git. Run the installer. I recommend installing only Git Bash in the context menu. I also recommend checking the option to '*Use Git from the Windows Command Prompt*'. 
 
 Open Git Bash (right-click to bring up the context menu or find it in your programs folder) and type  `git --version` to make sure it's successfully installed.
 
 ### Configure Git
 
-To get the most from git, you can configure a few of its global setings. In Git Bash, type the following commands:
+To get the most from Git, you can configure a few of its global setings. In Git Bash, type the following commands:
 
 ```bash
 git config --global user.name <name> 
@@ -31,7 +31,7 @@ The log is helpful when you need to see the history of changes made or roll back
 
 #### Create an alias for the git history command
 
-We'll customize the hist command to provide more information when we use it. You can use this pattern to alias other commands as well. 
+We'll customize the `hist` command to provide more information when we use it. You can use this pattern to alias other commands as well. 
 
 In Git Bash, type:
 
@@ -45,13 +45,13 @@ History will be served line by line, type `q` to quit at any time.
 
 #### Setup your preferred editor 
 
-You must provide a message describing your changes when you commit. You can usually type this directly into Git Bash, but sometimes you'll want to provide a lengthier message. You can set up your default editor for commit messages. This will set up VSCode as the default editor (note that --wait is only required for VSCode, and other editors may not require that flag).
+You must provide a message describing your changes when you commit. You can usually type this directly into Git Bash, but sometimes you'll want to provide a lengthier message. You can set up your default editor for commit messages. This will set up VSCode as the default editor (note that `--wait` is only required for VSCode, and other editors may not require that flag).
 
 ```bash
 git config --global core.editor "code --wait"
 ```
 
-Type `git config --global -e` to confirm this worked. VSCode should open and display the contents of Git's configuraiton file.
+Type `git config --global -e` to confirm this worked. VSCode should open and display the contents of Git's configuration file.
 
 !!! info
     You can open files with the command `start <filepath>` using your system's default editor for that filetype. If you want to open a project in VSCode from the command line (or Git Bash), type `code .`, where the period represents the current folder. This will open VSCode within the context of the project's folder. See the [documentation](https://code.visualstudio.com/docs/editor/command-line) for other ways you can open files/folder from the command line.
@@ -71,4 +71,4 @@ git config --global mergetool.prompt false
 ```
 
 !!! info
-    You can also use VSCode to compare two files using the command `code --diff <filepath1> <filepath2>. This option is available from within VSCode through the context menu as well.
+    You can also use VSCode to compare two files using the command `code --diff <filepath1> <filepath2>`. This option is available from within VSCode through the context menu as well.
