@@ -208,7 +208,7 @@ Dash apps (and any other apps hosted through Heroku) can be inserted into a webp
 <iframe src="<path-to-my-app.com>", height=800, width=700></iframe>
 ```
 
-Check out the [Utilization Report](../portfolio/utilization-report/utilization-report.md) embedded in this site for an example. Note that with the free tier, the page may timeout before the app is spun up and loaded. You'll need to reload the site, which isn't the best user experience, so consider upgrading any app that you want to embed in this way.
+Note that with the free tier, the page may timeout before the app is spun up and loaded. You'll need to reload the site, which isn't the best user experience, so consider upgrading any app that you want to embed in this way.
 
 ## Tips & Tricks
 
