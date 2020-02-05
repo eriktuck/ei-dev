@@ -1,6 +1,8 @@
 # Dashboards
 
-Dashboards promise to distill meaning from complexity and facilitate at-a-glance performance monitoring. However, if poorly designed, they can result in an overwhelming array of incoherent data visualizations that confuse more than illuminate. This page will help you [design a dashboard](#designing-a-dashboard) and [select a platform](#selecting-a-platform) to implement it.
+Dashboards promise to distill meaning from complexity and facilitate at-a-glance performance monitoring. However, if poorly designed, they can result in an overwhelming array of incoherent data visualizations that confuse more than illuminate. There's a reason we don't all walk around wearing [Tony Stark's helmet](https://cdn0.tnwcdn.com/wp-content/blogs.dir/1/files/2012/06/Iron_Man_Mark_VII_HUD_design_By_Jayse_Hansen_1400.png). 
+
+This page will help you [design a dashboard](#designing-a-dashboard) and [select a platform](#selecting-a-platform) to implement it.
 
 ## Designing a dashboard
 
@@ -123,7 +125,7 @@ Dash is a Python library for building analytic web apps. In terms of simplicity 
 
 #### Google Data Studio
 
-Google's Data Studio is a great dashboard tool if you're already using Google Sheets and need to build something quickly. You'll probably be disappointed with it's ability to blend data and compute. The functions available are rather limited as compared with Google Sheets, and the values users pass to widgets aren't exposed for computation (e.g., the start and end dates of the filter below). However, it's a great option if you have data that is in one place and already computed (e.g., a budget sheet). There are a number of options for restricted sharing, similar to Google Sheets. If you were thinking about doing your dashboard in Google Sheets, try Data Studio instead.
+Google's Data Studio is a great dashboard tool if you're already using Google Sheets and need to build something quickly. You'll probably be disappointed with it's ability to blend data and compute. The functions available are rather limited as compared with Google Sheets, and the values users pass to widgets aren't exposed for computation (e.g., the start and end dates of the filter below). However, it's a great option if you have data that is in one place and already computed (e.g., a budget sheet). There are a number of options for restricted sharing, similar to Google Sheets. Best of all, it's totally free.
 
 ---
 
@@ -143,7 +145,7 @@ Power BI is desktop software that allows for publishing and sharing dashboards t
 
 #### Fine Report
 
-Fine Report has a lot of functionality, but I find it to be rather unappealing aesthetically. They seem to have spent most of their time developing widgets that would look good in Minority Report but don't actually communicate any meaning. Don't build a dashboard like the one pictured below (which is from their website). However, as a truly free and no-code solution that still has a good deal of functionality, Fine Report may be your best option - just don't fall for the temptation of their 'Extended Charts'. Check out their [full library](http://endemo.finereport.com:8080/webroot/decision/login?origin=ba8ff0b2-3f05-4035-8406-8c05a968606b) of examples.
+Fine Report has a lot of functionality, but I find it to be rather unappealing aesthetically. They seem to have spent most of their time developing widgets that would look good in the 2002 sci-fi thriller *Minority Report* but don't actually communicate any meaning. Don't build a dashboard like the one pictured below (which is from their website). However, as a truly free and no-code solution that still has a good deal of functionality, Fine Report may be your best option - just don't fall for the temptation of their 'Extended Charts'. Check out their [full library](http://endemo.finereport.com:8080/webroot/decision/login?origin=ba8ff0b2-3f05-4035-8406-8c05a968606b) of examples.
 
 ---
 
