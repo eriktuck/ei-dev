@@ -54,8 +54,6 @@ Dashboards are having a moment right now as startups and Fortune-500 companies a
 
 There are free options and there are subscription-based options. Subscriptions are not unreasonable, ranging from $30 to $200 a month and up. The budget options limit features like the amount of data you can use, the number of data sources, the number of dashboards, and the frequency of data updates. Carefully review the pricing tiers and their associated limitations before selecting a paid option.
 
-The existing free options are more than sufficient for our purposes in my opinion, and are the only platforms I've reviewed here. 
-
 #### Sharing and hosting
 
 Consider how you will share the dashboard and where it will be hosted. I would suggest that to be really useful the dashboard should be available on the web. Many cloud-based platforms are available for hosting a web-based dashboard. However, make sure you don't share any personal or sensitive information publicly.

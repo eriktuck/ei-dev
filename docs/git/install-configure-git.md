@@ -4,7 +4,7 @@ Git is version control software for code. When paired with Github, Git is a conv
 
 ### Download & Install Git
 
-Go to [git-scm.com](git-scm.com) to download Git. Run the installer. I recommend installing only Git Bash in the context menu. I also recommend checking the option to '*Use Git from the Windows Command Prompt*'. 
+Go to [git-scm.com](https://git-scm.com) to download Git. Run the installer. I recommend installing only Git Bash in the context menu. I also recommend checking the option to '*Use Git from the Windows Command Prompt*'. 
 
 Open Git Bash (right-click to bring up the context menu or find it in your programs folder) and type  `git --version` to make sure it's successfully installed.
 
