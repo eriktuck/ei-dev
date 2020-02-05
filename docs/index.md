@@ -25,7 +25,7 @@ If you're here to better understand how the Metrics service line can support you
 
 Metrics service line experts will want to familiarize themselves with all of the content here. This site provides helpful training resources, captures best practices for developing metrics products, and describes our standard consulting process for internal and external clients. 
 
-If you will be contributing to the development of this site, please reference this [guidance](development-guidance.md).
+If you will be contributing to the development of this site, please reference this [guidance](maintenance/development-guidance.md).
 
 ## The Brown Bag
 

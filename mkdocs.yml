@@ -24,7 +24,7 @@ nav:
   - Portfolio: 'portfolio/project-portfolio.md'
   - Case Studies:
     - 'portfolio/ggs-hqt/ggs-hqt.md'
-    - 'portfolio/utilization-report/utilization-report.md'
+    # - 'portfolio/utilization-report/utilization-report.md'
 - Metrics Services: 'metrics-services/how-we-work.md'
 - Metrics Design Philosophy:
   - 'Overview': 'metrics-design/overview.md'
