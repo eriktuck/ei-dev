@@ -54,8 +54,6 @@ Dashboards are having a moment right now as startups and Fortune-500 companies a
 
 There are free options and there are subscription-based options. Subscriptions are not unreasonable, ranging from $30 to $200 a month and up. The budget options limit features like the amount of data you can use, the number of data sources, the number of dashboards, and the frequency of data updates. Carefully review the pricing tiers and their associated limitations before selecting a paid option.
 
-The existing free options are more than sufficient for our purposes in my opinion, and are the only platforms I've reviewed here. 
-
 #### Sharing and hosting
 
 Consider how you will share the dashboard and where it will be hosted. I would suggest that to be really useful the dashboard should be available on the web. Many cloud-based platforms are available for hosting a web-based dashboard. However, make sure you don't share any personal or sensitive information publicly.
@@ -91,40 +89,64 @@ The platforms reviewed below were selected because they include a free tier and 
 
 Others include Plecto, Geckoboard, Chartio, Looker, Klipfolio, Holistics, Sisense, Domo, Qlik, Databox, DataHero - literally so many options. If you're able to pay for a platform, evaluate a number of options against the considerations listed above to find one that best meets your needs and budget.
 
-### Excel/Google Sheets
+#### Excel/Google Sheets
 
+You're familiar with Excel's charts and data manipulation language, your data is already in there, why not just create a dashboard here? You can use pivot charts, filters and timeline slicers to provide some interactivity. There are even basic maps you can use to show chloropleths. 
 
+Just keep in mind the limitations: you'll need to share the workbook to share your dashboard and your data will go along with it - which is fine for a couple users but could be problematic with many users or with sensitive data. If you're looking for more functionality that still integrates with your data, check out [Power BI](#power-bi) (for Excel) or [Data Studio](#google-data-studio) (for Google Sheets).
 
+---
 
+![the classic utilization chart](assets/utilization-excel.png)
 
-### Dash
+---
 
-### 
+#### Tableau Public
 
+Tableau is capable of creating beautiful visualizations, but at the free tier will require you to share your dashboard publicly - a non-starter for personal or sensitive data. Subscriptions are $70 per user per month for what they call 'Creator', while additional users to view the dashboard (securely) can be added for $15 per user per month. But, if you don't mind the world seeing your dashboard, this is a great option.
 
+---
+![tableau map dashboard](https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;B2&#47;B2P_project&#47;MainDash&#47;1.png)
+Credit: Sam Drole, Originally published on Tableau Public.
 
-### Tableau Public
+---
 
+#### Dash
 
+Dash is a Python library for building analytic web apps. In terms of simplicity vs customizability, this solution skews heavily towards customizability. However, it's free, you can host it anywhere, it integrates with almost everything, computation is nearly unlimited, and it will scale without issue. (It's also a great option for interactive reports, which I'll hope to cover in this wiki at some point.) The only catch, you'll need to know Python to develop and maintain it.
 
+---
 
+![uber-dash](assets/dash-uber.png)
 
-### Google Data Studio
+---
 
+#### Google Data Studio
 
+Google's Data Studio is a great dashboard tool if you're already using Google Sheets and need to build something quickly. You'll probably be disappointed with it's ability to blend data and compute. The functions available are rather limited as compared with Google Sheets, and the values users pass to widgets aren't exposed for computation (e.g., the start and end dates of the filter below). However, it's a great option if you have data that is in one place and already computed (e.g., a budget sheet). There are a number of options for restricted sharing, similar to Google Sheets. If you were thinking about doing your dashboard in Google Sheets, try Data Studio instead.
 
+---
 
+![data-studio](assets/data-studio.png)
 
-### Power BI
+---
 
+#### Power BI
 
+Power BI is desktop software that allows for publishing and sharing dashboards to the web. If your team is already using Microsoft this may be a good option. An individual license is free, but to share dashboards you'll need to pay $9.99 per user per month (sold as an annual subscription) to upgrade to Power BI Pro. To share outside of your organization, you'll need to have a Premium capacity which costs $5,000. Read up [here](https://docs.microsoft.com/en-us/power-bi/service-how-to-collaborate-distribute-dashboards-reports) before fully investing in this solution.
 
+---
 
+![power-bi-dashboard](https://docs.microsoft.com/en-us/power-bi/media/service-dashboards/power-bi-dashboard2.png)
 
-### Fine Report
+---
 
-Last and, in my opinion, least is Fine Report. This is actually pretty popular software for developing dashboards, but I find it's aesthetic quite poor. They seem to have spent most of their time developing widgets that would look good in Minority Report but don't actually communicate any meaning.
+#### Fine Report
 
-However, Fine Report does include some data entry and management functionality like custom forms.
+Fine Report has a lot of functionality, but I find it to be rather unappealing aesthetically. They seem to have spent most of their time developing widgets that would look good in Minority Report but don't actually communicate any meaning. Don't build a dashboard like the one pictured below (which is from their website). However, as a truly free and no-code solution that still has a good deal of functionality, Fine Report may be your best option - just don't fall for the temptation of their 'Extended Charts'. Check out their [full library](http://endemo.finereport.com:8080/webroot/decision/login?origin=ba8ff0b2-3f05-4035-8406-8c05a968606b) of examples.
 
-Use this if you 
+---
+
+![fine-report](https://www.finereport.com/en/wp-content/uploads/2019/12/01.gif)
+
+---
