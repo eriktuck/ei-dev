@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -1434,7 +1434,7 @@
 <li><a href="#how-to-choose">help you select the right database for your needs</a>. </li>
 </ol>
 <h2 id="introduction-to-databases">Introduction to Databases<a class="headerlink" href="#introduction-to-databases" title="Permanent link">&para;</a></h2>
-<p>A database is simply an organized store for information. Data are stored as rows and columns in tables; relationships are defined between tables (hence the name, "relational database"). You might have tables for customers, products, and orders. Customers place orders which include products. The database helps you get the right products to the right customers.</p>
+<p>A database is simply an organized store for information. Data are stored as rows and columns in tables; relationships are defined between tables. You might have tables for customers, products, and orders. Customers place orders which include products. The database helps you get the right products to the right customers.</p>
 <p>How the data are stored is often less important than how the data are accessed. The primary reason you're developing a database is probably to make data easier to access, analyze and report. When choosing and designing a database, you'll need to pay as much attention to how the user will interface with the database as the database solution itself. </p>
 <blockquote>
 <p>If you're simply looking for data analysis and visualization (think: Tableau), check out our <em><a href="../../data-visualization/data-visualization/">Introduction to Data Visualization</a></em>.</p>
@@ -1454,7 +1454,7 @@
 <p>A database solution (aka database management system; DBMS) will include these key components</p>
 <ol>
 <li><strong>Database Software</strong> and <strong>Hosting Platform</strong>: The database software runs the database. The database and the database software will be hosted either on a local server or on the cloud.</li>
-<li><strong>Database Management Client</strong>: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client can reduce, but doesn't necessarily eliminate, the need to use SQL (Structured Query Language) to interact with the database (however many DBAs will prefer using SQL anyway).</li>
+<li><strong>Database Management Client</strong>: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client typically uses SQL (Structured Query Language) to interact with the database.</li>
 <li><strong>User Interface</strong> and <strong>Analysis Platform</strong>: The user interface allows users to access the data while the analysis platform allows the user to gain insights from the data. Often, these are combined.</li>
 </ol>
 <p>To illustrate, below are three options for a database solution that you might consider. </p>
@@ -1469,7 +1469,7 @@
 <hr />
 <p><img alt="mysql-stack" src="../assets/mysql-stack.png" /></p>
 <h5 id="example-3-mysql-mysql-workbench-custom-web-application">Example 3: MySQL + MySQL Workbench + Custom Web Application<a class="headerlink" href="#example-3-mysql-mysql-workbench-custom-web-application" title="Permanent link">&para;</a></h5>
-<p>This open source solution may be your go-to if you're building a website and working with a web developer.    Many open source solutions are available.</p>
+<p>This open source solution may be your go-to if you're willing to invest in a web-application.    Many open source solutions are available.</p>
 <blockquote>
 <p>Project Spotlight: The <a href="http://monarchhabitatexchange.org/projects">Registry</a> for the Monarch Butterfly Habitat Exchange was built on this stack.</p>
 </blockquote>
@@ -1479,7 +1479,7 @@
 <p>These are your options if you don't have a tech guru on the team and don't have enough budget to hire one. </p>
 <h4 id="freeish-and-mostly-desktop-based"><u>Free(ish) and Mostly Desktop-Based</u><a class="headerlink" href="#freeish-and-mostly-desktop-based" title="Permanent link">&para;</a></h4>
 <p><strong>Microsoft Access</strong> and <strong>OpenOffice Base</strong> are good entry-level options. OpenOffice Base is free but has fewer features and less support than Microsoft Access. </p>
-<p><strong>Microsoft Excel</strong>, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations. If you'd prefer a cloud-based solution, <strong>Google Sheets</strong> paired with <strong>Google Forms</strong> might even work. </p>
+<p><strong>Microsoft Excel</strong>, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations. If you'd prefer a cloud-based solution, <strong>Google Sheets</strong> paired with <strong>Google Forms</strong> might even work. Even though these are not 'databases' per se, you may be surprised by how much easier data management is when you separate the data storage functionality from the data entry and data viewing functionality.</p>
 <h4 id="cheapish-cloud-based-subscription-services"><u>Cheap(ish) Cloud-based Subscription Services</u><a class="headerlink" href="#cheapish-cloud-based-subscription-services" title="Permanent link">&para;</a></h4>
 <p>The need for data storage and analytics solutions to serve low-tech users has led to a boom in cloud-based solutions like <strong>AirTable</strong>, <strong>QuickBase</strong>, <strong>TeamDesk</strong>, <strong>Knack</strong>, and <strong>Sonadier</strong>. The price scales with increasing storage capacity and number of users, from cheap ($5/month) to not-so-cheap ($500/month or more). </p>
 <p>The data visualization powerhouse <strong>Tableau</strong> offers a data management add-on for $5/mo that might meet your needs if you're mostly focused on visualization and are already a Tableau subscriber.</p>
@@ -1519,7 +1519,6 @@
 <p><img alt="little-bobby-tables" src="https://imgs.xkcd.com/comics/exploits_of_a_mom.png" /></p>
                 
                   
-                
                 
               
               
@@ -1600,7 +1599,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
