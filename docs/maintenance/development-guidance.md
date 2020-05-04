@@ -61,7 +61,7 @@ Here are the technologies used in this project, you'll need to be familiar with 
 * Screen2Gif - a screen recording app that saves outputs as gifs (for video instruction)
 * YouTube - custom videos for instruction, etc.
 
-Use`mkdocs serve` to visualize the site while working on it.
+Use `mkdocs serve` to visualize the site while working on it.
 
 Add the `site/` folder to the .gitignore file.
 
