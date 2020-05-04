@@ -10,7 +10,7 @@ This tutorial will
 
 ## Introduction to Databases
 
-A database is simply an organized store for information. Data are stored as rows and columns in tables; relationships are defined between tables (hence the name, "relational database"). You might have tables for customers, products, and orders. Customers place orders which include products. The database helps you get the right products to the right customers.
+A database is simply an organized store for information. Data are stored as rows and columns in tables; relationships are defined between tables. You might have tables for customers, products, and orders. Customers place orders which include products. The database helps you get the right products to the right customers.
 
 How the data are stored is often less important than how the data are accessed. The primary reason you're developing a database is probably to make data easier to access, analyze and report. When choosing and designing a database, you'll need to pay as much attention to how the user will interface with the database as the database solution itself. 
 
@@ -45,7 +45,7 @@ Reports are queries or collections of queries that can be batched together and r
 A database solution (aka database management system; DBMS) will include these key components
 
 1. **Database Software** and **Hosting Platform**: The database software runs the database. The database and the database software will be hosted either on a local server or on the cloud.
-2. **Database Management Client**: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client can reduce, but doesn't necessarily eliminate, the need to use SQL (Structured Query Language) to interact with the database (however many DBAs will prefer using SQL anyway).
+2. **Database Management Client**: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client typically uses SQL (Structured Query Language) to interact with the database.
 3. **User Interface** and **Analysis Platform**: The user interface allows users to access the data while the analysis platform allows the user to gain insights from the data. Often, these are combined.
 
 To illustrate, below are three options for a database solution that you might consider. 
@@ -78,7 +78,7 @@ A cloud-based solution that offers great customization, if you're tech-savvy eno
 
 ##### Example 3: MySQL + MySQL Workbench + Custom Web Application
 
-This open source solution may be your go-to if you're building a website and working with a web developer.    Many open source solutions are available.
+This open source solution may be your go-to if you're willing to invest in a web-application.    Many open source solutions are available.
 
 > Project Spotlight: The [Registry]( http://monarchhabitatexchange.org/projects ) for the Monarch Butterfly Habitat Exchange was built on this stack.
 
@@ -94,7 +94,7 @@ These are your options if you don't have a tech guru on the team and don't have 
 
 **Microsoft Access** and **OpenOffice Base** are good entry-level options. OpenOffice Base is free but has fewer features and less support than Microsoft Access. 
 
-**Microsoft Excel**, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations. If you'd prefer a cloud-based solution, **Google Sheets** paired with **Google Forms** might even work. 
+**Microsoft Excel**, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations. If you'd prefer a cloud-based solution, **Google Sheets** paired with **Google Forms** might even work. Even though these are not 'databases' per se, you may be surprised by how much easier data management is when you separate the data storage functionality from the data entry and data viewing functionality.
 
 #### <u>Cheap(ish) Cloud-based Subscription Services</u>
 
