@@ -2,6 +2,14 @@
 
 These are a few of our projects. Peruse at your leisure.
 
+## Sustainable WASH Systems Monitoring Plan Visuals
+
+We worked with the Sustainable WASH Systems team to explore, analyze and create data visualizations for Performance Indicators included in their Monitoring, Evaluation and Learning (MEL) Plan report.
+
+<iframe src="https://albumizr.com/a/Nu-i" scrolling="no" frameborder="0" allowfullscreen width="700" height="400"></iframe>
+
+---
+
 ## Monarch Registry
 
 We worked with a web design firm to develop the [Monarch Registry](http://monarchhabitatexchange.org/projects) for the Monarch Habitat Exchange. Our role was to design the database, identify reporting metrics, and provide input on visual aesthetic.
