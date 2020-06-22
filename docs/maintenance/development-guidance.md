@@ -81,3 +81,8 @@ Note that in the GitHub repo on the Settings Tab, under project pages, should ha
 
 *To add the Anaconda Prompt to your right-click context menu on windows, see this [gist](https://gist.github.com/jiewpeng/8ba446acf329b1801bf91db767d179ea).
 
+#### Customs Used
+
+To identify a user-provided value, wrap it in `<>` within a code block:	`git commit <updated-file>`
+
+Highlight package names, files, code, and cli commands in code blocks: `rasterio`

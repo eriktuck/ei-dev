@@ -152,3 +152,14 @@ Fine Report has a lot of functionality, but I find it to be rather unappealing a
 ![fine-report](https://www.finereport.com/en/wp-content/uploads/2019/12/01.gif)
 
 ---
+
+#### ArcGIS Story Maps & Dashboard
+
+[ArcGIS StoryMaps](https://storymaps.arcgis.com/) are often used when the dashboard will include a map component. However, the map doesn't need to be the focus of the dashboard. In fact, some developers who are skilled with ArcGIS Story Maps will use this as their go-to dashboard. In my experience, it's best as a 'scrolly-telling' application, where charts are stacked one top of one another and the user scrolls through to reveal additional data. These can be created for free, but you'll want to use our license to develop the input layers for any maps you create. [This is a great example](https://storymaps.arcgis.com/stories/42b1a6fe6a524b578becd12c0bee4b4c).
+
+ESRI recently released ArcGIS Dashboards as a solution for dashboard-specific applications. Using this solution requires a license for ArcGIS Online.
+
+![arcgis-dashboard](https://https://www.esri.com/content/dam/esrisites/en-us/arcgis/products/operations-dashboard/update-2020/assets/arcgis-dashboard-banner-fg.jpg)
+
+---
+

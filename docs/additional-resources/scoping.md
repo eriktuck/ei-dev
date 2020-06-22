@@ -24,7 +24,7 @@ I recommend erring on the inclusive side here. You will continue to get more spe
 
 > In addition to defining the scope, it is also necessary to decide on a clear and common vision – a description of the desired state or ultimate condition that you are working to achieve. Your vision can be summarized in a vision statement, which meets the criteria of being relatively general, visionary, and brief. (CMP 2013)
 
-It's important to be agnostic about the solution within the vision statement. The vision is not for everyone to be using the tool your thinking about developing. Just describe the long-term outcomes that you're trying to achieve in sufficient detail that if you time-traveled to a time in which your strategy was successful, you'd know you were there.
+It's important to be agnostic about the solution within the vision statement. The vision is not for everyone to be using the tool you're thinking about developing. Just describe the long-term outcomes that you're trying to achieve in sufficient detail that if you time-traveled to a time in which your strategy was successful, you'd know you were there.
 
 See [Step 1: Start at the End](../metrics-design/step1-start-at-the-end.md) of our metrics design philosophy for help if you get stuck.
 

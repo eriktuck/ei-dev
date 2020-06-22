@@ -1,11 +1,5 @@
 # Tips & Tricks
 
-#### Customs Used
-
-To identify a user-provided value, wrap it in `<>` within a code block:	`git commit <updated-file>`
-
-Highlight package names, files, code, and cli commands in code blocks: `rasterio`
-
 #### Markdown Reference
 
 Here is a [handy reference]( https://support.typora.io/Markdown-Reference) for writing in markdown, provided by Typora.
@@ -67,6 +61,10 @@ Provides callout style boxes, including collapsible boxes, for example:
 
 See [documentation](https://squidfunk.github.io/mkdocs-material/extensions/admonition/) for more.
 
+##### PyMdown
+
+A ton of functionality in this [package of extensions](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/), including highlighting text, inline  editing, math equations, and task lists (though not interactive task lists).
+
 #### Interactive Visualizations
 
 Maps, dashboards, and other interactive visualizations should be passed in using the iframe. See Plotly guidance [here]( https://plot.ly/python/embedding-plotly-graphs-in-HTML).
@@ -99,12 +97,9 @@ It's best to work within the source code mode (`ctrl+/`), as Markdown treats thi
 <p>This would be the first paragraph of content</p>
 <p> Here's some more content with a <a href='https://enviroincentives.com'>link</a></p>
 </details>
-
 Note that the `details` tag is styled by the extension [admonition](#admonition) as a call out box when using the Material Theme. I couldn't prevent this behavior by removing the admonition extension from my yaml file. Switching to a different theme will avoid this behavior. [Adding custom CSS](#css) may also be an option.
 
-##### PyMdown
-
-A ton of functionality in this [package of extensions](https://squidfunk.github.io/mkdocs-material/extensions/pymdown/), including highlighting text, inline comments and editing, math equations, and task lists (though not interactive task lists).
+Details tags are also available as an extension (see [PyMdown](#pymdown)).
 
 
 #### JavaScript
