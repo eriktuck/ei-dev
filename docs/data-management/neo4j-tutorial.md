@@ -47,7 +47,7 @@ Let's assume our data is stored in a relational database with the following tabl
 
 3.1 Create a new graph database
 
-![img](assets/add-database.PNG)
+![img](assets/add-database.png)
 
 3.2 Select 'Create a Local Graph'
 

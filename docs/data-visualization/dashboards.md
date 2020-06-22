@@ -115,7 +115,7 @@ Credit: Sam Drole, Originally published on Tableau Public.
 
 #### Dash
 
-Dash is a Python library for building analytic web apps. In terms of simplicity vs customizability, this solution skews heavily towards customizability. However, it's free, you can host it anywhere, it integrates with almost everything, computation is nearly unlimited, and it will scale without issue. (It's also a great option for interactive reports, which I'll hope to cover in this wiki at some point.) The only catch, you'll need to know Python to develop and maintain it. See more [here](../python-packages/dash.md).
+Dash is a Python library for building analytic web apps. In terms of simplicity vs customizability, this solution skews heavily towards customizability. However, it's free, you can host it anywhere, it integrates with almost everything, computation is nearly unlimited, and it will scale without issue. (It's also a great option for interactive reports, which I'll hope to cover in this wiki at some point.) The only catch, you'll need to know Python to develop and maintain it. See more [here](../guides/dash.md).
 
 ---
 
