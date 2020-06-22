@@ -10,7 +10,7 @@ This tutorial demonstrates how to convert from a simple relational database sche
 
 **1.3** Create a New Project 
 
-![img](assets/new-project.png)
+![img](assets/new-project.PNG)
 
 ### 2. Get the data
 
@@ -41,25 +41,25 @@ Let's assume our data is stored in a relational database with the following tabl
 
 **2.4** In Neo4j Desktop, click 'Add Files' and add the saved CSV.
 
-![img](assets/add-files.png)
+![img](assets/add-files.PNG)
 
 ### 3. Create a graph database
 
 3.1 Create a new graph database
 
-![img](assets/add-database.png)
+![img](assets/add-database.PNG)
 
 3.2 Select 'Create a Local Graph'
 
-![img](assets/create-local.png)
+![img](assets/create-local.PNG)
 
 3.3 Provide a graph name and password (remember the password). Click 'Create'.
 
-![img](assets/password.png)
+![img](assets/password.PNG)
 
 3.4 Start the graph and then open with the Neo4j browser. The Browser will open in a new application window.
 
-![img](assets/start-open.png)
+![img](assets/start-open.PNG)
 
 ### 4. Populate the graph
 
@@ -67,7 +67,7 @@ We'll use the `LOAD CSV` command to read in the data from the CSV we created in 
 
 **4.1** In the Neo4j Desktop client, open the menu for the file you previously uploaded and select 'Copy url to clipboard'. The url is the most direct path (the file path doesn't include the file name, so is less useful here).
 
-![img](assets/open-url.png)
+![img](assets/open-url.PNG)
 
 **4.2** With the URL copied, return to the Neo4j Browser and type the following, then click the play button:
 
@@ -79,7 +79,7 @@ This will check that the file is accessible and return a JSON representation of 
 
 In the Browser, it would look like this:
 
-![img](assets/load-command.png)
+![img](assets/load-command.PNG)
 
 **4.3** Import entities as nodes. 
 
@@ -172,7 +172,7 @@ RETURN p, a
 
 You can now review the schema, which will look like this:
 
-![img](assets/schema.png)
+![img](assets/schema.PNG)
 
 The command to return a schema is `CALL db.schema.visualization`, however note that this was created in Bloom (see [instructions](#creating-a-schema-in-bloom)).
 
@@ -188,13 +188,13 @@ OR
 
 Install the Graph Data Science library. In the Neo4j Browser client, add the Graph Database Plugin by clicking Add Plugin and selecting the Graph Database plugin.
 
-![img](assets/gds.png)
+![img](assets/gds.PNG)
 
 **6.2** Open the Graph Data Science Playground using the 'Open' split button in the Neo4j Desktop.
 
 **6.3** Run the closeness algorithm. Select the Centralities category of algorithms, and then locate the Closeness algorithm in the menu bar. Set the 'Label' and 'Relationship Type' as 'Any'. This will allow us to find which node, whether an employee, a project, or a practice area, has the best ability to transmit information*. Change the 'Relationship Orientation' to 'Undirected' since information can flow either direction. Check the box to Store results, which will write the results into a new property in our nodes so we can access it later. Increase the 'Rows to Show' to 100 so you can see all nodes. Hit Run.
 
-![img](assets/closeness.png)
+![img](assets/closeness.PNG)
 
 You can explore the results with the Chart or Visualization in the Playground. You can also see the code so you could write it with the Graph Data Science Library in the Browser if needed.
 
@@ -212,13 +212,13 @@ The best way to explore the graph is in Neo4j Bloom, which comes standard with N
 
 **6.4** Re-color the Employee nodes by closeness. In the right panel, click on the colored employee legend item and select 'Rule-based' to apply a color based on the closeness score. Review the results in the Graph Data Science Library to see the minimum and maximum values. Make sure 'Apply Color' is switched on.
 
-![img](assets/rule-based-color.png)
+![img](assets/rule-based-color.PNG)
 
 
 
 That's it! You can now explore in Bloom by zooming and panning to see who is connected and how. Here's the final graph:
 
-![img](assets/ei-graph.png)
+![img](assets/ei-graph.PNG)
 
 
 

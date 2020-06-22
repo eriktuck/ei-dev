@@ -178,7 +178,7 @@ A graph database stores data in a graph, which is not the 'graph' with a x- and 
 
 NOSQL (Not Only SQL) databases store disconnected and unstructured data through a variety of strategies. Some definitions of NOSQL include graph databases because graph databases do not use SQL. NOSQL encompasses a large variety of database technologies that might suit your needs if a relational or graph database do not suffice. Here is how the same order data might be represented in a NOSQL database. 
 
-![nosql](assets/nosql.png)
+![nosql](assets/NOSQL.png)
 
 ## Final Thoughts
 
