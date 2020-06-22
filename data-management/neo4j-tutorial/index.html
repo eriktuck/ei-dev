@@ -1,0 +1,1418 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content=" A knowledge management system for the metrics service line">
+      
+      
+      
+        <meta name="author" content="Erik Anderson">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/ei-logo-black.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Neo4j Tutorial - EI Metrics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-151885346-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#neo4j-tutorial" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EI Metrics" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/ei-logo-white.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EI Metrics
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Neo4j Tutorial
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EI Metrics" class="md-nav__button md-logo">
+      
+        <img src="../../img/ei-logo-white.png" width="48" height="48">
+      
+    </a>
+    EI Metrics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project Portfolio
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project Portfolio
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/project-portfolio/" title="Portfolio" class="md-nav__link">
+      Portfolio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Case Studies
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Case Studies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/ggs-hqt/ggs-hqt/" title="Giant Garter Snake Habitat Quantification Tool" class="md-nav__link">
+      Giant Garter Snake Habitat Quantification Tool
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-services/how-we-work/" title="Metrics Services" class="md-nav__link">
+      Metrics Services
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Metrics Design Philosophy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Metrics Design Philosophy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step1-start-at-the-end/" title="Step 1: Start at the End" class="md-nav__link">
+      Step 1: Start at the End
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step2-map-it/" title="Step 2: Map It" class="md-nav__link">
+      Step 2: Map It
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step3-develop-empathy/" title="Step 3: Develop Empathy" class="md-nav__link">
+      Step 3: Develop Empathy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step4-define-the-problem/" title="Step 4: Define the Problem" class="md-nav__link">
+      Step 4: Define the Problem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step5-identify-a-solution/" title="Step 5: Identify a Solution" class="md-nav__link">
+      Step 5: Identify a Solution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step6-implement/" title="Step 6: Implement" class="md-nav__link">
+      Step 6: Implement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step7-adapt/" title="Step 7: Iterate & Adapt" class="md-nav__link">
+      Step 7: Iterate & Adapt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/install-configure-git/" title="Install Git" class="md-nav__link">
+      Install Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/initializing-git/" title="Create Project" class="md-nav__link">
+      Create Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/common-workflow/" title="Common Workflow" class="md-nav__link">
+      Common Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/collaborating-with-git/" title="Collaborating with Git" class="md-nav__link">
+      Collaborating with Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/additional-reference/" title="Additional Reference" class="md-nav__link">
+      Additional Reference
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/command-line-tools/" title="Command Line Tools" class="md-nav__link">
+      Command Line Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/scheduling-tasks/" title="Scheduling Tasks" class="md-nav__link">
+      Scheduling Tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/environment-variables/" title="Environment Variables" class="md-nav__link">
+      Environment Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/virtual-environments/" title="Virtual Environments" class="md-nav__link">
+      Virtual Environments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/deployment-overview/" title="Deployment Overview" class="md-nav__link">
+      Deployment Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/heroku/" title="Heroku" class="md-nav__link">
+      Heroku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/google-api/" title="Google API" class="md-nav__link">
+      Google API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Data Management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Data Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../database-overview/" title="Database Overview" class="md-nav__link">
+      Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../neo4j-overview/" title="Neo4j Graph Databases" class="md-nav__link">
+      Neo4j Graph Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Neo4j Tutorial
+      </label>
+    
+    <a href="./" title="Neo4j Tutorial" class="md-nav__link md-nav__link--active">
+      Neo4j Tutorial
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-set-up" class="md-nav__link">
+    1. Project set up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-the-data" class="md-nav__link">
+    2. Get the data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-a-graph-database" class="md-nav__link">
+    3. Create a graph database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-populate-the-graph" class="md-nav__link">
+    4. Populate the graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-evaluate-closeness" class="md-nav__link">
+    5. Evaluate 'closeness'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-explore-the-graph" class="md-nav__link">
+    6. Explore the graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-schema-in-bloom" class="md-nav__link">
+    Creating a schema in Bloom
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Data Science
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Data Science
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" title="Machine Learning Tutorial" class="md-nav__link">
+      Machine Learning Tutorial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Data Visualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Data Visualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-visualization/data-visualization/" title="Data Visualization" class="md-nav__link">
+      Data Visualization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-visualization/dashboards/" title="Dashboards" class="md-nav__link">
+      Dashboards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Python Packages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Python Packages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/dash/" title="Dash" class="md-nav__link">
+      Dash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Additional Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Additional Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/scoping/" title="Scoping Canvas" class="md-nav__link">
+      Scoping Canvas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/product-definition/" title="Product Definition" class="md-nav__link">
+      Product Definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/persona-guide/" title="Persona Development Guide" class="md-nav__link">
+      Persona Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/interview-guide/" title="Interview Guide" class="md-nav__link">
+      Interview Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      How to Maintain This Site
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        How to Maintain This Site
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maintenance/development-guidance/" title="Development Guide" class="md-nav__link">
+      Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maintenance/tips-and-tricks/" title="Tips & Tricks" class="md-nav__link">
+      Tips & Tricks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-project-set-up" class="md-nav__link">
+    1. Project set up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-the-data" class="md-nav__link">
+    2. Get the data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-create-a-graph-database" class="md-nav__link">
+    3. Create a graph database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-populate-the-graph" class="md-nav__link">
+    4. Populate the graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-evaluate-closeness" class="md-nav__link">
+    5. Evaluate 'closeness'
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-explore-the-graph" class="md-nav__link">
+    6. Explore the graph
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creating-a-schema-in-bloom" class="md-nav__link">
+    Creating a schema in Bloom
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="neo4j-tutorial">Neo4j Tutorial<a class="headerlink" href="#neo4j-tutorial" title="Permanent link">&para;</a></h1>
+<p>This tutorial demonstrates how to convert from a simple relational database schema to a graph database. We'll be building a basic graph of Environmental Incentive's current project teaming structure. The graph will include staff, the projects they work on, and the organization of projects under Practice Areas. The purpose of the graph will be to explore the connectivity of EI's professional network across teams. (Staff will be said to work on a project if they are authorized to bill on a project). See also the <a href="https://neo4j.com/developer/guide-importing-data-and-etl/">Neo4j-provided tutorial</a> describing the Windward database.</p>
+<h3 id="1-project-set-up">1. Project set up<a class="headerlink" href="#1-project-set-up" title="Permanent link">&para;</a></h3>
+<p><strong>1.1</strong> Create a project directory as you would otherwise </p>
+<p><strong>1.2</strong> Open Neo4j Desktop</p>
+<p><strong>1.3</strong> Create a New Project </p>
+<p><img alt="img" src="assets/new-project.png" /></p>
+<h3 id="2-get-the-data">2. Get the data<a class="headerlink" href="#2-get-the-data" title="Permanent link">&para;</a></h3>
+<p>Let's assume our data is stored in a relational database with the following tables:</p>
+<p><strong>Staff:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Abragan, Maria Celes L</td>
+</tr>
+<tr>
+<td>Alexandrovich, Andrew</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Projects</strong>:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Project</th>
+<th>Practice_Area</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1001</td>
+<td>MI2</td>
+<td>International</td>
+</tr>
+<tr>
+<td>1002</td>
+<td>LAC ESSC</td>
+<td>International</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.1</strong> First we'd join the staff to the projects table to get a flat file. Each staff x project combo would be represented as a row, looking like:</p>
+<table>
+<thead>
+<tr>
+<th>Code</th>
+<th>Project</th>
+<th>Practice_Area</th>
+<th>Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1001</td>
+<td>MI2</td>
+<td>International</td>
+<td>Alexandrovich, Andrew</td>
+</tr>
+<tr>
+<td>1001</td>
+<td>MI2</td>
+<td>International</td>
+<td>Ajroud, Brittany N</td>
+</tr>
+</tbody>
+</table>
+<p><strong>2.3</strong> Now export that table as a CSV and save to your <code>data/</code> folder for your project (i.e., save this file in the main project's directory--create one if necessary. This step has nothing to do with Neo4j, you should have a project directory set up already).</p>
+<p><strong>2.4</strong> In Neo4j Desktop, click 'Add Files' and add the saved CSV.</p>
+<p><img alt="img" src="assets/add-files.png" /></p>
+<h3 id="3-create-a-graph-database">3. Create a graph database<a class="headerlink" href="#3-create-a-graph-database" title="Permanent link">&para;</a></h3>
+<p>3.1 Create a new graph database</p>
+<p><img alt="img" src="assets/add-database.png" /></p>
+<p>3.2 Select 'Create a Local Graph'</p>
+<p><img alt="img" src="assets/create-local.png" /></p>
+<p>3.3 Provide a graph name and password (remember the password). Click 'Create'.</p>
+<p><img alt="img" src="assets/password.png" /></p>
+<p>3.4 Start the graph and then open with the Neo4j browser. The Browser will open in a new application window.</p>
+<p><img alt="img" src="assets/start-open.png" /></p>
+<h3 id="4-populate-the-graph">4. Populate the graph<a class="headerlink" href="#4-populate-the-graph" title="Permanent link">&para;</a></h3>
+<p>We'll use the <code>LOAD CSV</code> command to read in the data from the CSV we created in step 2. It may be helpful to have the CSV open to reference the header names.</p>
+<p><strong>4.1</strong> In the Neo4j Desktop client, open the menu for the file you previously uploaded and select 'Copy url to clipboard'. The url is the most direct path (the file path doesn't include the file name, so is less useful here).</p>
+<p><img alt="img" src="assets/open-url.png" /></p>
+<p><strong>4.2</strong> With the URL copied, return to the Neo4j Browser and type the following, then click the play button:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>This will check that the file is accessible and return a JSON representation of the data row by row, helpful if you need to see the structure of the data.</p>
+<p>In the Browser, it would look like this:</p>
+<p><img alt="img" src="assets/load-command.png" /></p>
+<p><strong>4.3</strong> Import entities as nodes. </p>
+<p>We'll want to import each entity as a node before we create relationships. Use 'Shift+Enter' to input multi-line commands into the terminal.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p><em>You can also access columns with their cell names (row."D2") or by index (row[1] (note indexing starts at 1)).</em></p>
+<p>You should see a graph with all of the nodes for each employee in the Browser.</p>
+<p>Now that we have the hang of it, we'll load the remainder of the entities all at once:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(:</span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Project</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="n">toInteger</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">Code</span><span class="p">)})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(:</span><span class="n">PracticeArea</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Practice_Area</span><span class="p">})</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>Notice here that we transformed the Code column to integer before reading in. All columns are read as text unless specified using <code>toInteger()</code>, . Also note that we read the Code as a property of the Project node, rather than as it's own node--not every column needs to be a node. Finally, we did not assign a variable name to each node since we did not want to return anything.</p>
+<p>Some other tips:</p>
+<ul>
+<li>
+<p>You can create a key for each imported row on the fly using the <code>linenumber()</code> command (<code>key: {linenumber()}</code>)</p>
+</li>
+<li>
+<p>When naming variables, don't use <a href="https://neo4j.com/docs/cypher-manual/current/syntax/reserved/">reserved keywords</a>.</p>
+</li>
+<li>Review the <a href="https://neo4j.com/docs/cypher-manual/current/styleguide/">Style Guide</a> to make your code and the names of your nodes, relationships, and properties easier to read and more consistent.</li>
+</ul>
+<p><strong>4.4</strong> Add relationships.</p>
+<p>Now that nodes are created, we can add relationships between them. We'll use the CSV again for this, by matching the Project to the Practice Area row by row, and then establishing the relationship.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">PracticeArea</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Practice_Area</span><span class="p">})</span><span class="w"></span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Code</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="n">r</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+<span class="k">RETURN</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="n">r</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>Here we identify (match) the nodes PracticeArea and Project of each row in the CSV, find those in the graph, and add (merge) a relationship of 'OWNS'. We return the graph illustrating these relationships. </p>
+<p>If you need to remove relationships you can use:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">MATCH</span><span class="w"> </span><span class="p">()</span><span class="o">-[</span><span class="n">r</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-</span><span class="p">()</span><span class="w"></span>
+<span class="k">DELETE</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>Let's add the relationship between employees and the projects the work on from the CSV:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Code</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">WORKS_ON</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p><strong>4.5</strong> Add any missing relationships.</p>
+<p>This example illustrates the power of graph databases. I happen to know that one project is owned by two practice areas. This is a rare exception, and had this been a relational database it would have been a pain--you'd need to migrate from a one-to-many relationship to a many-to-many relationship, which would break the schema. Here, we just add one more relationship.</p>
+<p>Let's first check to see which practice area the project (Walton) is currently assigned to:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">PracticeArea</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Walton&quot;</span><span class="p">})</span><span class="w"> </span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>This will show us that Walton is owned by Habitat. So, let's add a relationship with International:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">PracticeArea</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="err">&#39;</span><span class="n">International</span><span class="err">&#39;</span><span class="p">})</span><span class="w"></span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Walton</span><span class="err">&#39;</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>And then we'll check that both relationships still exist (you can click the log entry for when we used this previously to quickly load it again):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">PracticeArea</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;Walton&quot;</span><span class="p">})</span><span class="w"> </span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p><strong>4.6</strong> Review schema</p>
+<p>You can now review the schema, which will look like this:</p>
+<p><img alt="img" src="assets/schema.png" /></p>
+<p>The command to return a schema is <code>CALL db.schema.visualization</code>, however note that this was created in Bloom (see <a href="#creating-a-schema-in-bloom">instructions</a>).</p>
+<h3 id="5-evaluate-closeness">5. Evaluate 'closeness'<a class="headerlink" href="#5-evaluate-closeness" title="Permanent link">&para;</a></h3>
+<p>Closeness is a graph data science algorithm that can detect nodes that are able to spread information efficiently through a graph. This is exactly what we'd like to quantify to see who is well-connected, and who is not, in our professional network.</p>
+<p>You have two options for executing graph data science algorithms. For a no-code solution (recommended to begin), install and open the Graph Data Science Playground. If you'd prefer using the terminal in Desktop, install the Graph Data Science Library. This tutorial will focus on the Graph Data Science Playground. For an intro video, see <a href="https://www.youtube.com/watch?v=sA3EY5Hq6-E">here</a>.</p>
+<p><strong>6.1</strong> Install the Graph Data Science playground. In the Neo4j Desktop client, select the split button 'Open' for your graph and select 'Graph Apps Gallery'. Find the card for Graph Data Science Playground and click install (or paste the URL in the install bar as described <a href="https://medium.com/neo4j/introducing-the-graph-app-gallery-81aa3e63567b">here</a>). The Playground will now be available under the 'Open' split button.</p>
+<p>OR</p>
+<p>Install the Graph Data Science library. In the Neo4j Browser client, add the Graph Database Plugin by clicking Add Plugin and selecting the Graph Database plugin.</p>
+<p><img alt="img" src="assets/gds.png" /></p>
+<p><strong>6.2</strong> Open the Graph Data Science Playground using the 'Open' split button in the Neo4j Desktop.</p>
+<p><strong>6.3</strong> Run the closeness algorithm. Select the Centralities category of algorithms, and then locate the Closeness algorithm in the menu bar. Set the 'Label' and 'Relationship Type' as 'Any'. This will allow us to find which node, whether an employee, a project, or a practice area, has the best ability to transmit information*. Change the 'Relationship Orientation' to 'Undirected' since information can flow either direction. Check the box to Store results, which will write the results into a new property in our nodes so we can access it later. Increase the 'Rows to Show' to 100 so you can see all nodes. Hit Run.</p>
+<p><img alt="img" src="assets/closeness.png" /></p>
+<p>You can explore the results with the Chart or Visualization in the Playground. You can also see the code so you could write it with the Graph Data Science Library in the Browser if needed.</p>
+<p>*Note that because employees are not connected to each other, we cannot simply run the closeness algorithm on employees only. We would need to add a relationship between employees whenever they are connected by a project to evaluate only employees, rather than all nodes in the graph.</p>
+<h3 id="6-explore-the-graph">6. Explore the graph<a class="headerlink" href="#6-explore-the-graph" title="Permanent link">&para;</a></h3>
+<p>The best way to explore the graph is in Neo4j Bloom, which comes standard with Neo4j Desktop. </p>
+<p><strong>6.1</strong> In Neo4j Desktop, use the 'Open' split button to open with Neo4j Bloom.</p>
+<p><strong>6.2</strong> Use the suggested perspective. Perspectives are views on the data that can include or exclude certain parts of the graph. For our purposes, we want to see everything. The suggested perspective will get us there quickest. If you need to configure your own perspective, check out this <a href="https://www.youtube.com/watch?v=fOJqHcTpQxs">video</a>.</p>
+<p><strong>6.3</strong> Show Employees and Projects by searching. In the search bar, type <code>Employee WORKS_ON</code> and hit enter. This will return all employees and the projects they work on. </p>
+<p><strong>6.4</strong> Re-color the Employee nodes by closeness. In the right panel, click on the colored employee legend item and select 'Rule-based' to apply a color based on the closeness score. Review the results in the Graph Data Science Library to see the minimum and maximum values. Make sure 'Apply Color' is switched on.</p>
+<p><img alt="img" src="assets/rule-based-color.png" /></p>
+<p>That's it! You can now explore in Bloom by zooming and panning to see who is connected and how. Here's the final graph:</p>
+<p><img alt="img" src="assets/ei-graph.png" /></p>
+<h2 id="creating-a-schema-in-bloom">Creating a schema in Bloom<a class="headerlink" href="#creating-a-schema-in-bloom" title="Permanent link">&para;</a></h2>
+<p>To get a pretty representation of your schema, first color and provide icons for each node, and optionally color each relationship in Bloom. Next, create a search phrase with the following code as the Cypher query:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">CALL</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">visualization</span><span class="p">()</span><span class="w"> </span><span class="k">YIELD</span><span class="w"> </span><span class="n">nodes</span><span class="p">,</span><span class="w"> </span><span class="n">relationships</span><span class="w"></span>
+<span class="k">UNWIND</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
+<span class="k">UNWIND</span><span class="w"> </span><span class="n">relationships</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>Enter the search phrase in the search bar to get the schema.</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../neo4j-overview/" title="Neo4j Graph Databases" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Neo4j Graph Databases
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" title="Machine Learning Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Machine Learning Tutorial
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Environmental Incentives
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://linkedin.com/in/eriktanderson" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://github.com/eanderson-ei" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/scripts.js"></script>
+      
+    
+  </body>
+</html>

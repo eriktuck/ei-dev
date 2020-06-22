@@ -1,0 +1,1503 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+        <meta name="description" content=" A knowledge management system for the metrics service line">
+      
+      
+      
+        <meta name="author" content="Erik Anderson">
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../img/ei-logo-black.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Neo4j Graph Databases - EI Metrics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#3f51b5">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-151885346-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#neo4j-overview" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="EI Metrics" class="md-header-nav__button md-logo">
+          
+            <img src="../../img/ei-logo-white.png" width="24" height="24">
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              EI Metrics
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Neo4j Graph Databases
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="EI Metrics" class="md-nav__button md-logo">
+      
+        <img src="../../img/ei-logo-white.png" width="48" height="48">
+      
+    </a>
+    EI Metrics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Project Portfolio
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        Project Portfolio
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/project-portfolio/" title="Portfolio" class="md-nav__link">
+      Portfolio
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-2-2" type="checkbox" id="nav-2-2">
+    
+    <label class="md-nav__link" for="nav-2-2">
+      Case Studies
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-2-2">
+        Case Studies
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../portfolio/ggs-hqt/ggs-hqt/" title="Giant Garter Snake Habitat Quantification Tool" class="md-nav__link">
+      Giant Garter Snake Habitat Quantification Tool
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-services/how-we-work/" title="Metrics Services" class="md-nav__link">
+      Metrics Services
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Metrics Design Philosophy
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Metrics Design Philosophy
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step1-start-at-the-end/" title="Step 1: Start at the End" class="md-nav__link">
+      Step 1: Start at the End
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step2-map-it/" title="Step 2: Map It" class="md-nav__link">
+      Step 2: Map It
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step3-develop-empathy/" title="Step 3: Develop Empathy" class="md-nav__link">
+      Step 3: Develop Empathy
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step4-define-the-problem/" title="Step 4: Define the Problem" class="md-nav__link">
+      Step 4: Define the Problem
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step5-identify-a-solution/" title="Step 5: Identify a Solution" class="md-nav__link">
+      Step 5: Identify a Solution
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step6-implement/" title="Step 6: Implement" class="md-nav__link">
+      Step 6: Implement
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../metrics-design/step7-adapt/" title="Step 7: Iterate & Adapt" class="md-nav__link">
+      Step 7: Iterate & Adapt
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Git
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Git
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/install-configure-git/" title="Install Git" class="md-nav__link">
+      Install Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/initializing-git/" title="Create Project" class="md-nav__link">
+      Create Project
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/common-workflow/" title="Common Workflow" class="md-nav__link">
+      Common Workflow
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/collaborating-with-git/" title="Collaborating with Git" class="md-nav__link">
+      Collaborating with Git
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../git/additional-reference/" title="Additional Reference" class="md-nav__link">
+      Additional Reference
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Development
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Development
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/command-line-tools/" title="Command Line Tools" class="md-nav__link">
+      Command Line Tools
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/scheduling-tasks/" title="Scheduling Tasks" class="md-nav__link">
+      Scheduling Tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/environment-variables/" title="Environment Variables" class="md-nav__link">
+      Environment Variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/virtual-environments/" title="Virtual Environments" class="md-nav__link">
+      Virtual Environments
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7">
+    
+    <label class="md-nav__link" for="nav-7">
+      Deployment
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Deployment
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/deployment-overview/" title="Deployment Overview" class="md-nav__link">
+      Deployment Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/heroku/" title="Heroku" class="md-nav__link">
+      Heroku
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../deployment/google-api/" title="Google API" class="md-nav__link">
+      Google API
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" checked>
+    
+    <label class="md-nav__link" for="nav-8">
+      Data Management
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-8">
+        Data Management
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../database-overview/" title="Database Overview" class="md-nav__link">
+      Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Neo4j Graph Databases
+      </label>
+    
+    <a href="./" title="Neo4j Graph Databases" class="md-nav__link md-nav__link--active">
+      Neo4j Graph Databases
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-set-up" class="md-nav__link">
+    Installation &amp; Set Up
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-desktop" class="md-nav__link">
+    Neo4j Desktop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-browser" class="md-nav__link">
+    Neo4j Browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-bloom" class="md-nav__link">
+    Neo4j Bloom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apoc" class="md-nav__link">
+    APOC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-algorithms" class="md-nav__link">
+    Graph Algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-data-science-playground" class="md-nav__link">
+    Graph Data Science Playground
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cypher" class="md-nav__link">
+    Cypher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-modelling" class="md-nav__link">
+    Data Modelling
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-guide" class="md-nav__link">
+    Naming Guide
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    Unit Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-data" class="md-nav__link">
+    Importing Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizing-sharing" class="md-nav__link">
+    Visualizing &amp; Sharing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloom" class="md-nav__link">
+    Bloom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphgists" class="md-nav__link">
+    GraphGists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heroku-and-graphenedb" class="md-nav__link">
+    Heroku and GrapheneDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../neo4j-tutorial/" title="Neo4j Tutorial" class="md-nav__link">
+      Neo4j Tutorial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+    <label class="md-nav__link" for="nav-9">
+      Data Science
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        Data Science
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" title="Machine Learning Tutorial" class="md-nav__link">
+      Machine Learning Tutorial
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10">
+    
+    <label class="md-nav__link" for="nav-10">
+      Data Visualization
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-10">
+        Data Visualization
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-visualization/data-visualization/" title="Data Visualization" class="md-nav__link">
+      Data Visualization
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-visualization/dashboards/" title="Dashboards" class="md-nav__link">
+      Dashboards
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-11" type="checkbox" id="nav-11">
+    
+    <label class="md-nav__link" for="nav-11">
+      Python Packages
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-11">
+        Python Packages
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../guides/dash/" title="Dash" class="md-nav__link">
+      Dash
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-12" type="checkbox" id="nav-12">
+    
+    <label class="md-nav__link" for="nav-12">
+      Additional Resources
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-12">
+        Additional Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/scoping/" title="Scoping Canvas" class="md-nav__link">
+      Scoping Canvas
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/product-definition/" title="Product Definition" class="md-nav__link">
+      Product Definition
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/persona-guide/" title="Persona Development Guide" class="md-nav__link">
+      Persona Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../additional-resources/interview-guide/" title="Interview Guide" class="md-nav__link">
+      Interview Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-13" type="checkbox" id="nav-13">
+    
+    <label class="md-nav__link" for="nav-13">
+      How to Maintain This Site
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-13">
+        How to Maintain This Site
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maintenance/development-guidance/" title="Development Guide" class="md-nav__link">
+      Development Guide
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../maintenance/tips-and-tricks/" title="Tips & Tricks" class="md-nav__link">
+      Tips & Tricks
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#installation-set-up" class="md-nav__link">
+    Installation &amp; Set Up
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-desktop" class="md-nav__link">
+    Neo4j Desktop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-browser" class="md-nav__link">
+    Neo4j Browser
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#neo4j-bloom" class="md-nav__link">
+    Neo4j Bloom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apoc" class="md-nav__link">
+    APOC
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-algorithms" class="md-nav__link">
+    Graph Algorithms
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graph-data-science-playground" class="md-nav__link">
+    Graph Data Science Playground
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cypher" class="md-nav__link">
+    Cypher
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-modelling" class="md-nav__link">
+    Data Modelling
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#naming-guide" class="md-nav__link">
+    Naming Guide
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    Unit Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-data" class="md-nav__link">
+    Importing Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#visualizing-sharing" class="md-nav__link">
+    Visualizing &amp; Sharing
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#schema" class="md-nav__link">
+    Schema
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#image" class="md-nav__link">
+    Image
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bloom" class="md-nav__link">
+    Bloom
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#graphgists" class="md-nav__link">
+    GraphGists
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heroku-and-graphenedb" class="md-nav__link">
+    Heroku and GrapheneDB
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="neo4j-overview">Neo4j Overview<a class="headerlink" href="#neo4j-overview" title="Permanent link">&para;</a></h1>
+<p>This section is a high-level summary of content in the Neo4j <a href="https://neo4j.com/developer/get-started/">Developer Guides</a>; links are provided to relevant guides in each section. Also see these <a href="https://neo4j.com/developer/getting-started-resources/">resources</a> (the <a href="https://neo4j.com/graph-databases-book/">O'Reilly Graph Databases book</a> (free) is a must-read).</p>
+<h2 id="installation-set-up">Installation &amp; Set Up<a class="headerlink" href="#installation-set-up" title="Permanent link">&para;</a></h2>
+<p>Download the latest <a href="https://neo4j.com/download/">Neo4j Desktop</a> release for your operating system. Install as normal. The following sections explain some of the key features of Neo4j and link to set up instructions.</p>
+<h4 id="neo4j-desktop">Neo4j Desktop<a class="headerlink" href="#neo4j-desktop" title="Permanent link">&para;</a></h4>
+<p>Open the Neo4j Desktop client on your computer. Follow these <a href="https://neo4j.com/developer/neo4j-desktop/">instructions</a> to provide your activation key and orient yourself to the client. One important note: you'll want to open the '<a href="https://neo4j.com/developer/neo4j-desktop/#desktop-manage-db">Manage</a>'  menu on the database to locate the import folder (Neo4j can only read files within this folder, it can't access files in your project's directory) and install plugins.</p>
+<h4 id="neo4j-browser">Neo4j Browser<a class="headerlink" href="#neo4j-browser" title="Permanent link">&para;</a></h4>
+<p>You'll interact with graph databases in the Browser tool. 'Start' a graph database (or 'Add New Database') and, once it's ready, select 'Open'. This will open the Brower tool. Read through these <a href="https://neo4j.com/developer/neo4j-browser/">instructions</a> for an orientation.</p>
+<h4 id="neo4j-bloom">Neo4j Bloom<a class="headerlink" href="#neo4j-bloom" title="Permanent link">&para;</a></h4>
+<p>If you are going to be sharing your graph with a non-technical audience, <a href="https://neo4j.com/developer/neo4j-bloom/">Bloom</a> is a great tool for making your graph available and defining helpful searches. Your audience will need to download Neo4j Desktop and have access to your graph, and have some training on the interface. However, once set up it's a great way to explore the graph manually or execute pre-defined searches.</p>
+<h4 id="apoc">APOC<a class="headerlink" href="#apoc" title="Permanent link">&para;</a></h4>
+<p>APOC stands for Awesome Procedures on Cypher. (Cypher is the SQL-like language used by Neo4j). You'll need to install APOC and provision it for your database (see <a href="https://neo4j.com/developer/neo4j-apoc/">instructions</a>). APOC contains many of the Natural Language Processing (NLP) algorithms you'll want (see <a href="https://neo4j.com/developer/nlp/">more</a>).</p>
+<h4 id="graph-algorithms">Graph Algorithms<a class="headerlink" href="#graph-algorithms" title="Permanent link">&para;</a></h4>
+<p>The Graph Algorithms library provides access to many graph algorithms for exploring and quantifying the graph. Check out the free book <a href="https://neo4j.com/graph-algorithms-book/">O'Reilly Graph Algorithms</a>. This library is downloaded and provisioned similar to APOC (<a href="https://neo4j.com/developer/graph-algorithms/">instructions</a>).</p>
+<h4 id="graph-data-science-playground">Graph Data Science Playground<a class="headerlink" href="#graph-data-science-playground" title="Permanent link">&para;</a></h4>
+<p>The Graph Data Science Playground provides a streamlined experience for executing graph data science algorithms against your graph. First install it by selecting the split button 'Open' and selecting 'Graph Apps Gallery'. Find the card for Graph Data Science Playground and click install (or paste the URL in the install bar as described <a href="https://medium.com/neo4j/introducing-the-graph-app-gallery-81aa3e63567b">here</a>). The Playground will now be available under the 'Open' split button.</p>
+<h2 id="cypher">Cypher<a class="headerlink" href="#cypher" title="Permanent link">&para;</a></h2>
+<p>Cypher is the SQL-like language that Neo4j uses to add data and query graph databases. It's helpful but not necessary to have experience with SQL before learning Cypher. The free book <a href="https://neo4j.com/graph-databases-book/">O'Reilly Graph Databases</a> is the best way to start learning Cypher, then check out the tutorials <a href="https://neo4j.com/developer/cypher-query-language/">here</a>. </p>
+<p>Cypher is more like a drawing using ASCII characters than a language per se. Entities are represented in parentheses <code>(jim:Person)</code>, properties are listed in braces <code>(jim:Person {name:'Jim'})</code>, and relationships are represented by square brackets between an arrow (<code>-[:OWES]-&gt;</code>). Relationships can also have properties <code>-[:CONTAINS {amount:50}-&gt;]</code>. </p>
+<p>So, the following statement would state that Jim owes Jan $50:</p>
+<p><code>(jim:Person {name:'Jim'}) -[:OWES {amount: 50}]-&gt; (jan:Person {name: 'Jan'})</code></p>
+<p><em>Note that the <code>jim</code> and <code>jan</code> before the <code>:Person</code> are optional in this statement, but would be required if returning one or both of the entities in a query.</em></p>
+<p>Use <code>CREATE</code> or <code>MERGE</code>to create that relationship in the graph  (best practice is to use <code>MERGE</code> to avoid duplication). Use <code>MATCH</code> to find that relationship in the graph. Cypher also has commands <code>WHILE</code>, <code>WITH</code>, <code>SET</code>, <code>UNION</code>, <code>FOREACH</code>, <code>CREATE UNIQUE</code>.</p>
+<p>Use <code>RETURN</code> to get the results of a query.</p>
+<h2 id="data-modelling">Data Modelling<a class="headerlink" href="#data-modelling" title="Permanent link">&para;</a></h2>
+<p>The great thing about graph databases is that the schema is almost identical to the way we originally whiteboard out the information design. Unlike relational databases, you don't need to go through the normalization process and insert additional complexity, as when creating many-to-many lookup tables. </p>
+<p><img alt="img" src="https://dist.neo4j.com/wp-content/uploads/matrix_whiteboard_model2.png" /></p>
+<p>First, describe in words the system you want to model. The 'nouns' in your system (Jim, Denver, desk) will be represented as <em>nodes</em>. Nodes are <em>labelled</em> as the type of entity they represent (people, places, things). Think about how your entities are connected (or identify verbs in your system); these are <em>relationships</em>. People 'know' other people. People 'work on' projects. Projects 'belong to' business units.</p>
+<p>Assign <em>properties</em> to each node or relationship to capture attributes. Attributes often answer questions you have of each entity or relationship ('how old is Jim?', 'when did Jim move to Denver'?; add an attribute 'age' to the 'Person' node and an attribute 'move date' to the 'LIVES_IN' relationship).</p>
+<p>A few additional considerations (see the Data Modeling chapter of Graph Databases):</p>
+<ul>
+<li>Use relationship attributes to express strength, weight, or quality of a relationship, plus any necessary metadata like timestamps, version numbers, etc.</li>
+<li>Use multiple relationships between nodes to express fine-grained and generic relationships. For example, one user may have a different billing and delivery address. Create two relationships to each, one generic <code>ADDRESS</code> and one more specific (<code>BILLING_ADDRESS</code>) or (<code>DELIVERY_ADDRESS</code>). You can then search for either address or both very efficiently. This is better than using relationship attributes for the same purpose, because it is faster to search.</li>
+<li>Use reciprocal relationships for bi-directional relationships. In other words, create  a relationship going from node <code>a</code> to node <code>b</code>, and the same relationship from <code>b</code> to <code>a</code>. When searching, it's best to omit the arrow in the relationship if the direction is not known or is not important; however, relationships cannot be defined without a direction.</li>
+<li>Add relationships when use cases dictate. For example, while you could find everyone that worked together in a company by traversing from people through projects to other people, you can also make this relationship explicit by including a <code>-[:WORKS_WITH]-&gt;</code> relationship. This will make queries faster and easier to write.</li>
+<li>Use nodes to model facts. For example, a person may work in one role for some time, and then be promoted to another role. Use a <code>Job</code> node to model the time that each person spends in each role. A job will have a start and end date as attributes, and be related to a role. (If job history is not important, you can simply delete the current relationship to a role and update with a new one.)</li>
+</ul>
+<p>Once you have a general idea of the entities and relationships, think through the use cases for the graph. Write user stories if helpful (<em>As User X, I want Y so I can Z</em>).  Make sure that your schema will allow you to answer the questions that you'll need to answer to satisfy your use cases.</p>
+<p>You don't need to have a fully built out schema to begin, in fact one of the benefits of graph databases is that the schema can grow (i.e., you can add entities and relationships) over time. However, you will want to be thoughtful about your design so that it is efficient and captures the relationships you need to capture.</p>
+<p>For more detail, see Neo4j's <a href="https://neo4j.com/developer/modeling-designs/">modeling designs guide</a>.</p>
+<h3 id="naming-guide">Naming Guide<a class="headerlink" href="#naming-guide" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Node labels are <code>CapWords</code></li>
+<li>Relationships are <code>ALL_CAPS</code></li>
+<li>Properties, variables, parameters, aliases and functions are <code>camelCase</code></li>
+</ul>
+<h2 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">&para;</a></h2>
+<p>As you populate your graph with data and your schema expands, you may want to set up unit tests to ensure that the results you're getting are accurate. You can set up a small graph with your initial schema but less data. Then write queries that you know the answers to. When you want to update the graph schema, first update the test graph schema and test that the right answers are returned. Write new tests to cover the extension of the graph schema you are planning.</p>
+<h2 id="importing-data">Importing Data<a class="headerlink" href="#importing-data" title="Permanent link">&para;</a></h2>
+<p>You'll most often start a graph database by importing data from CSV files. You can also import JSON files from you API. CSV files can be loaded from a specific 'Import' file on your local directory, or they can loaded from a URL (Google Sheets, GitHub, Dropbox). </p>
+<p>To find the local folder, open the 'Manage' menu of your graph (three dots on the top right in the Desktop client, not the Browser). Click the split button 'Open Folder' and select 'Import'. A folder will open; drag and drop files into this folder. </p>
+<p>Alternatively, commit your project to GitHub and get the URL for the raw version of your data. Or save it in Google Sheets and get the public link. For step by step instructions, see <a href="https://neo4j.com/developer/kb/import-csv-locations/">here</a>.</p>
+<p>Once you have your data available, use the <code>LOAD CSV</code> command to read the data into Neo4j from the local file and parse the data into the graph. Here's a simple example, but see [our tutorial] or the <a href="https://neo4j.com/developer/guide-import-csv/">documentation</a> for more.</p>
+<p>Here's the first two rows of the CSV (avoid spaces in header names):</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Role</th>
+<th>Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jim</td>
+<td>Senior Associate</td>
+<td>$150</td>
+</tr>
+<tr>
+<td>Jan</td>
+<td>Associate</td>
+<td>$100</td>
+</tr>
+</tbody>
+</table>
+<p>Here's how to load entities into a graph database. Employees and Roles are represented as nodes. The role for each employee will be expressed as a relationship after nodes are initially loaded. You'll copy this Cypher code into the terminal of the Neo4j Browser application:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">LOAD CSV WITH HEADERS FROM &#39;file:///data.csv&#39; AS row</span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">role</span><span class="p">:</span><span class="n">Role</span><span class="w"> </span><span class="p">{</span><span class="n">role</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Role</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Rate</span><span class="p">})</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>In this statement, the CSV is first made available to the application. Each row will be iterated through, accessed with the <code>row</code> variable. Using the <code>MERGE</code> command, we assign the contents of the 'Name' column for that row (<code>row.Name</code>) to a node labelled 'Person' (<code>person:Person</code>), specifically to the property 'name' (<code>{name: row.Name}</code>). The <code>MERGE</code> command ensures no duplicates are created, <code>CREATE</code> could also be used but might result in duplication.</p>
+<p>Next, assign roles to employees through relationships:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">LOAD CSV WITH HEADERS FROM &#39;file:///data.csv&#39; AS row</span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">role</span><span class="p">:</span><span class="n">Role</span><span class="w"> </span><span class="p">{</span><span class="n">role</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Role</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">HAS_ROLE</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">role</span><span class="p">)</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>Again, the CSV is made available to the application. We'll need it to see which person has which role. The two <code>MATCH</code> statements identify nodes within our graph that have the same name and role as the first row in the CSV. With the correct Person and Role nodes identified, a new relationship <code>HAS_ROLE</code> is created with the <code>MERGE</code> command, again to avoid duplication.</p>
+<p>Continue in this way until all entities are imported as nodes and all relationships are defined between nodes.</p>
+<h2 id="visualizing-sharing">Visualizing &amp; Sharing<a class="headerlink" href="#visualizing-sharing" title="Permanent link">&para;</a></h2>
+<p>Graphs are so intuitive that it's tempting to share the graph itself with users so they can explore it. Sometimes you just need to make the graph available without exposing the graph itself. Neo4j offers a few options for sharing the power of graphs.</p>
+<h3 id="schema">Schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
+<p>To get the schema, use the command</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">call</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">visualization</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<p>You can export this as an image (see next header).</p>
+<h3 id="image">Image<a class="headerlink" href="#image" title="Permanent link">&para;</a></h3>
+<p>You can export a PNG or SVG of the graph from the Browser client by querying the entire graph (or a subset) and using the drop-down menu above the result. To get the entire graph, use the cypher command:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="o">-[</span><span class="n">r</span><span class="o">]-</span><span class="p">()</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
+</pre></div>
+</td></tr></table>
+
+<h3 id="bloom">Bloom<a class="headerlink" href="#bloom" title="Permanent link">&para;</a></h3>
+<p><a href="https://neo4j.com/developer/neo4j-bloom/">Bloom</a> is installed alongside the Neo4j Desktop client and provides great functionality for exploring the graph in visual format. You can also define searches for users to help them get the information they need. Once you have a graph populated, use the split button 'Open' to open with Bloom instead of the Browser.</p>
+<h3 id="graphgists">GraphGists<a class="headerlink" href="#graphgists" title="Permanent link">&para;</a></h3>
+<p><a href="https://portal.graphgist.org/about">GraphGists</a> are similar to Jupyter Notebooks, but for graphs. They load the graph into the browser itself, so no back-end is required. However, they can only support small graphs (150 nodes and edges). Use these if you want to provide somewhat interactive graphs in a report or presentation.</p>
+<h3 id="heroku-and-graphenedb">Heroku and GrapheneDB<a class="headerlink" href="#heroku-and-graphenedb" title="Permanent link">&para;</a></h3>
+<p>You can deploy your graph database powered application to the web with Heroku and the <a href="https://devcenter.heroku.com/articles/graphenedb">GrapheneDB</a> plugin. To get more than 1,000 nodes and 10,000 relationships, you'll need to pay the monthly fee for GrapheneDB ($9/month and up). To get some experience with deploying on Heroku, check out the <a href="https://neo4j.com/developer/example-project/">Movies Database tutorial</a> (DO NOT USE THE <code>py2neo</code> repo they have listed, a <a href="https://github.com/neo4j-examples/movies-python-py2neo">new repo</a> was created for the more recent version of py2neo--I have also found issues with that, contact me for a working copy).</p>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../database-overview/" title="Database Overview" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Database Overview
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../neo4j-tutorial/" title="Neo4j Tutorial" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Neo4j Tutorial
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Environmental Incentives
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+  <div class="md-footer-social">
+    <link rel="stylesheet" href="../../assets/fonts/font-awesome.css">
+    
+      <a href="https://linkedin.com/in/eriktanderson" class="md-footer-social__link fa fa-linkedin"></a>
+    
+      <a href="https://github.com/eanderson-ei" class="md-footer-social__link fa fa-github"></a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="../../js/scripts.js"></script>
+      
+    
+  </body>
+</html>

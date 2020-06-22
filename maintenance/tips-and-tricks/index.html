@@ -664,6 +664,30 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/neo4j-overview/" title="Neo4j Graph Databases" class="md-nav__link">
+      Neo4j Graph Databases
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/neo4j-tutorial/" title="Neo4j Tutorial" class="md-nav__link">
+      Neo4j Tutorial
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -778,7 +802,7 @@
 
 
   <li class="md-nav__item">
-    <a href="../../python-packages/dash/" title="Dash" class="md-nav__link">
+    <a href="../../guides/dash/" title="Dash" class="md-nav__link">
       Dash
     </a>
   </li>
@@ -927,13 +951,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#customs-used" class="md-nav__link">
-    Customs Used
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#markdown-reference" class="md-nav__link">
     Markdown Reference
   </a>
@@ -990,6 +1007,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pymdown" class="md-nav__link">
+    PyMdown
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1013,13 +1037,6 @@
           <li class="md-nav__item">
   <a href="#details" class="md-nav__link">
     Details
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pymdown" class="md-nav__link">
-    PyMdown
   </a>
   
 </li>
@@ -1080,13 +1097,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#customs-used" class="md-nav__link">
-    Customs Used
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#markdown-reference" class="md-nav__link">
     Markdown Reference
   </a>
@@ -1143,6 +1153,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#pymdown" class="md-nav__link">
+    PyMdown
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1166,13 +1183,6 @@
           <li class="md-nav__item">
   <a href="#details" class="md-nav__link">
     Details
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#pymdown" class="md-nav__link">
-    PyMdown
   </a>
   
 </li>
@@ -1214,9 +1224,6 @@
                 
                 
                 <h1 id="tips-tricks">Tips &amp; Tricks<a class="headerlink" href="#tips-tricks" title="Permanent link">&para;</a></h1>
-<h4 id="customs-used">Customs Used<a class="headerlink" href="#customs-used" title="Permanent link">&para;</a></h4>
-<p>To identify a user-provided value, wrap it in <code>&lt;&gt;</code> within a code block: <code>git commit &lt;updated-file&gt;</code></p>
-<p>Highlight package names, files, code, and cli commands in code blocks: <code>rasterio</code></p>
 <h4 id="markdown-reference">Markdown Reference<a class="headerlink" href="#markdown-reference" title="Permanent link">&para;</a></h4>
 <p>Here is a <a href="https://support.typora.io/Markdown-Reference">handy reference</a> for writing in markdown, provided by Typora.</p>
 <h4 id="converting-notebooks">Converting Notebooks<a class="headerlink" href="#converting-notebooks" title="Permanent link">&para;</a></h4>
@@ -1263,6 +1270,8 @@
 <p>...I changed the title of this note.</p>
 </div>
 <p>See <a href="https://squidfunk.github.io/mkdocs-material/extensions/admonition/">documentation</a> for more.</p>
+<h5 id="pymdown">PyMdown<a class="headerlink" href="#pymdown" title="Permanent link">&para;</a></h5>
+<p>A ton of functionality in this <a href="https://squidfunk.github.io/mkdocs-material/extensions/pymdown/">package of extensions</a>, including highlighting text, inline  editing, math equations, and task lists (though not interactive task lists).</p>
 <h4 id="interactive-visualizations">Interactive Visualizations<a class="headerlink" href="#interactive-visualizations" title="Permanent link">&para;</a></h4>
 <p>Maps, dashboards, and other interactive visualizations should be passed in using the iframe. See Plotly guidance <a href="https://plot.ly/python/embedding-plotly-graphs-in-HTML">here</a>.</p>
 <h4 id="html-tags">HTML Tags<a class="headerlink" href="#html-tags" title="Permanent link">&para;</a></h4>
@@ -1292,8 +1301,7 @@
 </details>
 
 <p>Note that the <code>details</code> tag is styled by the extension <a href="#admonition">admonition</a> as a call out box when using the Material Theme. I couldn't prevent this behavior by removing the admonition extension from my yaml file. Switching to a different theme will avoid this behavior. <a href="#css">Adding custom CSS</a> may also be an option.</p>
-<h5 id="pymdown">PyMdown<a class="headerlink" href="#pymdown" title="Permanent link">&para;</a></h5>
-<p>A ton of functionality in this <a href="https://squidfunk.github.io/mkdocs-material/extensions/pymdown/">package of extensions</a>, including highlighting text, inline comments and editing, math equations, and task lists (though not interactive task lists).</p>
+<p>Details tags are also available as an extension (see <a href="#pymdown">PyMdown</a>).</p>
 <h4 id="javascript">JavaScript<a class="headerlink" href="#javascript" title="Permanent link">&para;</a></h4>
 <p>You can add custom JavaScript to MkDocs provided you're ok with the script running on every page. </p>
 <p>In the <code>mkdocs.yml</code> file, add a line that points to the location of the JavaScript file relative to the docs/ folder:</p>
