@@ -1107,7 +1107,7 @@
 <p><strong>1.1</strong> Create a project directory as you would otherwise </p>
 <p><strong>1.2</strong> Open Neo4j Desktop</p>
 <p><strong>1.3</strong> Create a New Project </p>
-<p><img alt="img" src="assets/new-project.png" /></p>
+<p><img alt="img" src="../assets/new-project.PNG" /></p>
 <h3 id="2-get-the-data">2. Get the data<a class="headerlink" href="#2-get-the-data" title="Permanent link">&para;</a></h3>
 <p>Let's assume our data is stored in a relational database with the following tables:</p>
 <p><strong>Staff:</strong></p>
@@ -1175,20 +1175,20 @@
 </table>
 <p><strong>2.3</strong> Now export that table as a CSV and save to your <code>data/</code> folder for your project (i.e., save this file in the main project's directory--create one if necessary. This step has nothing to do with Neo4j, you should have a project directory set up already).</p>
 <p><strong>2.4</strong> In Neo4j Desktop, click 'Add Files' and add the saved CSV.</p>
-<p><img alt="img" src="assets/add-files.png" /></p>
+<p><img alt="img" src="../assets/add-files.PNG" /></p>
 <h3 id="3-create-a-graph-database">3. Create a graph database<a class="headerlink" href="#3-create-a-graph-database" title="Permanent link">&para;</a></h3>
 <p>3.1 Create a new graph database</p>
-<p><img alt="img" src="assets/add-database.png" /></p>
+<p><img alt="img" src="assets/add-database.PNG" /></p>
 <p>3.2 Select 'Create a Local Graph'</p>
-<p><img alt="img" src="assets/create-local.png" /></p>
+<p><img alt="img" src="../assets/create-local.PNG" /></p>
 <p>3.3 Provide a graph name and password (remember the password). Click 'Create'.</p>
-<p><img alt="img" src="assets/password.png" /></p>
+<p><img alt="img" src="../assets/password.PNG" /></p>
 <p>3.4 Start the graph and then open with the Neo4j browser. The Browser will open in a new application window.</p>
-<p><img alt="img" src="assets/start-open.png" /></p>
+<p><img alt="img" src="../assets/start-open.PNG" /></p>
 <h3 id="4-populate-the-graph">4. Populate the graph<a class="headerlink" href="#4-populate-the-graph" title="Permanent link">&para;</a></h3>
 <p>We'll use the <code>LOAD CSV</code> command to read in the data from the CSV we created in step 2. It may be helpful to have the CSV open to reference the header names.</p>
 <p><strong>4.1</strong> In the Neo4j Desktop client, open the menu for the file you previously uploaded and select 'Copy url to clipboard'. The url is the most direct path (the file path doesn't include the file name, so is less useful here).</p>
-<p><img alt="img" src="assets/open-url.png" /></p>
+<p><img alt="img" src="../assets/open-url.PNG" /></p>
 <p><strong>4.2</strong> With the URL copied, return to the Neo4j Browser and type the following, then click the play button:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"> </span><span class="k">RETURN</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
 </pre></div>
@@ -1196,7 +1196,7 @@
 
 <p>This will check that the file is accessible and return a JSON representation of the data row by row, helpful if you need to see the structure of the data.</p>
 <p>In the Browser, it would look like this:</p>
-<p><img alt="img" src="assets/load-command.png" /></p>
+<p><img alt="img" src="../assets/load-command.PNG" /></p>
 <p><strong>4.3</strong> Import entities as nodes. </p>
 <p>We'll want to import each entity as a node before we create relationships. Use 'Shift+Enter' to input multi-line commands into the terminal.</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -1289,7 +1289,7 @@
 
 <p><strong>4.6</strong> Review schema</p>
 <p>You can now review the schema, which will look like this:</p>
-<p><img alt="img" src="assets/schema.png" /></p>
+<p><img alt="img" src="../assets/schema.PNG" /></p>
 <p>The command to return a schema is <code>CALL db.schema.visualization</code>, however note that this was created in Bloom (see <a href="#creating-a-schema-in-bloom">instructions</a>).</p>
 <h3 id="5-evaluate-closeness">5. Evaluate 'closeness'<a class="headerlink" href="#5-evaluate-closeness" title="Permanent link">&para;</a></h3>
 <p>Closeness is a graph data science algorithm that can detect nodes that are able to spread information efficiently through a graph. This is exactly what we'd like to quantify to see who is well-connected, and who is not, in our professional network.</p>
@@ -1297,10 +1297,10 @@
 <p><strong>6.1</strong> Install the Graph Data Science playground. In the Neo4j Desktop client, select the split button 'Open' for your graph and select 'Graph Apps Gallery'. Find the card for Graph Data Science Playground and click install (or paste the URL in the install bar as described <a href="https://medium.com/neo4j/introducing-the-graph-app-gallery-81aa3e63567b">here</a>). The Playground will now be available under the 'Open' split button.</p>
 <p>OR</p>
 <p>Install the Graph Data Science library. In the Neo4j Browser client, add the Graph Database Plugin by clicking Add Plugin and selecting the Graph Database plugin.</p>
-<p><img alt="img" src="assets/gds.png" /></p>
+<p><img alt="img" src="../assets/gds.PNG" /></p>
 <p><strong>6.2</strong> Open the Graph Data Science Playground using the 'Open' split button in the Neo4j Desktop.</p>
 <p><strong>6.3</strong> Run the closeness algorithm. Select the Centralities category of algorithms, and then locate the Closeness algorithm in the menu bar. Set the 'Label' and 'Relationship Type' as 'Any'. This will allow us to find which node, whether an employee, a project, or a practice area, has the best ability to transmit information*. Change the 'Relationship Orientation' to 'Undirected' since information can flow either direction. Check the box to Store results, which will write the results into a new property in our nodes so we can access it later. Increase the 'Rows to Show' to 100 so you can see all nodes. Hit Run.</p>
-<p><img alt="img" src="assets/closeness.png" /></p>
+<p><img alt="img" src="../assets/closeness.PNG" /></p>
 <p>You can explore the results with the Chart or Visualization in the Playground. You can also see the code so you could write it with the Graph Data Science Library in the Browser if needed.</p>
 <p>*Note that because employees are not connected to each other, we cannot simply run the closeness algorithm on employees only. We would need to add a relationship between employees whenever they are connected by a project to evaluate only employees, rather than all nodes in the graph.</p>
 <h3 id="6-explore-the-graph">6. Explore the graph<a class="headerlink" href="#6-explore-the-graph" title="Permanent link">&para;</a></h3>
@@ -1309,9 +1309,9 @@
 <p><strong>6.2</strong> Use the suggested perspective. Perspectives are views on the data that can include or exclude certain parts of the graph. For our purposes, we want to see everything. The suggested perspective will get us there quickest. If you need to configure your own perspective, check out this <a href="https://www.youtube.com/watch?v=fOJqHcTpQxs">video</a>.</p>
 <p><strong>6.3</strong> Show Employees and Projects by searching. In the search bar, type <code>Employee WORKS_ON</code> and hit enter. This will return all employees and the projects they work on. </p>
 <p><strong>6.4</strong> Re-color the Employee nodes by closeness. In the right panel, click on the colored employee legend item and select 'Rule-based' to apply a color based on the closeness score. Review the results in the Graph Data Science Library to see the minimum and maximum values. Make sure 'Apply Color' is switched on.</p>
-<p><img alt="img" src="assets/rule-based-color.png" /></p>
+<p><img alt="img" src="../assets/rule-based-color.PNG" /></p>
 <p>That's it! You can now explore in Bloom by zooming and panning to see who is connected and how. Here's the final graph:</p>
-<p><img alt="img" src="assets/ei-graph.png" /></p>
+<p><img alt="img" src="../assets/ei-graph.PNG" /></p>
 <h2 id="creating-a-schema-in-bloom">Creating a schema in Bloom<a class="headerlink" href="#creating-a-schema-in-bloom" title="Permanent link">&para;</a></h2>
 <p>To get a pretty representation of your schema, first color and provide icons for each node, and optionally color each relationship in Bloom. Next, create a search phrase with the following code as the Cypher query:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
