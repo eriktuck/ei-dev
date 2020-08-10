@@ -54,13 +54,15 @@ nav:
   - 'Google API': 'deployment/google-api.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
+  - 'Neo4j Graph Databases': 'data-management/neo4j-overview.md'
+  - 'Neo4j Tutorial': 'data-management/neo4j-tutorial.md'
 - Data Science:
   - 'Machine Learning Tutorial': 'data-science/machine-learning-tutorial/machine-learning-tutorial.md'
 - Data Visualization:
   - 'Data Visualization': 'data-visualization/data-visualization.md'
   - 'Dashboards': 'data-visualization/dashboards.md'
 - Python Packages:
-  - 'Dash': 'python-packages/dash.md'
+  - 'Dash': 'guides/dash.md'
 - Additional Resources:
   - 'Scoping Canvas': 'additional-resources/scoping.md'
   - 'Product Definition': 'additional-resources/product-definition.md'

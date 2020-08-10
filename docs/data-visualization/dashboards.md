@@ -115,7 +115,7 @@ Credit: Sam Drole, Originally published on Tableau Public.
 
 #### Dash
 
-Dash is a Python library for building analytic web apps. In terms of simplicity vs customizability, this solution skews heavily towards customizability. However, it's free, you can host it anywhere, it integrates with almost everything, computation is nearly unlimited, and it will scale without issue. (It's also a great option for interactive reports, which I'll hope to cover in this wiki at some point.) The only catch, you'll need to know Python to develop and maintain it. See more [here](../python-packages/dash.md).
+Dash is a Python library for building analytic web apps. In terms of simplicity vs customizability, this solution skews heavily towards customizability. However, it's free, you can host it anywhere, it integrates with almost everything, computation is nearly unlimited, and it will scale without issue. (It's also a great option for interactive reports, which I'll hope to cover in this wiki at some point.) The only catch, you'll need to know Python to develop and maintain it. See more [here](../guides/dash.md).
 
 ---
 
@@ -135,7 +135,7 @@ Google's Data Studio is a great dashboard tool if you're already using Google Sh
 
 #### Power BI
 
-Power BI is desktop software that allows for publishing and sharing dashboards to the web. If your team is already using Microsoft this may be a good option. An individual license is free, but to share dashboards you'll need to pay $9.99 per user per month (sold as an annual subscription) to upgrade to Power BI Pro. To share outside of your organization, you'll need to have a Premium capacity which costs $5,000. Read up [here](https://docs.microsoft.com/en-us/power-bi/service-how-to-collaborate-distribute-dashboards-reports) before fully investing in this solution.
+Power BI is desktop software that allows for publishing and sharing dashboards to the web. If your team is already using Microsoft this may be a good option. An individual license is free, but to share dashboards you'll need to pay $9.99 per user per month (sold as an annual subscription) to upgrade to Power BI Pro. You can only share with others who also have Power BI Pro; to share with those that do not have Power BI Pro, you'll need to have a Premium capacity which costs $5,000. Read up [here](https://docs.microsoft.com/en-us/power-bi/service-how-to-collaborate-distribute-dashboards-reports) before fully investing in this solution.
 
 ---
 
@@ -152,3 +152,14 @@ Fine Report has a lot of functionality, but I find it to be rather unappealing a
 ![fine-report](https://www.finereport.com/en/wp-content/uploads/2019/12/01.gif)
 
 ---
+
+#### ArcGIS Story Maps & Dashboard
+
+[ArcGIS StoryMaps](https://storymaps.arcgis.com/) are often used when the dashboard will include a map component. However, the map doesn't need to be the focus of the dashboard. In fact, some developers who are skilled with ArcGIS Story Maps will use this as their go-to dashboard. In my experience, it's best as a 'scrolly-telling' application, where charts are stacked one top of one another and the user scrolls through to reveal additional data. These can be created for free, but you'll want to use our license to develop the input layers for any maps you create. [This is a great example](https://storymaps.arcgis.com/stories/42b1a6fe6a524b578becd12c0bee4b4c).
+
+ESRI recently released ArcGIS Dashboards as a solution for dashboard-specific applications. Using this solution requires a license for ArcGIS Online.
+
+![arcgis-dashboard](https://https://www.esri.com/content/dam/esrisites/en-us/arcgis/products/operations-dashboard/update-2020/assets/arcgis-dashboard-banner-fg.jpg)
+
+---
+

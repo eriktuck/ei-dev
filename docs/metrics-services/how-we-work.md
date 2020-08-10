@@ -38,9 +38,9 @@ After this meeting, we'll refine our understanding of what you told us, develop 
 
 ### Product Definition
 
-Utilizing our research and what you've told us, we'll develop options for solutions and develop a recommendation. We'll return with a [Product Definition](../additional-resources/product-definition.md) and, potentially, a 'Minimum Viable Product' (MVP) - some tangible way for you to understand the recommended solution. 
+Utilizing our research and what you've told us, we'll develop options for solutions and develop a recommendation. We'll return with a [Product Definition](../additional-resources/product-definition.md) and, potentially, a prototype - some tangible way for you to understand the recommended solution. 
 
-The MVP is the minimum build sufficient to test key hypotheses we've developed. It may not even     function at all (e.g., a 'wizard of oz' approach), but will simulate the experience of using the tool. It might be as simple as a drawing, a wireframe, or even a small version of what we'll eventually develop. We find it's better to have something tangible for you to react to so that you are fully aware of the look/feel and limitations of any solution. Otherwise you might be imaging a cure all that is impossible!
+The prototype is the minimum build sufficient to test key hypotheses we've developed. It may not even function at all (e.g., a 'wizard of oz' approach), but will simulate the experience of using the tool. It might be as simple as a drawing, a wireframe, or even a small version of what we'll eventually develop. We find it's better to have something tangible for you to react to so that you are fully aware of the look/feel and limitations of any solution. 
 
 Also, we may not be able to solve all of the problems (or meet all of the needs) all at once, if not, we'll pick an 'anchor problem' and start there. We'll keep track of other problems to be solved in future features.
 

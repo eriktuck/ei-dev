@@ -10,7 +10,9 @@ This tutorial will
 
 ## Introduction to Databases
 
-A database is simply an organized store for information. Data are stored as rows and columns in tables; relationships are defined between tables (hence the name, "relational database"). You might have tables for customers, products, and orders. Customers place orders which include products. The database helps you get the right products to the right customers.
+A database is simply an organized store for information. In a relational database, data are stored as rows and columns in tables; relationships are defined between tables. You might have tables for customers, products, and orders. Customers place orders which include products. The database helps you get the right products to the right customers.
+
+In addition to relational databases, [graph databases](#graph-databases) and [NOSQL](#nosql) (Not Only Structured Query Language) databases are available.
 
 How the data are stored is often less important than how the data are accessed. The primary reason you're developing a database is probably to make data easier to access, analyze and report. When choosing and designing a database, you'll need to pay as much attention to how the user will interface with the database as the database solution itself. 
 
@@ -45,7 +47,7 @@ Reports are queries or collections of queries that can be batched together and r
 A database solution (aka database management system; DBMS) will include these key components
 
 1. **Database Software** and **Hosting Platform**: The database software runs the database. The database and the database software will be hosted either on a local server or on the cloud.
-2. **Database Management Client**: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client can reduce, but doesn't necessarily eliminate, the need to use SQL (Structured Query Language) to interact with the database (however many DBAs will prefer using SQL anyway).
+2. **Database Management Client**: The database management client is the interface that the DBA will use to configure the database and manage access for users. The database client typically uses SQL (Structured Query Language) to interact with the database.
 3. **User Interface** and **Analysis Platform**: The user interface allows users to access the data while the analysis platform allows the user to gain insights from the data. Often, these are combined.
 
 To illustrate, below are three options for a database solution that you might consider. 
@@ -78,7 +80,7 @@ A cloud-based solution that offers great customization, if you're tech-savvy eno
 
 ##### Example 3: MySQL + MySQL Workbench + Custom Web Application
 
-This open source solution may be your go-to if you're building a website and working with a web developer.    Many open source solutions are available.
+This open source solution may be your go-to if you're willing to invest in a web-application.    Many open source solutions are available.
 
 > Project Spotlight: The [Registry]( http://monarchhabitatexchange.org/projects ) for the Monarch Butterfly Habitat Exchange was built on this stack.
 
@@ -94,7 +96,7 @@ These are your options if you don't have a tech guru on the team and don't have 
 
 **Microsoft Access** and **OpenOffice Base** are good entry-level options. OpenOffice Base is free but has fewer features and less support than Microsoft Access. 
 
-**Microsoft Excel**, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations. If you'd prefer a cloud-based solution, **Google Sheets** paired with **Google Forms** might even work. 
+**Microsoft Excel**, especially if paired with custom VBA Forms and Modules, can even serve as a database but has limitations. If you'd prefer a cloud-based solution, **Google Sheets** paired with **Google Forms** might even work. Even though these are not 'databases' per se, you may be surprised by how much easier data management is when you separate the data storage functionality from the data entry and data viewing functionality.
 
 #### <u>Cheap(ish) Cloud-based Subscription Services</u>
 
@@ -112,7 +114,7 @@ Venture into this territory and you'll want to make sure you have the technical 
 
 #### <u>Open Source Database Software</u>
 
-**PostgreSQL**, **MySQL**, and **MariaDB** are examples of open source (free) database solutions. While these are robust, scalable database solutions used by many large corporations, they are not designed for your everyday desk jockey. These open source solutions are often paired with a web-based interface. If you are working with a web developer and have the budget for them to design the forms, queries and reports you need you'll likely choose one of these open source options. *Don't forget you'll probably need to hire them again when you want to make changes or when the software reaches its End Of Life (EOL).*
+**PostgreSQL**, **MySQL**, and **MariaDB** are examples of open source (free) database solutions. **Neo4j** is a long-time standard for graph databases. While these are robust, scalable database solutions used by many large corporations, they are not designed for your everyday desk jockey. These open source solutions are often paired with a web-based interface. If you are working with a web developer and have the budget for them to design the forms, queries and reports you need you'll likely choose one of these open source options. *Don't forget you'll probably need to hire them again when you want to make changes or when the software reaches its End Of Life (EOL).*
 
 #### <u>Cloud-based Scalable Services</u>
 
@@ -134,6 +136,8 @@ If you're working in Python, know that there are APIs for most of the open sourc
 
 I'd recommend playing around with [SQLite](https://www.sqlitetutorial.net/) (sqlite3 package), which comes with the base Python distribution, to familiarize yourself with using databases in your applications. You can access and manipulate your database in a Jupyter Notebook using the appropriate API and `pandas`. Use the `pandas.read_sql` command to read the results of a SQL query into a pandas dataframe for further analysis.
 
+For a graph database solution, Neo4j has multiple APIs for Python, try `py2neo`.
+
 ## How to Choose?
 
 With so many options, how do you choose? This section will help you pick the right one. 
@@ -144,7 +148,9 @@ Consider both the cost of the software itself and the cost of configuring and ma
 
 #### Scalability
 
-Unless you're dealing with \*Big Data*, you won't need to worry about the database growing too large to fit on a single server. The only likely exception would be if attempting to store geospatial data within a relational database outside of ArcGIS. If you go with a cloud-based solution you can scale as much as you want, provided you can pay for it.
+Unless you're dealing with \*Big Data*, you won't need to worry about the database growing too large to fit on a single server. The only likely exception would be if attempting to store geospatial data within a relational database outside of ArcGIS. If you go with a cloud-based solution you can scale as much as you want, provided you can pay for it. 
+
+Graph databases and NOSQL solutions are more robust to changes in their schema, if you're worried about changes to the data that will be stored in your database overtime.
 
 #### Hosting & Integration
 
@@ -159,6 +165,20 @@ Who will maintain the database over time? If it's the client, make sure they are
 Who will provide support if something crashes or the client needs a new type of report developed? If it's you, make sure *you* are comfortable with the solution. 
 
 Keep in mind that paying a contractor to set up a cool web-based database and interface will likely require paying a contractor to maintain that database and interface periodically over time. 
+
+## Graph Databases
+
+A graph database stores data in a graph, which is not the 'graph' with a x- and y-axis, but rather a collection of nodes (sometimes called vertices) and relationships (sometimes called edges). Instead of a table of products, orders, and customers; each would be represented as a node and relationships would be defined to connect products to orders and orders to customers. Graph databases are more flexible than relational databases, and because relationships are stored directly in the database, they can be more performant for evaluating relationships specifically.
+
+![graph-databases](assets/graph-database.png)
+
+
+
+## NOSQL
+
+NOSQL (Not Only SQL) databases store disconnected and unstructured data through a variety of strategies. Some definitions of NOSQL include graph databases because graph databases do not use SQL. NOSQL encompasses a large variety of database technologies that might suit your needs if a relational or graph database do not suffice. Here is how the same order data might be represented in a NOSQL database. 
+
+![nosql](assets/NOSQL.png)
 
 ## Final Thoughts
 
