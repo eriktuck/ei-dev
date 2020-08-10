@@ -48,7 +48,7 @@ This is your chance to give us direction on the scope and solution. Did we overe
 
 ### Specification
 
-We'll document the specifications for the solution in our template [Specifications Document](), create our project plan and roadmap, and develop the solution or support you to get the product built with a technology provider. Before working with a technology provider, we may develop a simple prototype that will allow you to test and interact with the product so you can be very clear about what you want and how you want it to work.
+We'll document the specifications for the solution in our template [Specifications Document](../additional-resources/specification-doc.md), create our project plan and roadmap, and develop the solution or support you to get the product built with a technology provider. Before working with a technology provider, we may develop a simple prototype that will allow you to test and interact with the product so you can be very clear about what you want and how you want it to work.
 
 ### Implementation
 
