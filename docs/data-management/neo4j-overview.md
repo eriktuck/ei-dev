@@ -34,7 +34,7 @@ The Graph Data Science Playground provides a streamlined experience for executin
 
 Cypher is the SQL-like language that Neo4j uses to add data and query graph databases. It's helpful but not necessary to have experience with SQL before learning Cypher. The free book [O'Reilly Graph Databases](https://neo4j.com/graph-databases-book/) is the best way to start learning Cypher, then check out the tutorials [here](https://neo4j.com/developer/cypher-query-language/). 
 
-Cypher is more like a drawing using ASCII characters than a language per se. Entities are represented in parentheses `(jim:Person)`, properties are listed in braces `(jim:Person {name:'Jim'})`, and relationships are represented by square brackets between an arrow (`-[:OWES]->`). Relationships can also have properties `-[:CONTAINS {amount:50}->]`. 
+Cypher is more like a drawing using ASCII characters than a language per se. Entities are represented in parentheses `(jim:Person)`, properties are listed in braces `(jim:Person {name:'Jim'})`, and relationships are represented by square brackets between an arrow (`-[:OWES]->`). Relationships can also have properties `-[:CONTAINS {amount:50}]->`. 
 
 So, the following statement would state that Jim owes Jan $50:
 
