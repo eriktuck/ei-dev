@@ -1,8 +1,8 @@
 # Product Definition
 
-> An editable version of the Product Definition is available [here](https://docs.google.com/document/d/18tqPRzVUzHOwHV_MJVtf4ewP7XH1Kr0QZQ_6B8St56k/edit?usp=sharing). Download a copy before continuing.
+> An editable version of the Product Definition is available [here](https://docs.google.com/document/d/1TdTCZUWw9zF2YfGSbtSu3njs2C2LlT8wWzoDTuQeOKE/edit?usp=sharing). Download a copy before continuing.
 
-Product definition is the process of documenting the proposed solution in broad terms. The purpose of a product definition is to align expectations, formulate broad concepts, clarify roles, and establish a development timeline. In the next step, [Product Specification](), you will have a chance to provide more specifics. At the product definition stage, you still have considerable flexibility in how you will deliver the final solution.
+Product definition is the process of documenting the proposed solution in broad terms. The purpose of a product definition is to align expectations, formulate broad concepts, clarify roles, and establish a development timeline. In the next step, [Product Specification](specification-doc.md), you will have a chance to provide more specifics. At the product definition stage, you still have considerable flexibility in how you will deliver the final solution.
 
 Use the guidance below to complete the product definition. The product definition for this website is available [here]() as an example.
 
@@ -30,6 +30,8 @@ The goal statement should describe the desired impact of the project. It should 
 
 Primary users are the subset of your boundary partners who will directly interact with the tool or solution. Think of these like your customers. You might want to group users with [personas](../additional-resources/persona-guide.md). For each primary user identified, complete the table below. If you've already completed the [scoping exercise](scoping.md), you will have a starting point. 
 
+Provide specific examples of each user group and describe their perspective to help put yourself in their shoes.
+
 |               Problem Scenarios               |       Alternatives       |      Value Propositions      |
 | :-------------------------------------------: | :----------------------: | :--------------------------: |
 | What is the problem, need, or job to be done? | What are they doing now? | Why is your solution better? |
@@ -50,11 +52,17 @@ Uses describe the conditions under which the tool is used and the purpose for us
 
 If you're familiar with user stories, you can think of a use case as an 'epic' user story. During product specification you will enumerate more specific user stories to motivate development of features. However, if it's helpful, you can frame use cases like user stories as "As user X, I want to Y so I can Z." This helps you think through each use case (Y) as specific to a user (X) who is motivated to achieve some outcome (Z). 
 
-#### Product Sketch
+#### Workflow or Product Sketch
 
-The six panels in this section allow you to get visual with how you expect the solution to work in practice. Visualizing can really help you avoid pitfalls and identify necessary features. Don't feel restricted to this six-panel format, feel free to get creative. Storyboards and Journey Maps are both great options for this sketch. Jot down any insights you had. You can move this section to the back if breaks up the flow of the document too much.
+Describe in general terms how the tool will integrate with existing workflows or create new workflows (be careful in creating new workflows, without sufficient motivation, it's unlikely your users will fully adopt the tool).
 
-#### Design Principles & Constraints
+A journey map can be particularly effective in visualizing the users' workflow without the tool (before) and with the tool (after). Visualizing can really help you avoid pitfalls and identify necessary features. Be sure to jot down any insights you had. You can move the sketch to the back if breaks up the flow of the document too much.
+
+#### Related Products
+
+List any products that will integrate with, inform, or be informed by this product, especially products that produce data used by the tool, products that receive data from the tool, or products to be replaced by the tool. You'll probably have identified a few of these products in the workflow section above, here is your chance to be thorough. Add links to existing products if possible for easy reference.
+
+#### Considerations
 
 List design principles and constraints. Consider integration, hosting, support, adaptive management and deployment but don't get into details yet. Your client may have constraints related to software licensing, budget, etc. Listing them here will make sure you don't come back with a solution that isn't feasible.
 
