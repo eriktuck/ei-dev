@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -1092,6 +1092,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../additional-resources/specification-doc/" title="Product Specification" class="md-nav__link">
+      Product Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../additional-resources/persona-guide/" title="Persona Development Guide" class="md-nav__link">
       Persona Development Guide
     </a>
@@ -1486,23 +1498,35 @@
 
 <h4 id="grids">Grids<a class="headerlink" href="#grids" title="Permanent link">&para;</a></h4>
 <p>To create side-by-side elements, access the grid. First, create a <code>div</code> where you will include the side-by-side elements. Assign to each component the number of 'columns' you want the component to occupy out of a possible twelve. Assign to the <code>div</code> element the class name of 'row'. This example would create two side-by-side buttons, each occupying one half of the screen:</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8
-9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">html</span><span class="p">.</span><span class="n">Div</span><span class="p">([</span>
-    <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="s1">&#39;Submit&#39;</span><span class="p">,</span>
-    <span class="n">id</span><span class="o">=</span><span class="s1">&#39;submit-button&#39;</span><span class="p">,</span>
-    <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six rows&#39;</span><span class="p">),</span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">html</span><span class="p">.</span><span class="n">Div</span><span class="p">(</span>
+    <span class="n">className</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span>
+    <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six columns&#39;</span><span class="p">,</span>
+            <span class="n">id</span><span class="o">=</span><span class="s1">&#39;submit-button&#39;</span><span class="p">,</span>
+            <span class="n">children</span><span class="o">=</span><span class="s1">&#39;Submit&#39;</span>
+            <span class="p">),</span>
 
-    <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span><span class="s1">&#39;Undo&#39;</span><span class="p">,</span>
-    <span class="n">id</span><span class="o">=</span><span class="s1">&#39;undo-button&#39;</span><span class="p">,</span>
-    <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six rows&#39;</span><span class="p">)</span>
-<span class="p">],</span> <span class="n">className</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">)</span>
+        <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six columns&#39;</span><span class="p">,</span>
+            <span class="n">id</span><span class="o">=</span><span class="s1">&#39;undo-button&#39;</span><span class="p">,</span>
+            <span class="n">children</span><span class="o">=</span><span class="s1">&#39;Undo&#39;</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
@@ -1632,6 +1656,7 @@
                 
                   
                 
+                
               
               
                 
@@ -1711,7 +1736,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

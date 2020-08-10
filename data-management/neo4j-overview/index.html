@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -1039,6 +1039,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../additional-resources/specification-doc/" title="Product Specification" class="md-nav__link">
+      Product Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../additional-resources/persona-guide/" title="Persona Development Guide" class="md-nav__link">
       Persona Development Guide
     </a>
@@ -1309,7 +1321,7 @@
 <p>The Graph Data Science Playground provides a streamlined experience for executing graph data science algorithms against your graph. First install it by selecting the split button 'Open' and selecting 'Graph Apps Gallery'. Find the card for Graph Data Science Playground and click install (or paste the URL in the install bar as described <a href="https://medium.com/neo4j/introducing-the-graph-app-gallery-81aa3e63567b">here</a>). The Playground will now be available under the 'Open' split button.</p>
 <h2 id="cypher">Cypher<a class="headerlink" href="#cypher" title="Permanent link">&para;</a></h2>
 <p>Cypher is the SQL-like language that Neo4j uses to add data and query graph databases. It's helpful but not necessary to have experience with SQL before learning Cypher. The free book <a href="https://neo4j.com/graph-databases-book/">O'Reilly Graph Databases</a> is the best way to start learning Cypher, then check out the tutorials <a href="https://neo4j.com/developer/cypher-query-language/">here</a>. </p>
-<p>Cypher is more like a drawing using ASCII characters than a language per se. Entities are represented in parentheses <code>(jim:Person)</code>, properties are listed in braces <code>(jim:Person {name:'Jim'})</code>, and relationships are represented by square brackets between an arrow (<code>-[:OWES]-&gt;</code>). Relationships can also have properties <code>-[:CONTAINS {amount:50}-&gt;]</code>. </p>
+<p>Cypher is more like a drawing using ASCII characters than a language per se. Entities are represented in parentheses <code>(jim:Person)</code>, properties are listed in braces <code>(jim:Person {name:'Jim'})</code>, and relationships are represented by square brackets between an arrow (<code>-[:OWES]-&gt;</code>). Relationships can also have properties <code>-[:CONTAINS {amount:50}]-&gt;</code>. </p>
 <p>So, the following statement would state that Jim owes Jan $50:</p>
 <p><code>(jim:Person {name:'Jim'}) -[:OWES {amount: 50}]-&gt; (jan:Person {name: 'Jan'})</code></p>
 <p><em>Note that the <code>jim</code> and <code>jan</code> before the <code>:Person</code> are optional in this statement, but would be required if returning one or both of the entities in a query.</em></p>
@@ -1413,6 +1425,7 @@
                 
                   
                 
+                
               
               
                 
@@ -1492,7 +1505,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
