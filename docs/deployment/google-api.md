@@ -26,46 +26,76 @@ Credit: Greg Baugues, twilio.com
 
 ### Interacting with the spreadsheet
 
-Now you can access the spreadsheet from your script. You'll need both the `gspread` and `oauth2client` package. *Note that oauth2client is deprecated, see `google-auth` or `oauthlib`, `gspread` may be superseded by `pygsheets`*.
+Now you can access the spreadsheet from your script. You'll need to install `pygsheets` and `pandas`; `conda install` the required packages. Follow the instructions above to save your credentials into a `secrets/` directory within the project. Learn more about how to handle credentials with Heroku [here](heroku.md) (step 23).
 
-`conda install` the required packages.
-
-Use the code below to get access to the spreadsheet. 
+#### Authorizing access
 
 ```python
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
-
-scope = ['https://spreadsheets.google.com/feeds',
-         'https://www.googleapis.com/auth/drive']
-
-creds = ServiceAccountCredentials.from_json_keyfile_name(
-	'<path to JSON credentials>', scope
-)
-
-client = gspread.authorize(creds)
+import pygsheets
+def auth_gspread():
+    """Authorize Google to access the Utilization Project
+    :returns client
+    """
+    # creds for local development
+    try:
+        client = pygsheets.authorize(
+            service_file='secrets/gs_credentials.json'
+            )
+    # creds for heroku deployment
+    except:
+        client = pygsheets.authorize(
+            service_account_env_var='GOOGLE_SHEETS_CREDS_JSON'
+        )
+        
+    return client
 ```
 
-Refer to the 'gspread` [docs](https://gspread.readthedocs.io/en/latest/) for help reading and writing to spreadsheets.
+Refer to the `pygsheets` [docs](https://pygsheets.readthedocs.io/en/stable/reference.html) for help reading and writing to spreadsheets; or this [helpful guide](https://medium.com/game-of-data/play-with-google-spreadsheets-with-python-301dd4ee36eb) from Towards Data Science.
 
-#### Basic gspread commands
+#### Reading data to a data frame
 
-Use this code to read a spreadsheet as a pandas data frame (include code from above to authenticate). Note that a spreadsheet is synonymous with an Excel workbook, and a worksheets is still a worksheet.
+Use this code to read a spreadsheet as a pandas data frame use the function above to get the `client` variable). Note that a spreadsheet (`sh`) is synonymous with an Excel workbook, and a worksheet (`wks`) is still a worksheet.
 
 ```python
 import pandas as pd
 
-wks = client.open('<spreadsheet name>').worksheet('<worksheet name>')
-data = hours_wks.get_all_values()
-headers = data.pop(0)
-df = pd.DataFrame(data, columns=headers)
+def load_data(client, spreadsheet, sheet_title, tidy=False):
+    """Load data (must be in tidy format) from sheet.
+    Empty rows are dropped.
+    :param client: client object for accessing google
+    :param spreadsheet: name of the spreadsheet
+    :param sheet_title: worksheet name
+    :param tidy: if data is well-formatted, set to True
+    :returns pandas dataframe
+    """
+    # load data from google sheet
+    sh = client.open(spreadsheet)
+    wks = sh.worksheet_by_title(sheet_title)
+    if tidy:
+        df = wks.get_as_df(empty_values=None)
+    else:
+        data = wks.get_all_records(empty_value=None)  # get_as_df can't handle empty columns
+    	df = pd.DataFrame(data)
+    df.dropna(axis=0, how='all', inplace=True)
+    
+    return df
 ```
 
-To save a csv in an existing workbook (note this will overwrite the entire workbook):
+#### Saving a data frame
+
+To save a csv in an existing worksheet (note this will overwrite any data in the worksheet):
 
 ```python
-out_file = client.open('<spreadsheet name>')'.id
-data = ('<data.csv>')
-client.import_csv(out_file, data)
+def save_data(client, spreadsheet, sheet_title, df)
+	"""Save data to a worksheet, overwriting existing data
+	:param client: client object for accessing google
+    :param spreadsheet: name of the spreadsheet
+    :param sheet_title: worksheet name
+    :param df: dataframe to save
+    :returns none
+    """
+    sh = client.open(spreadsheet)
+    wks = sh.worksheet_by_title(sheet_title)
+    wks.set_dataframe(df, 'A1', fit=True)
 ```
 
