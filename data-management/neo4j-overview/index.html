@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -1382,8 +1382,8 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">LOAD CSV WITH HEADERS FROM &#39;file:///data.csv&#39; AS row</span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">role</span><span class="p">:</span><span class="n">Role</span><span class="w"> </span><span class="p">{</span><span class="n">role</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Role</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Rate</span><span class="p">})</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">role</span><span class="p">:</span><span class="n">Role</span><span class="w"> </span><span class="p">{</span><span class="n">role</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Role</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Rate</span><span class="p">})</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
 
@@ -1395,7 +1395,7 @@
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1">LOAD CSV WITH HEADERS FROM &#39;file:///data.csv&#39; AS row</span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">role</span><span class="p">:</span><span class="n">Role</span><span class="w"> </span><span class="p">{</span><span class="n">role</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Role</span><span class="p">})</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">HAS_ROLE</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">role</span><span class="p">)</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">HAS_ROLE</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">role</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
 
@@ -1405,7 +1405,7 @@
 <p>Graphs are so intuitive that it's tempting to share the graph itself with users so they can explore it. Sometimes you just need to make the graph available without exposing the graph itself. Neo4j offers a few options for sharing the power of graphs.</p>
 <h3 id="schema">Schema<a class="headerlink" href="#schema" title="Permanent link">&para;</a></h3>
 <p>To get the schema, use the command</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">call</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">visualization</span><span class="w"></span>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">call</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">visualization</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
 
@@ -1424,7 +1424,6 @@
 <p>You can deploy your graph database powered application to the web with Heroku and the <a href="https://devcenter.heroku.com/articles/graphenedb">GrapheneDB</a> plugin. To get more than 1,000 nodes and 10,000 relationships, you'll need to pay the monthly fee for GrapheneDB ($9/month and up). To get some experience with deploying on Heroku, check out the <a href="https://neo4j.com/developer/example-project/">Movies Database tutorial</a> (DO NOT USE THE <code>py2neo</code> repo they have listed, a <a href="https://github.com/neo4j-examples/movies-python-py2neo">new repo</a> was created for the more recent version of py2neo--I have also found issues with that, contact me for a working copy).</p>
                 
                   
-                
                 
               
               
@@ -1505,7 +1504,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

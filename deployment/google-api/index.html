@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -666,8 +666,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-gspread-commands" class="md-nav__link">
-    Basic gspread commands
+  <a href="#authorizing-access" class="md-nav__link">
+    Authorizing access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-data-to-a-data-frame" class="md-nav__link">
+    Reading data to a data frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-a-data-frame" class="md-nav__link">
+    Saving a data frame
   </a>
   
 </li>
@@ -1041,8 +1055,22 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#basic-gspread-commands" class="md-nav__link">
-    Basic gspread commands
+  <a href="#authorizing-access" class="md-nav__link">
+    Authorizing access
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-data-to-a-data-frame" class="md-nav__link">
+    Reading data to a data frame
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#saving-a-data-frame" class="md-nav__link">
+    Saving a data frame
   </a>
   
 </li>
@@ -1089,9 +1117,8 @@
 <p><img alt="" src="https://s3.amazonaws.com/com.twilio.prod.twilio-docs/original_images/google-developer-console.gif" /></p>
 <p>Credit: Greg Baugues, twilio.com</p>
 <h3 id="interacting-with-the-spreadsheet">Interacting with the spreadsheet<a class="headerlink" href="#interacting-with-the-spreadsheet" title="Permanent link">&para;</a></h3>
-<p>Now you can access the spreadsheet from your script. You'll need both the <code>gspread</code> and <code>oauth2client</code> package. <em>Note that oauth2client is deprecated, see <code>google-auth</code> or <code>oauthlib</code>, <code>gspread</code> may be superseded by <code>pygsheets</code></em>.</p>
-<p><code>conda install</code> the required packages.</p>
-<p>Use the code below to get access to the spreadsheet. </p>
+<p>Now you can access the spreadsheet from your script. You'll need to install <code>pygsheets</code> and <code>pandas</code>; <code>conda install</code> the required packages. Follow the instructions above to save your credentials into a <code>secrets/</code> directory within the project. Learn more about how to handle credentials with Heroku <a href="../heroku/">here</a> (step 23).</p>
+<h4 id="authorizing-access">Authorizing access<a class="headerlink" href="#authorizing-access" title="Permanent link">&para;</a></h4>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -1102,48 +1129,108 @@
  8
  9
 10
-11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">gspread</span>
-<span class="kn">from</span> <span class="nn">oauth2client.service_account</span> <span class="kn">import</span> <span class="n">ServiceAccountCredentials</span>
+11
+12
+13
+14
+15
+16
+17</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pygsheets</span>
+<span class="k">def</span> <span class="nf">auth_gspread</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;Authorize Google to access the Utilization Project</span>
+<span class="sd">    :returns client</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># creds for local development</span>
+    <span class="k">try</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pygsheets</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span>
+            <span class="n">service_file</span><span class="o">=</span><span class="s1">&#39;secrets/gs_credentials.json&#39;</span>
+            <span class="p">)</span>
+    <span class="c1"># creds for heroku deployment</span>
+    <span class="k">except</span><span class="p">:</span>
+        <span class="n">client</span> <span class="o">=</span> <span class="n">pygsheets</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span>
+            <span class="n">service_account_env_var</span><span class="o">=</span><span class="s1">&#39;GOOGLE_SHEETS_CREDS_JSON&#39;</span>
+        <span class="p">)</span>
 
-<span class="n">scope</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://spreadsheets.google.com/feeds&#39;</span><span class="p">,</span>
-         <span class="s1">&#39;https://www.googleapis.com/auth/drive&#39;</span><span class="p">]</span>
-
-<span class="n">creds</span> <span class="o">=</span> <span class="n">ServiceAccountCredentials</span><span class="o">.</span><span class="n">from_json_keyfile_name</span><span class="p">(</span>
-    <span class="s1">&#39;&lt;path to JSON credentials&gt;&#39;</span><span class="p">,</span> <span class="n">scope</span>
-<span class="p">)</span>
-
-<span class="n">client</span> <span class="o">=</span> <span class="n">gspread</span><span class="o">.</span><span class="n">authorize</span><span class="p">(</span><span class="n">creds</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">client</span>
 </pre></div>
 </td></tr></table>
 
-<p>Refer to the 'gspread` <a href="https://gspread.readthedocs.io/en/latest/">docs</a> for help reading and writing to spreadsheets.</p>
-<h4 id="basic-gspread-commands">Basic gspread commands<a class="headerlink" href="#basic-gspread-commands" title="Permanent link">&para;</a></h4>
-<p>Use this code to read a spreadsheet as a pandas data frame (include code from above to authenticate). Note that a spreadsheet is synonymous with an Excel workbook, and a worksheets is still a worksheet.</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<p>Refer to the <code>pygsheets</code> <a href="https://pygsheets.readthedocs.io/en/stable/reference.html">docs</a> for help reading and writing to spreadsheets; or this <a href="https://medium.com/game-of-data/play-with-google-spreadsheets-with-python-301dd4ee36eb">helpful guide</a> from Towards Data Science.</p>
+<h4 id="reading-data-to-a-data-frame">Reading data to a data frame<a class="headerlink" href="#reading-data-to-a-data-frame" title="Permanent link">&para;</a></h4>
+<p>Use this code to read a spreadsheet as a pandas data frame use the function above to get the <code>client</code> variable). Note that a spreadsheet (<code>sh</code>) is synonymous with an Excel workbook, and a worksheet (<code>wks</code>) is still a worksheet.</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
 
-<span class="n">wks</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;&lt;spreadsheet name&gt;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">worksheet</span><span class="p">(</span><span class="s1">&#39;&lt;worksheet name&gt;&#39;</span><span class="p">)</span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">hours_wks</span><span class="o">.</span><span class="n">get_all_values</span><span class="p">()</span>
-<span class="n">headers</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">headers</span><span class="p">)</span>
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">spreadsheet</span><span class="p">,</span> <span class="n">sheet_title</span><span class="p">,</span> <span class="n">tidy</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Load data (must be in tidy format) from sheet.</span>
+<span class="sd">    Empty rows are dropped.</span>
+<span class="sd">    :param client: client object for accessing google</span>
+<span class="sd">    :param spreadsheet: name of the spreadsheet</span>
+<span class="sd">    :param sheet_title: worksheet name</span>
+<span class="sd">    :param tidy: if data is well-formatted, set to True</span>
+<span class="sd">    :returns pandas dataframe</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># load data from google sheet</span>
+    <span class="n">sh</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spreadsheet</span><span class="p">)</span>
+    <span class="n">wks</span> <span class="o">=</span> <span class="n">sh</span><span class="o">.</span><span class="n">worksheet_by_title</span><span class="p">(</span><span class="n">sheet_title</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">tidy</span><span class="p">:</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">wks</span><span class="o">.</span><span class="n">get_as_df</span><span class="p">(</span><span class="n">empty_values</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">wks</span><span class="o">.</span><span class="n">get_all_records</span><span class="p">(</span><span class="n">empty_value</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>  <span class="c1"># get_as_df can&#39;t handle empty columns</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">df</span>
 </pre></div>
 </td></tr></table>
 
-<p>To save a csv in an existing workbook (note this will overwrite the entire workbook):</p>
-<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">out_file</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="s1">&#39;&lt;spreadsheet name&gt;&#39;</span><span class="p">)</span><span class="s1">&#39;.id</span>
-<span class="n">data</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;&lt;data.csv&gt;&#39;</span><span class="p">)</span>
-<span class="n">client</span><span class="o">.</span><span class="n">import_csv</span><span class="p">(</span><span class="n">out_file</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+<h4 id="saving-a-data-frame">Saving a data frame<a class="headerlink" href="#saving-a-data-frame" title="Permanent link">&para;</a></h4>
+<p>To save a csv in an existing worksheet (note this will overwrite any data in the worksheet):</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">save_data</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">spreadsheet</span><span class="p">,</span> <span class="n">sheet_title</span><span class="p">,</span> <span class="n">df</span><span class="p">)</span>
+    <span class="sd">&quot;&quot;&quot;Save data to a worksheet, overwriting existing data</span>
+<span class="sd">    :param client: client object for accessing google</span>
+<span class="sd">    :param spreadsheet: name of the spreadsheet</span>
+<span class="sd">    :param sheet_title: worksheet name</span>
+<span class="sd">    :param df: dataframe to save</span>
+<span class="sd">    :returns none</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">sh</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spreadsheet</span><span class="p">)</span>
+    <span class="n">wks</span> <span class="o">=</span> <span class="n">sh</span><span class="o">.</span><span class="n">worksheet_by_title</span><span class="p">(</span><span class="n">sheet_title</span><span class="p">)</span>
+    <span class="n">wks</span><span class="o">.</span><span class="n">set_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
                 
                   
-                
                 
               
               
@@ -1224,7 +1311,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

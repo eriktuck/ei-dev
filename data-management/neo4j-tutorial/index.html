@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -1214,7 +1214,7 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
 <span class="k">RETURN</span><span class="w"> </span><span class="n">e</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
@@ -1225,8 +1225,8 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(:</span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Project</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="n">toInteger</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">Code</span><span class="p">)})</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(:</span><span class="n">PracticeArea</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Practice_Area</span><span class="p">})</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(:</span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Project</span><span class="p">,</span><span class="w"> </span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="n">toInteger</span><span class="p">(</span><span class="n">row</span><span class="p">.</span><span class="n">Code</span><span class="p">)})</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(:</span><span class="n">PracticeArea</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Practice_Area</span><span class="p">})</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
 
@@ -1250,7 +1250,7 @@
 5</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">PracticeArea</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Practice_Area</span><span class="p">})</span><span class="w"></span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Code</span><span class="p">})</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="n">r</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="n">r</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
 <span class="k">RETURN</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="n">r</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
@@ -1270,7 +1270,7 @@
 4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="p">&lt;</span><span class="n">paste</span><span class="w"> </span><span class="n">URL</span><span class="w"> </span><span class="n">here</span><span class="p">&gt;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"></span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">:</span><span class="w"> </span><span class="n">Employee</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">code</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Code</span><span class="p">})</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">WORKS_ON</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">WORKS_ON</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
 
@@ -1288,7 +1288,7 @@
 2
 3</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">:</span><span class="w"> </span><span class="n">PracticeArea</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="err">&#39;</span><span class="n">International</span><span class="err">&#39;</span><span class="p">})</span><span class="w"></span>
 <span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="w"> </span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="err">&#39;</span><span class="n">Walton</span><span class="err">&#39;</span><span class="p">})</span><span class="w"></span>
-<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
+<span class="n">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">a</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">OWNS</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
 
@@ -1329,9 +1329,9 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="k">CALL</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">visualization</span><span class="p">()</span><span class="w"> </span><span class="k">YIELD</span><span class="w"> </span><span class="n">nodes</span><span class="p">,</span><span class="w"> </span><span class="n">relationships</span><span class="w"></span>
-<span class="k">UNWIND</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
-<span class="k">UNWIND</span><span class="w"> </span><span class="n">relationships</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">CALL</span><span class="w"> </span><span class="n">db</span><span class="p">.</span><span class="n">schema</span><span class="p">.</span><span class="n">visualization</span><span class="p">()</span><span class="w"> </span><span class="n">YIELD</span><span class="w"> </span><span class="n">nodes</span><span class="p">,</span><span class="w"> </span><span class="n">relationships</span><span class="w"></span>
+<span class="n">UNWIND</span><span class="w"> </span><span class="n">nodes</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">n</span><span class="w"></span>
+<span class="n">UNWIND</span><span class="w"> </span><span class="n">relationships</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
 <span class="k">RETURN</span><span class="w"> </span><span class="n">n</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
 </pre></div>
 </td></tr></table>
@@ -1339,7 +1339,6 @@
 <p>Enter the search phrase in the search bar to get the schema.</p>
                 
                   
-                
                 
               
               
@@ -1420,7 +1419,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.808e90bb.js"></script>
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
