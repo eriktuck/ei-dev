@@ -84,15 +84,21 @@ html.Button(
 To create side-by-side elements, access the grid. First, create a `div` where you will include the side-by-side elements. Assign to each component the number of 'columns' you want the component to occupy out of a possible twelve. Assign to the `div` element the class name of 'row'. This example would create two side-by-side buttons, each occupying one half of the screen:
 
 ```
-html.Div([
-    html.Button('Submit',
-    id='submit-button',
-    className='six rows'),
-    
-    html.Button('Undo',
-    id='undo-button',
-    className='six rows')
-], className='row')
+html.Div(
+	className='row',
+	children=[
+        html.Button(
+        	className='six columns',
+        	id='submit-button',
+        	children='Submit'
+        	),
+
+        html.Button(
+        	className='six columns',
+        	id='undo-button',
+        	children='Undo'
+        )
+    ]
 ```
 
 #### Bootstrap
