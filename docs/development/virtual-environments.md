@@ -37,14 +37,14 @@ You will likely be prompted to install pylint into this environment, go ahead an
 Here's a quick workflow reference for setting up and working with virtual environments:
 
 1. Open an Anaconda Prompt window
-2. Create the environment: `conda create <name-of-environment>`
+2. Create the environment: `conda create -n <name-of-environment>`
 3. Activate the environment:  `conda activate <name-of-environment>`
 4. Install necessary packages:  `conda install -c conda-forge <package-name>` (Check Anaconda's [package repo]( https://anaconda.org/anaconda/repo ) for the correct channel to install from)
 
 5. Build your project
 6. If you need to deactivate the environment, use `conda deactivate` or `conda activate base` to go back to the base environment (both have the same result).
 
-For packages not on Anaconda's package repo, you may need to install pip before using a `pip install` command.
+For packages not on Anaconda's package repo, you may need to install pip before using a `pip install` command. Once you start using `pip`, don't go back to using `conda` to install packages.
 
 ### Sharing virtual environments
 
@@ -54,6 +54,8 @@ Virtual environments are shared with a `requirements.txt` or `environment.yml` f
 
 ### My 2-cents
 
-I recommend creating a new environment for any long-lived project using `conda create -n <name-of-environment> python` and saving the name of the environment as the same as the root folder of the project. Install pip within it only if needed. The base conda environment (`conda activate base`) is useful for quick projects or ongoing-development type projects that you don't mind breaking from time to time, but plan to always keep up to date.
+I recommend creating a new environment for any long-lived project using `conda create -n <name-of-environment>` and saving the name of the environment as the same as the root folder of the project. Install as many packages as possible with conda, then install pip and use pip as the package manager (see [here](https://www.anaconda.com/blog/using-pip-in-a-conda-environment) for more). 
 
-If you code a project without a virtual environment and don't come back to it for a year, there's a good chance you'll find the code doesn't work anymore, or worse yet behaves unexpectedly, and you'll need to go through and update it--which might be more trouble than it's worth. So use virtual environments to save you the hassle. At the very least, keep a `requirements.txt` or `environment.yml` file of the current state of the base environment for later reference.
+The base conda environment (`conda activate base`) is useful for quick projects or ongoing-development type projects that you don't mind breaking from time to time, but plan to always keep up to date.
+
+If you code a project without a virtual environment and don't come back to it for a year, there's a good chance you'll find the code doesn't work anymore, or worse yet behaves unexpectedly, and you'll need to go through and update it--which might be more trouble than it's worth. So use virtual environments to save you the hassle and keep the `requirements.txt` or `environment.yml` file up to date in the root folder of the project.

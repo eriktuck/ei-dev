@@ -20,11 +20,32 @@ import os
 my_password = os.environ.get('PASS_KEY')
 ```
 
+#### Using environment variables in Heroku
+
+In Heroku, environment variables are set under 'Settings' by clicking 'Reveal Config Vars'. These are accessed in exactly the same way.
+
 ### A caveat
 
-Environment variables are commonly used, but [not always the best option](https://blog.dnsimple.com/2018/05/using-environment-as-configuration/ ) for storing secrets. They can be subject to mangling by the operating system, and some access tokens don't conform to their limitations (e.g., my google access token had a '=' character, which is not allowed). Especially if your secrets are stored as a JSON blob, you might consider saving them in a file and reading them directly from the file. I will add a `secrets/` folder to my projects and save credentials there. MAKE SURE TO INCLUDE `secrets/` IN YOUR `.gitignore` FILE!
+Environment variables are commonly used, but [not always the best option](https://blog.dnsimple.com/2018/05/using-environment-as-configuration/ ) for storing secrets. They can be subject to mangling by the operating system, and some access tokens don't conform to their limitations (e.g., my google access token had a '=' character, which is not allowed). Especially if your secrets are stored as a JSON blob, you might consider saving them in a file and reading them directly from the file. I add a `secrets/` folder to my projects and save credentials there. MAKE SURE TO INCLUDE `secrets/` IN YOUR `.gitignore` FILE (but add a [.keep file](../git/additional-reference.md#adding-empty-folders))!
 
-Use the `google-auth` or `oauthlib` packages to access and use credentials stored as a JSON file.
+Here's what a `my_secrets_file.json` file would look like with a secret key:
+
+```json
+{
+    "MY_SECRET_KEY": "<save_key_here>"
+}
+```
+
+You can read that into python just like a dictionary:
+
+```python
+import json
+
+with open('secrets/my_secrets_file.json') as f:
+    my_creds = json.load(f).get("MY_SECRET_KEY") 
+```
+
+You can also use the `google-auth` or `oauthlib` packages to access and use credentials stored as a JSON file.
 
 ### For the A/V Crowd
 

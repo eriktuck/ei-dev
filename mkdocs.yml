@@ -54,6 +54,7 @@ nav:
   - 'Google API': 'deployment/google-api.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
+  - 'PostgreSQL Tutorial': 'data-management/postgres-tutorial.md'
   - 'Neo4j Graph Databases': 'data-management/neo4j-overview.md'
   - 'Neo4j Tutorial': 'data-management/neo4j-tutorial.md'
 - Data Science:

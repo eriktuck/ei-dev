@@ -20,7 +20,7 @@ https://kbroman.org/github_tutorial/pages/fork.html
 If you are not a collaborator, you will need to fork the project to your GitHub.
 
 1. Navigate to the repository on GitHub
-2. Select 'Fork', which will copy the project to your own repository
+2. Select 'Fork', which will copy the project to your own repository on GitHub
 3. Clone your version of the repo to your computer using `git clone <project>` in Git Bash (see [Initializing Git](initializing-git.md) for help here)
 4. Work [as you normally would](common-workflow.md), working on a branch rather than master. *Be sure to always pull changes before working on your feature AND before pushing changes.*
 5. Use `git push -u origin <branch_name>` to push changes the first time, otherwise `git push origin <branch_name>`. This will push the changes to your GitHub repository.
@@ -55,3 +55,30 @@ When working with others, you'll be merging their changes to your files whenever
 * **Manual** merge: when Git can't resolve conflicting changes it moves into merging state. You must resolve conflicts before proceeding. If you've configured VSCode as your merge tool, you will be prompted to address the conflicting changes one file at a time.
 
 Ideally, you'll be communicating with your team members to avoid creating conflicting changes that require manual merges.
+
+## Replicating virtual environments
+
+After forking a repo, you may need to set up a [virtual environment](../development/virtual-environments) to match the environment of the project. The project should contain a `requirements.txt` or `environment.yml` file in the root directory ([see here for how to create this file](../development/virtual-environments/#sharing-virtual-environments)). This can be used to replicate the environment.
+
+Due to some of our common packages not being available through conda and the need for a requirements.txt file for Heroku deployments, we typically use `requirements.txt` in our projects after creating a conda environment.
+
+After forking the repo, open the prompt and type:
+
+```bash
+conda create <env-name>
+conda activate <env-name>
+conda install pip
+pip install -r requirements.txt
+```
+
+## Working on two devices
+
+If you're simply wanting to work on the same project across two devices, you can easily copy the project to a directory on each device. We recommend keeping this directory out of any other version control software (e.g., Sharepoint or OneDrive). 
+
+Go to GitHub and select the green 'Code' split button, then copy the HTTPS location of the repo. Navigate to the directory in which you want the project folder stored (`c_dev` on my computer), then open a prompt window and clone the project into that directory:
+
+```bash
+git clone <https://>
+```
+
+Finally, [replicate the virtual environment](#replicating-virtual-environments) and get started. Don't forget to always push changes before switching devices and pull changes after! If you update the environment, make sure to freeze it into requirements.txt and push that as well.
