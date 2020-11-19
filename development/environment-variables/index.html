@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -550,6 +550,18 @@
           
           
 
+
+  <li class="md-nav__item">
+    <a href="../secrets/" title="Secrets" class="md-nav__link">
+      Secrets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
   
 
 
@@ -583,12 +595,38 @@
     Setting Environment Variables
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving-environment-variables-in-a-conda-environment" class="md-nav__link">
+    Saving Environment Variables in a conda environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#using-environment-variables" class="md-nav__link">
     Using Environment Variables
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables-in-heroku" class="md-nav__link">
+    Using environment variables in Heroku
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -721,6 +759,18 @@
   <li class="md-nav__item">
     <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
       Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/postgres-tutorial/" title="PostgreSQL Tutorial" class="md-nav__link">
+      PostgreSQL Tutorial
     </a>
   </li>
 
@@ -1031,12 +1081,38 @@
     Setting Environment Variables
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#saving-environment-variables-in-a-conda-environment" class="md-nav__link">
+    Saving Environment Variables in a conda environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
   <a href="#using-environment-variables" class="md-nav__link">
     Using Environment Variables
   </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-environment-variables-in-heroku" class="md-nav__link">
+    Using environment variables in Heroku
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1076,6 +1152,8 @@
 <h3 id="setting-environment-variables">Setting Environment Variables<a class="headerlink" href="#setting-environment-variables" title="Permanent link">&para;</a></h3>
 <p>Environment variables are set differently on different operating systems. On Windows, just type 'environment variables' into the start menu and open the System Properties dialog box ('Advanced' tab). Click on 'Environment Variables' to edit. Adding as a user variable, rather than a system variable, is generally sufficient. Conventionally, both the name and the value are uppercase.</p>
 <p><img alt="set-environment" src="../assets/set-environ-var.gif" /></p>
+<h4 id="saving-environment-variables-in-a-conda-environment">Saving Environment Variables in a conda environment<a class="headerlink" href="#saving-environment-variables-in-a-conda-environment" title="Permanent link">&para;</a></h4>
+<p>You can set up <a href="./">environment variables</a> within a conda environment. See <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#setting-environment-variables">here</a>. </p>
 <h3 id="using-environment-variables">Using Environment Variables<a class="headerlink" href="#using-environment-variables" title="Permanent link">&para;</a></h3>
 <p>Python reads the environment variables when <code>os</code> is imported. Environment variables are passed as a dictionary. Since this is simply a dictionary, you can use <code>os.environ.get('&lt;KEY&gt;')</code> to access the value with the name of the variable (where <code>'&lt;KEY&gt;'</code> is the name you specified for the environment variable). For example:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -1086,14 +1164,16 @@
 </pre></div>
 </td></tr></table>
 
+<h4 id="using-environment-variables-in-heroku">Using environment variables in Heroku<a class="headerlink" href="#using-environment-variables-in-heroku" title="Permanent link">&para;</a></h4>
+<p>In Heroku, environment variables are set under 'Settings' by clicking 'Reveal Config Vars'. These are accessed in exactly the same way as above.</p>
 <h3 id="a-caveat">A caveat<a class="headerlink" href="#a-caveat" title="Permanent link">&para;</a></h3>
-<p>Environment variables are commonly used, but <a href="https://blog.dnsimple.com/2018/05/using-environment-as-configuration/">not always the best option</a> for storing secrets. They can be subject to mangling by the operating system, and some access tokens don't conform to their limitations (e.g., my google access token had a '=' character, which is not allowed). Especially if your secrets are stored as a JSON blob, you might consider saving them in a file and reading them directly from the file. I will add a <code>secrets/</code> folder to my projects and save credentials there. MAKE SURE TO INCLUDE <code>secrets/</code> IN YOUR <code>.gitignore</code> FILE!</p>
-<p>Use the <code>google-auth</code> or <code>oauthlib</code> packages to access and use credentials stored as a JSON file.</p>
+<p>Environment variables are commonly used, but <a href="https://blog.dnsimple.com/2018/05/using-environment-as-configuration/">not always the best option</a> for storing secrets. They can be subject to mangling by the operating system, and some access tokens don't conform to their limitations (e.g., my google access token had a '=' character, which is not allowed). Especially if your secrets are stored as a JSON blob, you might consider saving them in a <code>JSON</code> file and reading them directly from the file. </p>
 <h3 id="for-the-av-crowd">For the A/V Crowd<a class="headerlink" href="#for-the-av-crowd" title="Permanent link">&para;</a></h3>
 <p>This video captures the essentials of Environment Variables in 5 minutes. Worth a watch for anything I missed.</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/IolxqkL7cD8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 
                   
+                
                 
               
               
@@ -1112,7 +1192,7 @@
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid">
         
-          <a href="../scheduling-tasks/" title="Scheduling Tasks" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../secrets/" title="Secrets" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-flex__cell md-flex__cell--shrink">
               <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
             </div>
@@ -1121,7 +1201,7 @@
                 <span class="md-footer-nav__direction">
                   Previous
                 </span>
-                Scheduling Tasks
+                Secrets
               </span>
             </div>
           </a>
@@ -1174,7 +1254,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

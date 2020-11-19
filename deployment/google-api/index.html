@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -550,6 +550,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../development/secrets/" title="Secrets" class="md-nav__link">
+      Secrets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../development/environment-variables/" title="Environment Variables" class="md-nav__link">
       Environment Variables
     </a>
@@ -734,6 +746,18 @@
   <li class="md-nav__item">
     <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
       Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/postgres-tutorial/" title="PostgreSQL Tutorial" class="md-nav__link">
+      PostgreSQL Tutorial
     </a>
   </li>
 
@@ -1179,9 +1203,9 @@
 19
 20
 21
-22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="kn">as</span> <span class="nn">pd</span>
+22</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">spreadsheet</span><span class="p">,</span> <span class="n">sheet_title</span><span class="p">,</span> <span class="n">tidy</span><span class="o">=</span><span class="bp">False</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="n">client</span><span class="p">,</span> <span class="n">spreadsheet</span><span class="p">,</span> <span class="n">sheet_title</span><span class="p">,</span> <span class="n">tidy</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Load data (must be in tidy format) from sheet.</span>
 <span class="sd">    Empty rows are dropped.</span>
 <span class="sd">    :param client: client object for accessing google</span>
@@ -1194,11 +1218,11 @@
     <span class="n">sh</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spreadsheet</span><span class="p">)</span>
     <span class="n">wks</span> <span class="o">=</span> <span class="n">sh</span><span class="o">.</span><span class="n">worksheet_by_title</span><span class="p">(</span><span class="n">sheet_title</span><span class="p">)</span>
     <span class="k">if</span> <span class="n">tidy</span><span class="p">:</span>
-        <span class="n">df</span> <span class="o">=</span> <span class="n">wks</span><span class="o">.</span><span class="n">get_as_df</span><span class="p">(</span><span class="n">empty_values</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>
+        <span class="n">df</span> <span class="o">=</span> <span class="n">wks</span><span class="o">.</span><span class="n">get_as_df</span><span class="p">(</span><span class="n">empty_values</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">data</span> <span class="o">=</span> <span class="n">wks</span><span class="o">.</span><span class="n">get_all_records</span><span class="p">(</span><span class="n">empty_value</span><span class="o">=</span><span class="bp">None</span><span class="p">)</span>  <span class="c1"># get_as_df can&#39;t handle empty columns</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">wks</span><span class="o">.</span><span class="n">get_all_records</span><span class="p">(</span><span class="n">empty_value</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span>  <span class="c1"># get_as_df can&#39;t handle empty columns</span>
         <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;all&#39;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 
     <span class="k">return</span> <span class="n">df</span>
 </pre></div>
@@ -1226,11 +1250,12 @@
 <span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">sh</span> <span class="o">=</span> <span class="n">client</span><span class="o">.</span><span class="n">open</span><span class="p">(</span><span class="n">spreadsheet</span><span class="p">)</span>
     <span class="n">wks</span> <span class="o">=</span> <span class="n">sh</span><span class="o">.</span><span class="n">worksheet_by_title</span><span class="p">(</span><span class="n">sheet_title</span><span class="p">)</span>
-    <span class="n">wks</span><span class="o">.</span><span class="n">set_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">wks</span><span class="o">.</span><span class="n">set_dataframe</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="s1">&#39;A1&#39;</span><span class="p">,</span> <span class="n">fit</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
                 
                   
+                
                 
               
               
@@ -1311,7 +1336,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

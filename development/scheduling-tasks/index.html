@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -637,6 +637,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../secrets/" title="Secrets" class="md-nav__link">
+      Secrets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../environment-variables/" title="Environment Variables" class="md-nav__link">
       Environment Variables
     </a>
@@ -747,6 +759,18 @@
   <li class="md-nav__item">
     <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
       Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/postgres-tutorial/" title="PostgreSQL Tutorial" class="md-nav__link">
+      PostgreSQL Tutorial
     </a>
   </li>
 
@@ -1130,8 +1154,8 @@
 <h3 id="1-create-a-bat-file">1. Create a <code>.bat</code> file<a class="headerlink" href="#1-create-a-bat-file" title="Permanent link">&para;</a></h3>
 <p>To use the Windows Task Scheduler to , you'll first need to create a <code>.bat</code> file. Open a new file on VS Code or notepad and type:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>&quot;&lt;Path to python executable&gt;&quot; &quot;&lt;Path to script&gt;&quot;
-pause
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">&quot;&lt;Path to python executable&gt;&quot; &quot;&lt;Path to script&gt;&quot;</span>
+<span class="err">pause</span>
 </pre></div>
 </td></tr></table>
 
@@ -1159,14 +1183,15 @@ pause
 <h2 id="getting-an-error">Getting an error?<a class="headerlink" href="#getting-an-error" title="Permanent link">&para;</a></h2>
 <p>In some cases (especially if you have multiple python versions installed on your computer), you may need to activate the base Anaconda environment before attempting to run your script in the <code>.bat</code> file. To do this, simply add a line at the beginning of your <code>.bat</code> file (edit the path as necessary to for your machine) so it looks like this:</p>
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>call &quot;C:\Users\Erik\Anaconda3\Scripts\activate.bat&quot;
-&quot;C:\Users\Erik\Anaconda3\python.exe&quot; &quot;&lt;Path to script&gt;&quot;
+2</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">call &quot;C:\Users\Erik\Anaconda3\Scripts\activate.bat&quot;</span>
+<span class="err">&quot;C:\Users\Erik\Anaconda3\python.exe&quot; &quot;&lt;Path to script&gt;&quot;</span>
 </pre></div>
 </td></tr></table>
 
 <p>The <code>call</code> function is used to execute another <code>.bat</code> file from within a <code>.bat</code> file, and in this case will activate the base anaconda environment which will allow your machine to find the packages you need to run your script. If you don't do this, you may get a DLL load error when attempting to run the <code>.bat</code> file.</p>
                 
                   
+                
                 
               
               
@@ -1200,13 +1225,13 @@ pause
           </a>
         
         
-          <a href="../environment-variables/" title="Environment Variables" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../secrets/" title="Secrets" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
               <span class="md-flex__ellipsis">
                 <span class="md-footer-nav__direction">
                   Next
                 </span>
-                Environment Variables
+                Secrets
               </span>
             </div>
             <div class="md-flex__cell md-flex__cell--shrink">
@@ -1247,7 +1272,7 @@ pause
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -550,6 +550,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../development/secrets/" title="Secrets" class="md-nav__link">
+      Secrets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../development/environment-variables/" title="Environment Variables" class="md-nav__link">
       Environment Variables
     </a>
@@ -660,6 +672,18 @@
   <li class="md-nav__item">
     <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
       Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/postgres-tutorial/" title="PostgreSQL Tutorial" class="md-nav__link">
+      PostgreSQL Tutorial
     </a>
   </li>
 
@@ -1432,10 +1456,10 @@
 <table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
 3
-4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>venv
-*.pyc
-.DS_Store
-.env
+4</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="err">venv</span>
+<span class="err">*.pyc</span>
+<span class="err">.DS_Store</span>
+<span class="err">.env</span>
 </pre></div>
 </td></tr></table>
 
@@ -1460,8 +1484,8 @@
 14
 15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
 <span class="kn">import</span> <span class="nn">dash</span>
-<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="kn">as</span> <span class="nn">dcc</span>
-<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="kn">as</span> <span class="nn">html</span>
+<span class="kn">import</span> <span class="nn">dash_core_components</span> <span class="k">as</span> <span class="nn">dcc</span>
+<span class="kn">import</span> <span class="nn">dash_html_components</span> <span class="k">as</span> <span class="nn">html</span>
 
 <span class="n">external_stylesheets</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;https://codepen.io/chriddyp/pen/bWLwgP.css&#39;</span><span class="p">]</span>
 
@@ -1472,7 +1496,7 @@
 <span class="p">])</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+    <span class="n">app</span><span class="o">.</span><span class="n">run_server</span><span class="p">(</span><span class="n">debug</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </td></tr></table>
 
@@ -1512,21 +1536,21 @@
 12
 13
 14
-15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>html.Div(
-    className=&#39;row&#39;,
-    children=[
-        html.Button(
-            className=&#39;six columns&#39;,
-            id=&#39;submit-button&#39;,
-            children=&#39;Submit&#39;
-            ),
+15</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="n">html</span><span class="p">.</span><span class="n">Div</span><span class="p">(</span>
+    <span class="n">className</span><span class="o">=</span><span class="s1">&#39;row&#39;</span><span class="p">,</span>
+    <span class="n">children</span><span class="o">=</span><span class="p">[</span>
+        <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six columns&#39;</span><span class="p">,</span>
+            <span class="n">id</span><span class="o">=</span><span class="s1">&#39;submit-button&#39;</span><span class="p">,</span>
+            <span class="n">children</span><span class="o">=</span><span class="s1">&#39;Submit&#39;</span>
+            <span class="p">),</span>
 
-        html.Button(
-            className=&#39;six columns&#39;,
-            id=&#39;undo-button&#39;,
-            children=&#39;Undo&#39;
-        )
-    ]
+        <span class="n">html</span><span class="p">.</span><span class="n">Button</span><span class="p">(</span>
+            <span class="n">className</span><span class="o">=</span><span class="s1">&#39;six columns&#39;</span><span class="p">,</span>
+            <span class="n">id</span><span class="o">=</span><span class="s1">&#39;undo-button&#39;</span><span class="p">,</span>
+            <span class="n">children</span><span class="o">=</span><span class="s1">&#39;Undo&#39;</span>
+        <span class="p">)</span>
+    <span class="p">]</span>
 </pre></div>
 </td></tr></table>
 
@@ -1546,7 +1570,7 @@
 9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span>
 <span class="c1"># Put callbacks below the layout or in a separate file</span>
 
-<span class="nd">@app.callback</span><span class="p">(</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
     <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;my-output&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
     <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)]</span>
 <span class="p">)</span>
@@ -1574,7 +1598,7 @@
 8
 9</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dash.dependencies</span> <span class="kn">import</span> <span class="n">Input</span><span class="p">,</span> <span class="n">Output</span><span class="p">,</span> <span class="n">State</span>
 
-<span class="nd">@app.callback</span><span class="p">(</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
     <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;my-output&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
     <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)],</span>
     <span class="p">[</span><span class="n">State</span><span class="p">(</span><span class="s1">&#39;my-input-state&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)]</span>
@@ -1599,12 +1623,12 @@
 10
 11</pre></div></td><td class="code"><div class="codehilite"><pre><span></span><span class="kn">from</span> <span class="nn">dash.exceptions</span> <span class="kn">import</span> <span class="n">PreventUpdate</span>
 
-<span class="nd">@app.callback</span><span class="p">(</span>
+<span class="nd">@app</span><span class="o">.</span><span class="n">callback</span><span class="p">(</span>
     <span class="n">Output</span><span class="p">(</span><span class="s1">&#39;my-output&#39;</span><span class="p">,</span> <span class="s1">&#39;children&#39;</span><span class="p">),</span>
     <span class="p">[</span><span class="n">Input</span><span class="p">(</span><span class="s1">&#39;my-input&#39;</span><span class="p">,</span> <span class="s1">&#39;value&#39;</span><span class="p">)]</span>
 <span class="p">)</span>
 <span class="k">def</span> <span class="nf">my_function</span><span class="p">(</span><span class="n">first_input</span><span class="p">):</span>
-    <span class="k">if</span> <span class="n">first_input</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">first_input</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
         <span class="k">raise</span> <span class="n">PreventUpdate</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">first_input</span> <span class="o">^</span> <span class="mi">2</span>
@@ -1655,6 +1679,7 @@
 <p>To add custom JavaScript, simply include a JavaScript file in the <code>assets</code> folder in the project's root directory. Dash will automatically include it. However, they recommend building new Dash components for any significant functionality you want to add.</p>
                 
                   
+                
                 
               
               
@@ -1735,7 +1760,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -552,6 +552,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../secrets/" title="Secrets" class="md-nav__link">
+      Secrets
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../environment-variables/" title="Environment Variables" class="md-nav__link">
       Environment Variables
     </a>
@@ -630,11 +642,66 @@
     Sharing virtual environments
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-a-virtual-environment" class="md-nav__link">
+    Exporting a virtual environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-virtual-environment-from-file" class="md-nav__link">
+    Duplicate virtual environment from file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-an-environment" class="md-nav__link">
+    Cloning an environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-virtual-environment" class="md-nav__link">
+    Update a virtual environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-2-cents" class="md-nav__link">
-    My 2-cents
+  <a href="#common-issues" class="md-nav__link">
+    Common issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-create-an-environment" class="md-nav__link">
+    When to create an environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-commands" class="md-nav__link">
+    More commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
   </a>
   
 </li>
@@ -742,6 +809,18 @@
   <li class="md-nav__item">
     <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
       Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/postgres-tutorial/" title="PostgreSQL Tutorial" class="md-nav__link">
+      PostgreSQL Tutorial
     </a>
   </li>
 
@@ -1087,11 +1166,66 @@
     Sharing virtual environments
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exporting-a-virtual-environment" class="md-nav__link">
+    Exporting a virtual environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#duplicate-virtual-environment-from-file" class="md-nav__link">
+    Duplicate virtual environment from file
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cloning-an-environment" class="md-nav__link">
+    Cloning an environment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#update-a-virtual-environment" class="md-nav__link">
+    Update a virtual environment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
-  <a href="#my-2-cents" class="md-nav__link">
-    My 2-cents
+  <a href="#common-issues" class="md-nav__link">
+    Common issues
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#when-to-create-an-environment" class="md-nav__link">
+    When to create an environment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#more-commands" class="md-nav__link">
+    More commands
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
   </a>
   
 </li>
@@ -1116,16 +1250,16 @@
                 <h1 id="virtual-environments">Virtual Environments<a class="headerlink" href="#virtual-environments" title="Permanent link">&para;</a></h1>
 <p>Virtual environments allow you to maintain a controlled development environment and are useful when deploying your application. They're actually quite easy to set up and use. See the <a href="#virtual-environment-workflow">basic workflow</a> for a quick reference.</p>
 <h3 id="why-use-a-virtual-environment">Why use a virtual environment?<a class="headerlink" href="#why-use-a-virtual-environment" title="Permanent link">&para;</a></h3>
-<p>Imagine you have built an app using Python v2.7. You decide to upgrade your Anaconda distribution, which upgrades all of your packages and upgrades Python to v3.6. All of the sudden, all of your print statements return an error because they are missing parentheses! </p>
-<p>To avoid this, you can create virtual environments for each of your projects. A virtual environment simply saves all of the packages you're using, as well as the Python version (in some cases), in a unique folder rather than with the base Anaconda packages. This way, you can always be sure that the packages you're using aren't upgraded (or downgraded) in the future when you upgrade or install new packages to your base environment.</p>
+<p>Imagine you have built an app using Python 2.7. You decide to upgrade your Anaconda distribution, which upgrades all of your packages and upgrades Python to 3.6. All of the sudden, all of your print statements return an error because they are missing parentheses! </p>
+<p>To avoid this, you can create virtual environments for each of your projects. A virtual environment simply saves all of the packages you're using, as well as the Python version (if specified), in a unique folder rather than with the base Anaconda packages. This way, you can always be sure that the packages you're using aren't upgraded (or downgraded) in the future when you upgrade or install new packages to your base environment.</p>
 <h3 id="the-base-environment">The base environment<a class="headerlink" href="#the-base-environment" title="Permanent link">&para;</a></h3>
-<p>If you're not working in a virtual environment you have created, you're working in the base Anaconda environment (assuming you're working from an Anaconda distribution). You'll notice that every time you open an Anaconda Prompt window, it automatically activates the base environment with the command <code>conda activate base</code>.</p>
+<p>If you're not working in a virtual environment you have created, you're working in the base conda environment (assuming you're working from an Anaconda distribution). You'll notice that every time you open an Anaconda Prompt window, it automatically activates the base environment with the command <code>conda activate base</code>.</p>
 <p>When you <code>conda install</code> a package from the base environment, it is stored in this base environment.</p>
 <h3 id="creating-virtual-environments">Creating virtual environments<a class="headerlink" href="#creating-virtual-environments" title="Permanent link">&para;</a></h3>
-<p>To create a virtual environment, simply use the command <code>conda create -n &lt;name-of-environment&gt; python</code>. If you want a specific python version, specify it as <code>python=3.6.3</code> for example. This environment is stored in Anaconda's environment directory (<code>C:\Users\User\Anaconda3\envs</code>), rather than the project's folder. Be sure to use the Anaconda Prompt window when creating virtual environments.</p>
-<p>If you're not using Anaconda, you can use the <code>venv</code> or <code>virtualenv</code> packages (however they do not work with the Anaconda distribution.) <code>venv</code> is the preferred package and should work fine, unless you need to specify a python version, then use <code>virtualenv</code>.</p>
+<p>To create a virtual environment, simply use the command <code>conda create -n &lt;env_name&gt;</code>. If you want a specific python version, specify it (for example: <code>conda create -n &lt;env_name&gt; python=3.8</code>). This environment is stored in Anaconda's environment directory (<code>C:\Users\&lt;User&gt;\Anaconda3\envs</code>), rather than the project's folder. Be sure to use the Anaconda Prompt window when creating virtual environments.</p>
+<p>If you're not using Anaconda, you can use the <code>venv</code> or <code>virtualenv</code> packages (however they do not work with the Anaconda distribution.) <code>venv</code> is the preferred package and should work fine, unless you need to specify a python version, then use <code>virtualenv</code>. For more info on those packages, see their documentation.</p>
 <h3 id="working-in-virtual-environments">Working in virtual environments<a class="headerlink" href="#working-in-virtual-environments" title="Permanent link">&para;</a></h3>
-<p>To activate an environment, simply type <code>conda activate &lt;name-of-environment&gt;</code>. To deactivate, type <code>conda deactivate</code>. </p>
+<p>To activate an environment, simply type <code>conda activate &lt;env_name&gt;</code>. To deactivate, type <code>conda deactivate</code>. </p>
 <p>If you're using VS Code, you should tell it that you are working in a virtual environment so it can properly lint (highlight errors) based on the packages in your environment. Here's how:</p>
 <ol>
 <li>Ctrl+Shift+P to open the command palette</li>
@@ -1137,25 +1271,50 @@
 <p>Here's a quick workflow reference for setting up and working with virtual environments:</p>
 <ol>
 <li>Open an Anaconda Prompt window</li>
-<li>Create the environment: <code>conda create &lt;name-of-environment&gt;</code></li>
+<li>Create the environment: <code>conda create -n &lt;name-of-environment&gt; [python=3.8]</code> (note the square brackets denote an optional parameter, if you want to include a python package, )</li>
 <li>Activate the environment:  <code>conda activate &lt;name-of-environment&gt;</code></li>
-<li>
-<p>Install necessary packages:  <code>conda install -c conda-forge &lt;package-name&gt;</code> (Check Anaconda's <a href="https://anaconda.org/anaconda/repo">package repo</a> for the correct channel to install from)</p>
-</li>
-<li>
-<p>Build your project</p>
-</li>
+<li>Install necessary packages:  <code>conda install -c conda-forge &lt;package-name&gt;</code> (Check Anaconda's <a href="https://anaconda.org/anaconda/repo">package repo</a> for the correct channel to install from)</li>
+<li>Build your project</li>
+<li>Export the environment to an <code>environment.yml</code> file: <code>conda env export &gt; environment.yml</code></li>
 <li>If you need to deactivate the environment, use <code>conda deactivate</code> or <code>conda activate base</code> to go back to the base environment (both have the same result).</li>
 </ol>
-<p>For packages not on Anaconda's package repo, you may need to install pip before using a <code>pip install</code> command.</p>
+<p>For packages not on Anaconda's package repo, you may need to install pip before using a <code>pip install</code> command. Once you start using <code>pip</code>, don't go back to using <code>conda</code> to install packages. Do not use pip in the base environment. You'll note that the <code>environment.yml</code> file will specify which packages must be installed using <code>pip</code>.</p>
 <h3 id="sharing-virtual-environments">Sharing virtual environments<a class="headerlink" href="#sharing-virtual-environments" title="Permanent link">&para;</a></h3>
-<p>Another great thing about virtual environments is that they are easy to share. And, if you're planning to deploy an app on a platform like Heroku, you must specify the environment (by specifying the necessary packages).</p>
-<p>Virtual environments are shared with a <code>requirements.txt</code> or <code>environment.yml</code> file. Others can use this to recreate the environment on their own machines. To create this file, make sure the environment is activated and type <code>conda env export &gt; environment.yml</code> (for Anaconda) or <code>pip freeze &gt; requirements.txt</code> (if using pip). This file will be saved in the current working directory. It will include not just the top level libraries you are using (e.g., the libraries you import at the top of your script), but also the dependencies for the current version of those libraries.</p>
-<h3 id="my-2-cents">My 2-cents<a class="headerlink" href="#my-2-cents" title="Permanent link">&para;</a></h3>
-<p>I recommend creating a new environment for any long-lived project using <code>conda create -n &lt;name-of-environment&gt; python</code> and saving the name of the environment as the same as the root folder of the project. Install pip within it only if needed. The base conda environment (<code>conda activate base</code>) is useful for quick projects or ongoing-development type projects that you don't mind breaking from time to time, but plan to always keep up to date.</p>
-<p>If you code a project without a virtual environment and don't come back to it for a year, there's a good chance you'll find the code doesn't work anymore, or worse yet behaves unexpectedly, and you'll need to go through and update it--which might be more trouble than it's worth. So use virtual environments to save you the hassle. At the very least, keep a <code>requirements.txt</code> or <code>environment.yml</code> file of the current state of the base environment for later reference.</p>
+<p>Another great thing about virtual environments is that they are easy to share. And, if you're planning to deploy an app on a platform like Heroku, you must specify the environment (by specifying the necessary packages in a <code>requirements.txt</code> file).</p>
+<h4 id="exporting-a-virtual-environment">Exporting a virtual environment<a class="headerlink" href="#exporting-a-virtual-environment" title="Permanent link">&para;</a></h4>
+<p>Virtual environments are shared with a <code>requirements.txt</code> or <code>environment.yml</code> file. Others can use this to recreate the environment on their own machines. To create this file, make sure the environment is activated and type <code>conda env export &gt; environment.yml</code> or <code>pip freeze &gt; requirements.txt</code>. This file will be saved in the current working directory. </p>
+<p>Generally, you should save your environment in an <code>environment.yml</code> file since we'll be using conda environments most of the time. Heroku, however, requires a <code>requirements.txt</code> file. It's ok to have both in a project.</p>
+<p>If you know you will be working on the same operating system (same machine or another machine), you can create an exact replica of the environment using <code>conda list --explicit &gt; environment.yml</code>. This will ensure that all dependencies are of the same version. This likely won't work if you are recreating the environment on a different OS version (e.g., Windows 10 vs. 8.1).</p>
+<p>If instead you may be working on completely different operating systems (e.g., Windows vs. OSx), you can be extra cautious and use <code>conda env export --from-history &gt; environment.yml</code>. This will only include packages specifically installed into the environment, and allow conda to resolve any dependencies.</p>
+<h4 id="duplicate-virtual-environment-from-file">Duplicate virtual environment from file<a class="headerlink" href="#duplicate-virtual-environment-from-file" title="Permanent link">&para;</a></h4>
+<p>To duplicate a virtual environment from the <code>environment.yml</code> file, use the command <code>conda env create -f environment.yml</code>. This will create the environment with the same name as the original environment. </p>
+<p>To duplicate a virtual environment from the <code>requirements.txt</code> file, first create an empty conda environment <code>conda create --name &lt;env name&gt;</code> , install pip <code>conda install pip</code> and then install the packages from the file <code>pip install -r requirements.txt</code>.</p>
+<h4 id="cloning-an-environment">Cloning an environment<a class="headerlink" href="#cloning-an-environment" title="Permanent link">&para;</a></h4>
+<p>To clone an environment, simply <code>conda create --name &lt;new_env_name&gt; --clone &lt;old_env_name&gt;</code>.</p>
+<h4 id="update-a-virtual-environment">Update a virtual environment<a class="headerlink" href="#update-a-virtual-environment" title="Permanent link">&para;</a></h4>
+<p>You can add packages to the environment simply by using <code>conda install &lt;package&gt;</code> or <code>pip install &lt;package&gt;</code> as you're building the project. Make sure to export the environment after installing new packages so that it's always up-to-date!</p>
+<p>If changes were made to the environment by a collaborator or on a cloned project, you can install the new packages from the updated <code>environemnt.yml</code> file with the command <code>conda env update --prefix ./env --file environment.yml --prune</code>. The <code>--prune</code> option causes conda to remove old dependencies.</p>
+<h3 id="common-issues">Common issues<a class="headerlink" href="#common-issues" title="Permanent link">&para;</a></h3>
+<p>If you are trying to recreate an environment created on another OS platform (e.g., Windows vs. OSx, Windows 10 vs. 8.1) from an <code>environment.yml</code> file, the specific dependencies may not be available on your platform. In this case, go back to the original project and use <code>conda env export --from-history &gt; environment.yml</code>. This will create a file using only the packages specifically imported (excluding any dependencies) and conda will resolve those dependencies on its own. Note that the two environments might not be identical, but it's better than not having the environment at all!</p>
+<p>For a quick fix, try removing the version number from the packages in the <code>environment.yml</code> or <code>requirements.txt</code> file, and/or deleting packages you know to be dependencies (i.e., <code>numpy</code> is a dependency of <code>pandas</code>, only list <code>pandas</code> in the file). </p>
+<h3 id="when-to-create-an-environment">When to create an environment<a class="headerlink" href="#when-to-create-an-environment" title="Permanent link">&para;</a></h3>
+<p>I recommend creating a new environment for any long-lived project using <code>conda create -n &lt;env_name&gt;</code>, saving the name of the environment as the same as the root folder of the project. Install as many packages as possible with conda, then install pip and use pip as the package manager (see <a href="https://www.anaconda.com/blog/using-pip-in-a-conda-environment">here</a> for why). </p>
+<p>The base conda environment (<code>conda activate base</code>) is useful for quick projects or ongoing-development type projects that you don't mind breaking from time to time.</p>
+<p>Always keep the <code>environments.yml</code> file up-to-date! Anytime you install a package, export the environment.</p>
+<p>If you code a project without a virtual environment and don't come back to it for a year, there's a good chance you'll find the code doesn't work anymore, or worse yet behaves unexpectedly, and you'll need to go through and update it--which might be more trouble than it's worth. So use virtual environments to save you the hassle and keep the <code>requirements.txt</code> or <code>environment.yml</code> file up to date in the root folder of the project.</p>
+<h3 id="more-commands">More commands<a class="headerlink" href="#more-commands" title="Permanent link">&para;</a></h3>
+<p>To see your environments: <code>conda env list</code>.</p>
+<p>To see packages in an environment: <code>conda list -n &lt;env_name&gt;</code> or simply <code>conda list</code> if the environment is active.</p>
+<p>To remove an environment: <code>conda remove -n &lt;env_name&gt; --all</code>.</p>
+<p>To update conda: <code>conda update conda</code>.</p>
+<p>To update a package: <code>conda update &lt;package&gt;</code>.</p>
+<p>To change python version: <code>conda install python=2.7</code> (make sure the environment is activated or this will downgrade/upgrade python system-wide!)</p>
+<p>You can set up <a href="../environment-variables/">environment variables</a> within an environment (although this is not my preferred way of handling <a href="../secrets/">secrets</a>). See <a href="https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#setting-environment-variables">here</a>.</p>
+<h3 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h3>
+<p><a href="https://docs.conda.io/projects/conda/en/4.6.0/_downloads/52a95608c49671267e40c689e0bc00ca/conda-cheatsheet.pdf">CONDA CHEATSHEET</a></p>
                 
                   
+                
                 
               
               
@@ -1236,7 +1395,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       

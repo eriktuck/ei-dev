@@ -36,7 +36,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../img/ei-logo-black.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -44,7 +44,7 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/application.1b62728e.css">
       
         <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
       
@@ -55,12 +55,12 @@
       
     
     
-      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+      <script src="../../assets/javascripts/modernizr.268332fc.js"></script>
     
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -554,6 +554,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#replicating-virtual-environments" class="md-nav__link">
+    Replicating virtual environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-on-two-machines" class="md-nav__link">
+    Working on two machines
+  </a>
+  
+</li>
+      
       
       
       
@@ -621,6 +635,18 @@
   <li class="md-nav__item">
     <a href="../../development/scheduling-tasks/" title="Scheduling Tasks" class="md-nav__link">
       Scheduling Tasks
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../development/secrets/" title="Secrets" class="md-nav__link">
+      Secrets
     </a>
   </li>
 
@@ -741,6 +767,18 @@
   <li class="md-nav__item">
     <a href="../../data-management/database-overview/" title="Database Overview" class="md-nav__link">
       Database Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data-management/postgres-tutorial/" title="PostgreSQL Tutorial" class="md-nav__link">
+      PostgreSQL Tutorial
     </a>
   </li>
 
@@ -1094,6 +1132,20 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#replicating-virtual-environments" class="md-nav__link">
+    Replicating virtual environments
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-on-two-machines" class="md-nav__link">
+    Working on two machines
+  </a>
+  
+</li>
+      
       
       
       
@@ -1126,7 +1178,7 @@
 <p>If you are not a collaborator, you will need to fork the project to your GitHub.</p>
 <ol>
 <li>Navigate to the repository on GitHub</li>
-<li>Select 'Fork', which will copy the project to your own repository</li>
+<li>Select 'Fork', which will copy the project to your own repository on GitHub</li>
 <li>Clone your version of the repo to your computer using <code>git clone &lt;project&gt;</code> in Git Bash (see <a href="../initializing-git/">Initializing Git</a> for help here)</li>
 <li>Work <a href="../common-workflow/">as you normally would</a>, working on a branch rather than master. <em>Be sure to always pull changes before working on your feature AND before pushing changes.</em></li>
 <li>Use <code>git push -u origin &lt;branch_name&gt;</code> to push changes the first time, otherwise <code>git push origin &lt;branch_name&gt;</code>. This will push the changes to your GitHub repository.</li>
@@ -1151,8 +1203,25 @@
 <li><strong>Manual</strong> merge: when Git can't resolve conflicting changes it moves into merging state. You must resolve conflicts before proceeding. If you've configured VSCode as your merge tool, you will be prompted to address the conflicting changes one file at a time.</li>
 </ul>
 <p>Ideally, you'll be communicating with your team members to avoid creating conflicting changes that require manual merges.</p>
+<h2 id="replicating-virtual-environments">Replicating virtual environments<a class="headerlink" href="#replicating-virtual-environments" title="Permanent link">&para;</a></h2>
+<p>After forking a repo, you may need to set up a <a href="../development/virtual-environments">virtual environment</a> to match the environment of the project. The project should contain a <code>requirements.txt</code> or <code>environment.yml</code> file in the root directory (<a href="../development/virtual-environments/#sharing-virtual-environments">see here for how to create this file</a>). This can be used to replicate the environment.</p>
+<p>After forking the repo, open the prompt and type:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>conda env create --f environment.yml 
+</pre></div>
+</td></tr></table>
+
+<p>See the page on <a href="../development/virtual-environments">virtual environments</a> if you encounter issues or only have a <code>requirements.txt</code> file.</p>
+<h2 id="working-on-two-machines">Working on two machines<a class="headerlink" href="#working-on-two-machines" title="Permanent link">&para;</a></h2>
+<p>If you're simply wanting to work on the same project across two devices, you can easily copy the project to a directory on each device. We recommend keeping this directory out of any other version control software (e.g., Sharepoint or OneDrive). </p>
+<p>Go to GitHub and select the green 'Code' split button, then copy the HTTPS location of the repo. Navigate to the directory in which you want the project folder stored (<code>c_dev</code> on my computer), then open a prompt window and clone the project into that directory:</p>
+<table class="codehilitetable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="codehilite"><pre><span></span>git clone &lt;https://&gt;
+</pre></div>
+</td></tr></table>
+
+<p>Finally, <a href="#replicating-virtual-environments">replicate the virtual environment</a> and get started. Don't forget to always push changes before switching devices and pull changes after! If you update the environment, make sure to freeze it into requirements.txt and push that as well.</p>
                 
                   
+                
                 
               
               
@@ -1233,7 +1302,7 @@
       
     </div>
     
-      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
