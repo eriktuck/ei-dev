@@ -1,5 +1,7 @@
 # Getting Started
 
+## Install python and basic packages
+
 1. [Install miniconda](https://docs.conda.io/en/latest/miniconda.html)
 
 2. Add to context menu (https://gist.github.com/jiewpeng/8ba446acf329b1801bf91db767d179ea)
@@ -22,3 +24,27 @@
 If you like, you can install a few additional often used packages into the base environment, but we recommend using environments for most projects, rather than installing everything into the base environment:
 
 * `pandas`
+
+### Why install packages into the base environment?
+
+In general, we recommend creating [virtual environments](../development/virtual-environments.md) for most projects.
+
+However, especially as you are getting started with coding, you'll want to be able to quickly explore different concepts. Having these commonly used packages installed in the base environment will allow you to explore without a lot of set up or tear down.
+
+## Working in Jupyter Notebooks
+
+Jupyter notebooks are a literate coding environment which allow you to mix code with your own text in Markdown. Outputs are printed directly to the screen. Notebooks are great for getting started, and may become an important part of your process even as you advance. I use notebooks for data exploration and when developing new processes. As I test different strategies and packages, I can capture both what works (which eventually finds its way into a `.py` file) and what *didn't* work. 
+
+## Using Jupyter Notebooks with environments
+
+As you are exploring a new project, you may want to use jupyter notebooks in a virtual environment. This will allow you to avoid polluting your base environment, or your project's main environment, with packages you won't end up using, and the jupyter notebook package itself. While you could install jupyter notebook directly in the environment (but make sure to complete step 6 below), you might not if you plan to deploy your app as you will end up installing jupyter notebook on the production server when you really don't need to. I like to set up a temporary environment for this exploration phase. Follow the process below in your command prompt.
+
+1. `conda create -n <temp_env_name>`
+2. `conda activate <temp_env_name>`
+3. `conda install -c conda-forge <jupyterlab>`
+4. (install any other packages needed)
+5. `python -m ipykernel install --user`: this step installs the kernel into the environment so that your system can find the environment. See [here](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/) for more on the relationship between a jupyter notebook kernel and the environment
+6. `jupyter notebook` will launch the notebook in your browser (it will open automatically) 
+
+
+
