@@ -4,7 +4,9 @@ This section is a high-level summary of content in the Neo4j [Developer Guides](
 
 ## Installation & Set Up
 
-Download the latest [Neo4j Desktop](https://neo4j.com/download/) release for your operating system. Install as normal. The following sections explain some of the key features of Neo4j and link to set up instructions.
+Download the latest [Neo4j Desktop](https://neo4j.com/download/) release for your operating system. Install as normal. Make sure you meet the minimum system requirements (esp. check that PowerShell is v5 or above). The following sections explain some of the key features of Neo4j and link to set up instructions.
+
+## Solutions
 
 #### Neo4j Desktop
 
@@ -29,6 +31,10 @@ The Graph Algorithms library provides access to many graph algorithms for explor
 #### Graph Data Science Playground
 
 The Graph Data Science Playground provides a streamlined experience for executing graph data science algorithms against your graph. First install it by selecting the split button 'Open' and selecting 'Graph Apps Gallery'. Find the card for Graph Data Science Playground and click install (or paste the URL in the install bar as described [here](https://medium.com/neo4j/introducing-the-graph-app-gallery-81aa3e63567b)). The Playground will now be available under the 'Open' split button.
+
+#### Aura
+
+Neo4j provides a graph hosting service 'Aura'. Fees are advertised by the second, but in actuality graph instances cannot be stopped, so the cheapest option comes to $64.80 per month. It's fairly easy to set up and [upload an existing graph database](#making-a-copy). Instances can only be connected to with neo4j (not py2neo), so keep that in mind before selecting this option for hosting. Graphs can also be hosted on [AWS](https://aws.amazon.com/marketplace/pp/Neo4j-Neo4j-Graph-Database-Community-Edition/B071P26C9D) or deployed in [Docker](https://neo4j.com/developer/docker-run-neo4j/).
 
 ## Cypher
 
@@ -78,50 +84,6 @@ For more detail, see Neo4j's [modeling designs guide](https://neo4j.com/develope
 * Relationships are `ALL_CAPS`
 * Properties, variables, parameters, aliases and functions are `camelCase`
 
-## Unit Testing
-
-As you populate your graph with data and your schema expands, you may want to set up unit tests to ensure that the results you're getting are accurate. You can set up a small graph with your initial schema but less data. Then write queries that you know the answers to. When you want to update the graph schema, first update the test graph schema and test that the right answers are returned. Write new tests to cover the extension of the graph schema you are planning.
-
-## Importing Data
-
-You'll most often start a graph database by importing data from CSV files. You can also import JSON files from you API. CSV files can be loaded from a specific 'Import' file on your local directory, or they can loaded from a URL (Google Sheets, GitHub, Dropbox). 
-
-To find the local folder, open the 'Manage' menu of your graph (three dots on the top right in the Desktop client, not the Browser). Click the split button 'Open Folder' and select 'Import'. A folder will open; drag and drop files into this folder. 
-
-Alternatively, commit your project to GitHub and get the URL for the raw version of your data. Or save it in Google Sheets and get the public link. For step by step instructions, see [here](https://neo4j.com/developer/kb/import-csv-locations/).
-
-Once you have your data available, use the `LOAD CSV` command to read the data into Neo4j from the local file and parse the data into the graph. Here's a simple example, but see [our tutorial] or the [documentation](https://neo4j.com/developer/guide-import-csv/) for more.
-
-Here's the first two rows of the CSV (avoid spaces in header names):
-
-| Name | Role             | Rate |
-| ---- | ---------------- | ---- |
-| Jim  | Senior Associate | $150 |
-| Jan  | Associate        | $100 |
-
-Here's how to load entities into a graph database. Employees and Roles are represented as nodes. The role for each employee will be expressed as a relationship after nodes are initially loaded. You'll copy this Cypher code into the terminal of the Neo4j Browser application:
-
-```cypher
-LOAD CSV WITH HEADERS FROM 'file:///data.csv' AS row
-MERGE (person:Person {name: row.Name})
-MERGE (role:Role {role:row.Role, rate:row.Rate})
-```
-
-In this statement, the CSV is first made available to the application. Each row will be iterated through, accessed with the `row` variable. Using the `MERGE` command, we assign the contents of the 'Name' column for that row (`row.Name`) to a node labelled 'Person' (`person:Person`), specifically to the property 'name' (`{name: row.Name}`). The `MERGE` command ensures no duplicates are created, `CREATE` could also be used but might result in duplication.
-
-Next, assign roles to employees through relationships:
-
-```cypher
-LOAD CSV WITH HEADERS FROM 'file:///data.csv' AS row
-MATCH (person:Person {name: row.Name})
-MATCH (role:Role {role: row.Role})
-MERGE (person)-[:HAS_ROLE]->(role)
-```
-
-Again, the CSV is made available to the application. We'll need it to see which person has which role. The two `MATCH` statements identify nodes within our graph that have the same name and role as the first row in the CSV. With the correct Person and Role nodes identified, a new relationship `HAS_ROLE` is created with the `MERGE` command, again to avoid duplication.
-
-Continue in this way until all entities are imported as nodes and all relationships are defined between nodes.
-
 ## Visualizing & Sharing 
 
 Graphs are so intuitive that it's tempting to share the graph itself with users so they can explore it. Sometimes you just need to make the graph available without exposing the graph itself. Neo4j offers a few options for sharing the power of graphs.
@@ -131,7 +93,7 @@ Graphs are so intuitive that it's tempting to share the graph itself with users 
 To get the schema, use the command
 
 ```cypher
-call db.schema.visualization
+call db.schema.visualization()
 ```
 
 You can export this as an image (see next header).
@@ -152,6 +114,13 @@ MATCH (n)-[r]-() RETURN n, r
 
 [GraphGists](https://portal.graphgist.org/about) are similar to Jupyter Notebooks, but for graphs. They load the graph into the browser itself, so no back-end is required. However, they can only support small graphs (150 nodes and edges). Use these if you want to provide somewhat interactive graphs in a report or presentation.
 
+### Kumu.io
+
+[Kumu.io](https://kumu.io/) provides a platform for sharing graphs and system maps with some interactivity. You can display node information in a sidebar and 'focus' on specific nodes and relationships by clicking. It's a great way to explore systems maps, situation models, and other complex maps. Check out this [system analysis from The Nature Conservancy](https://kumu.io/tnc/tnc-global-situation-analysis-v2) for an example.
+
 ### Heroku and GrapheneDB
+
+!!! Warning
+    GrapheneDB as a low-cost solution has been deprecated.
 
 You can deploy your graph database powered application to the web with Heroku and the [GrapheneDB](https://devcenter.heroku.com/articles/graphenedb) plugin. To get more than 1,000 nodes and 10,000 relationships, you'll need to pay the monthly fee for GrapheneDB ($9/month and up). To get some experience with deploying on Heroku, check out the [Movies Database tutorial](https://neo4j.com/developer/example-project/) (DO NOT USE THE `py2neo` repo they have listed, a [new repo](https://github.com/neo4j-examples/movies-python-py2neo) was created for the more recent version of py2neo--I have also found issues with that, contact me for a working copy).

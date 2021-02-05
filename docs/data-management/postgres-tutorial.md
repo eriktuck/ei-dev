@@ -1,3 +1,5 @@
+# PostgreSQL Tutorial
+
 This tutorial demonstrates how to integrate a Postgres database with a Dash app. First, we'll set up a local Postgres database for testing and then provision a Postgres database through Heroku. Credit to [Charming Data](https://www.youtube.com/watch?v=Mf3s0P4aVKw) for his tutorial and inspiration for this tutorial. 
 
 ### 1. Install Postgres

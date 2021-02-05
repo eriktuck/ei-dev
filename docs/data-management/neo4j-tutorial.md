@@ -47,7 +47,7 @@ Let's assume our data is stored in a relational database with the following tabl
 
 3.1 Create a new graph database
 
-![img](assets/add-database.png)
+![img](assets/add-database.PNG)
 
 3.2 Select 'Create a Local Graph'
 
@@ -182,7 +182,7 @@ Closeness is a graph data science algorithm that can detect nodes that are able 
 
 You have two options for executing graph data science algorithms. For a no-code solution (recommended to begin), install and open the Graph Data Science Playground. If you'd prefer using the terminal in Desktop, install the Graph Data Science Library. This tutorial will focus on the Graph Data Science Playground. For an intro video, see [here](https://www.youtube.com/watch?v=sA3EY5Hq6-E).
 
-**6.1** Install the Graph Data Science playground. In the Neo4j Desktop client, select the split button 'Open' for your graph and select 'Graph Apps Gallery'. Find the card for Graph Data Science Playground and click install (or paste the URL in the install bar as described [here](https://medium.com/neo4j/introducing-the-graph-app-gallery-81aa3e63567b)). The Playground will now be available under the 'Open' split button.
+**6.1** Install the Graph Data Science playground. In the Neo4j Desktop client, select the split button 'Open' for your graph and select 'Graph Apps Gallery'. Find the card for Graph Data Science Playground and click install (or paste the URL in the install bar as described [here](https://medium.com/neo4j/introducing-the-graph-app-gallery-81aa3e63567b)). The Playground will now be available under the 'Open' split button. You will also need to install the APOC plugin (see below).
 
 OR
 

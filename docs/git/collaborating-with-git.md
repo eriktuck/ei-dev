@@ -60,18 +60,15 @@ Ideally, you'll be communicating with your team members to avoid creating confli
 
 After forking a repo, you may need to set up a [virtual environment](../development/virtual-environments) to match the environment of the project. The project should contain a `requirements.txt` or `environment.yml` file in the root directory ([see here for how to create this file](../development/virtual-environments/#sharing-virtual-environments)). This can be used to replicate the environment.
 
-Due to some of our common packages not being available through conda and the need for a requirements.txt file for Heroku deployments, we typically use `requirements.txt` in our projects after creating a conda environment.
-
 After forking the repo, open the prompt and type:
 
 ```bash
-conda create <env-name>
-conda activate <env-name>
-conda install pip
-pip install -r requirements.txt
+conda env create --f environment.yml 
 ```
 
-## Working on two devices
+See the page on [virtual environments](../development/virtual-environments) if you encounter issues or only have a `requirements.txt` file.
+
+## Working on two machines
 
 If you're simply wanting to work on the same project across two devices, you can easily copy the project to a directory on each device. We recommend keeping this directory out of any other version control software (e.g., Sharepoint or OneDrive). 
 

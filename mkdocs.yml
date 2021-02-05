@@ -46,17 +46,20 @@ nav:
 - Development:
   - 'Command Line Tools': 'development/command-line-tools.md'
   - 'Scheduling Tasks': 'development/scheduling-tasks.md'
+  - 'Secrets': 'development/secrets.md'
   - 'Environment Variables': 'development/environment-variables.md'
   - 'Virtual Environments': 'development/virtual-environments.md'
 - Deployment:
   - 'Deployment Overview': 'deployment/deployment-overview.md'
   - 'Heroku': 'deployment/heroku.md'
   - 'Google API': 'deployment/google-api.md'
+  - 'Lightweight Backends': 'deployment/lightweight-backends.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
   - 'PostgreSQL Tutorial': 'data-management/postgres-tutorial.md'
   - 'Neo4j Graph Databases': 'data-management/neo4j-overview.md'
   - 'Neo4j Tutorial': 'data-management/neo4j-tutorial.md'
+  - 'Neo4j Advanced': 'data-management/neo4j-advanced.md'
 - Data Science:
   - 'Machine Learning Tutorial': 'data-science/machine-learning-tutorial/machine-learning-tutorial.md'
 - Data Visualization:

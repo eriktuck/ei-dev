@@ -9,7 +9,9 @@ I recommend taking a day to work through the examples in the [User Guide](https:
 
 ## Installation
 
-Dash isn't distributed through `conda` (yet), so you'll need to install using `pip`. Might as well [initialize a git repository](../git/initializing-git.md) and create a [virtual environment](../development/virtual-environment) while you're at it. Use `virtualenv` since this is a `pip` environment and that's what the Dash documentation suggests. Make sure your prompt is in the root folder of your project directory (or `mkdir` and `cd` into it).
+Dash isn't distributed through `conda` (yet), so you'll need to install using `pip`. Might as well [initialize a git repository](../git/initializing-git.md) and create a [virtual environment](../development/virtual-environments.md) while you're at it. Use `virtualenv` si
+
+0nce this is a `pip` environment and that's what the Dash documentation suggests. Make sure your prompt is in the root folder of your project directory (or `mkdir` and `cd` into it).
 
 ```powershell
 virtualenv venv
