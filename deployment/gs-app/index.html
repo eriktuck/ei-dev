@@ -1,0 +1,2107 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content=" A knowledge management system for the metrics service line">
+      
+      
+      
+        <meta name="author" content="Erik Anderson">
+      
+      
+      <link rel="shortcut icon" href="../../img/ei-logo-black.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+    
+    
+      
+        <title>Google Sheets App - EI Metrics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-151885346-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#google-sheets-application" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EI Metrics" class="md-header__button md-logo" aria-label="EI Metrics">
+      
+  <img src="../../img/ei-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EI Metrics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Google Sheets App
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EI Metrics" class="md-nav__button md-logo" aria-label="EI Metrics">
+      
+  <img src="../../img/ei-logo-white.png" alt="logo">
+
+    </a>
+    EI Metrics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Project Portfolio
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Project Portfolio" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Project Portfolio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../portfolio/project-portfolio/" class="md-nav__link">
+        Portfolio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Case Studies
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Case Studies" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Case Studies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../portfolio/ggs-hqt/ggs-hqt/" class="md-nav__link">
+        Giant Garter Snake Habitat Quantification Tool
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-services/how-we-work/" class="md-nav__link">
+        Metrics Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Metrics Design Philosophy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metrics Design Philosophy" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metrics Design Philosophy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step1-start-at-the-end/" class="md-nav__link">
+        Step 1: Start at the End
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step2-map-it/" class="md-nav__link">
+        Step 2: Map It
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step3-develop-empathy/" class="md-nav__link">
+        Step 3: Develop Empathy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step4-define-the-problem/" class="md-nav__link">
+        Step 4: Define the Problem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step5-identify-a-solution/" class="md-nav__link">
+        Step 5: Identify a Solution
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step6-implement/" class="md-nav__link">
+        Step 6: Implement
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step7-adapt/" class="md-nav__link">
+        Step 7: Iterate & Adapt
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        The Basics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          The Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../the-basics/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/install-configure-git/" class="md-nav__link">
+        Install Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/initializing-git/" class="md-nav__link">
+        Create Project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/common-workflow/" class="md-nav__link">
+        Common Workflow
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/collaborating-with-git/" class="md-nav__link">
+        Collaborating with Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/additional-reference/" class="md-nav__link">
+        Additional Reference
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/command-line-tools/" class="md-nav__link">
+        Command Line Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/scheduling-tasks/" class="md-nav__link">
+        Scheduling Tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/secrets/" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/environment-variables/" class="md-nav__link">
+        Environment Variables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/virtual-environments/" class="md-nav__link">
+        Virtual Environments
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      <label class="md-nav__link" for="__nav_8">
+        Deployment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Deployment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment-overview/" class="md-nav__link">
+        Deployment Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../heroku/" class="md-nav__link">
+        Heroku
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../google-api/" class="md-nav__link">
+        Google API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Google Sheets App
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Google Sheets App
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spreadsheet-maturity-model" class="md-nav__link">
+    Spreadsheet Maturity Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-design" class="md-nav__link">
+    Data Design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tidy-endpoints" class="md-nav__link">
+    "Tidy Endpoints"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-formulas" class="md-nav__link">
+    Array Formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-formula-examples" class="md-nav__link">
+    Array Formula examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Formula examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiply-a-column-by-a-scalar" class="md-nav__link">
+    Multiply a column by a scalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiply-an-array-by-a-scalar" class="md-nav__link">
+    Multiply an array by a scalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-table" class="md-nav__link">
+    Product table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-formulas" class="md-nav__link">
+    Supporting Formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Supporting Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    Filter
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering-the-results-of-an-array-formula" class="md-nav__link">
+    Filtering the results of an array formula
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-based-on-a-list" class="md-nav__link">
+    Filter based on a list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    Query
+  </a>
+  
+    <nav class="md-nav" aria-label="Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-column-headers-in-select-statements" class="md-nav__link">
+    Using column headers in SELECT statements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indirect" class="md-nav__link">
+    Indirect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-queries" class="md-nav__link">
+    Advanced Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-by" class="md-nav__link">
+    Group by
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-imported-data" class="md-nav__link">
+    Filtering Imported data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpivot" class="md-nav__link">
+    Unpivot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-array-formulas-of-note" class="md-nav__link">
+    Non-array Formulas of note
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-array Formulas of note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#index-match" class="md-nav__link">
+    Index Match
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivot-tables" class="md-nav__link">
+    Pivot Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    Joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formula-efficiency" class="md-nav__link">
+    Formula efficiency
+  </a>
+  
+    <nav class="md-nav" aria-label="Formula efficiency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-spreadsheet-efficiency" class="md-nav__link">
+    Testing spreadsheet efficiency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolution-of-a-formula" class="md-nav__link">
+    Evolution of a formula
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-set-up" class="md-nav__link">
+    Basic Set Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregating-data" class="md-nav__link">
+    Aggregating Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tidying-data" class="md-nav__link">
+    Tidying data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-data" class="md-nav__link">
+    Sharing data
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharing data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-connections" class="md-nav__link">
+    Managing connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-in-shared-sheets" class="md-nav__link">
+    Working in Shared Sheets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../lightweight-backends/" class="md-nav__link">
+        Lightweight Backends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" >
+      
+      <label class="md-nav__link" for="__nav_9">
+        Data Management
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-management/database-overview/" class="md-nav__link">
+        Database Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-management/postgres-tutorial/" class="md-nav__link">
+        PostgreSQL Tutorial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-management/neo4j-overview/" class="md-nav__link">
+        Neo4j Graph Databases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-management/neo4j-tutorial/" class="md-nav__link">
+        Neo4j Tutorial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-management/neo4j-advanced/" class="md-nav__link">
+        Neo4j Advanced
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Data Analysis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Analysis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Data Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" class="md-nav__link">
+        Machine Learning Tutorial
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Data Visualization
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Visualization" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Data Visualization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-visualization/data-visualization/" class="md-nav__link">
+        Data Visualization
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-visualization/dashboards/" class="md-nav__link">
+        Dashboards
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Python Packages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python Packages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Python Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/dash/" class="md-nav__link">
+        Dash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/py2neo/" class="md-nav__link">
+        py2neo
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Additional Resources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Additional Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/scoping/" class="md-nav__link">
+        Scoping Canvas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/product-definition/" class="md-nav__link">
+        Product Definition
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/specification-doc/" class="md-nav__link">
+        Product Specification
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/persona-guide/" class="md-nav__link">
+        Persona Development Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/interview-guide/" class="md-nav__link">
+        Interview Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/user-testing-guide/" class="md-nav__link">
+        User Testing Guide
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        How to Maintain This Site
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to Maintain This Site" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          How to Maintain This Site
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/development-guidance/" class="md-nav__link">
+        Development Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/tips-and-tricks/" class="md-nav__link">
+        Tips & Tricks
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#spreadsheet-maturity-model" class="md-nav__link">
+    Spreadsheet Maturity Model
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-design" class="md-nav__link">
+    Data Design
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tidy-endpoints" class="md-nav__link">
+    "Tidy Endpoints"
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#array-formulas" class="md-nav__link">
+    Array Formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#array-formula-examples" class="md-nav__link">
+    Array Formula examples
+  </a>
+  
+    <nav class="md-nav" aria-label="Array Formula examples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#multiply-a-column-by-a-scalar" class="md-nav__link">
+    Multiply a column by a scalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#multiply-an-array-by-a-scalar" class="md-nav__link">
+    Multiply an array by a scalar
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#product-table" class="md-nav__link">
+    Product table
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#supporting-formulas" class="md-nav__link">
+    Supporting Formulas
+  </a>
+  
+    <nav class="md-nav" aria-label="Supporting Formulas">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filter" class="md-nav__link">
+    Filter
+  </a>
+  
+    <nav class="md-nav" aria-label="Filter">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#filtering-the-results-of-an-array-formula" class="md-nav__link">
+    Filtering the results of an array formula
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filter-based-on-a-list" class="md-nav__link">
+    Filter based on a list
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#query" class="md-nav__link">
+    Query
+  </a>
+  
+    <nav class="md-nav" aria-label="Query">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-column-headers-in-select-statements" class="md-nav__link">
+    Using column headers in SELECT statements
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#indirect" class="md-nav__link">
+    Indirect
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#advanced-queries" class="md-nav__link">
+    Advanced Queries
+  </a>
+  
+    <nav class="md-nav" aria-label="Advanced Queries">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#group-by" class="md-nav__link">
+    Group by
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#filtering-imported-data" class="md-nav__link">
+    Filtering Imported data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unpivot" class="md-nav__link">
+    Unpivot
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#non-array-formulas-of-note" class="md-nav__link">
+    Non-array Formulas of note
+  </a>
+  
+    <nav class="md-nav" aria-label="Non-array Formulas of note">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#index-match" class="md-nav__link">
+    Index Match
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pivot-tables" class="md-nav__link">
+    Pivot Tables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#joins" class="md-nav__link">
+    Joins
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#formula-efficiency" class="md-nav__link">
+    Formula efficiency
+  </a>
+  
+    <nav class="md-nav" aria-label="Formula efficiency">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#testing-spreadsheet-efficiency" class="md-nav__link">
+    Testing spreadsheet efficiency
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#evolution-of-a-formula" class="md-nav__link">
+    Evolution of a formula
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#basic-set-up" class="md-nav__link">
+    Basic Set Up
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#aggregating-data" class="md-nav__link">
+    Aggregating Data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tidying-data" class="md-nav__link">
+    Tidying data
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sharing-data" class="md-nav__link">
+    Sharing data
+  </a>
+  
+    <nav class="md-nav" aria-label="Sharing data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#managing-connections" class="md-nav__link">
+    Managing connections
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#working-in-shared-sheets" class="md-nav__link">
+    Working in Shared Sheets
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="google-sheets-application">Google Sheets Application<a class="headerlink" href="#google-sheets-application" title="Permanent link">&para;</a></h1>
+<p>Imagine you want to leverage the familiarity and ease-of-use of Google Sheets for your user interface but you also want to develop a user-friendly application-like experience for users. Google Sheets can serve as a surprisingly powerful platform for developing your solution with a few simple tricks.</p>
+<p>This tutorial will introduce you to the concepts required to extend Google Sheets to an efficient full-stack solution for your application. I am not going to use Macros, AppSheet, or Add-ons, although you may find those useful. This tutorial instead uses out-of-the-box functionality of Google Sheets. I will supply one formula for the Script editor, but it is not important to understand how it works.</p>
+<p>The benefits of using Google Sheets is that you can much more quickly build a fairly robust solution than on another platform. It is also likely familiar to user, which allows you to bring them into the development and testing process. Finally, it has a ton of out-of-the box functionality that you can leverage for your project. Google Sheets can be right for prototyping solutions and often can be the first and last stop for developing a lightweight application.</p>
+<details class="question"><summary>Why not Excel?</summary><p>Excel is behind Google Sheets in two key areas: array formulas and data sharing. Array formulas allow for data aggregation and import without knowing the structure of the data. Ever copy data from one sheet to another by just dragging a <code>=Sheet1!A1</code> formula down a column? You need an array formula. Data sharing between Excel sheets can be accomplished through external links or Power Query, however I find those break more than they work once a file is shared and Power Query is comparatively slow.</p>
+</details>
+<h2 id="spreadsheet-maturity-model">Spreadsheet Maturity Model<a class="headerlink" href="#spreadsheet-maturity-model" title="Permanent link">&para;</a></h2>
+<p>Before beginning, I want to share a model of maturity for spreadsheets I first heard in this <a href="https://www.youtube.com/watch?v=vnm6ViI06MM&amp;t=1561s">GSuite presentation</a>.  This is a very useful model for thinking about how to advance your Google Sheet project from concept to application. </p>
+<ol>
+<li><strong>Infancy</strong> - "Capture the Idea" - just trying to figure out what pieces of data and organization of data makes the most sense.</li>
+<li><strong>Toddler</strong> - "Validate the Idea" - share the spreadsheet with others to collaborate, improve, and capture more use cases.</li>
+<li><strong>Grade School</strong> - "Formalize the idea" - apply formatting, validation, and freeze rows. Generally make it easier to use and supply affordances (hints to users). </li>
+<li><strong>Middle School</strong> - "Build the permissions" - protect ranges, set up permissions, and use private sheets (sharing data through <code>IMPORTRANGE</code>). Consider access and privileges.</li>
+<li><strong>High School</strong> - "Build the process" - build nuance to the data collection process to reflect users workflows. Set up forms instead of editing the sheet directly.</li>
+<li><strong>College Student</strong> - "Build the logic" - automate some processes and improve communications throughout the workflow. (GSuite recommends AppSheet, however the pricing is <a href="https://community.appsheet.com/t/appsheet-cost-for-g-suite-business-users/18810">...confusing</a>).</li>
+</ol>
+<p>If you are using spreadsheets as your app platform, you'll want to have a "College Student" level of maturity before going to production. Separate the data entry functionality from the data storage and data analysis/visualization. This will greatly improve the user experience of your spreadsheet application.</p>
+<h2 id="data-design">Data Design<a class="headerlink" href="#data-design" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Data Entry</li>
+<li>Data Storage</li>
+<li>Data Visualization</li>
+</ol>
+<h2 id="tidy-endpoints">"Tidy Endpoints"<a class="headerlink" href="#tidy-endpoints" title="Permanent link">&para;</a></h2>
+<p>Tidy Endpoints is a conceptual extension of RESTful endpoints, however using tidy data instead of JSON. </p>
+<p><a href="https://vita.had.co.nz/papers/tidy-data.pdf">Tidy data</a> is a concept popularized by Hadley Wickham and an incredibly simple yet powerful concept for data management. Tidy data can also be described as 'tall' rather than 'wide'. Tidy data correlates to Codd's Third Normal Form, which can be further refined to 4th normal form for efficient data storage (as used in database applications). I've found spreadsheets are more amenable to tidy data than 4th normal form data, so we'll use the tidy data concept for our architecture.</p>
+<p>The power of the Tidy Endpoints concept is that it allows us to format our data in such a way that it can be efficiently and safely shared with other spreadsheets without worrying about the structure of those sheets or the total amount of data shared. (However, note that Google Sheets has limits on how much data can be shared.)</p>
+<p>Tidy data meets the following conditions:</p>
+<ol>
+<li>Each variable forms a column</li>
+<li>Each observation forms a row</li>
+<li>Each level of observation forms a table</li>
+</ol>
+<h2 id="array-formulas">Array Formulas<a class="headerlink" href="#array-formulas" title="Permanent link">&para;</a></h2>
+<p>To unlock the power of Google Sheets, you must understand <a href="https://support.google.com/docs/answer/6208276?hl=en&amp;ref_topic=9055396">array formulas</a>. Array formulas return an array, rather than a single value. In many ways, the lack of array formulas was the primary constraint of spreadsheets as compared to higher level programming interfaces. Without array formulas, you are acting as a low-level memory manager for the application, allocating a single piece of information to a single cell. With array formulas, you have the power of many modern programing languages as the memory management function is abstracted away.</p>
+<p>The simplest way to return an array in Google Sheets is to use curly braces <code>{}</code>.</p>
+<p>For example, this would return all of the data in columns A and C in side-by-side columns:</p>
+<div class="codehilite"><pre><span></span><code>={Sheet1!A:A, Sheet1C:C}
+</code></pre></div>
+
+<p>To return data stacked vertically, rather than side-by-side, use a semi-colon:</p>
+<div class="codehilite"><pre><span></span><code>={Sheet1A1:A10, Sheet1!A20:A30}
+</code></pre></div>
+
+<p>Alternatively, you can use <code>ARRAYFORMULA(Sheet1A1:A10, Sheet1!A20:A30)</code> for the same purpose.</p>
+<h3 id="array-formula-examples">Array Formula examples<a class="headerlink" href="#array-formula-examples" title="Permanent link">&para;</a></h3>
+<p>Let's try out some array formulas. Note that you won't need to worry about fixed references (<code>$</code>) because you won't be dragging the formula around.</p>
+<h4 id="multiply-a-column-by-a-scalar">Multiply a column by a scalar<a class="headerlink" href="#multiply-a-column-by-a-scalar" title="Permanent link">&para;</a></h4>
+<p><code>=arrayformula(A2:A7*10)</code></p>
+<h4 id="multiply-an-array-by-a-scalar">Multiply an array by a scalar<a class="headerlink" href="#multiply-an-array-by-a-scalar" title="Permanent link">&para;</a></h4>
+<p><code>=arrayformula(A2:F7*10)</code></p>
+<h4 id="product-table">Product table<a class="headerlink" href="#product-table" title="Permanent link">&para;</a></h4>
+<p><code>=arrayformula(A2:A7*B1:F1)</code></p>
+<h2 id="supporting-formulas">Supporting Formulas<a class="headerlink" href="#supporting-formulas" title="Permanent link">&para;</a></h2>
+<p>We'll use the following formulas in combination with array formulas to aggregate, format, and share data.</p>
+<h4 id="filter">Filter<a class="headerlink" href="#filter" title="Permanent link">&para;</a></h4>
+<p><code>FILTER</code> is my go-to formula for concatenating. It improves upon the basic array formula by allowing you to filter what is returned in the array. Most often, I filter null or zero values, for example:</p>
+<div class="codehilite"><pre><span></span><code>=FILTER(Sheet1!A:Z, Sheet1!A:A &gt; 0)
+</code></pre></div>
+
+<p>will return the array in Sheet1!A:Z where column A is greater than zero. </p>
+<p>To pull data from multiple sheets, we can use:</p>
+<div class="codehilite"><pre><span></span><code><span class="o">=</span><span class="p">{</span><span class="err">FILTER(Sheet1!</span><span class="n">A</span><span class="p">:</span><span class="n">Z</span><span class="p">,</span> <span class="n">Sheet1</span><span class="o">!</span><span class="n">A</span><span class="o">:</span><span class="n">A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">);</span> 
+<span class="err">FILTER(Sheet2!</span><span class="n">A2</span><span class="p">:</span><span class="n">Z</span><span class="p">,</span> <span class="n">Sheet2</span><span class="o">!:</span><span class="n">A2</span><span class="o">:</span><span class="n">A</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)}</span>
+</code></pre></div>
+
+<p>Note that sheets 2 and beyond should only pull from row 2 on to avoid duplicating headers in your array. Sheet 1 and Sheet 2 should have the same headers.</p>
+<h5 id="filtering-the-results-of-an-array-formula">Filtering the results of an array formula<a class="headerlink" href="#filtering-the-results-of-an-array-formula" title="Permanent link">&para;</a></h5>
+<p>Sometimes you want to filter the results of an array formula. You can use <code>INDEX</code> to get the right column to filter for</p>
+<div class="codehilite"><pre><span></span><code>={FILTER(ARRAYFORMULA(Sheet1!A:Z),
+INDEX(ARRAYFORMULA(Sheet1!A:Z),0,3)&lt;&gt;&quot;&quot;)}
+</code></pre></div>
+
+<p>will filter the third column of the returned array that are blank. This is useful when the array formula is manipulating the structure of the data, and you do not have access to that column (common with <code>UNPIVOT</code>, see below). However, note that this is now calling the array formula twice! This can be very expensive. Use a helper table instead. If you're importing using <code>IMPORTRANGE</code>, use a <code>QUERY</code>.</p>
+<h5 id="filter-based-on-a-list">Filter based on a list<a class="headerlink" href="#filter-based-on-a-list" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><code>=FILTER(A:C, COUNTIF(E:E, A:A))
+</code></pre></div>
+
+<p>where <code>E</code> is the list to check and <code>A</code> is the column to check against <code>E</code>.</p>
+<h4 id="query">Query<a class="headerlink" href="#query" title="Permanent link">&para;</a></h4>
+<p><code>QUERY</code> is a <code>SQL</code>-like syntax for querying arrays. If you are familiar with <code>SQL</code> you will want to explore this function. Why isn't it my go-to then? Primarily because it behaves unexpectedly when a column's data types are mixed. </p>
+<p>Imagine your company uses identifiers that contain a mix of letters and numbers, but some (most) are numeric. Query will simply ignore any data that are not of the dominant type in a column (and it won't pay attention to how you have formatted the column!). Thus, you may end up missing values (without warning) in your results.</p>
+<p><code>QUERY</code> relies on a SELECT statement passed as a string to return your array. You will not have access to the column headers for the SELECT statement, so you must refer to columns by their column letter (i.e., <code>A</code>, <code>B</code>). Alternatively (and if you are combining a <code>QUERY</code> with <code>IMPORTRANGE</code>) you can wrap your range in curly braces and use 'Col1', 'Col2', ... to refer to columns by order. The reason this works is that the range provided is now no longer considered part of the spreadsheet, and so you don't have the column letter identifiers. Note that you cannot use 'Col1', 'Col2', ... without wrapping the range in curly braces.</p>
+<p>An example <code>QUERY</code> might be</p>
+<div class="codehilite"><pre><span></span><code>=QUERY(Sheet1!A:Z, &quot;SELECT A, sum(B) where A is not null group by A&quot;)
+</code></pre></div>
+
+<p>or</p>
+<div class="codehilite"><pre><span></span><code>=QUERY({Sheet1!A:Z}, SELECT Col1, sum(Col2) where Col1 is not null group by Col1)
+</code></pre></div>
+
+<p>This would return the sum of all values in column B grouped by column A where A is not null (use <code>&lt;&gt; ''</code> if the column contains text rather than numerical data). </p>
+<h5 id="using-column-headers-in-select-statements">Using column headers in SELECT statements<a class="headerlink" href="#using-column-headers-in-select-statements" title="Permanent link">&para;</a></h5>
+<p>If you need to substitute a column header for the column letter, you can use this slightly complicated formula</p>
+<div class="codehilite"><pre><span></span><code>SUBSTITUTE(ADDRESS(1, MATCH(&quot;&lt;Column Name&gt;&quot;,Sheet1!A$1:$Z$1,0),4),1,&quot;&quot;)
+</code></pre></div>
+
+<p>in the SELECT statement using concatenation</p>
+<div class="codehilite"><pre><span></span><code>=QUERY(Sheet1!A:Z, &quot;SELECT&quot; &amp; &lt;paste SUBSTITUTE formula here&gt;)
+</code></pre></div>
+
+<h5 id="indirect">Indirect<a class="headerlink" href="#indirect" title="Permanent link">&para;</a></h5>
+<p>Indirect is another way to return a cell address using a string as input, in essence it converts <code>"A1"</code> to <code>A1</code> so that Google Sheets treats it like a cell address.</p>
+<h5 id="advanced-queries">Advanced Queries<a class="headerlink" href="#advanced-queries" title="Permanent link">&para;</a></h5>
+<h6 id="group-by">Group by<a class="headerlink" href="#group-by" title="Permanent link">&para;</a></h6>
+<p>Query can be used with SQL-like grammar for very powerful calculations like groupby.</p>
+<div class="codehilite"><pre><span></span><code>=query(eventsByStaff!A:O, &quot;select A, B, sum(D), sum(E), sum(F), sum(G), sum(H), sum(I), sum(J), sum(K), sum(L), sum(M), sum(N), sum(O) where A is not null group by A, B&quot;, 1)
+</code></pre></div>
+
+<h5 id="filtering-imported-data">Filtering Imported data<a class="headerlink" href="#filtering-imported-data" title="Permanent link">&para;</a></h5>
+<div class="codehilite"><pre><span></span><code>=QUERY(IMPORTRANGE(&quot;url&quot;, &quot;Sheet1!A:Z&quot;) &quot;SELECT * WHERE Col1 = &#39;TRUE&#39;&quot;)
+</code></pre></div>
+
+<p>Note the quotes around True, otherwise it will look for a column named TRUE (which it won't find).</p>
+<h4 id="unpivot">Unpivot<a class="headerlink" href="#unpivot" title="Permanent link">&para;</a></h4>
+<p>Unpivot is a custom function written using the Script editor. Unpivoting, or 'melting' data is a common practice in data manipulation to get tidy data. If you have columns that are actually dimensions, you can unpivot the data to get a column with dimensions and a column with corresponding value. I've provided the code below (not my code, <a href="https://stackoverflow.com/questions/24954722/how-do-you-create-a-reverse-pivot-in-google-sheets">credit</a>). Simply open the Script editor, paste the contents of the code block below, hit save, and the <code>unpivot</code> function will be available to you in the sheet.</p>
+<div class="codehilite"><pre><span></span><code><span class="cm">/**</span>
+<span class="cm"> * Unpivot a pivot table of any size.</span>
+<span class="cm"> *</span>
+<span class="cm"> * @param {A1:D30} data The pivot table.</span>
+<span class="cm"> * @param {1} fixColumns Number of columns, after which pivoted values begin. Default 1.</span>
+<span class="cm"> * @param {1} fixRows Number of rows (1 or 2), after which pivoted values begin. Default 1.</span>
+<span class="cm"> * @param {&quot;city&quot;} titlePivot The title of horizontal pivot values. Default &quot;column&quot;.</span>
+<span class="cm"> * @param {&quot;distance&quot;[,...]} titleValue The title of pivot table values. Default &quot;value&quot;.</span>
+<span class="cm"> * @return The unpivoted table</span>
+<span class="cm"> * @customfunction</span>
+<span class="cm"> * https://stackoverflow.com/questions/24954722/how-do-you-create-a-reverse-pivot-in-google-sheets</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="k">function</span><span class="w"> </span><span class="k">unpivot</span><span class="p">(</span><span class="k">data</span><span class="p">,</span><span class="n">fixColumns</span><span class="p">,</span><span class="n">fixRows</span><span class="p">,</span><span class="n">titlePivot</span><span class="p">,</span><span class="n">titleValue</span><span class="p">)</span><span class="w"> </span><span class="err">{</span><span class="w">  </span>
+<span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">fixColumns</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fixColumns</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">fixed</span><span class="w"></span>
+<span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">fixRows</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fixRows</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">many</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="k">are</span><span class="w"> </span><span class="n">fixed</span><span class="w"></span>
+<span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">titlePivot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titlePivot</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;column&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">titleValue</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">titleValue</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="s1">&#39;value&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">ret</span><span class="o">=</span><span class="err">[]</span><span class="p">,</span><span class="n">i</span><span class="p">,</span><span class="n">j</span><span class="p">,</span><span class="k">row</span><span class="p">,</span><span class="n">uniqueCols</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">handle</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">dimension</span><span class="w"> </span><span class="n">arrays</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="err">!</span><span class="k">Array</span><span class="p">.</span><span class="n">isArray</span><span class="p">(</span><span class="k">data</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">data</span><span class="p">.</span><span class="n">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fixRows</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="err">!</span><span class="k">Array</span><span class="p">.</span><span class="n">isArray</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">)</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">.</span><span class="n">length</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">fixColumns</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Error</span><span class="p">(</span><span class="s1">&#39;no data&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="n">handle</span><span class="w"> </span><span class="nf">max</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="k">rows</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fixRows</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">throw</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Error</span><span class="p">(</span><span class="s1">&#39;max 2 fixed rows are allowed&#39;</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">fill</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="n">cells</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="k">value</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="k">last</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">previous</span><span class="w"> </span><span class="n">columns</span><span class="w"> </span><span class="p">(</span><span class="k">for</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="k">rows</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="nf">var</span><span class="w"> </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">]</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">!=</span><span class="w"> </span><span class="s1">&#39;&#39;</span><span class="p">)</span><span class="w"> </span>
+<span class="w">      </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">      </span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">tmp</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">calculate</span><span class="w"> </span><span class="k">unique</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">number</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">fixRows</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">uniqueCols</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">tmp</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">{}</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">fixColumns</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="k">data</span><span class="o">[</span><span class="n">1</span><span class="o">]</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">typeof</span><span class="w"> </span><span class="n">tmp</span><span class="o">[</span><span class="n"> data[1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="s1">&#39;undefined&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="err">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">tmp</span><span class="o">[</span><span class="n"> data[1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="err">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span><span class="w"></span>
+<span class="w">        </span><span class="n">uniqueCols</span><span class="o">++</span><span class="p">;</span><span class="w"></span>
+<span class="w">      </span><span class="err">}</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="k">return</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="k">row</span><span class="err">:</span><span class="w"> </span><span class="n">fix</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">titles</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">pivoted</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="k">values</span><span class="w"> </span><span class="k">column</span><span class="w"> </span><span class="n">title</span><span class="p">(</span><span class="n">s</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">fixColumns</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">row</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">fixRows</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="vm">?</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">j</span><span class="o">]||</span><span class="k">data</span><span class="o">[</span><span class="n">1</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="w"> </span><span class="err">:</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">0</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">);</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="n">we</span><span class="w"> </span><span class="k">try</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">find</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="ow">and</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="mi">2</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">3</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">arguments</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"> </span><span class="k">row</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="n">arguments</span><span class="o">[</span><span class="n">j</span><span class="o">]</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="n">ret</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="k">row</span><span class="p">);</span><span class="w"></span>
+
+<span class="w">  </span><span class="o">//</span><span class="w"> </span><span class="n">processing</span><span class="w"> </span><span class="k">rows</span><span class="w"> </span><span class="p">(</span><span class="n">skipping</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">fixed</span><span class="w"> </span><span class="n">columns</span><span class="p">,</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">dedicating</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">each</span><span class="w"> </span><span class="n">pivoted</span><span class="w"> </span><span class="k">value</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="n">fixRows</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">&lt;</span><span class="k">data</span><span class="p">.</span><span class="n">length</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">length</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span><span class="w"> </span><span class="n">i</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">  </span><span class="err">{</span><span class="w"></span>
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="n">skip</span><span class="w"> </span><span class="n">totally</span><span class="w"> </span><span class="n">empty</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="k">only</span><span class="w"> </span><span class="n">whitespace</span><span class="w"> </span><span class="n">containing</span><span class="w"> </span><span class="k">rows</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="k">join</span><span class="p">(</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="nf">replace</span><span class="p">(</span><span class="o">/</span><span class="err">\</span><span class="n">s</span><span class="o">+/</span><span class="n">g</span><span class="p">,</span><span class="s1">&#39;&#39;</span><span class="p">).</span><span class="n">length</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">)</span><span class="w"> </span><span class="k">continue</span><span class="p">;</span><span class="w"></span>
+
+<span class="w">    </span><span class="o">//</span><span class="w"> </span><span class="k">unpivot</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">row</span><span class="w"></span>
+<span class="w">    </span><span class="k">row</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="err">[]</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="n">fixColumns</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">j</span><span class="o">&lt;</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="k">row</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">j</span><span class="o">=</span><span class="n">fixColumns</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">length</span><span class="p">;</span><span class="n">j</span><span class="o">+=</span><span class="n">uniqueCols</span><span class="p">)</span><span class="w"></span>
+<span class="w">      </span><span class="n">ret</span><span class="p">.</span><span class="n">push</span><span class="p">(</span><span class="w"> </span>
+<span class="w">        </span><span class="k">row</span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="o">[</span><span class="n">data[0</span><span class="o">][</span><span class="n">j</span><span class="o">]</span><span class="err">]</span><span class="p">)</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="k">first</span><span class="w"> </span><span class="k">row</span><span class="w"> </span><span class="n">title</span><span class="w"> </span><span class="k">value</span><span class="w"></span>
+<span class="w">        </span><span class="p">.</span><span class="nf">concat</span><span class="p">(</span><span class="k">data</span><span class="o">[</span><span class="n">i</span><span class="o">]</span><span class="p">.</span><span class="n">slice</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="n">j</span><span class="o">+</span><span class="n">uniqueCols</span><span class="p">))</span><span class="w"> </span><span class="o">//</span><span class="w"> </span><span class="n">pivoted</span><span class="w"> </span><span class="k">values</span><span class="w"></span>
+<span class="w">      </span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="err">}</span><span class="w"></span>
+
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="n">ret</span><span class="p">;</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
+</code></pre></div>
+
+<p>Simply specify the data source, number of fixed columns/rows, and optionally the name of the new dimension column and value column.</p>
+<div class="codehilite"><pre><span></span><code>=UNPIVOT(Sheet1!A:Z, 2, 1, &quot;my dim&quot;, &quot;my val&quot;)
+</code></pre></div>
+
+<p>Here the first two columns will be treated as fixed and the first row will be treated as the header. Note that only two header rows are supported. If you need to add more structure to your sheet, consider adding hidden rows/columns around your variable data to pull them closer to the data you need to unpivot.</p>
+<h3 id="non-array-formulas-of-note">Non-array Formulas of note<a class="headerlink" href="#non-array-formulas-of-note" title="Permanent link">&para;</a></h3>
+<h4 id="index-match">Index Match<a class="headerlink" href="#index-match" title="Permanent link">&para;</a></h4>
+<p>Combining the <code>INDEX</code> and <code>MATCH</code> formula is a powerhouse formula for spreadsheets, allowing you to lookup a value from one column based on a value from another column. If you don't know it, check it out, there are lots of great resources online. You cannot use Index Match in an array formula however. </p>
+<h3 id="pivot-tables">Pivot Tables<a class="headerlink" href="#pivot-tables" title="Permanent link">&para;</a></h3>
+<p>Unpivoted data is great for sharing and analysis, but not always optimal for data visualizing. Use Google Sheets built in Pivot tables to return data to its original format if needed.</p>
+<h3 id="joins">Joins<a class="headerlink" href="#joins" title="Permanent link">&para;</a></h3>
+<p>If you're familiar with SQL, you'll likely sorely miss the ability to join data, especially when the join is many-to-many. Here's how you can do it in Google Sheets:</p>
+<div class="codehilite"><pre><span></span><code>=FILTER(
+{Sheet1!A:C, 
+VLOOKUP(Sheet1!C:C, {Sheet2!A:A, Sheet2!B:E}, {2,3,4,5}, false)}, 
+Sheet1!C:C&lt;&gt;&quot;&quot;)
+</code></pre></div>
+
+<p>First note that you will be combining two results side by side (Sheet1!A:C and the result of the VLOOKUP).</p>
+<p>That will be filtered where Sheet1 column C is not blank.</p>
+<p>The VLOOKUP table is in Sheet2, where column A is the join index for Sheet2 and column C is the join index for Sheet1. Columns B:E is Sheet2 will be joined to Sheet1 wherever the join indices match.</p>
+<p>The general form is below:</p>
+<div class="codehilite"><pre><span></span><code>=FILTER(
+{&lt;Table1&gt;,
+VLOOKUP(&lt;Table1 Join Index&gt;, {&lt;Table2 Join Index&gt;, &lt;Table2 Columns to Join&gt;}, {&lt;2, 3 ... length of Table2 Columns to Join&gt;}, false)},
+&lt;Filter condition&gt;)
+</code></pre></div>
+
+<h3 id="formula-efficiency">Formula efficiency<a class="headerlink" href="#formula-efficiency" title="Permanent link">&para;</a></h3>
+<p>Use helper columns and helper tables to avoid re-calculating the same thing multiple times. This can speed up your spreadsheet immensely.</p>
+<p>Don't:</p>
+<div class="codehilite"><pre><span></span><code>={FILTER(IMPORTRANGE(&quot;url&quot;, &quot;SheetName!A:Z&quot;), INDEX(IMPORTRANGE(&quot;url&quot;, &quot;SheetName!A:Z&quot;),0,1)&lt;&gt;&#39;&#39;)}
+</code></pre></div>
+
+<p>Do (in two separate sheets):</p>
+<div class="codehilite"><pre><span></span><code>=IMPORTRANGE(&quot;url&quot;, &quot;SheetName!A:Z&quot;)  // in Sheet1 of the new spreadsheet
+=FILTER(Sheet1!A:Z, Sheet1!A:Z &lt;&gt; &#39;&#39;)
+</code></pre></div>
+
+<p>In the Don't example, you are importing the range twice, which is very expensive. In the second example, you import the range once into a helper table, and then filter the result, thus importing only once.</p>
+<p>Don't drag this formula down a column to calculate percent of time worked:</p>
+<div class="codehilite"><pre><span></span><code>=A1/NETWORKDAYS(A1, EDATE(A1, 1)-1)
+</code></pre></div>
+
+<p>Do create a helper column in <code>B</code> with the result of <code>NETWORKDAY</code> and then in column <code>C</code> drag down</p>
+<div class="codehilite"><pre><span></span><code>=A1/B1
+</code></pre></div>
+
+<h4 id="testing-spreadsheet-efficiency">Testing spreadsheet efficiency<a class="headerlink" href="#testing-spreadsheet-efficiency" title="Permanent link">&para;</a></h4>
+<p>In your spreadsheet, use <code>Ctrl+Shift+I</code> to open the developer tools. Under performance, record the spreadsheet loading (with data in it). Make a change to improve your formulas and reload the spreadsheet again. You can then see the performance improvement in ms. Note that this can be quite stochastic depending on your wifi at the exact moment, so run the test a few times for each configuration.</p>
+<p>If still sluggish, consider deleting unused rows, columns in your spreadsheet, limit conditional formatting, or see other ideas <a href="https://www.benlcollins.com/spreadsheets/slow-google-sheets/">here</a>.</p>
+<h3 id="evolution-of-a-formula">Evolution of a formula<a class="headerlink" href="#evolution-of-a-formula" title="Permanent link">&para;</a></h3>
+<p>Like spreadsheets, formulas should be built iteratively. First, just make sure the formula does what you want it to do. Then start formalizing it such that it allows for user customization and is robust to changes in the spreadsheet.</p>
+<p>[Example]</p>
+<ol>
+<li>Write basic</li>
+<li>Extract fixed values</li>
+<li>Use named ranges</li>
+<li>Substitute variables to allow extension (with caution)</li>
+</ol>
+<h2 id="basic-set-up">Basic Set Up<a class="headerlink" href="#basic-set-up" title="Permanent link">&para;</a></h2>
+<p>Although not necessary, it can be helpful to create a new folder on Google Drive to store all of your spreadsheets. </p>
+<p>We'll set up four spreadsheets, one for input values, two for data entry, and one for aggregation and data visualization.</p>
+<p>Your folder should look like this:</p>
+<p>[Insert drive image]</p>
+<p>Now let's add some data. We'll support two different data entry formats to better illustrate the power of Google Sheets.</p>
+<h2 id="aggregating-data">Aggregating Data<a class="headerlink" href="#aggregating-data" title="Permanent link">&para;</a></h2>
+<p>You can support multiple 'rooms' as different sheets in the spreadsheet to make data entry easier for users. You must ensure that the rooms are identical (for the data you want to aggregate).</p>
+<div class="codehilite"><pre><span></span><code><span class="o">=</span><span class="p">{</span><span class="err">Sheet1!</span><span class="n">A</span><span class="p">:</span><span class="n">Z</span><span class="p">;</span> <span class="err">Sheet2!</span><span class="n">A2</span><span class="p">:</span><span class="n">Z</span><span class="o">&gt;</span><span class="p">}</span>
+</code></pre></div>
+
+<p>Note that the second and all subsequent ranges should exclude the headers. If you want to change the headers, you can use the first row to specify new header names and then in row 2 set the import to start at row 2 of Sheet1.</p>
+<h2 id="tidying-data">Tidying data<a class="headerlink" href="#tidying-data" title="Permanent link">&para;</a></h2>
+<p>Tidy data using the <code>UNPIVOT</code> custom function defined above and then filtering null values.</p>
+<div class="codehilite"><pre><span></span><code>=UNPIVOT(Sheet3!A:E, 1, 1, &quot;&lt;parameter&gt;&quot;, &quot;&lt;value&gt;&quot;)  // in Sheet4!A1
+=FILTER(Sheet4!A:E, Sheet4!A:A&lt;&gt;&quot;&quot;)  // in Sheet 5!A1
+</code></pre></div>
+
+<p>Your data is now all tidied up and ready for export!</p>
+<h2 id="sharing-data">Sharing data<a class="headerlink" href="#sharing-data" title="Permanent link">&para;</a></h2>
+<p>The magic of Google Sheets is being able to treat multiple spreadsheets as a single system. <a href="https://support.google.com/docs/answer/3093340"><code>IMPORTRANGE</code></a> allows you to pull data together using the URL of each spreadsheet.</p>
+<p>Once access is granted, any editor on the destination spreadsheet can use <code>IMPORTRANGE</code> to pull from any part of the source spreadsheet. The access remains in effect until the user who granted access is removed from the source.</p>
+<p>If the data you are trying to import is too large, you may get an error.</p>
+<h3 id="managing-connections">Managing connections<a class="headerlink" href="#managing-connections" title="Permanent link">&para;</a></h3>
+<p>connectionLog</p>
+<h3 id="working-in-shared-sheets">Working in Shared Sheets<a class="headerlink" href="#working-in-shared-sheets" title="Permanent link">&para;</a></h3>
+<p>Filter Views</p>
+<p><a href="https://support.google.com/docs/answer/9245556?hl=en&amp;ref_topic=9055396#zippy=%2Cfilters-filter-views-slicers">Slicers</a></p>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../google-api/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Google API
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../lightweight-backends/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Lightweight Backends
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Environmental Incentives
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      
+        <script src="../../js/scripts.js"></script>
+      
+    
+  </body>
+</html>

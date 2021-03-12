@@ -1,0 +1,1517 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content=" A knowledge management system for the metrics service line">
+      
+      
+      
+        <meta name="author" content="Erik Anderson">
+      
+      
+      <link rel="shortcut icon" href="../../img/ei-logo-black.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.5">
+    
+    
+      
+        <title>Neo4j Advanced - EI Metrics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.77f3fd56.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.7fa14f5b.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#4051b5">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font-family:"Roboto";--md-code-font-family:"Roboto Mono"}</style>
+      
+    
+    
+    
+    
+      
+        
+<script>window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)},ga.l=+new Date,ga("create","UA-151885346-1","auto"),ga("set","anonymizeIp",!0),ga("send","pageview"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){var e;this.value&&(e=document.location.pathname,ga("send","pageview",e+"?q="+this.value))}),"undefined"!=typeof location$&&location$.subscribe(function(e){ga("send","pageview",e.pathname)})})</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="indigo" data-md-color-accent="indigo">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#neo4j-advanced" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="EI Metrics" class="md-header__button md-logo" aria-label="EI Metrics">
+      
+  <img src="../../img/ei-logo-white.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            EI Metrics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Neo4j Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="md-header__options">
+      
+    </div>
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="EI Metrics" class="md-nav__button md-logo" aria-label="EI Metrics">
+      
+  <img src="../../img/ei-logo-white.png" alt="logo">
+
+    </a>
+    EI Metrics
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      <label class="md-nav__link" for="__nav_2">
+        Project Portfolio
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Project Portfolio" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Project Portfolio
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../portfolio/project-portfolio/" class="md-nav__link">
+        Portfolio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      <label class="md-nav__link" for="__nav_2_2">
+        Case Studies
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Case Studies" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Case Studies
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../portfolio/ggs-hqt/ggs-hqt/" class="md-nav__link">
+        Giant Garter Snake Habitat Quantification Tool
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-services/how-we-work/" class="md-nav__link">
+        Metrics Services
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      <label class="md-nav__link" for="__nav_4">
+        Metrics Design Philosophy
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Metrics Design Philosophy" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Metrics Design Philosophy
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/overview/" class="md-nav__link">
+        Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step1-start-at-the-end/" class="md-nav__link">
+        Step 1: Start at the End
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step2-map-it/" class="md-nav__link">
+        Step 2: Map It
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step3-develop-empathy/" class="md-nav__link">
+        Step 3: Develop Empathy
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step4-define-the-problem/" class="md-nav__link">
+        Step 4: Define the Problem
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step5-identify-a-solution/" class="md-nav__link">
+        Step 5: Identify a Solution
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step6-implement/" class="md-nav__link">
+        Step 6: Implement
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../metrics-design/step7-adapt/" class="md-nav__link">
+        Step 7: Iterate & Adapt
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      <label class="md-nav__link" for="__nav_5">
+        The Basics
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="The Basics" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          The Basics
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../the-basics/getting-started/" class="md-nav__link">
+        Getting Started
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" >
+      
+      <label class="md-nav__link" for="__nav_6">
+        Git
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Git" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/install-configure-git/" class="md-nav__link">
+        Install Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/initializing-git/" class="md-nav__link">
+        Create Project
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/common-workflow/" class="md-nav__link">
+        Common Workflow
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/collaborating-with-git/" class="md-nav__link">
+        Collaborating with Git
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../git/additional-reference/" class="md-nav__link">
+        Additional Reference
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" >
+      
+      <label class="md-nav__link" for="__nav_7">
+        Development
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Development" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Development
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/command-line-tools/" class="md-nav__link">
+        Command Line Tools
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/scheduling-tasks/" class="md-nav__link">
+        Scheduling Tasks
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/secrets/" class="md-nav__link">
+        Secrets
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/environment-variables/" class="md-nav__link">
+        Environment Variables
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../development/virtual-environments/" class="md-nav__link">
+        Virtual Environments
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" >
+      
+      <label class="md-nav__link" for="__nav_8">
+        Deployment
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Deployment" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Deployment
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/deployment-overview/" class="md-nav__link">
+        Deployment Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/heroku/" class="md-nav__link">
+        Heroku
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/google-api/" class="md-nav__link">
+        Google API
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/gs-app/" class="md-nav__link">
+        Google Sheets App
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../deployment/lightweight-backends/" class="md-nav__link">
+        Lightweight Backends
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_9" type="checkbox" id="__nav_9" checked>
+      
+      <label class="md-nav__link" for="__nav_9">
+        Data Management
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Management" data-md-level="1">
+        <label class="md-nav__title" for="__nav_9">
+          <span class="md-nav__icon md-icon"></span>
+          Data Management
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../database-overview/" class="md-nav__link">
+        Database Overview
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../postgres-tutorial/" class="md-nav__link">
+        PostgreSQL Tutorial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neo4j-overview/" class="md-nav__link">
+        Neo4j Graph Databases
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../neo4j-tutorial/" class="md-nav__link">
+        Neo4j Tutorial
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Neo4j Advanced
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Neo4j Advanced
+      </a>
+      
+        
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#neo4j-admin" class="md-nav__link">
+    Neo4j admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dump-and-load-database" class="md-nav__link">
+    Dump and load database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-hosting" class="md-nav__link">
+    Web hosting
+  </a>
+  
+    <nav class="md-nav" aria-label="Web hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-database" class="md-nav__link">
+    Create the database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#populate-with-existing-database" class="md-nav__link">
+    Populate with existing database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    Unit Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-data" class="md-nav__link">
+    Importing Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Importing Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-with-files" class="md-nav__link">
+    Working with files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_10" type="checkbox" id="__nav_10" >
+      
+      <label class="md-nav__link" for="__nav_10">
+        Data Analysis
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Analysis" data-md-level="1">
+        <label class="md-nav__title" for="__nav_10">
+          <span class="md-nav__icon md-icon"></span>
+          Data Analysis
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" class="md-nav__link">
+        Machine Learning Tutorial
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_11" type="checkbox" id="__nav_11" >
+      
+      <label class="md-nav__link" for="__nav_11">
+        Data Visualization
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Data Visualization" data-md-level="1">
+        <label class="md-nav__title" for="__nav_11">
+          <span class="md-nav__icon md-icon"></span>
+          Data Visualization
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-visualization/data-visualization/" class="md-nav__link">
+        Data Visualization
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../data-visualization/dashboards/" class="md-nav__link">
+        Dashboards
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_12" type="checkbox" id="__nav_12" >
+      
+      <label class="md-nav__link" for="__nav_12">
+        Python Packages
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Python Packages" data-md-level="1">
+        <label class="md-nav__title" for="__nav_12">
+          <span class="md-nav__icon md-icon"></span>
+          Python Packages
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/dash/" class="md-nav__link">
+        Dash
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../guides/py2neo/" class="md-nav__link">
+        py2neo
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_13" type="checkbox" id="__nav_13" >
+      
+      <label class="md-nav__link" for="__nav_13">
+        Additional Resources
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Additional Resources" data-md-level="1">
+        <label class="md-nav__title" for="__nav_13">
+          <span class="md-nav__icon md-icon"></span>
+          Additional Resources
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/scoping/" class="md-nav__link">
+        Scoping Canvas
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/product-definition/" class="md-nav__link">
+        Product Definition
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/specification-doc/" class="md-nav__link">
+        Product Specification
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/persona-guide/" class="md-nav__link">
+        Persona Development Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/interview-guide/" class="md-nav__link">
+        Interview Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../additional-resources/user-testing-guide/" class="md-nav__link">
+        User Testing Guide
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_14" type="checkbox" id="__nav_14" >
+      
+      <label class="md-nav__link" for="__nav_14">
+        How to Maintain This Site
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="How to Maintain This Site" data-md-level="1">
+        <label class="md-nav__title" for="__nav_14">
+          <span class="md-nav__icon md-icon"></span>
+          How to Maintain This Site
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/development-guidance/" class="md-nav__link">
+        Development Guide
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../maintenance/tips-and-tricks/" class="md-nav__link">
+        Tips & Tricks
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#neo4j-admin" class="md-nav__link">
+    Neo4j admin
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dump-and-load-database" class="md-nav__link">
+    Dump and load database
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#web-hosting" class="md-nav__link">
+    Web hosting
+  </a>
+  
+    <nav class="md-nav" aria-label="Web hosting">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-the-database" class="md-nav__link">
+    Create the database
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#populate-with-existing-database" class="md-nav__link">
+    Populate with existing database
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#unit-testing" class="md-nav__link">
+    Unit Testing
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#importing-data" class="md-nav__link">
+    Importing Data
+  </a>
+  
+    <nav class="md-nav" aria-label="Importing Data">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#working-with-files" class="md-nav__link">
+    Working with files
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="neo4j-advanced">Neo4j Advanced<a class="headerlink" href="#neo4j-advanced" title="Permanent link">&para;</a></h1>
+<p>This topic contains advanced procedures for Neo4j graph databases.</p>
+<h2 id="neo4j-admin">Neo4j admin<a class="headerlink" href="#neo4j-admin" title="Permanent link">&para;</a></h2>
+<p>Neo4j-admin is the CLI for Neo4j. To access it in Neo4j Desktop, select 'Manage' from the three-circle menu in the top right of a database card. Then select the 'Open Terminal' button. You must prepend <code>bin\</code> to any calls to <code>neo4j-admin</code> for it to work. For example:</p>
+<div class="codehilite"><pre><span></span><code>bin\neo4j-admin ...
+</code></pre></div>
+
+<h2 id="dump-and-load-database">Dump and load database<a class="headerlink" href="#dump-and-load-database" title="Permanent link">&para;</a></h2>
+<p>If you need to make a copy of an existing graph database to share, you can use the <code>dump</code> and <code>load</code> commands with neo4j-admin.</p>
+<p>First, open the project you want to share. Make sure the database is stopped. Click the three-circles button in the top right of the database card and select 'Manage'. Click 'Open Terminal'. In the Terminal, type:</p>
+<div class="codehilite"><pre><span></span><code>bin\neo4j-admin dump --database=neo4j --to=&lt;path\to\destination.dump&gt;
+</code></pre></div>
+
+<p>Note that the default database for this project will be saved (I believe this is the database in the first position). If you use the name you gave a database in the --database flag, you'll get a database does not exist error. I have no idea why they set it up this way, but it is the way it is.</p>
+<p>To load the database, first create an empty database in a new project. Then, following the process above, access the terminal and type:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">bin</span>\<span class="n">neo4j</span><span class="o">-</span><span class="n">admin</span> <span class="nb">load</span> <span class="o">--</span><span class="n">from</span><span class="o">=&lt;</span><span class="n">path</span>\<span class="n">to</span>\<span class="n">destination</span><span class="o">.</span><span class="n">dump</span><span class="o">&gt;</span> <span class="o">--</span><span class="n">database</span><span class="o">=</span><span class="n">neo4j</span> <span class="o">--</span><span class="n">force</span>
+</code></pre></div>
+
+<p>The <code>--force</code> flag will overwrite the existing database, which is why I recommend starting a new project so you don't overwrite something you want to keep.</p>
+<p>See <a href="https://neo4j.com/docs/operations-manual/current/tools/dump-load/">here</a> for more.</p>
+<h2 id="web-hosting">Web hosting<a class="headerlink" href="#web-hosting" title="Permanent link">&para;</a></h2>
+<p>Neo4j graph databases can be hosted in <a href="https://neo4j.com/cloud/aura/">Aura</a> (Neo4j's own hosting service), on <a href="https://aws.amazon.com/marketplace/pp/Neo4j-Neo4j-Graph-Database-Community-Edition/B071P26C9D">AWS</a> or deployed in <a href="https://neo4j.com/developer/docker-run-neo4j/">Docker</a> (among other options). While Neo4j advertises pricing by the minute, in fact they bill by the month: you cannot stop an instance of an Aura graph database. One month of hosting will run about $64. Previously, GrapheneDB offered an option through Heroku for $9, however that is no longer supported.</p>
+<h3 id="create-the-database">Create the database<a class="headerlink" href="#create-the-database" title="Permanent link">&para;</a></h3>
+<p>Setting up a database on Aura is fairly easy. You'll need to set up an account and provide a credit card. Then, just hit 'Create Database'. Save the username and password into a <code>JSON</code> file in your <code>secrets/</code> directory. The URI is less sensitive, but might as well just keep it all together.</p>
+<p>The code below will establish a connection using <code>neo4j</code>.</p>
+<div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">neo4j</span> <span class="kn">import</span> <span class="n">GraphDatabase</span>
+<span class="kn">import</span> <span class="nn">json</span> 
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;secrets/aura_creds.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
+    <span class="n">creds</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+
+<span class="n">URI</span> <span class="o">=</span> <span class="n">creds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;URI&#39;</span><span class="p">)</span>
+<span class="n">USERNAME</span> <span class="o">=</span> <span class="n">creds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;USERNAME&#39;</span><span class="p">)</span>
+<span class="n">PASSWORD</span> <span class="o">=</span> <span class="n">creds</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;PASSWORD&#39;</span><span class="p">)</span>
+
+<span class="n">graph</span> <span class="o">=</span> <span class="n">GraphDatabase</span><span class="o">.</span><span class="n">driver</span><span class="p">(</span><span class="n">URI</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="p">(</span><span class="n">USERNAME</span><span class="p">,</span> <span class="n">PASSWORD</span><span class="p">))</span>
+</code></pre></div>
+
+<p>Note that it appears that <code>py2neo v2020.1.0</code> does not support the protocol used by Aura. If your app simply queries data from the database with cypher, <code>neo4j</code> will be sufficient. If you need more advanced functionality, and don't want to learn <code>neo4j</code> to that extent, check this <a href="https://stackoverflow.com/questions/64880029/connect-to-neo4j-aura-cloud-database-with-py2neo">stack overflow topic</a> to see if anyone can help. Al</p>
+<h3 id="populate-with-existing-database">Populate with existing database<a class="headerlink" href="#populate-with-existing-database" title="Permanent link">&para;</a></h3>
+<p>To push an existing database to this cloud instance, follow the guidance under 'Import'. See the guidance <a href="#neo4j-admin">above</a> for help using the terminal. Note that the database name is not the one you gave it, it is likely 'neo4j'.</p>
+<h2 id="unit-testing">Unit Testing<a class="headerlink" href="#unit-testing" title="Permanent link">&para;</a></h2>
+<p>As you populate your graph with data and your schema expands, you may want to set up unit tests to ensure that the results you're getting are accurate. You can set up a small graph with your initial schema but less data. Then write queries that you know the answers to. When you want to update the graph schema, first update the test graph schema and test that the right answers are returned. Write new tests to cover the extension of the graph schema you are planning.</p>
+<h2 id="importing-data">Importing Data<a class="headerlink" href="#importing-data" title="Permanent link">&para;</a></h2>
+<p>You'll often start a graph database by importing data from CSV files. You can also import JSON files from you API. CSV files can be loaded from a specific 'Import' file on your local directory, or they can loaded from a URL (Google Sheets, GitHub, Dropbox). </p>
+<p>To find the local folder, open the 'Manage' menu of your graph (three dots on the top right in the Desktop client, not the Browser). Click the split button 'Open Folder' and select 'Import'. A folder will open; drag and drop files into this folder. </p>
+<p>Alternatively, commit your project to GitHub and get the URL for the raw version of your data. Or save it in Google Sheets and get the public link. For step by step instructions, see <a href="https://neo4j.com/developer/kb/import-csv-locations/">here</a>.</p>
+<p>Once you have your data available, use the <code>LOAD CSV</code> command to read the data into Neo4j from the local file and parse the data into the graph. Here's a simple example, but see [our tutorial] or the <a href="https://neo4j.com/developer/guide-import-csv/">documentation</a> for more.</p>
+<p>Here's the first two rows of the CSV (avoid spaces in header names):</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Role</th>
+<th>Rate</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Jim</td>
+<td>Senior Associate</td>
+<td>$150</td>
+</tr>
+<tr>
+<td>Jan</td>
+<td>Associate</td>
+<td>$100</td>
+</tr>
+</tbody>
+</table>
+<p>Here's how to load entities into a graph database. Employees and Roles are represented as nodes. The role for each employee will be expressed as a relationship after nodes are initially loaded. You'll copy this Cypher code into the terminal of the Neo4j Browser application:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">LOAD CSV WITH HEADERS FROM &#39;file:///data.csv&#39; AS row</span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">role</span><span class="p">:</span><span class="n">Role</span><span class="w"> </span><span class="p">{</span><span class="n">role</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Role</span><span class="p">,</span><span class="w"> </span><span class="n">rate</span><span class="p">:</span><span class="n">row</span><span class="p">.</span><span class="n">Rate</span><span class="p">})</span><span class="w"></span>
+</code></pre></div>
+
+<p>In this statement, the CSV is first made available to the application. Each row will be iterated through, accessed with the <code>row</code> variable. Using the <code>MERGE</code> command, we assign the contents of the 'Name' column for that row (<code>row.Name</code>) to a node labelled 'Person' (<code>person:Person</code>), specifically to the property 'name' (<code>{name: row.Name}</code>). The <code>MERGE</code> command ensures no duplicates are created, <code>CREATE</code> could also be used but might result in duplication.</p>
+<p>Next, assign roles to employees through relationships:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">LOAD CSV WITH HEADERS FROM &#39;file:///data.csv&#39; AS row</span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">:</span><span class="n">Person</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Name</span><span class="p">})</span><span class="w"></span>
+<span class="k">MATCH</span><span class="w"> </span><span class="p">(</span><span class="n">role</span><span class="p">:</span><span class="n">Role</span><span class="w"> </span><span class="p">{</span><span class="n">role</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Role</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="w"> </span><span class="p">(</span><span class="n">person</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">HAS_ROLE</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">role</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+
+<p>Again, the CSV is made available to the application. We'll need it to see which person has which role. The two <code>MATCH</code> statements identify nodes within our graph that have the same name and role as the first row in the CSV. With the correct Person and Role nodes identified, a new relationship <code>HAS_ROLE</code> is created with the <code>MERGE</code> command, again to avoid duplication.</p>
+<p>Continue in this way until all entities are imported as nodes and all relationships are defined between nodes.</p>
+<h3 id="working-with-files">Working with files<a class="headerlink" href="#working-with-files" title="Permanent link">&para;</a></h3>
+<p>The <a href="../neo4j-tutorial/">Neo4j tutorial</a> provides in depth guidance for translating a relational database to a graph database using csvs. Below we provide some basic guidance on working with files, especially csvs.</p>
+<p>Neo4j does not allow you to access files on your local system. Instead, you must upload files into the project's file directory before they can be available to Neo4j. Add a file using the 'Add File' card in the Desktop client. Of course, changes made to the file in your local directory will not be reflected in this copy, you must upload any changes directly.</p>
+<p>To use the file in Neo4j, click on the three-circle icon in the top right of the uploaded file card and select 'copy file URL'.</p>
+<p>Use the copied file url like this:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">LOAD</span><span class="w"> </span><span class="n">CSV</span><span class="w"> </span><span class="k">WITH</span><span class="w"> </span><span class="n">HEADERS</span><span class="w"> </span><span class="n">FROM</span><span class="w"> </span><span class="s">&quot;&lt;paste url here&gt;&quot;</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="n">row</span><span class="w"> </span>
+<span class="p">...</span><span class="w"></span>
+</code></pre></div>
+
+<p>For example, you can load entities from two columns 'Project_Number' and 'Region' with:</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">LOAD CSV WITH HEADERS FROM &quot;http://localhost:11001/project-5810fc37-0742-4c0b-b0d7-238646cc50ea/reports.csv&quot; as row</span>
+<span class="k">MERGE</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Project_Number</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="p">(</span><span class="n">r</span><span class="p">:</span><span class="n">Region</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Region</span><span class="p">})</span><span class="w"></span>
+<span class="k">RETURN</span><span class="w"> </span><span class="n">p</span><span class="p">,</span><span class="w"> </span><span class="n">r</span><span class="w"></span>
+</code></pre></div>
+
+<p>To create relationships between these nodes (where any nodes in the same row are related):</p>
+<div class="codehilite"><pre><span></span><code><span class="c1">LOAD CSV WITH HEADERS FROM &quot;http://localhost:11001/project-5810fc37-0742-4c0b-b0d7-238646cc50ea/reports.csv&quot; as row</span>
+<span class="k">MATCH</span><span class="p">(</span><span class="n">p</span><span class="p">:</span><span class="n">Project</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Project_Number</span><span class="p">})</span><span class="w"></span>
+<span class="k">MATCH</span><span class="p">(</span><span class="n">r</span><span class="p">:</span><span class="n">Region</span><span class="w"> </span><span class="p">{</span><span class="n">name</span><span class="p">:</span><span class="w"> </span><span class="n">row</span><span class="p">.</span><span class="n">Region</span><span class="p">})</span><span class="w"></span>
+<span class="k">MERGE</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">-[</span><span class="p">:</span><span class="n">LOCATED_IN</span><span class="o">]-&gt;</span><span class="p">(</span><span class="n">r</span><span class="p">)</span><span class="w"></span>
+</code></pre></div>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../neo4j-tutorial/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Neo4j Tutorial
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../../data-science/machine-learning-tutorial/machine-learning-tutorial/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Machine Learning Tutorial
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Environmental Incentives
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+        
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.fb4a9340.min.js", "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.5cf3e710.min.js"></script>
+      
+        <script src="../../js/scripts.js"></script>
+      
+    
+  </body>
+</html>
