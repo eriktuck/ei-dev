@@ -39,11 +39,11 @@ Jupyter notebooks are a literate coding environment which allow you to mix code 
 
 As you are exploring a new project, you may want to use jupyter notebooks in a virtual environment. This will allow you to avoid polluting your base environment, or your project's main environment, with packages you won't end up using, and the jupyter notebook package itself. While you could install jupyter notebook directly in the environment (but make sure to complete step 6 below), you might not if you plan to deploy your app as you will end up installing jupyter notebook on the production server when you really don't need to. I like to set up a temporary environment for this exploration phase. Follow the process below in your command prompt.
 
-1. `conda create -n <temp_env_name>`
+1. `conda create -n <temp_env_name>`  (I like to append `-nb` to indicate a notebook environement)
 2. `conda activate <temp_env_name>`
 3. `conda install -c conda-forge <jupyterlab>`
 4. (install any other packages needed)
-5. `python -m ipykernel install --user`: this step installs the kernel into the environment so that your system can find the environment. See [here](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/) for more on the relationship between a jupyter notebook kernel and the environment
+5. `python -m ipykernel install --user`: this step installs the kernel into the environment so that your system can find the environment. See [here](https://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/) for more on the relationship between a jupyter notebook kernel and the environment. Note that you will need to do this step anytime you change environments and wish to use jupyter notebooks (even in the base environment)
 6. `jupyter notebook` will launch the notebook in your browser (it will open automatically) 
 
 

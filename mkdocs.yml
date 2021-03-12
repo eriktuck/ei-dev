@@ -35,8 +35,8 @@ nav:
   - 'Step 5: Identify a Solution': 'metrics-design/step5-identify-a-solution.md'
   - 'Step 6: Implement': 'metrics-design/step6-implement.md'
   - 'Step 7: Iterate & Adapt': 'metrics-design/step7-adapt.md'
-# - The Basics:
-#   - 'Getting Started': 'getting-started.md'
+- The Basics:
+  - 'Getting Started': 'the-basics/getting-started.md'
 - Git:
   - 'Install Git': 'git/install-configure-git.md'
   - 'Create Project': 'git/initializing-git.md'
@@ -53,6 +53,7 @@ nav:
   - 'Deployment Overview': 'deployment/deployment-overview.md'
   - 'Heroku': 'deployment/heroku.md'
   - 'Google API': 'deployment/google-api.md'
+  - 'Google Sheets App': 'deployment/gs-app.md'
   - 'Lightweight Backends': 'deployment/lightweight-backends.md'
 - Data Management:
   - 'Database Overview': 'data-management/database-overview.md'
@@ -60,19 +61,21 @@ nav:
   - 'Neo4j Graph Databases': 'data-management/neo4j-overview.md'
   - 'Neo4j Tutorial': 'data-management/neo4j-tutorial.md'
   - 'Neo4j Advanced': 'data-management/neo4j-advanced.md'
-- Data Science:
+- Data Analysis:
   - 'Machine Learning Tutorial': 'data-science/machine-learning-tutorial/machine-learning-tutorial.md'
 - Data Visualization:
   - 'Data Visualization': 'data-visualization/data-visualization.md'
   - 'Dashboards': 'data-visualization/dashboards.md'
 - Python Packages:
   - 'Dash': 'guides/dash.md'
+  - 'py2neo': 'guides/py2neo.md'
 - Additional Resources:
   - 'Scoping Canvas': 'additional-resources/scoping.md'
   - 'Product Definition': 'additional-resources/product-definition.md'
   - 'Product Specification': 'additional-resources/specification-doc.md'
   - 'Persona Development Guide': 'additional-resources/persona-guide.md'
   - 'Interview Guide': 'additional-resources/interview-guide.md'
+  - 'User Testing Guide': 'additional-resources/user-testing-guide.md'
 - How to Maintain This Site: 
   - 'Development Guide': 'maintenance/development-guidance.md'
   - 'Tips & Tricks': 'maintenance/tips-and-tricks.md'

@@ -2,7 +2,7 @@
 
 For some applications, you don't need or want to go through the extra effort of setting up a database backend. You have a few options for hosting data for web-based applications and similar tools. This topic covers a few of those options.
 
-## Google Sheets (no API required)
+## Google Sheets Download (no API required)
 
 Google Sheets can be downloaded automatically as CSV files using a URL that you can construct from the sheet’s key. Take this sheet, for example:
 `https://docs.google.com/spreadsheets/d/1qrtaGu5dwljVbHJeR4RIMWtdZKOauJfJ6nODlPwMRno/edit?usp=sharing`
@@ -20,14 +20,13 @@ Any application with that link will download a csv file directly.
 
 If you have multiple sheets, specify the sheet by appending `&sheet=<sheet>`.
 
-You can, for example, pass data from one Google Sheet to another by using the IMPORTDATA() function. In the cell you want to import these data, type:
+You can also pass data from one Google Sheet to another by using the `IMPORTRANGE()` function. In the cell you want to import these data, type:
 
 ```
-=importdata("https://docs.google.com/spreadsheets/d/<key>/gviz/tq?tqx=out:csv&sheet=<sheet>")
+=importrange("<key>", "Sheet1!A:Z")
 ```
 
-!!!Info
-    [IMPORTDATA refreshes every hour](https://support.google.com/docs/answer/58515?hl=en), so your spreadsheet may not have up-to-date information if a change was made recently.
+To use Google Sheets as a full-stack application solution, see [the Google Sheets Application guide](gs-app.md).
 
 ## Google Sheets (with pygsheets)
 
