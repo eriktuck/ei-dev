@@ -6,8 +6,8 @@ This tutorial will introduce you to the concepts required to extend Google Sheet
 
 The benefits of using Google Sheets is that you can much more quickly build a fairly robust solution than on another platform. It is also likely familiar to user, which allows you to bring them into the development and testing process. Finally, it has a ton of out-of-the box functionality that you can leverage for your project. Google Sheets can be right for prototyping solutions and often can be the first and last stop for developing a lightweight application.
 
-??? note "Why not Excel?"
-	Excel is behind Google Sheets in two key areas: array formulas and data sharing. Array formulas allow for data aggregation and import without knowing the structure of the data. Ever copy data from one sheet to another by just dragging a `=Sheet1!A1` formula down a column? You need an array formula. Data sharing between Excel sheets can be accomplished through external links or Power Query, however I find those break more than they work once a file is shared.
+??? question "Why not Excel?"
+    Excel is behind Google Sheets in two key areas: array formulas and data sharing. Array formulas allow for data aggregation and import without knowing the structure of the data. Ever copy data from one sheet to another by just dragging a `=Sheet1!A1` formula down a column? You need an array formula. Data sharing between Excel sheets can be accomplished through external links or Power Query, however I find those break more than they work once a file is shared and Power Query is comparatively slow.
 
 ## Spreadsheet Maturity Model
 
@@ -117,6 +117,8 @@ will filter the third column of the returned array that are blank. This is usefu
 ```
 
 where `E` is the list to check and `A` is the column to check against `E`.
+
+If you provide one column instead of A:C, you can easily sum all values based on a condition (like an advance SUMIF).
 
 #### Query
 
@@ -269,6 +271,8 @@ Here the first two columns will be treated as fixed and the first row will be tr
 
 Combining the `INDEX` and `MATCH` formula is a powerhouse formula for spreadsheets, allowing you to lookup a value from one column based on a value from another column. If you don't know it, check it out, there are lots of great resources online. You cannot use Index Match in an array formula however. 
 
+If you're looking for a simple lookup, however, you can use an array formula to avoid dragging the equation down the column. See *Joins* below.
+
 ### Pivot Tables
 
 Unpivoted data is great for sharing and analysis, but not always optimal for data visualizing. Use Google Sheets built in Pivot tables to return data to its original format if needed.
@@ -298,6 +302,36 @@ The general form is below:
 VLOOKUP(<Table1 Join Index>, {<Table2 Join Index>, <Table2 Columns to Join>}, {<2, 3 ... length of Table2 Columns to Join>}, false)},
 <Filter condition>)
 ```
+
+#### One column lookup
+
+Instead of using `INDEX, MATCH` or `VLOOKUP` you can use a version of the join formula for a one column lookup.
+
+```
+=ARRAYFORMULA(
+{VLOOKUP(<Table1 Join Index>, {<Table2 Join Index>, <Table2 Column to Join>}, 2, false)},
+)
+```
+
+### Sum
+
+To repeat an operation down a column, such as summing across multiple columns, use `MMULT`, a matrix multiplication operation. 
+
+```
+=ARRAYFORMULA(IF(ISBLANK(A:A)=FALSE,
+MMULT(
+n(B:F),  // returns array blanks as 0 
+sequence(columns(B:F),1)^0),  // returns series of 1s of length number of columns B:F
+"")  / else leave blank
+```
+
+### Return all except what's in a list
+
+```
+={ArrayFormula(FILTER(helper4!A2:C,helper4!A2:A<>"",ISERROR(match(helper4!A2:A,helper10!A2:A,0))));helper10!A2:C}
+```
+
+
 
 ### Formula efficiency
 
@@ -398,3 +432,17 @@ Filter Views
 
 [Slicers](https://support.google.com/docs/answer/9245556?hl=en&ref_topic=9055396#zippy=%2Cfilters-filter-views-slicers)
 
+## Other Topics
+
+* Basic lookups
+* Lookup with row
+* Lookup with column
+* 2-d Lookup
+* Lookup with intermediary list (one to many)
+* Lookup with intermediary list (many to one) - same as basic lookup
+* Sumif with filter, on rows
+* Sumif with filter, on rows and columns
+
+
+
+Pandas to SQL to Google Sheets

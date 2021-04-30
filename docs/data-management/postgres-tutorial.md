@@ -24,6 +24,8 @@ Select 'Add New Server' (under Dashboard). Configure the new server following th
 
 In the left sidebar, right-click on `Databases` under`my_local_server` and select `Create> Database...`. Call the database `test` and save.
 
+*Note that if you have two databases with the same name located under two different servers, programmatically accessing the database will access all databases of that name regardless of the server. Keep database names unique (don't use 'test' again).*
+
 ### 4. Create a table
 
 In the left sidebar, navigate to `my_local_server> Databases> test> Schemas> Tables` to access the tables associated with the database. Since this is a new database, we'll need to create a table.  Note, if you called your database something other than `test`, you should navigate to your database in the tree.
@@ -166,7 +168,7 @@ Next, we'll deploy the app to Heroku and provision a database using the Heroku P
 
 Open the app at Heroku.com and click on 'Resources' to provision a Postgres database. Search for 'postgres', select 'Heroku Postgres', and click 'Provision' (you can use the Free version for this demo).
 
-### 7. Connect to the remote database in pgAdmin
+### 8. Connect to the remote database in pgAdmin
 
 In 'Resources' you should see the add-on you provisioned. Click on it, click 'Settings', and 'View Credentials'. You'll need this info to connect to the server through pgAdmin on your computer, and to use this database in your app.
 
@@ -180,7 +182,7 @@ Note that the credentials you used may be 'rotated' (changed) by Heroku. This wo
 
 Repeat steps 4 and 5 to create and populate tables in your new database.
 
-### 8. Connect your app to your remote database
+### 9. Connect your app to your remote database
 
 Now you're ready to connect your app to your remote database!
 

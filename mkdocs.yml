@@ -83,19 +83,27 @@ nav:
 # Extensions
 markdown_extensions:
   - admonition
+  - pymdownx.details
   - codehilite:
       guess_lang: true
-      linenums: true
+      # linenums: true
   - toc:
       permalink: true
 
-# Social
-extra:
-  social:
-    - type: 'linkedin'
-      link: 'https://linkedin.com/in/eriktanderson'
-    - type: 'github'
-      link: 'https://github.com/eanderson-ei'
+# # Social
+# extra:
+#   social:
+#     - icon: brands/linkedin
+#       link: https://linkedin.com/in/eriktanderson
+#     - icon: brands/github-alt
+#       link: https://github.com/eanderson-ei
+
+# Search
+plugins:
+  - search:
+      separator: '[\s\-\.]+'
+      lang:
+        - en
   
 # Analytics
 google_analytics:

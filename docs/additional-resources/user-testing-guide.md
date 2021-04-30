@@ -63,21 +63,21 @@ Usability testing (especially exploratory and assessment testing) will often tak
 1. Validation question: are you who we think you are?
 
 2. Discovery
-   - Do you have these characteristics (confirm persona hypotheses)?
-   - Do you have this problem (confirm problem hypotheses)?
-   - How do you solve it now (what is the next best alternative)?
+    - Do you have these characteristics (confirm persona hypotheses)?
+    - Do you have this problem (confirm problem hypotheses)?
+    - How do you solve it now (what is the next best alternative)?
 
 3. Testing
 
-   - Overview and instructions
-   - Test
-     - Example: Give the subject a goal (related to a problem hypothesis) and watch them attempt to solve it
-   - Measure: track the metrics that were identified in your grading plan
+    - Overview and instructions
+    - Test
+        - Example: Give the subject a goal (related to a problem hypothesis) and watch them attempt to solve it
+    - Measure: track the metrics that were identified in your grading plan
 
 4. User feedback: an opportunity for the user to share their qualitative experience (optional but helpful)
 
 5. Capture takeaways
-   - Persona and problem hypotheses
-   - UI and user stores
-   - Other notes
+    - Persona and problem hypotheses
+    - UI and user stores
+    - Other notes
 
