@@ -6,7 +6,7 @@ This tutorial demonstrates how to integrate a Postgres database with a Dash app.
 
 Visit the [Postgres website](https://www.postgresql.org/) and download the right version of Postgres for your operating system (note that you may need to use a different browser if the download does not start automatically).
 
-Once the install begins, follow [these instructions](https://www.postgresqltutorial.com/install-postgresql/) to set up Postgres on your local machine. Uncheck 'Stack Builder' when prompted, you won't need it. Make sure you write down the superuser password you set up! 
+Once the install begins, follow [these instructions](https://www.postgresqltutorial.com/install-postgresql/) to set up Postgres on your local machine. Make sure you write down the superuser password you set up! 
 
 This installation will automatically install pgAdmin, the default database management client for Postgres, and psql, a command line interface for Postgres. (If you're following the instructions linked above to verify your Postgres install, note that the password will not display on screen when you type it for security reasons).
 
@@ -220,3 +220,8 @@ except:
 
 For more info on Heroku Postgres, [read the docs](https://devcenter.heroku.com/articles/heroku-postgresql).
 
+## 10 (Optional) Install PostGIS
+
+PostGIS is a spatial database extension for Postgres. You can install it using the Stack Builder App that was installed alongside Postgres. If that fails, then download the installer from the ftp site (at http://download.osgeo.org/, navigate to /postgis/windows/pg96/). Run the installer and ensure that the target folder for installation is the same folder that Postgres is installed in (on my machine, C:/Program Files/PostgreSQL/13).
+
+Enable PostGIS on any database for which you need it by
