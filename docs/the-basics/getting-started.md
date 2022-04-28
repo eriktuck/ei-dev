@@ -48,3 +48,8 @@ As you are exploring a new project, you may want to use jupyter notebooks in a v
 
 
 
+Install Git
+
+
+
+Set up GitHub

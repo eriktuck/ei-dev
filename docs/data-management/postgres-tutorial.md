@@ -224,4 +224,24 @@ For more info on Heroku Postgres, [read the docs](https://devcenter.heroku.com/a
 
 PostGIS is a spatial database extension for Postgres. You can install it using the Stack Builder App that was installed alongside Postgres. If that fails, then download the installer from the ftp site (at http://download.osgeo.org/, navigate to /postgis/windows/pg96/). Run the installer and ensure that the target folder for installation is the same folder that Postgres is installed in (on my machine, C:/Program Files/PostgreSQL/13).
 
-Enable PostGIS on any database for which you need it by
+Enable PostGIS on any database for which you need it in pgAdmin by right-clicking on the database, selecting "Create SCRIPT", and running the following SQL:
+
+```SQL
+CREATE EXTENSION postgis;
+```
+
+To enable PostGIS on a Heroku deployed database, ...
+
+We recommend the extension `geoalchemy2` for using PostGIS with `flask-sqlalchemy`. For example:
+
+```python
+from geoalchemy2 import Geometry
+
+class SpatialData(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    coordinate_x = db.Column(Geometry('POINT'), nullable=False)
+    coordinate_y = db.Column(Geometry('POINT'), nullable=False)
+```
+
+
+

@@ -66,6 +66,10 @@ To duplicate a virtual environment from the `environment.yml` file, use the comm
 
 To duplicate a virtual environment from the `requirements.txt` file, first create an empty conda environment `conda create --name <env name>` , install pip `conda install pip` and then install the packages from the file `pip install -r requirements.txt`.
 
+#### Updating a virtual environment from file
+
+What if your team member adds a new dependency to your project and now you need to add that to your environment? Run `conda env update -f environment.yml` to update the environment from the updated `environment.yml` fil
+
 #### Cloning an environment
 
 To clone an environment, simply `conda create --name <new_env_name> --clone <old_env_name>`.

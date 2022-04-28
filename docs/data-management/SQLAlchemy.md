@@ -194,7 +194,7 @@ from app.models import *  # load all tables/classes into namespace
 db.create_all()
 ```
 
-Open pgAdmin and refresh the tables to see if the database was set up correctly. Note that re-running `db.create_all()` will only add new tables and will not override existing data, add new fields/relationships, or fail if tables already exist. Use `db.drop_all()` to delete all tables and start over.
+Open pgAdmin and refresh the tables to see if the database was set up correctly. Note that re-running `db.create_all()` will only add new tables and will not override existing data, add new fields/relationships, or fail if tables already exist. Use `db.drop_all()` to delete all tables and start over. See [here](https://dev.to/zchtodd/sqlalchemy-cascading-deletes-8hk) for an in depth discussion on deleting records.
 
 ## Adding data
 
@@ -298,6 +298,20 @@ To view data from the database on Heroku, you can follow this pattern:
 ```python
 pg: psql --app <app_name>
 select * from <table_name>
+```
+
+
+
+## Database schema
+
+To get information about the database schema:
+
+```python
+from flask_sqlalchemy import inspect
+
+insp = inspect(db.engine)
+insp.get_table_names()
+>>>['table_1', 'tabl']
 ```
 
 
